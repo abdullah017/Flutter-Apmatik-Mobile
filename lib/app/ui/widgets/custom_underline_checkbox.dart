@@ -1,0 +1,77 @@
+import 'package:apmatik_app/app/core/constant/color_constants.dart';
+import 'package:apmatik_app/app/ui/style/text_style.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+class CustomUnderLineCheckBox extends StatelessWidget {
+  const CustomUnderLineCheckBox({
+    Key? key,
+    required this.value,
+    required this.onChanged,
+    required this.checkBoxText,
+    required this.checkBoxInfoText,
+  }) : super(key: key);
+
+  final bool value;
+  final dynamic Function(bool?)? onChanged;
+  final String checkBoxText;
+  final String checkBoxInfoText;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: <Widget>[
+            Expanded(
+              flex: 1,
+              child: CheckboxListTile(
+                contentPadding: EdgeInsets.only(right: 1),
+                // fillColor: MaterialStateProperty.all(Colors.orange),
+                tristate: true,
+                value: value, //controller.isCheck.value,
+                onChanged: onChanged,
+                activeColor: AppColors.ORANGE,
+              ),
+            ),
+            buildCheckboxText(),
+          ],
+        ),
+        buildUnderLine(),
+        buildInfoText()
+      ],
+    );
+  }
+
+  Expanded buildCheckboxText() {
+    return Expanded(
+              flex: 6,
+              child: Text(
+                checkBoxText,
+                style: AppTextStyle().getSfProDisplayMedium(
+                  Colors.black,
+                ),
+              ));
+  }
+
+  Padding buildUnderLine() {
+    return Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: 20.w,
+        ),
+        child: Divider(
+          color: Colors.black,
+          height: 1,
+        ),
+      );
+  }
+
+  Padding buildInfoText() {
+    return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 3.h),
+        child: Text(checkBoxInfoText,
+            textAlign: TextAlign.start,
+            style: AppTextStyle().getSfProDisplayLittle(Colors.grey)),
+      );
+  }
+}
