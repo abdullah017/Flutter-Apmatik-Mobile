@@ -1,6 +1,8 @@
 import 'package:apmatik_app/app/core/binding/videos_details_binding.dart';
 import 'package:apmatik_app/app/ui/view/auth/additional_details/additional_details_binding.dart';
 import 'package:apmatik_app/app/ui/view/auth/additional_details/additional_details_view.dart';
+import 'package:apmatik_app/app/ui/view/auth/forgot_password/forgotpassword_binding.dart';
+import 'package:apmatik_app/app/ui/view/auth/forgot_password/forgotpassword_view.dart';
 import 'package:apmatik_app/app/ui/view/auth/login/login_binding.dart';
 import 'package:apmatik_app/app/ui/view/auth/login/login_view.dart';
 import 'package:apmatik_app/app/ui/view/auth/otp/otp_binding.dart';
@@ -81,6 +83,11 @@ class AppPages {
       name: _Paths.COMMON,
       page: () => CommonView(),
       binding: CommonBinding(),
+    ),
+    GetPage(
+      name: _Paths.FORGOTPASSWORD,
+      page: () => ForgotPasswordView(),
+      binding: ForgotPasswordBinding(),
     ),
   ];
 }

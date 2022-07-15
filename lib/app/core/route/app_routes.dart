@@ -17,6 +17,7 @@ abstract class Routes {
   static const ADDITIONAL_DETAILS = _Paths.ADDITIONAL_DETAILS;
   static const OTP = _Paths.OTP;
   static const COMMON = _Paths.COMMON;
+  static const FORGOTPASSWORD = _Paths.FORGOTPASSWORD;
 }
 
 abstract class _Paths {
@@ -33,4 +34,5 @@ abstract class _Paths {
   static const ADDITIONAL_DETAILS = '/additional_details';
   static const OTP = '/otp';
   static const COMMON = '/common';
+  static const FORGOTPASSWORD = '/forgotpassword';
 }
