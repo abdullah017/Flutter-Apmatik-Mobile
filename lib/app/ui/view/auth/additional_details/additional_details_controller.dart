@@ -38,7 +38,7 @@ class AdditionalDetailsController extends BaseController {
     '4 çocuk',
     '5 veya daha fazla çocuk'
   ];
-  var selectedDate = DateTime.now().obs;
+  var selectedDate = DateTime(2000).obs;
 
   var isCheck = false.obs;
 
@@ -56,7 +56,7 @@ class AdditionalDetailsController extends BaseController {
   @override
   void onInit() {
     super.onInit();
-    dateText.text = DateFormat("dd.MM.yyyy").format(DateTime.now()).toString();
+    dateText.text = DateFormat("dd.MM.yyyy").format(DateTime(2000)).toString();
   }
 
   @override
@@ -77,8 +77,8 @@ class AdditionalDetailsController extends BaseController {
       initialDate: selectedDate.value,
       firstDate: DateTime(1900),
       lastDate: DateTime.now(),
-      //initialEntryMode: DatePickerEntryMode.input,
-      // initialDatePickerMode: DatePickerMode.year,
+      initialEntryMode: DatePickerEntryMode.calendar,
+      initialDatePickerMode: DatePickerMode.day,
       helpText: 'Doğum Tarihini Seçiniz',
       cancelText: 'Kapat',
       confirmText: 'Onayla',

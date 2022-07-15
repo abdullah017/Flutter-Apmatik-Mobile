@@ -1,3 +1,4 @@
+import 'package:apmatik_app/app/core/base/base_common_pages.dart';
 import 'package:apmatik_app/app/core/helper/form_validation_helper.dart';
 import 'package:apmatik_app/app/core//utils/utilities.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,7 @@ import 'widget_state.dart';
 /// Please extends to your [Controller].
 /// read the [Example] above.
 class BaseController extends GetxController
-    with BaseCommonWidgets, Utilities, WidgetState, ScreenState {
+    with BaseCommonWidgets, BaseCommonPages, Utilities, WidgetState, ScreenState {
   final box = GetStorage();
 
   bool isLoadMore = false;

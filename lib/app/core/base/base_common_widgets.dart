@@ -14,6 +14,12 @@ import 'base_controller.dart';
 /// You can find and use on your Controller wich is the Controller extends [BaseController].
 class BaseCommonWidgets implements _CommonWidgetsInterface {
 
+  
+
+
+
+
+
   @override
   void showSnackBar({String title = "", String message = ""}) {
     Get.snackbar(title, message,

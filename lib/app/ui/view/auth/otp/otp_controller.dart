@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:apmatik_app/app/core/base/base_common_widget.dart';
 import 'package:apmatik_app/app/core/base/base_controller.dart';
+import 'package:apmatik_app/app/ui/view/common/common_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -20,7 +21,6 @@ class OtpController extends BaseController
   TextEditingController textEditingController = TextEditingController();
   StreamController<ErrorAnimationType>? errorController;
   AnimationController? animationController;
-
 
   @override
   void onInit() {
@@ -50,7 +50,13 @@ class OtpController extends BaseController
     super.dispose();
   }
 
-
+  statusPage() {
+    try {
+      Get.toNamed('common', arguments: '1');
+    } catch (e) {
+      print(e);
+    }
+  }
 
   void getUserPhone() {
     storageList.value = box.read('userData');
