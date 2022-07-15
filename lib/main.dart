@@ -1,5 +1,6 @@
 import 'package:apmatik_app/app/core/network/api-handler/api-handler.dart';
 import 'package:apmatik_app/app/core/network/api-handler/api-repo.dart';
+import 'package:apmatik_app/app/core/network/check_connection/check_connecition.dart';
 import 'package:apmatik_app/app/core/route/app_pages.dart';
 import 'package:apmatik_app/app/core/utils/translation_service.dart';
 
@@ -11,7 +12,6 @@ import 'package:get/get.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   Get.put(ApiBaseHelper(), permanent: true);
   Get.put(ApiRepository(Get.find()));
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: [
-            Locale('tr', ''), 
+            Locale('tr', ''),
             Locale('en', ''),
           ],
           locale: TranslationService.locale,

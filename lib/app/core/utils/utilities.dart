@@ -29,17 +29,7 @@ class Utilities {
     }
   }
 
-  String rupiahFormater(String value) {
-    if (value == null || value == 'null') {
-      value = "0";
-    }
 
-    double amount = double.parse(value);
-    // FlutterMoneyFormatter fmf = FlutterMoneyFormatter(amount: amount);
-    // String c = fmf.output.nonSymbol.toString().replaceAll(".00", "");
-    // String fix = "Rp. " + c.replaceAll(",", ".");
-    return value;
-  }
 
   String moneyFormater(String value) {
     if (value == null || value == 'null') {

@@ -2,7 +2,6 @@ import 'package:apmatik_app/app/core/base/base_view.dart';
 import 'package:apmatik_app/app/core/constant/color_constants.dart';
 import 'package:apmatik_app/app/ui/style/text_style.dart';
 import 'package:apmatik_app/app/ui/view/auth/otp/otp_controller.dart';
-import 'package:apmatik_app/app/ui/view/common/common_view.dart';
 import 'package:apmatik_app/app/ui/widgets/custom_appbar.dart';
 import 'package:apmatik_app/app/ui/widgets/custom_elevated_button.dart';
 import 'package:apmatik_app/app/ui/widgets/custom_page_title.dart';
@@ -40,7 +39,6 @@ class OtpView extends BaseView<OtpController> {
 
   Container buildGoOnButton() {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 25.w),
       margin: EdgeInsets.symmetric(vertical: 25.w),
       width: Get.width,
       height: Get.height * 0.05.h,
@@ -51,7 +49,7 @@ class OtpView extends BaseView<OtpController> {
           child: Text(
             'goOn'.tr,
             style: appTextStyle.getSfProDisplayMedium_H4(AppColors.WHITE),
-          )),
+          )), 
     );
   }
 
