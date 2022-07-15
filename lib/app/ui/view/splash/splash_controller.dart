@@ -1,4 +1,6 @@
+import 'package:apmatik_app/app/core/base/base_common_pages.dart';
 import 'package:apmatik_app/app/core/base/base_controller.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class SplashController extends BaseController {
@@ -15,6 +17,10 @@ class SplashController extends BaseController {
   @override
   void onInit() {
     super.onInit();
+    print(Get.height);
+    print(Get.width);
+    print(MediaQuery.of(Get.context!).size.height);
+    print(MediaQuery.of(Get.context!).size.width);
     // id.value = '2014422';
     // getImagesDetails(id.value);
   }
@@ -26,6 +32,9 @@ class SplashController extends BaseController {
   void goRegisterPage() {
     Get.toNamed('register');
   }
+
+
+
   // void getImagesDetails(id)async {
   //   try {
   //    await apiRepository

@@ -28,7 +28,7 @@ class LoginView extends BaseView<LoginController> {
                   buildEMailField(),
                   buildPasswordField(),
                   SizedBox(
-                    height: 50.h,
+                    height: 45.h,
                   ),
                   buildButtonsCapsule(),
                 ],
@@ -39,16 +39,14 @@ class LoginView extends BaseView<LoginController> {
       ));
 
   CustomPageTitle buildPageTitle() {
-    return CustomPageTitle(
-        appTextStyle: appTextStyle, titleText: 'loginTitle'.tr);
+    return CustomPageTitle(titleText: 'loginTitle'.tr);
   }
 
   CustomTextFormField buildEMailField() {
     return CustomTextFormField(
       textEditingController: controller.emailController,
-      padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 25.h),
+      padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 5.h),
       labelText: 'emailLabel'.tr,
-      style: appTextStyle.getSfProDisplayMedium(Colors.black),
       validator: (email) {
         return controller.formValidationHelper.emailValidator(email!);
       },
@@ -60,7 +58,6 @@ class LoginView extends BaseView<LoginController> {
       textEditingController: controller.passwordController,
       padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 1.h),
       labelText: 'passowordLabel'.tr,
-      style: appTextStyle.getSfProDisplayMedium(Colors.black),
       obscureText: controller.isPasswordHidden.value,
       obscureCharacter: '*',
       suffixIcon: IconButton(
@@ -96,10 +93,14 @@ class LoginView extends BaseView<LoginController> {
 
   CustomElevatedButton buildLoginButton() {
     return CustomElevatedButton(
+      buttonSize: Size(330.w, 45.h),
       onPressed: () {
         controller.login();
       },
-      child: Text('loginButton'.tr),
+      child: Text(
+        'loginButton'.tr,
+        style: appTextStyle.getSfProDisplayRegular_H5(AppColors.WHITE),
+      ),
     );
   }
 
@@ -111,7 +112,7 @@ class LoginView extends BaseView<LoginController> {
       onPressed: () {},
       child: Text(
         'forgotPasswordButton'.tr,
-        style: appTextStyle.getSfProDisplayMedium(AppColors.GREY_OPACITY),
+        style: appTextStyle.getSfProDisplayRegular_H6(AppColors.GREY_OPACITY),
       ),
     );
   }

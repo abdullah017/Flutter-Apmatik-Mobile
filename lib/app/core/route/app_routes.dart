@@ -16,6 +16,7 @@ abstract class Routes {
   static const REGISTER = _Paths.REGISTER;
   static const ADDITIONAL_DETAILS = _Paths.ADDITIONAL_DETAILS;
   static const OTP = _Paths.OTP;
+  static const COMMON = _Paths.COMMON;
 }
 
 abstract class _Paths {
@@ -31,4 +32,5 @@ abstract class _Paths {
   static const REGISTER = '/register';
   static const ADDITIONAL_DETAILS = '/additional_details';
   static const OTP = '/otp';
+  static const COMMON = '/common';
 }

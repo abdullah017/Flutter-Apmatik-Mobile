@@ -1,4 +1,5 @@
 import 'package:apmatik_app/app/core/base/base_view.dart';
+import 'package:apmatik_app/app/core/constant/color_constants.dart';
 import 'package:apmatik_app/app/ui/style/text_style.dart';
 import 'package:apmatik_app/app/ui/view/auth/register/register_controller.dart';
 import 'package:apmatik_app/app/ui/widgets/custom_appbar.dart';
@@ -37,7 +38,7 @@ class RegisterView extends BaseView<RegisterController> {
       );
 
   CustomPageTitle buildPageTitle() {
-    return CustomPageTitle(appTextStyle: appTextStyle, titleText: 'Kaydol');
+    return CustomPageTitle(titleText: 'Kaydol');
   }
 
   CustomTextFormField buildNameSurnameTextField() {
@@ -73,7 +74,7 @@ class RegisterView extends BaseView<RegisterController> {
 
   Padding buildPhoneNumber() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 15.h),
+      padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 10.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -93,38 +94,38 @@ class RegisterView extends BaseView<RegisterController> {
                   left: 0,
                   child: Container(
                     height: 30,
-                    width: 80,
+                    width: 70,
                     decoration: BoxDecoration(
                       color: Colors.grey.shade300,
                       borderRadius: BorderRadius.circular(5),
                     ),
                     child: Row(
-                      children: const [
+                      children: [
                         Spacer(),
                         Icon(
                           CupertinoIcons.chevron_down,
-                          size: 16,
+                          size: 11.sp,
                         ),
                         SizedBox(
-                          width: 5,
+                          width: 10.w,
                         ),
                       ],
                     ),
                   ),
                 ),
-                //NUMARA MASKELEME İŞLEMİ YAPILACAK
                 SizedBox(
                   height: 50,
                   child: InternationalPhoneNumberInput(
+                    selectorTextStyle: appTextStyle
+                        .getSfProDisplayMedium_little(AppColors.BLACK),
                     validator: (number) {
-                      // return controller.formValidationHelper
-                      //     .phoneNumberValidator(number!);
                       if (number == null) {
                         return 'Lütfen Telefon Numarası alanını doldurun';
                       }
                       if (!controller.correctPhone.value) {
                         return controller.error.value;
                       }
+                      return null;
                     },
                     searchBoxDecoration:
                         InputDecoration(hintText: 'searchCountry'.tr),
@@ -133,6 +134,7 @@ class RegisterView extends BaseView<RegisterController> {
                     onInputChanged: (PhoneNumber number) {
                       print(number.phoneNumber);
                       print(number.dialCode);
+                      controller.phoneNumberWithRegion = number;
                     },
                     onInputValidated: (bool value) {
                       print(value);
@@ -146,10 +148,7 @@ class RegisterView extends BaseView<RegisterController> {
                       }
                     },
                     ignoreBlank: false,
-                    autoValidateMode: AutovalidateMode.always,
-                    selectorTextStyle: const TextStyle(
-                      color: Colors.black,
-                    ),
+                    autoValidateMode: AutovalidateMode.onUserInteraction,
                     selectorConfig: const SelectorConfig(
                       selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
                       setSelectorButtonAsPrefixIcon: false,
@@ -172,7 +171,8 @@ class RegisterView extends BaseView<RegisterController> {
 
                       //labelText: 'Telefon Numarası',
                     ),
-                    textStyle: const TextStyle(color: Colors.black),
+                    textStyle:
+                        appTextStyle.getSfProDisplayMedium_H6(AppColors.BLACK),
                     onSaved: (PhoneNumber number) {
                       print('On Saved: $number');
                     },
@@ -194,7 +194,7 @@ class RegisterView extends BaseView<RegisterController> {
           value: val,
           child: Text(
             val,
-            style: AppTextStyle().getSfProDisplayMedium(Colors.black),
+            style: AppTextStyle().getSfProDisplayMedium_H6(Colors.black),
           ),
         );
       }).toList(),
@@ -206,7 +206,6 @@ class RegisterView extends BaseView<RegisterController> {
       textEditingController: controller.passwordController,
       padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 1.h),
       labelText: 'password'.tr,
-      style: appTextStyle.getSfProDisplayMedium(Colors.black),
       obscureText: controller.isPasswordHidden.value,
       obscureCharacter: '*',
       suffixIcon: IconButton(
@@ -227,7 +226,6 @@ class RegisterView extends BaseView<RegisterController> {
       textEditingController: controller.repasswordController,
       padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 1.h),
       labelText: 'rePassword'.tr,
-      style: appTextStyle.getSfProDisplayMedium(Colors.black),
       obscureText: controller.isRePasswordHidden.value,
       obscureCharacter: '*',
       suffixIcon: IconButton(
@@ -253,9 +251,9 @@ class RegisterView extends BaseView<RegisterController> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           CustomElevatedButton(
+            buttonSize: Size(330.w, 45.h),
             onPressed: () {
               controller.register();
-              controller.getRegionPhoneNumber();
             },
             child: Text('registerButton'.tr),
           ),

@@ -45,33 +45,31 @@ class CustomUnderLineCheckBox extends StatelessWidget {
 
   Expanded buildCheckboxText() {
     return Expanded(
-              flex: 6,
-              child: Text(
-                checkBoxText,
-                style: AppTextStyle().getSfProDisplayMedium(
-                  Colors.black,
-                ),
-              ));
+        flex: 6,
+        child: Text(
+          checkBoxText,
+          style: AppTextStyle().getSfProDisplayMedium_H6(AppColors.BLACK),
+        ));
   }
 
   Padding buildUnderLine() {
     return Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: 20.w,
-        ),
-        child: Divider(
-          color: Colors.black,
-          height: 1,
-        ),
-      );
+      padding: EdgeInsets.symmetric(
+        horizontal: 20.w,
+      ),
+      child: Divider(
+        color: Colors.black,
+        height: 1.h,
+      ),
+    );
   }
 
   Padding buildInfoText() {
     return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 3.h),
-        child: Text(checkBoxInfoText,
-            textAlign: TextAlign.start,
-            style: AppTextStyle().getSfProDisplayLittle(Colors.grey)),
-      );
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 1.h),
+      child: Text(checkBoxInfoText,
+          textAlign: TextAlign.start,
+          style: AppTextStyle().getSfProDisplayLight_H6(Colors.grey)),
+    );
   }
 }

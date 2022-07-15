@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
-  Size get preferredSize => Size.fromHeight(0.3.sw);
+  Size get preferredSize => Size.fromHeight(0.2.sw);
 
   @override
   Widget build(BuildContext context) {

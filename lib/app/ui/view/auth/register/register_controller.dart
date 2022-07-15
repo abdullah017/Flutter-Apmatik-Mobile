@@ -30,14 +30,10 @@ class RegisterController extends BaseController {
     phoneNumberController;
     emailController;
     passwordController;
+    phoneNumberWithRegion;
   }
 
-  getRegionPhoneNumber() async {
-    phoneNumberWithRegion = await PhoneNumber.getRegionInfoFromPhoneNumber(
-        phoneNumberController.text, phoneNumberWithRegion!.dialCode!);
 
-    print(phoneNumberWithRegion);
-  }
 
   void changePasswordShowStatus() {
     isPasswordHidden.value = !isPasswordHidden.value;
@@ -53,14 +49,14 @@ class RegisterController extends BaseController {
 
   void register() async {
     if (registerFormKey.currentState!.validate()) {
-      await getRegionPhoneNumber();
+     
 
       await box
           .write('userData', [
             nameSurnameController.text,
             emailController.text,
             identifyNumberController.text,
-            phoneNumberWithRegion!.phoneNumber,
+            phoneNumberWithRegion,
             selectedValue,
             passwordController.text,
           ])

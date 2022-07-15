@@ -3,6 +3,7 @@ import 'package:apmatik_app/app/core/constant/asset_constants.dart';
 import 'package:apmatik_app/app/core/constant/color_constants.dart';
 import 'package:apmatik_app/app/ui/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import 'splash_controller.dart';
@@ -17,7 +18,10 @@ class SplashView extends BaseView<SplashController> {
               buildSplashLogo(),
             ],
           ),
-          bottomSheet: buildSplashButtons(),
+          floatingActionButton: buildSplashButtons(),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.centerFloat,
+          // bottomSheet: buildSplashButtons(),
         ),
       );
 
@@ -56,7 +60,7 @@ class SplashView extends BaseView<SplashController> {
   Container buildSplashButtons() {
     return Container(
       width: Get.width,
-      height: Get.height * .25,
+      height: Get.width > 390 ? Get.height * .15.h : Get.height * .10.h,
       color: Colors.transparent,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -65,7 +69,10 @@ class SplashView extends BaseView<SplashController> {
             onPressed: () {
               controller.goLoginPage();
             },
-            child: Text('loginTitle'.tr),
+            child: Text(
+              'loginTitle'.tr,
+              style: appTextStyle.getSfProDisplayRegular_H5(Colors.white),
+            ),
           ),
           TextButton(
             style: ButtonStyle(
@@ -75,7 +82,7 @@ class SplashView extends BaseView<SplashController> {
               controller.goRegisterPage();
             },
             child: Text('registerTitle'.tr,
-                style: appTextStyle.getSfProDisplayMedium(AppColors.BLACK)),
+                style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK)),
           )
         ],
       ),

@@ -2,6 +2,7 @@ import 'package:apmatik_app/app/core/base/base_view.dart';
 import 'package:apmatik_app/app/core/constant/color_constants.dart';
 import 'package:apmatik_app/app/ui/style/text_style.dart';
 import 'package:apmatik_app/app/ui/view/auth/otp/otp_controller.dart';
+import 'package:apmatik_app/app/ui/view/common/common_view.dart';
 import 'package:apmatik_app/app/ui/widgets/custom_appbar.dart';
 import 'package:apmatik_app/app/ui/widgets/custom_elevated_button.dart';
 import 'package:apmatik_app/app/ui/widgets/custom_page_title.dart';
@@ -42,14 +43,20 @@ class OtpView extends BaseView<OtpController> {
       padding: EdgeInsets.symmetric(horizontal: 25.w),
       margin: EdgeInsets.symmetric(vertical: 25.w),
       width: Get.width,
-      height: Get.height * 0.08,
-      child: CustomElevatedButton(onPressed: () {}, child: Text('goOn'.tr)),
+      height: Get.height * 0.05.h,
+      child: CustomElevatedButton(
+          onPressed: () {
+            controller.statusPage();
+          },
+          child: Text(
+            'goOn'.tr,
+            style: appTextStyle.getSfProDisplayMedium_H4(AppColors.WHITE),
+          )),
     );
   }
 
   CustomPageTitle buildPageTitle() {
-    return CustomPageTitle(
-        appTextStyle: appTextStyle, titleText: 'verificationCode'.tr);
+    return CustomPageTitle(titleText: 'verificationCode'.tr);
   }
 
   Center buildPhoneNumberAndInfoText() {
@@ -62,7 +69,7 @@ class OtpView extends BaseView<OtpController> {
             TextSpan(
                 text: 'verificationCodeInfo'.tr,
                 style: AppTextStyle()
-                    .getSfProDisplayRegular_h6(AppColors.GREY_OPACITY)),
+                    .getSfProDisplayRegular_H6(AppColors.GREY_OPACITY)),
           ],
         ),
         textAlign: TextAlign.center,
@@ -135,7 +142,7 @@ class OtpView extends BaseView<OtpController> {
           child: Text(
             'verificationTimer'.tr,
             style: AppTextStyle()
-                .getSfProDisplayRegular_h6(AppColors.GREY_OPACITY),
+                .getSfProDisplayRegular_H6(AppColors.GREY_OPACITY),
           ),
         )
       ],

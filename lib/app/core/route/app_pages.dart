@@ -7,6 +7,8 @@ import 'package:apmatik_app/app/ui/view/auth/otp/otp_binding.dart';
 import 'package:apmatik_app/app/ui/view/auth/otp/otp_view.dart';
 import 'package:apmatik_app/app/ui/view/auth/register/register_binding.dart';
 import 'package:apmatik_app/app/ui/view/auth/register/register_view.dart';
+import 'package:apmatik_app/app/ui/view/common/common_binding.dart';
+import 'package:apmatik_app/app/ui/view/common/common_view.dart';
 
 import 'package:apmatik_app/app/ui/view/splash/splah_view.dart';
 import 'package:apmatik_app/app/ui/view/splash/splash_binding.dart';
@@ -74,6 +76,11 @@ class AppPages {
       name: _Paths.OTP,
       page: () => OtpView(),
       binding: OtpBinding(),
+    ),
+    GetPage(
+      name: _Paths.COMMON,
+      page: () => CommonView(),
+      binding: CommonBinding(),
     ),
   ];
 }
