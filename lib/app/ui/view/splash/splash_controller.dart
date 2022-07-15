@@ -1,5 +1,5 @@
-import 'package:apmatik_app/app/core/base/base_common_pages.dart';
 import 'package:apmatik_app/app/core/base/base_controller.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -13,7 +13,8 @@ class SplashController extends BaseController {
   // var isLoading = true.obs;
 
   // var isMoreDataAvailable = true.obs;
-
+  Map source = {ConnectivityResult.none: false};
+  String? msg;
   @override
   void onInit() {
     super.onInit();
@@ -21,6 +22,8 @@ class SplashController extends BaseController {
     print(Get.width);
     print(MediaQuery.of(Get.context!).size.height);
     print(MediaQuery.of(Get.context!).size.width);
+    getVersionApp();
+
     // id.value = '2014422';
     // getImagesDetails(id.value);
   }
@@ -32,8 +35,6 @@ class SplashController extends BaseController {
   void goRegisterPage() {
     Get.toNamed('register');
   }
-
-
 
   // void getImagesDetails(id)async {
   //   try {

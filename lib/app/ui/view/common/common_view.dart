@@ -2,7 +2,7 @@
 
 import 'package:apmatik_app/app/core/base/base_view.dart';
 import 'package:apmatik_app/app/ui/view/common/common_controller.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CommonView extends BaseView<CommonController> {
@@ -13,7 +13,15 @@ class CommonView extends BaseView<CommonController> {
       ? commonPages.registerSuccess(buttonText: 'Giriş Yap', onPressed: () {})
       : status == "1"
           ? commonPages.registerSuccess(
-              buttonText: 'TEKRAR DENE', onPressed: () {})
+              buttonText: 'TEKRAR DENE',
+              onPressed: () {
+                Get.back();
+              },
+              title: 'İnternet Bağlantısı Kurulamadı',
+              info:
+                  'Telefonunuzun internet bağlantısı olup olmadığını kontrol edip tekrar deneyin',
+              icon: Icons.wifi,
+            )
           : status == "2"
               ? commonPages.registerSuccess(
                   buttonText: 'KABUL ETMİYORUM', onPressed: () {})

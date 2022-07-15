@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:apmatik_app/app/core/base/base_common_widget.dart';
 import 'package:apmatik_app/app/core/base/base_controller.dart';
-import 'package:apmatik_app/app/ui/view/common/common_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
