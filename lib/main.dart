@@ -1,6 +1,5 @@
 import 'package:apmatik_app/app/core/network/api-handler/api-handler.dart';
 import 'package:apmatik_app/app/core/network/api-handler/api-repo.dart';
-import 'package:apmatik_app/app/core/network/check_connection/check_connecition.dart';
 import 'package:apmatik_app/app/core/route/app_pages.dart';
 import 'package:apmatik_app/app/core/utils/translation_service.dart';
 
