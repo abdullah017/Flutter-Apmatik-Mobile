@@ -10,17 +10,26 @@ class CommonView extends BaseView<CommonController> {
 
   @override
   Widget vBuilder() => status == "0"
-      ? commonPages.registerSuccess(buttonText: 'Giriş Yap', onPressed: () {})
+      ? commonPages.registerSuccess(
+          buttonText: 'KAYDINIZ BAŞARI İLE TAMAMLANDI',
+          onPressed: () {
+            controller.connection.checkConnectionStatus();
+          },
+          title: 'İnternet Bağlantısı Kurulamadı',
+          info:
+              'Telefonunuzun internet bağlantısı olup olmadığını kontrol edip tekrar deneyin',
+          icon: Icons.wifi,
+        )
       : status == "1"
           ? commonPages.registerSuccess(
               buttonText: 'TEKRAR DENE',
               onPressed: () {
-                Get.back();
+               controller.connection.subConnectionStatus();
               },
               title: 'İnternet Bağlantısı Kurulamadı',
               info:
                   'Telefonunuzun internet bağlantısı olup olmadığını kontrol edip tekrar deneyin',
-              icon: Icons.wifi,
+              icon: Icons.blender,
             )
           : status == "2"
               ? commonPages.registerSuccess(

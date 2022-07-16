@@ -2,11 +2,12 @@ import 'package:apmatik_app/app/core/base/base_common_pages.dart';
 import 'package:apmatik_app/app/core/helper/form_validation_helper.dart';
 import 'package:apmatik_app/app/core//utils/utilities.dart';
 import 'package:apmatik_app/app/core/network/check_connection/check_connecition.dart';
-import 'package:connectivity_plus/connectivity_plus.dart';
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:new_version/new_version.dart';
 import 'base_common_widgets.dart';
 import 'widget_state.dart';
 
@@ -45,44 +46,89 @@ class BaseController extends GetxController
   ScrollController scrollController = ScrollController();
   PageController pageController = PageController();
   FormValidationHelper formValidationHelper = FormValidationHelper();
-  NetworkConnectivity networkConnectivity = NetworkConnectivity.instance;
+  //NetworkConnectivity networkConnectivity = NetworkConnectivity.instance;
+  // ConnectionStatusSingleton connectionStatusSingleton =
+  //     ConnectionStatusSingleton.getInstance();
+  StreamSubscription? connectionChangeStream;
+  CheckNetworkConnection connection = CheckNetworkConnection.instance;
 
   set setEnableScrollController(bool value) => withScrollController = value;
+
+  ///[Calling showAlertIfNecessary with your app's
+  ///BuildContext will check if the app can be updated,
+  ///and will automatically display a platform-specific alert that the user can use to go to the app store.]
+  basicStatusCheck(NewVersion newVersion) {
+    newVersion.showAlertIfNecessary(context: Get.context!);
+  }
+
+  ///If you want to create a custom alert or use the app version information differently, call getVersionStatus.
+  ///<This will return a Future<VersionStatus> with information about the local and app store versions of the app
+  advancedStatusCheck(NewVersion newVersion) async {
+    final status = await newVersion.getVersionStatus();
+    if (status != null) {
+      debugPrint(status.releaseNotes);
+      debugPrint(status.appStoreLink);
+      debugPrint(status.localVersion);
+      debugPrint(status.storeVersion);
+      debugPrint(status.canUpdate.toString());
+      newVersion.showUpdateDialog(
+        context: Get.context!,
+        versionStatus: status,
+        dialogTitle: 'Custom Title', //=> YOUR ALERT TITLE TEXT
+        dialogText: 'Custom Text', //=> YOUR ALERT DESCRIPTION TEXT
+        updateButtonText:
+            'Custom update button text', //=> YOUR UPDATE  TITLE TEXT
+        dismissButtonText:
+            'Custom dismiss button text', //=> YOUR DISMISS  TITLE TEXT
+        dismissAction: () {}, //=> YOUR FUNCTION  TITLE TEXT
+      );
+    }
+  }
+
+  checkAppVersion() {
+    /// Instantiate NewVersion manager object (Using GCP Console app as example)
+    final newVersion = NewVersion(
+        //iOSId: 'com.google.Vespa', //=> YOUR IOS APP ID
+        //androidId: 'com.google.android.apps.cloudconsole', //=> YOUR GOOGLE APP ID
+        );
+
+    /// You can let the plugin handle fetching the status and showing a dialog,
+    /// or you can fetch the status and display your own dialog, or no dialog.
+    bool? simpleBehavior;
+    if (simpleBehavior == true) {
+      basicStatusCheck(newVersion);
+    } else {
+      advancedStatusCheck(newVersion);
+    }
+  }
+
+  bool isOffline = false;
+  void connectionChanged(dynamic hasConnection) {
+    isOffline = !hasConnection;
+    print(isOffline);
+    update();
+  }
 
   @override
   void onInit() {
     super.onInit();
-    networkConnectivity.initialise();
-    networkConnectivity.myStream.listen((source) {
-      var _source = source;
-      print('source $_source');
-      // 1.
-      switch (_source.keys.toList()[0]) {
-        case ConnectivityResult.mobile:
-          _source.values.toList()[0]
-              ? 'Mobile: Online'
-              : Get.toNamed('common', arguments: '1');
-          ;
-          break;
-        case ConnectivityResult.wifi:
-          _source.values.toList()[0]
-              ? 'WiFi: Online'
-              : Get.toNamed('common', arguments: '1');
-          ;
-          break;
-        case ConnectivityResult.none:
-        default:
-          msg = 'Offline';
-          Get.toNamed('common', arguments: '1');
-      }
-      // 2.
-      update();
-      // 3.
-      // showSnackBar(
-      //   title: 'HATA',
-      //   message: msg!,
-      // );
-    });
+
+    ///[CHECK APP VERSION]
+    // checkAppVersion();
+
+    ///[CHECK NETWORK CONNECTION]
+    //networkConnectivity.initialise();
+    // ConnectionStatusSingleton connectionStatus =
+    //     ConnectionStatusSingleton.getInstance();
+    // connectionStatus.initialize();
+    // connectionChangeStream =
+    //     connectionStatus.connectionChange.listen(connectionChanged);
+
+    connection.checkConnectionStatus().then(
+        (value) => value! ? 'BAĞLI' : Get.toNamed('common', arguments: '1'));
+    connection.subConnectionStatus();
+
+    ///[SCROLL CONTROLLER]
     if (withScrollController) {
       logWhenDebug("SCROLL CONTROLLER ENABLE on ${Get.currentRoute}",
           withScrollController.toString());

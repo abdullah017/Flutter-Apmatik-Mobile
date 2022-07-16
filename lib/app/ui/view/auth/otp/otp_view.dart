@@ -15,7 +15,11 @@ class OtpView extends BaseView<OtpController> {
   @override
   Widget vBuilder() => Scaffold(
         backgroundColor: AppColors.PAGEBACKGROUND,
-        appBar: CustomAppBar(),
+        appBar: CustomAppBar(
+          onTap: () async {
+            await buildShowModalBottomSheeet();
+          },
+        ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: buildGoOnButton(),
         body: ListView(
@@ -37,6 +41,27 @@ class OtpView extends BaseView<OtpController> {
         ),
       );
 
+  Future<dynamic> buildShowModalBottomSheeet() {
+    return showModalBottomSheet(
+        context: Get.context!,
+        builder: (context) {
+          return Container(
+              width: Get.width,
+              height: Get.width > 390 ? Get.height * .20.h : Get.height * .30.h,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text('Bu işlemi İptal etmek istediğinize emin misiniz?'),
+                  CustomElevatedButton(
+                      onPressed: () {
+                        Get.offNamedUntil('splash', (route) => false);
+                      },
+                      child: Text('Devam Et'))
+                ],
+              ));
+        });
+  }
+
   Container buildGoOnButton() {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 25.w),
@@ -49,7 +74,7 @@ class OtpView extends BaseView<OtpController> {
           child: Text(
             'goOn'.tr,
             style: appTextStyle.getSfProDisplayMedium_H4(AppColors.WHITE),
-          )), 
+          )),
     );
   }
 

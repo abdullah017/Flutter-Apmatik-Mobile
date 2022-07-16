@@ -1,6 +1,5 @@
 import 'package:apmatik_app/app/core/base/base_common_pages.dart';
 import 'package:apmatik_app/app/core/helper/form_validation_helper.dart';
-import 'package:apmatik_app/app/core/network/check_connection/check_connecition.dart';
 import 'package:apmatik_app/app/ui/style/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -32,14 +31,14 @@ export 'base_controller.dart';
 /// read the [Example] above.
 abstract class BaseView<T extends BaseController> extends StatelessWidget {
   BaseView({
-    Key? key, 
+    Key? key,
   }) : super(key: key);
 
   final String? tag = null;
   final AppTextStyle appTextStyle = AppTextStyle();
   final FormValidationHelper formValidationHelper = FormValidationHelper();
   final BaseCommonPages commonPages = BaseCommonPages();
-  
+
   T get controller => GetInstance().find<T>(tag: tag);
 
   @override

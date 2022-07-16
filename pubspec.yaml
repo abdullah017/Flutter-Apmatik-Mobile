@@ -59,6 +59,7 @@ dependencies:
   #UTILS
   device_info: ^2.0.3
   package_info: ^2.0.2
+  new_version: ^0.3.1
   url_launcher: ^6.1.4
   intl: ^0.17.0
   libphonenumber_plugin: ^0.2.3

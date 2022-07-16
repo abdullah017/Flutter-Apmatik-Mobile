@@ -7,7 +7,7 @@ class RegExpConstans {
 
   RegExpConstans._init();
 
-  /// Sadece Küçük-Büyük [Harf] içerebilir
+  /// Sadece Küçük-Büyük [Harf] içerebilir [a-zA-Z0-9ğüşöçİĞÜŞÖÇ]+$
   final alpha = RegExp(r'^[A-Za-z]+$');
 
   /// Sadece [Rakam] içerebilir
@@ -17,7 +17,7 @@ class RegExpConstans {
   final alphaNumeric = RegExp(r'^[a-zA-Z0-9]+$');
 
   /// Sadece [Harf ve Boşluk] içerebilir
-  final nameExp = RegExp(r'^[A-Za-z ]+$');
+  final nameExp = RegExp(r'^[A-Za-z-ğüşöçİĞÇ ]+$');
 
   /// E-posta
   final emailExp = RegExp(
