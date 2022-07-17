@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:apmatik_app/app/core/network/api-handler/api-handler.dart';
 import 'package:apmatik_app/app/core/network/api-handler/api-repo.dart';
 import 'package:apmatik_app/app/core/route/app_pages.dart';
@@ -8,11 +10,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Get.put(ApiBaseHelper(), permanent: true);
   Get.put(ApiRepository(Get.find()));
+
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     systemNavigationBarColor: Colors.white.withOpacity(0.0),
     // navigation bar color
@@ -25,9 +29,12 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+  GetStorage box = GetStorage();
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    var isLoginValue = box.read('isLogin') ?? true;
     return ScreenUtilInit(
       minTextAdapt: true,
       builder: (context, child) {
@@ -45,7 +52,7 @@ class MyApp extends StatelessWidget {
           fallbackLocale: TranslationService.fallbackLocale,
           translations: TranslationService(),
           title: "Application",
-          initialRoute: AppPages.INITIAL,
+          initialRoute: isLoginValue ? AppPages.HOME : AppPages.INITIAL,
           getPages: AppPages.routes,
           debugShowCheckedModeBanner: false,
           // theme: Themes.light,

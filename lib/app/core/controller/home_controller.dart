@@ -1,26 +1,26 @@
 
-import 'package:get/get.dart';
+// import 'package:get/get.dart';
 
-class HomeController extends GetxController {
+// class HomeController extends GetxController {
 
-  RxInt rxIndex= 0.obs;
-  @override
-  void onInit() {
+//   RxInt rxIndex= 0.obs;
+//   @override
+//   void onInit() {
 
-    super.onInit();
+//     super.onInit();
 
-  }
-  @override
-  void onReady() async {
-
-
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
+//   }
+//   @override
+//   void onReady() async {
 
 
+//     super.onReady();
+//   }
+
+//   @override
+//   void onClose() {}
 
 
-}
+
+
+// }

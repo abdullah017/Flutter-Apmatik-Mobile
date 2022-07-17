@@ -51,6 +51,7 @@ dependencies:
   heroicons:
   dropdown_search: ^5.0.2
   pin_code_fields: ^7.4.0
+  carousel_slider: ^4.1.1
   flutter_timer_countdown: ^1.0.3
   intl_phone_number_input:
     git:
@@ -108,12 +109,16 @@ flutter:
       fonts:
         - asset: assets/fonts/Sf_Pro_Display/SF-Pro-Display-Light.otf
           weight: 300
+        - asset: assets/fonts/Sf_Pro_Display/SF-Pro-Display-LightItalic.otf
+          weight: 300
         - asset: assets/fonts/Sf_Pro_Display/SF-Pro-Display-Medium.otf
           weight: 500
         - asset: assets/fonts/Sf_Pro_Display/SF-Pro-Display-Regular.otf
           weight: 400
         - asset: assets/fonts/Sf_Pro_Display/SF-Pro-Display-Bold.otf
-          weight: 600  
+          weight: 600 
+        - asset: assets/fonts/Sf_Pro_Display/SF-Pro-Display-Semibold.otf
+          weight: 600    
 
 
          

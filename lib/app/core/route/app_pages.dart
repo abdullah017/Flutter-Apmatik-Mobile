@@ -1,3 +1,4 @@
+import 'package:apmatik_app/app/core/binding/home_binding.dart';
 import 'package:apmatik_app/app/core/binding/videos_details_binding.dart';
 import 'package:apmatik_app/app/ui/view/auth/additional_details/additional_details_binding.dart';
 import 'package:apmatik_app/app/ui/view/auth/additional_details/additional_details_view.dart';
@@ -11,6 +12,7 @@ import 'package:apmatik_app/app/ui/view/auth/register/register_binding.dart';
 import 'package:apmatik_app/app/ui/view/auth/register/register_view.dart';
 import 'package:apmatik_app/app/ui/view/common/common_binding.dart';
 import 'package:apmatik_app/app/ui/view/common/common_view.dart';
+import 'package:apmatik_app/app/ui/view/home/home_view.dart';
 
 import 'package:apmatik_app/app/ui/view/splash/splah_view.dart';
 import 'package:apmatik_app/app/ui/view/splash/splash_binding.dart';
@@ -23,6 +25,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
   static const INITIAL = Routes.SPLASH;
+   static const HOME = Routes.HOME;
   static final routes = [
     // GetPage(
     //   name: _Paths.DASHBOARD,
@@ -88,6 +91,11 @@ class AppPages {
       name: _Paths.FORGOTPASSWORD,
       page: () => ForgotPasswordView(),
       binding: ForgotPasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.HOME,
+      page: () => HomeView(),
+      binding: HomeBinding(),
     ),
   ];
 }

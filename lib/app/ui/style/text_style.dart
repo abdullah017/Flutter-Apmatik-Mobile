@@ -4,12 +4,31 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppTextStyle {
   /// [LIGHT_FONT_TYPE]
 
-  TextStyle getSfProDisplayLight_H6(Color color) {
+  TextStyle getSfProDisplayLight_H5(Color color) {
     return TextStyle(
         fontFamily: 'SF Pro',
         fontSize: 10.sp,
         fontWeight: FontWeight.w300,
         fontStyle: FontStyle.normal,
+        color: color);
+  }
+
+  TextStyle getSfProDisplayLight_H6(Color color) {
+    return TextStyle(
+        fontFamily: 'SF Pro',
+        fontSize: 7.sp,
+        fontWeight: FontWeight.w300,
+        fontStyle: FontStyle.normal,
+        color: color);
+  }
+
+  /// [LIGHT_ITALIC_FONT_TYPE]
+  TextStyle getSfProDisplayLight_Italic_H6(Color color) {
+    return TextStyle(
+        fontFamily: 'SF Pro',
+        fontSize: 12.sp,
+        fontWeight: FontWeight.w300,
+        fontStyle: FontStyle.italic,
         color: color);
   }
 
@@ -101,6 +120,15 @@ class AppTextStyle {
   }
 
   TextStyle getSfProDisplayBold_h6(Color color) {
+    return TextStyle(
+        fontFamily: 'SF Pro',
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w600,
+        fontStyle: FontStyle.normal,
+        color: color);
+  }
+
+  TextStyle getSfProDisplaySemiBold_h6(Color color) {
     return TextStyle(
         fontFamily: 'SF Pro',
         fontSize: 14.sp,
