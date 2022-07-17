@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTextStyle {
+/////-----------------------[SF PRO DISPLAY FONT TYPE AREA!]------------------------------------/////
+
   /// [LIGHT_FONT_TYPE]
 
   TextStyle getSfProDisplayLight_H5(Color color) {
@@ -43,7 +45,7 @@ class AppTextStyle {
         color: color);
   }
 
-  TextStyle getSfProDisplayRegular_H5(Color color) {
+  TextStyle getSfProDisplayRegular_H4(Color color) {
     return TextStyle(
         fontFamily: 'SF Pro',
         fontSize: 17.sp,
@@ -52,12 +54,30 @@ class AppTextStyle {
         color: color);
   }
 
-  TextStyle getSfProDisplayRegular_H6(Color color) {
+  TextStyle getSfProDisplayRegular_H5(Color color) {
     return TextStyle(
         fontFamily: 'SF Pro',
         fontSize: 14.sp,
         fontWeight: FontWeight.w400,
         fontStyle: FontStyle.normal,
+        color: color);
+  }
+
+  TextStyle getSfProDisplayRegular_H6(Color color) {
+    return TextStyle(
+        fontFamily: 'SF Pro',
+        fontSize: 10.sp,
+        fontWeight: FontWeight.w400,
+        fontStyle: FontStyle.normal,
+        color: color);
+  }
+
+  TextStyle getSfProDisplayRegular_Italic_H6(Color color) {
+    return TextStyle(
+        fontFamily: 'SF Pro',
+        fontSize: 10.sp,
+        fontWeight: FontWeight.w400,
+        fontStyle: FontStyle.italic,
         color: color);
   }
 
@@ -132,6 +152,27 @@ class AppTextStyle {
     return TextStyle(
         fontFamily: 'SF Pro',
         fontSize: 14.sp,
+        fontWeight: FontWeight.w600,
+        fontStyle: FontStyle.normal,
+        color: color);
+  }
+
+/////-----------------------[SF PRO ROUNDED FONT TYPE AREA!]------------------------------------/////
+  ///[BOLD_FONT_TYPE]
+
+  TextStyle getSfProRoundedSemiBold_h5(Color color) {
+    return TextStyle(
+        fontFamily: 'SF Pro Rounded',
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w600,
+        fontStyle: FontStyle.normal,
+        color: color);
+  }
+
+  TextStyle getSfProRoundedSemiBold_h6(Color color) {
+    return TextStyle(
+        fontFamily: 'SF Pro Rounded',
+        fontSize: 7.sp,
         fontWeight: FontWeight.w600,
         fontStyle: FontStyle.normal,
         color: color);

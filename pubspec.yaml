@@ -53,6 +53,7 @@ dependencies:
   pin_code_fields: ^7.4.0
   carousel_slider: ^4.1.1
   flutter_timer_countdown: ^1.0.3
+  dots_indicator: ^2.1.0
   intl_phone_number_input:
     git:
       url: https://github.com/AbdOoSaed/intl_phone_number_input
@@ -114,12 +115,19 @@ flutter:
         - asset: assets/fonts/Sf_Pro_Display/SF-Pro-Display-Medium.otf
           weight: 500
         - asset: assets/fonts/Sf_Pro_Display/SF-Pro-Display-Regular.otf
+        - asset: assets/fonts/Sf_Pro_Display/SF-Pro-Display-RegularItalic.otf
           weight: 400
         - asset: assets/fonts/Sf_Pro_Display/SF-Pro-Display-Bold.otf
           weight: 600 
         - asset: assets/fonts/Sf_Pro_Display/SF-Pro-Display-Semibold.otf
           weight: 600    
-
+    
+    - family: SF Pro Rounded
+      fonts:
+        - asset: assets/fonts/Sf_Pro_Rounded/SF-Pro-Rounded-Bold.otf
+          weight: 600
+        
+      
 
          
   #         style: italic
