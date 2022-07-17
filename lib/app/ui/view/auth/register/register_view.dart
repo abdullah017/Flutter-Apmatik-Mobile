@@ -15,24 +15,22 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 class RegisterView extends BaseView<RegisterController> {
   @override
-  Widget vBuilder() => SafeArea(
-        child: Scaffold(
-          appBar: CustomAppBar(),
-          body: Form(
-            key: controller.registerFormKey,
-            child: ListView(
-              children: [
-                buildPageTitle(),
-                buildNameSurnameTextField(),
-                buildEmailTextField(),
-                buildIdentifyNumber(),
-                buildPhoneNumber(),
-                buildGenderDropdownButton(),
-                buildPasswordTextField(),
-                buildRePasswordTextField(),
-                buildRegisterButton(),
-              ],
-            ),
+  Widget vBuilder() => Scaffold(
+        appBar: CustomAppBar(),
+        body: Form(
+          key: controller.registerFormKey,
+          child: ListView(
+            children: [
+              buildPageTitle(),
+              buildNameSurnameTextField(),
+              buildEmailTextField(),
+              buildIdentifyNumber(),
+              buildPhoneNumber(),
+              buildGenderDropdownButton(),
+              buildPasswordTextField(),
+              buildRePasswordTextField(),
+              buildRegisterButton(),
+            ],
           ),
         ),
       );
@@ -91,10 +89,10 @@ class RegisterView extends BaseView<RegisterController> {
                 Positioned(
                   bottom: 10,
                   top: 10,
-                  left: 0,
+                  left: 10,
                   child: Container(
                     height: 30,
-                    width: 70,
+                    width: 50,
                     decoration: BoxDecoration(
                       color: Colors.grey.shade300,
                       borderRadius: BorderRadius.circular(5),
@@ -107,7 +105,7 @@ class RegisterView extends BaseView<RegisterController> {
                           size: 11.sp,
                         ),
                         SizedBox(
-                          width: 10.w,
+                          width: 5.w,
                         ),
                       ],
                     ),

@@ -21,9 +21,10 @@ class BaseCommonPages implements _CommonPagesInterface {
       bool? showLogo,
       required Function()? onPressed,
       required String buttonText}) {
-    return SafeArea(
-      child: Scaffold(
-        body: Column(
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 25.0),
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(

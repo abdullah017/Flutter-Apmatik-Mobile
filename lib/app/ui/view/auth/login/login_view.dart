@@ -13,8 +13,7 @@ import 'package:get/get.dart';
 
 class LoginView extends BaseView<LoginController> {
   @override
-  Widget vBuilder() => SafeArea(
-          child: Scaffold(
+  Widget vBuilder() => Scaffold(
         appBar: CustomAppBar(),
         body: ListView(
           children: [
@@ -24,7 +23,10 @@ class LoginView extends BaseView<LoginController> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  buildPageTitle(),
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 20.0.h),
+                    child: buildPageTitle(),
+                  ),
                   buildEMailField(),
                   buildPasswordField(),
                   SizedBox(
@@ -36,7 +38,7 @@ class LoginView extends BaseView<LoginController> {
             ),
           ],
         ),
-      ));
+      );
 
   CustomPageTitle buildPageTitle() {
     return CustomPageTitle(titleText: 'loginTitle'.tr);

@@ -41,6 +41,12 @@ class CustomTextFormField extends StatelessWidget {
         obscuringCharacter: obscureCharacter ?? '*',
         validator: validator,
         decoration: InputDecoration(
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: Color(0xffE6E6E6)),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: AppColors.ORANGE),
+          ),
           labelText: labelText,
           labelStyle:
               AppTextStyle().getSfProDisplayRegular_H6(AppColors.GREY_OPACITY),
