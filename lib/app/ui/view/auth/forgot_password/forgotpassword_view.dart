@@ -12,12 +12,11 @@ import 'package:get/get.dart';
 class ForgotPasswordView extends BaseView<ForgotPasswordController> {
   @override
   Widget vBuilder() => Scaffold(
-    appBar: CustomAppBar(),
-    floatingActionButtonLocation:
-        FloatingActionButtonLocation.centerFloat,
-    floatingActionButton: buildGoOnButton(),
-    body: buildForm(),
-  );
+        appBar: CustomAppBar(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: buildGoOnButton(),
+        body: buildForm(),
+      );
 
   Container buildGoOnButton() {
     return Container(
@@ -41,7 +40,10 @@ class ForgotPasswordView extends BaseView<ForgotPasswordController> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomPageTitle(titleText: 'forgotPasswordButton'.tr),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 20.0.h),
+            child: CustomPageTitle(titleText: 'forgotPasswordButton'.tr),
+          ),
           buildEmailTextField(),
           buildInfoText()
         ],
