@@ -37,7 +37,7 @@ class OtpController extends BaseController
     animationController!.forward();
     errorController = StreamController<ErrorAnimationType>();
 
-    getUserPhone();
+    //getUserPhone();
     super.onInit();
   }
 
@@ -56,11 +56,11 @@ class OtpController extends BaseController
     }
   }
 
-  void getUserPhone() {
-    storageList.value = box.read('userData');
-    print(storageList[3]);
-    phone = storageList[3];
-  }
+  // void getUserPhone() {
+  //   storageList.value = box.read('userData');
+  //   print(storageList[3]);
+  //   phone = storageList[3];
+  // }
 
   goHomePage() {
     Get.toNamed('home');

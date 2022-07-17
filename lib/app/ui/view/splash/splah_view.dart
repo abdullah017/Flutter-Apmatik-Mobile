@@ -10,19 +10,16 @@ import 'splash_controller.dart';
 
 class SplashView extends BaseView<SplashController> {
   @override
-  Widget vBuilder() => SafeArea(
-        child: Scaffold(
-          body: Stack(
-            children: [
-              buildStaticBackgroundImage(),
-              buildSplashLogo(),
-            ],
-          ),
-          floatingActionButton: buildSplashButtons(),
-          floatingActionButtonLocation:
-              FloatingActionButtonLocation.centerFloat,
-          // bottomSheet: buildSplashButtons(),
+  Widget vBuilder() => Scaffold(
+        body: Stack(
+          children: [
+            buildStaticBackgroundImage(),
+            buildSplashLogo(),
+          ],
         ),
+        floatingActionButton: buildSplashButtons(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        // bottomSheet: buildSplashButtons(),
       );
 
   Container buildStaticBackgroundImage() {

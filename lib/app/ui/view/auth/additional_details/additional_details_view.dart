@@ -15,8 +15,7 @@ import 'package:get/get.dart';
 
 class AdditionalDetailsView extends BaseView<AdditionalDetailsController> {
   @override
-  Widget vBuilder() => SafeArea(
-          child: Scaffold(
+  Widget vBuilder() => Scaffold(
         appBar: CustomAppBar(),
         body: Form(
           key: controller.additionalFormKey,
@@ -38,7 +37,7 @@ class AdditionalDetailsView extends BaseView<AdditionalDetailsController> {
             ],
           ),
         ),
-      ));
+      );
 
   InkWell buildBirthDayPicker() {
     return InkWell(

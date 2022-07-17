@@ -17,11 +17,9 @@ void main() async {
   Get.put(ApiBaseHelper(), permanent: true);
   Get.put(ApiRepository(Get.find()));
 
-  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    systemNavigationBarColor: Colors.white.withOpacity(0.0),
-    // navigation bar color
-    statusBarColor: Colors.white.withOpacity(0.0), // status bar color
-  ));
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive,
+      overlays: <SystemUiOverlay>[]);
+
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
     runApp(MyApp());
@@ -34,7 +32,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    var isLoginValue = box.read('isLogin') ?? true;
+    var isLoginValue = box.read('isLogin') ?? false;
     return ScreenUtilInit(
       minTextAdapt: true,
       builder: (context, child) {

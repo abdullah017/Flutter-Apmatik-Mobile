@@ -12,8 +12,7 @@ import 'home_controller.dart';
 
 class HomeView extends BaseView<HomeController> {
   @override
-  Widget vBuilder() => SafeArea(
-          child: Scaffold(
+  Widget vBuilder() => Scaffold(
         appBar: CustomAppBar(),
         body: ListView(children: [
           Padding(
@@ -74,5 +73,5 @@ class HomeView extends BaseView<HomeController> {
           ),
           QuestionnaireAndSponsoredCardWidget()
         ]),
-      ));
+      );
 }

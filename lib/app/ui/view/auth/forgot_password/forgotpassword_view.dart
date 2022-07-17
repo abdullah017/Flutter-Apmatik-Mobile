@@ -11,15 +11,13 @@ import 'package:get/get.dart';
 
 class ForgotPasswordView extends BaseView<ForgotPasswordController> {
   @override
-  Widget vBuilder() => SafeArea(
-        child: Scaffold(
-          appBar: CustomAppBar(),
-          floatingActionButtonLocation:
-              FloatingActionButtonLocation.centerFloat,
-          floatingActionButton: buildGoOnButton(),
-          body: buildForm(),
-        ),
-      );
+  Widget vBuilder() => Scaffold(
+    appBar: CustomAppBar(),
+    floatingActionButtonLocation:
+        FloatingActionButtonLocation.centerFloat,
+    floatingActionButton: buildGoOnButton(),
+    body: buildForm(),
+  );
 
   Container buildGoOnButton() {
     return Container(
