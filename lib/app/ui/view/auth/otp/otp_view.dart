@@ -78,8 +78,11 @@ class OtpView extends BaseView<OtpController> {
     );
   }
 
-  CustomPageTitle buildPageTitle() {
-    return CustomPageTitle(titleText: 'verificationCode'.tr);
+  buildPageTitle() {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 20.0.h),
+      child: CustomPageTitle(titleText: 'verificationCode'.tr),
+    );
   }
 
   Center buildPhoneNumberAndInfoText() {

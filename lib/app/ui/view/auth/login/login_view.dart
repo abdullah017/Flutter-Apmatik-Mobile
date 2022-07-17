@@ -111,7 +111,9 @@ class LoginView extends BaseView<LoginController> {
       style: ButtonStyle(
         fixedSize: MaterialStateProperty.all<Size>(Size(260.w, 40.h)),
       ),
-      onPressed: () {},
+      onPressed: () {
+        controller.goToForgotPassword();
+      },
       child: Text(
         'forgotPasswordButton'.tr,
         style: appTextStyle.getSfProDisplayRegular_H6(AppColors.GREY_OPACITY),
