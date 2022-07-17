@@ -35,8 +35,11 @@ class RegisterView extends BaseView<RegisterController> {
         ),
       );
 
-  CustomPageTitle buildPageTitle() {
-    return CustomPageTitle(titleText: 'Kaydol');
+  buildPageTitle() {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 20.0.h),
+      child: CustomPageTitle(titleText: 'Kaydol'),
+    );
   }
 
   CustomTextFormField buildNameSurnameTextField() {
