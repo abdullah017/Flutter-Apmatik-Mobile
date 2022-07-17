@@ -125,6 +125,13 @@ class OtpView extends BaseView<OtpController> {
           enableActiveFill: true,
           errorAnimationController: controller.errorController,
           controller: controller.textEditingController,
+          validator: (value) {
+            if (value == null || value.length < 5) {
+              return "Lütfen Tüm alanları Doldurun!";
+            } else {
+              return null;
+            }
+          },
           onCompleted: (v) {
             print("Completed");
           },

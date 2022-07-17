@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:apmatik_app/app/core/base/base_common_widget.dart';
 import 'package:apmatik_app/app/core/base/base_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -63,7 +62,11 @@ class OtpController extends BaseController
     phone = storageList[3];
   }
 
-  snackBar(String? message) {
-    return showSnackBar('HATA', message!, Colors.black, true, '');
+  goHomePage() {
+    Get.toNamed('home');
   }
+
+  // snackBar(String? message) {
+  //   return showSnackBar('HATA', message!, Colors.black, true, '');
+  // }
 }
