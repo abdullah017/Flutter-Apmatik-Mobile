@@ -66,9 +66,12 @@ class LoginView extends BaseView<LoginController> {
           onPressed: () {
             controller.changePasswordShowStatus();
           },
-          icon: Icon(controller.isPasswordHidden.value
-              ? Icons.visibility
-              : Icons.visibility_off)),
+          icon: Icon(
+            controller.isPasswordHidden.value
+                ? Icons.visibility
+                : Icons.visibility_off,
+            size: 19.sm,
+          )),
       validator: (password) {
         return controller.formValidationHelper.passwordValidator(password!);
       },

@@ -23,6 +23,15 @@ class CustomDropdownButtonFormField extends StatelessWidget {
           labelText: labelText ?? 'gender'.tr,
           labelStyle:
               AppTextStyle().getSfProDisplayRegular_H6(AppColors.GREY_OPACITY),
+          border: UnderlineInputBorder(
+            borderSide: BorderSide(color: AppColors.GREY_OPACITY, width: 0.2),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: AppColors.GREY_OPACITY, width: 0.2),
+          ),
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(color: AppColors.GREY_OPACITY, width: 0.2),
+          ),
         ),
         validator: validator,
         value: value,
