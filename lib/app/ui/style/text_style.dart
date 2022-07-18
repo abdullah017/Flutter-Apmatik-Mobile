@@ -160,7 +160,7 @@ class AppTextStyle {
 /////-----------------------[SF PRO ROUNDED FONT TYPE AREA!]------------------------------------/////
   ///[BOLD_FONT_TYPE]
 
-  TextStyle getSfProRoundedSemiBold_h5(Color color) {
+  TextStyle get_SfProRounded_SemiBold_h5(Color color) {
     return TextStyle(
         fontFamily: 'SF Pro Rounded',
         fontSize: 14.sp,
@@ -169,11 +169,21 @@ class AppTextStyle {
         color: color);
   }
 
-  TextStyle getSfProRoundedSemiBold_h6(Color color) {
+  TextStyle get_SfProRounded_SemiBold_h6(Color color) {
     return TextStyle(
         fontFamily: 'SF Pro Rounded',
         fontSize: 7.sp,
         fontWeight: FontWeight.w600,
+        fontStyle: FontStyle.normal,
+        color: color);
+  }
+
+  ///[MEDIUM_FONT_TYPE]
+  TextStyle get_SfProRounded_Medium_H6(Color color) {
+    return TextStyle(
+        fontFamily: 'SF Pro Rounded',
+        fontSize: 11.sp,
+        fontWeight: FontWeight.w500,
         fontStyle: FontStyle.normal,
         color: color);
   }

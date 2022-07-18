@@ -18,6 +18,8 @@ abstract class Routes {
   static const OTP = _Paths.OTP;
   static const COMMON = _Paths.COMMON;
   static const FORGOTPASSWORD = _Paths.FORGOTPASSWORD;
+  static const BLANK = _Paths.BLANK;
+  static const BOTTOM = _Paths.BOTTOM;
 }
 
 abstract class _Paths {
@@ -35,4 +37,6 @@ abstract class _Paths {
   static const OTP = '/otp';
   static const COMMON = '/common';
   static const FORGOTPASSWORD = '/forgotpassword';
+  static const BLANK = '/blank';
+  static const BOTTOM = '/bottom';
 }

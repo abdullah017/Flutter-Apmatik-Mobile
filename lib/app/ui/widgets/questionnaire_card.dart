@@ -4,8 +4,8 @@ import 'package:apmatik_app/app/ui/widgets/stacked_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class QuestionnaireAndSponsoredCardWidget extends StatelessWidget {
-  const QuestionnaireAndSponsoredCardWidget({
+class QuestionnaireCardWidget extends StatelessWidget {
+  const QuestionnaireCardWidget({
     Key? key,
   }) : super(key: key);
 
@@ -60,15 +60,14 @@ class QuestionnaireAndSponsoredCardWidget extends StatelessWidget {
                     children: [
                       Text(
                         'Apartman Boyanması',
-                        style: AppTextStyle().getSfProRoundedSemiBold_h5(
+                        style: AppTextStyle().get_SfProRounded_SemiBold_h5(
                           AppColors.BLACK,
                         ),
                       ),
                       Text(
                         '8 saat önce',
-                        style: AppTextStyle()
-                            .getSfProDisplayRegular_Italic_H6(
-                                AppColors.GREY_OPACITY),
+                        style: AppTextStyle().getSfProDisplayRegular_Italic_H6(
+                            AppColors.GREY_OPACITY),
                       ),
                     ],
                   ),
@@ -88,16 +87,14 @@ class QuestionnaireAndSponsoredCardWidget extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 20.0.w),
                   child: TextButton(
                       child: Padding(
-                        padding:
-                            EdgeInsets.only(left: 8.0.w, right: 8.0.w),
+                        padding: EdgeInsets.only(left: 8.0.w, right: 8.0.w),
                         child: Text("Detaylar",
                             style: AppTextStyle()
-                                .getSfProDisplayRegular_H5(
-                                    AppColors.ORANGE)),
+                                .getSfProDisplayRegular_H5(AppColors.ORANGE)),
                       ),
                       style: ButtonStyle(
-                        shape: MaterialStateProperty.all<
-                            RoundedRectangleBorder>(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5),
                             side: BorderSide(color: AppColors.ORANGE),
@@ -149,7 +146,7 @@ Widget buildStackedImages({
                     child: Text(
                       '+22',
                       style: AppTextStyle()
-                          .getSfProRoundedSemiBold_h6(AppColors.WHITE),
+                          .get_SfProRounded_SemiBold_h6(AppColors.WHITE),
                     ),
                   ))),
         ),

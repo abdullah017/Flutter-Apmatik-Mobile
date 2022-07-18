@@ -126,7 +126,8 @@ flutter:
       fonts:
         - asset: assets/fonts/Sf_Pro_Rounded/SF-Pro-Rounded-Bold.otf
           weight: 600
-        
+        - asset: assets/fonts/Sf_Pro_Rounded/SF-Pro-Rounded-Medium.otf
+          weight: 500
       
 
          

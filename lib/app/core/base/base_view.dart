@@ -38,6 +38,7 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
   final AppTextStyle appTextStyle = AppTextStyle();
   final FormValidationHelper formValidationHelper = FormValidationHelper();
   final BaseCommonPages commonPages = BaseCommonPages();
+  
 
   T get controller => GetInstance().find<T>(tag: tag);
 

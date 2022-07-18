@@ -10,6 +10,10 @@ import 'package:apmatik_app/app/ui/view/auth/otp/otp_binding.dart';
 import 'package:apmatik_app/app/ui/view/auth/otp/otp_view.dart';
 import 'package:apmatik_app/app/ui/view/auth/register/register_binding.dart';
 import 'package:apmatik_app/app/ui/view/auth/register/register_view.dart';
+import 'package:apmatik_app/app/ui/view/blank/blank_binding.dart';
+import 'package:apmatik_app/app/ui/view/blank/blank_view.dart';
+import 'package:apmatik_app/app/ui/view/bottom_navbar/bottom_navbar_binding.dart';
+import 'package:apmatik_app/app/ui/view/bottom_navbar/bottom_navbar_view.dart';
 import 'package:apmatik_app/app/ui/view/common/common_binding.dart';
 import 'package:apmatik_app/app/ui/view/common/common_view.dart';
 import 'package:apmatik_app/app/ui/view/home/home_view.dart';
@@ -24,7 +28,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.SPLASH;
+  static const INITIAL = Routes.BOTTOM;
   static const HOME = Routes.HOME;
   static final routes = [
     // GetPage(
@@ -96,6 +100,16 @@ class AppPages {
       name: _Paths.HOME,
       page: () => HomeView(),
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.BLANK,
+      page: () => BlankView(),
+      binding: BlankBinding(),
+    ),
+    GetPage(
+      name: _Paths.BOTTOM,
+      page: () => BottomNavbarView(),
+      binding: BottomNavbarBinding(),
     ),
   ];
 }
