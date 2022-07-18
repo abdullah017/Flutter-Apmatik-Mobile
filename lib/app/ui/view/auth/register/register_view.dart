@@ -19,6 +19,7 @@ class RegisterView extends BaseView<RegisterController> {
         appBar: CustomAppBar(),
         body: Form(
           key: controller.registerFormKey,
+          autovalidateMode: controller.formValidation,
           child: ListView(
             children: [
               buildPageTitle(),
@@ -75,7 +76,7 @@ class RegisterView extends BaseView<RegisterController> {
 
   Padding buildPhoneNumber() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 10.h),
+      padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 5.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -83,104 +84,103 @@ class RegisterView extends BaseView<RegisterController> {
             'phoneNumberLabel'.tr,
             style: TextStyle(color: Colors.grey),
           ),
-          Container(
-            decoration: const BoxDecoration(
-                border:
-                    Border(bottom: BorderSide(width: 1, color: Colors.grey))),
-            child: Stack(
-              children: [
-                Positioned(
-                  bottom: 10,
-                  top: 10,
-                  left: 10,
-                  child: Container(
-                    height: 30,
-                    width: 50,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade300,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Row(
-                      children: [
-                        Spacer(),
-                        Icon(
-                          CupertinoIcons.chevron_down,
-                          size: 11.sp,
-                        ),
-                        SizedBox(
-                          width: 5.w,
-                        ),
-                      ],
-                    ),
+          Stack(
+            children: [
+              Positioned(
+                bottom: 10,
+                top: 10,
+                left: 10,
+                child: Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade300,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Row(
+                    children: [
+                      Spacer(),
+                      Icon(
+                        CupertinoIcons.chevron_down,
+                        size: 11.sp,
+                      ),
+                      SizedBox(
+                        width: 5.w,
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(
-                  height: 50,
-                  child: InternationalPhoneNumberInput(
-                    selectorTextStyle: appTextStyle
-                        .getSfProDisplayMedium_little(AppColors.BLACK),
-                    validator: (number) {
-                      if (number == null) {
-                        return 'Lütfen Telefon Numarası alanını doldurun';
-                      }
-                      if (!controller.correctPhone.value) {
-                        return controller.error.value;
-                      }
-                      return null;
-                    },
-                    searchBoxDecoration:
-                        InputDecoration(hintText: 'searchCountry'.tr),
-                    spaceBetweenSelectorAndTextField: 0,
-                    hintText: 'phoneNumberLabel'.tr,
-                    onInputChanged: (PhoneNumber number) {
-                      print(number.phoneNumber);
-                      print(number.dialCode);
-                      controller.phoneNumberWithRegion = number;
-                    },
-                    onInputValidated: (bool value) {
-                      print(value);
-                      if (!value) {
-                        controller.error.value =
-                            'Telefon numarası alanını doğru şekilde doldurun!';
-                        controller.correctPhone.value = false;
-                      } else {
-                        controller.correctPhone.value = true;
-                        controller.error.value = '';
-                      }
-                    },
-                    ignoreBlank: false,
-                    autoValidateMode: AutovalidateMode.onUserInteraction,
-                    selectorConfig: const SelectorConfig(
-                      selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
-                      setSelectorButtonAsPrefixIcon: false,
-                      leadingPadding: 10,
-                      showFlags: false,
-                      trailingSpace: true,
+              ),
+              SizedBox(
+                height: 50,
+                child: InternationalPhoneNumberInput(
+                  selectorButtonOnErrorPadding: 20,
+                  spaceBetweenSelectorAndTextField: 12,
+                  selectorTextStyle: appTextStyle
+                      .getSfProDisplayMedium_little(AppColors.BLACK),
+                  validator: (number) {
+                    if (number == null) {
+                      return 'Lütfen Telefon Numarası alanını doldurun';
+                    }
+                    if (!controller.correctPhone.value) {
+                      return controller.error.value;
+                    }
+                    return null;
+                  },
+                  searchBoxDecoration:
+                      InputDecoration(hintText: 'searchCountry'.tr),
+                  hintText: 'phoneNumberLabel'.tr,
+                  onInputChanged: (PhoneNumber number) {
+                    print(number.phoneNumber);
+                    print(number.dialCode);
+                    controller.phoneNumberWithRegion = number;
+                  },
+                  onInputValidated: (bool value) {
+                    print(value);
+                    if (!value) {
+                      controller.error.value = 'Lütfen numaranızı doğru girin.';
+                      controller.correctPhone.value = false;
+                    } else {
+                      controller.correctPhone.value = true;
+                      controller.error.value = '';
+                    }
+                  },
+                  ignoreBlank: false,
+                  autoValidateMode: AutovalidateMode.onUserInteraction,
+                  selectorConfig: const SelectorConfig(
+                    selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+                    setSelectorButtonAsPrefixIcon: false,
+                    leadingPadding: 10,
+                    showFlags: false,
+                    trailingSpace: true,
+                  ),
+                  initialValue: PhoneNumber(isoCode: 'TR'),
+                  textFieldController: controller.phoneNumberController,
+                  formatInput: false,
+                  keyboardType: TextInputType.numberWithOptions(
+                      signed: true, decimal: true),
+                  inputDecoration: const InputDecoration(
+                    errorBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.red)),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide:
+                          BorderSide(color: AppColors.GREY_OPACITY, width: 0.2),
                     ),
-                    initialValue: PhoneNumber(isoCode: 'TR'),
-                    textFieldController: controller.phoneNumberController,
-                    formatInput: false,
-                    keyboardType: TextInputType.numberWithOptions(
-                        signed: true, decimal: true),
-                    inputDecoration: const InputDecoration(
-                      errorBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.transparent)),
-                      enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.transparent)),
-                      focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.transparent)),
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide:
+                          BorderSide(color: AppColors.GREY_OPACITY, width: 0.2),
+                    ),
 
-                      //labelText: 'Telefon Numarası',
-                    ),
-                    textStyle:
-                        appTextStyle.getSfProDisplayMedium_H6(AppColors.BLACK),
-                    onSaved: (PhoneNumber number) {
-                      print('On Saved: $number');
-                    },
+                    //labelText: 'Telefon Numarası',
                   ),
+                  textStyle:
+                      appTextStyle.getSfProDisplayMedium_H6(AppColors.BLACK),
+                  onSaved: (PhoneNumber number) {
+                    print('On Saved: $number');
+                  },
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ],
       ),
@@ -210,12 +210,16 @@ class RegisterView extends BaseView<RegisterController> {
       obscureText: controller.isPasswordHidden.value,
       obscureCharacter: '*',
       suffixIcon: IconButton(
-          onPressed: () {
-            controller.changePasswordShowStatus();
-          },
-          icon: Icon(controller.isPasswordHidden.value
+        onPressed: () {
+          controller.changePasswordShowStatus();
+        },
+        icon: Icon(
+          controller.isPasswordHidden.value
               ? Icons.visibility
-              : Icons.visibility_off)),
+              : Icons.visibility_off,
+          size: 19.sm,
+        ),
+      ),
       validator: (password) {
         return controller.formValidationHelper.passwordValidator(password!);
       },
@@ -230,12 +234,16 @@ class RegisterView extends BaseView<RegisterController> {
       obscureText: controller.isRePasswordHidden.value,
       obscureCharacter: '*',
       suffixIcon: IconButton(
-          onPressed: () {
-            controller.changeRePasswordShowStatus();
-          },
-          icon: Icon(controller.isRePasswordHidden.value
+        onPressed: () {
+          controller.changeRePasswordShowStatus();
+        },
+        icon: Icon(
+          controller.isRePasswordHidden.value
               ? Icons.visibility
-              : Icons.visibility_off)),
+              : Icons.visibility_off,
+          size: 19.sm,
+        ),
+      ),
       validator: (repassword) {
         return controller.formValidationHelper.rePasswordValidator(
             repassword!, controller.passwordController.text);

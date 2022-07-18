@@ -7,8 +7,9 @@ class RegisterController extends BaseController {
   GlobalKey<FormState> registerFormKey = GlobalKey<FormState>();
   RxBool isPasswordHidden = true.obs;
   RxBool isRePasswordHidden = true.obs;
-  RxString error = "".obs;
+  RxString error = "Lütfen numaranızı doğru girin.".obs;
   RxBool correctPhone = false.obs;
+  PhoneNumber? phoneNumberWithRegion;
 
   String? selectedValue = 'Erkek';
   List<String> listOfValue = ['Erkek', 'Kadın'];
@@ -19,7 +20,8 @@ class RegisterController extends BaseController {
   TextEditingController phoneNumberController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController repasswordController = TextEditingController();
-  PhoneNumber? phoneNumberWithRegion;
+
+  AutovalidateMode formValidation = AutovalidateMode.disabled;
 
   @override
   void onInit() {
@@ -32,8 +34,6 @@ class RegisterController extends BaseController {
     passwordController;
     phoneNumberWithRegion;
   }
-
-
 
   void changePasswordShowStatus() {
     isPasswordHidden.value = !isPasswordHidden.value;
@@ -49,8 +49,7 @@ class RegisterController extends BaseController {
 
   void register() async {
     if (registerFormKey.currentState!.validate()) {
-     
-
+      formValidation = AutovalidateMode.disabled;
       await box
           .write('userData', [
             nameSurnameController.text,
@@ -70,6 +69,8 @@ class RegisterController extends BaseController {
       print(box.getValues());
     } else {
       print('NO');
+      formValidation = AutovalidateMode.always;
+      update();
     }
   }
 
