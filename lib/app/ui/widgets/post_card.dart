@@ -16,36 +16,28 @@ class PostCardWidget extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20.w),
       width: 350.w,
-      height: Get.width >= 390 ? 268.h : 365.h,
+      height: Get.width >= 390 ? 315.h : 340.h,
       // Get.width > 390 ? Get.height * .15.h : Get.height * .10.h,
-      child: Column(
-        children: <Widget>[
-          Card(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                ListTile(
-                  leading: buildPostUserImage(),
-                  minLeadingWidth: 0.0,
-                  contentPadding: EdgeInsets.symmetric(horizontal: 14),
-                  dense: true,
-                  title: buildPostUserNameAndMoreIcon(),
-                ),
-                buildPostImage(),
-                SizedBox(
-                  height: 10.h,
-                ),
-                buildPostTitleAndDescription(),
-                buildArrowIconButton(),
-                SizedBox(
-                  height: 10.h,
-                )
-              ],
+      child: Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            ListTile(
+              leading: buildPostUserImage(),
+              minLeadingWidth: 0.0,
+              contentPadding: EdgeInsets.symmetric(horizontal: 14),
+              dense: true,
+              title: buildPostUserNameAndMoreIcon(),
             ),
-          ),
-        ],
+            buildPostImage(),
+            SizedBox(
+              height: 10.h,
+            ),
+            buildPostTitleAndDescription(),
+            buildArrowIconButton(),
+          ],
+        ),
       ),
     );
   }

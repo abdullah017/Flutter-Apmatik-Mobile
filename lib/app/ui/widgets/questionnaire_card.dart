@@ -15,105 +15,99 @@ class QuestionnaireCardWidget extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20),
       width: 350.w,
-      height: Get.width >= 390 ? 268.h : 305.h,
-      child: Column(
-        children: <Widget>[
-          Card(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Stack(
-                  children: [
-                    Image.asset(
-                      'assets/images/anket.png',
-                      width: 350.sm,
-                      height: 135.sm,
-                      fit: BoxFit.fill,
+      height: Get.width >= 390 ? 255.h : 305.h,
+      child: Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Stack(
+              children: [
+                Image.asset(
+                  'assets/images/anket.png',
+                  width: 350.sm,
+                  height: 135.sm,
+                  fit: BoxFit.fill,
+                ),
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Container(
+                    width: 70.w,
+                    height: 20.h,
+                    decoration: BoxDecoration(
+                        color: AppColors.ORANGE,
+                        borderRadius:
+                            BorderRadius.only(bottomLeft: Radius.circular(30))),
+                    child: Text(
+                      'Anket',
+                      textAlign: TextAlign.center,
+                      style: AppTextStyle()
+                          .getSfProDisplayRegular_H5(AppColors.WHITE),
                     ),
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: Container(
-                        width: 70.w,
-                        height: 20.h,
-                        decoration: BoxDecoration(
-                            color: AppColors.ORANGE,
-                            borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(30))),
-                        child: Text(
-                          'Anket',
-                          textAlign: TextAlign.center,
-                          style: AppTextStyle()
-                              .getSfProDisplayRegular_H5(AppColors.WHITE),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 10.h,
-                ),
-                ListTile(
-                  title: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        'Apartman Boyanması',
-                        style: AppTextStyle().get_SfProRounded_SemiBold_h5(
-                          AppColors.BLACK,
-                        ),
-                      ),
-                      Text(
-                        '8 saat önce',
-                        style: AppTextStyle().getSfProDisplayRegular_Italic_H6(
-                            AppColors.GREY_OPACITY),
-                      ),
-                    ],
                   ),
-                  subtitle: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Apartman Boyanması için apartmanımızda anket başlamıştır. Hemen katılıp bizimle fikirlerini paylaş!',
-                        style: AppTextStyle()
-                            .getSfProDisplayRegular_H6(AppColors.BLACK),
-                      ),
-                      buildStackedImages(direction: TextDirection.rtl),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20.0.w),
-                  child: TextButton(
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 8.0.w, right: 8.0.w),
-                        child: Text("Detaylar",
-                            style: AppTextStyle()
-                                .getSfProDisplayRegular_H5(AppColors.ORANGE)),
-                      ),
-                      style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5),
-                            side: BorderSide(color: AppColors.ORANGE),
-                          ),
-                        ),
-                        fixedSize: MaterialStateProperty.all<Size>(
-                          Size(89.w, 27.h),
-                        ),
-                      ),
-                      onPressed: () => null),
-                ),
-                SizedBox(
-                  height: 17.h,
                 )
               ],
             ),
-          ),
-        ],
+            SizedBox(
+              height: 10.h,
+            ),
+            ListTile(
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    'Apartman Boyanması',
+                    style: AppTextStyle().get_SfProRounded_SemiBold_h5(
+                      AppColors.BLACK,
+                    ),
+                  ),
+                  Text(
+                    '8 saat önce',
+                    style: AppTextStyle().getSfProDisplayRegular_Italic_H6(
+                        AppColors.GREY_OPACITY),
+                  ),
+                ],
+              ),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Apartman Boyanması için apartmanımızda anket başlamıştır. Hemen katılıp bizimle fikirlerini paylaş!',
+                    style: AppTextStyle()
+                        .getSfProDisplayRegular_H6(AppColors.BLACK),
+                  ),
+                  buildStackedImages(direction: TextDirection.rtl),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.0.w),
+              child: TextButton(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 8.0.w, right: 8.0.w),
+                    child: Text("Detaylar",
+                        style: AppTextStyle()
+                            .getSfProDisplayRegular_H5(AppColors.ORANGE)),
+                  ),
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
+                        side: BorderSide(color: AppColors.ORANGE),
+                      ),
+                    ),
+                    fixedSize: MaterialStateProperty.all<Size>(
+                      Size(89.w, 27.h),
+                    ),
+                  ),
+                  onPressed: () => null),
+            ),
+            SizedBox(
+              height: 17.h,
+            )
+          ],
+        ),
       ),
     );
   }
