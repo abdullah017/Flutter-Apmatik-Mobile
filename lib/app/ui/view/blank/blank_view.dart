@@ -2,6 +2,7 @@
 
 import 'package:apmatik_app/app/core/base/base_view.dart';
 import 'package:apmatik_app/app/ui/view/blank/blank_controller.dart';
+
 import 'package:flutter/material.dart';
 
 class BlankView extends BaseView<BlankController> {

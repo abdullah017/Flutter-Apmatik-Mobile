@@ -5,37 +5,64 @@ import 'package:apmatik_app/app/ui/view/bottom_navbar/bottom_navbar_controller.d
 import 'package:apmatik_app/app/ui/view/home/home_view.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class BottomNavbarView extends BaseView<BottomNavbarController> {
   @override
   Widget vBuilder() => Scaffold(
-        bottomNavigationBar: BottomNavigationBar(
-            onTap: (index) {
-              controller.tabChange(index);
-            },
-            unselectedItemColor: Colors.amber,
-            selectedItemColor: Colors.red,
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            currentIndex: controller.tabIndex.value,
-            items: [
-              _bottomNavbarItem(),
-              _bottomNavbarItem(),
-            ]),
+        bottomNavigationBar: SizedBox(
+          width: Get.width,
+          height: 50.h,
+          child: BottomNavigationBar(
+              onTap: (index) {
+                controller.tabChange(index);
+              },
+              unselectedLabelStyle: TextStyle(fontSize: 0),
+              unselectedFontSize: 0,
+              unselectedIconTheme: IconThemeData(size: 14.sm),
+              selectedFontSize: 0,
+              selectedIconTheme: IconThemeData(size: 14.sm),
+              selectedLabelStyle: TextStyle(fontSize: 0),
+              type: BottomNavigationBarType.fixed,
+              landscapeLayout: BottomNavigationBarLandscapeLayout.spread,
+              unselectedItemColor: Colors.black,
+              selectedItemColor: Colors.orange,
+              showSelectedLabels: false,
+              showUnselectedLabels: false,
+              currentIndex: controller.tabIndex.value,
+              items: [
+                _bottomNavbarItem(Icons.credit_card, ''),
+                _bottomNavbarItem(Icons.key, ''),
+                _bottomNavbarItem(Icons.home, ''),
+                _bottomNavbarItem(Icons.insert_page_break, ''),
+                _bottomNavbarItem(Icons.menu, ''),
+              ]),
+        ),
         body: IndexedStack(
           index: controller.tabIndex.value,
           children: [
+            BlankView(),
+            BlankView(),
             HomeView(),
+            BlankView(),
             BlankView(),
           ],
         ),
       );
 }
 
-_bottomNavbarItem() {
+_bottomNavbarItem(IconData icon, String label) {
   return BottomNavigationBarItem(
-      icon: Icon(
-        Icons.home,
+    icon: Icon(icon),
+    activeIcon: Container(
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(width: 1.5, color: Colors.orange),
+        ),
       ),
-      label: 'HOME');
+      child: Icon(icon),
+    ),
+    label: label,
+  );
 }
