@@ -20,9 +20,13 @@ class BottomNavbarView extends BaseView<BottomNavbarController> {
               },
               unselectedLabelStyle: TextStyle(fontSize: 0),
               unselectedFontSize: 0,
-              unselectedIconTheme: IconThemeData(size: 14.sm),
+              unselectedIconTheme: IconThemeData(
+                size: Get.width > 390 ? 16.sm : 18.sm,
+              ),
               selectedFontSize: 0,
-              selectedIconTheme: IconThemeData(size: 14.sm),
+              selectedIconTheme: IconThemeData(
+                size: Get.width > 390 ? 16.sm : 18.sm,
+              ),
               selectedLabelStyle: TextStyle(fontSize: 0),
               type: BottomNavigationBarType.fixed,
               landscapeLayout: BottomNavigationBarLandscapeLayout.spread,

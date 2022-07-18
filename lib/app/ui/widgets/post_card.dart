@@ -4,6 +4,7 @@ import 'package:apmatik_app/app/ui/widgets/stacked_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class PostCardWidget extends StatelessWidget {
   const PostCardWidget({
@@ -15,7 +16,8 @@ class PostCardWidget extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20.w),
       width: 350.w,
-      height: 307.h,
+      height: Get.width > 390 ? 307.h : 335.h,
+      // Get.width > 390 ? Get.height * .15.h : Get.height * .10.h,
       child: Column(
         children: <Widget>[
           Card(
@@ -36,7 +38,7 @@ class PostCardWidget extends StatelessWidget {
                   height: 10.h,
                 ),
                 buildPostTitleAndDescription(),
-                buildArrowIconButton()
+                buildArrowIconButton(),
               ],
             ),
           ),
