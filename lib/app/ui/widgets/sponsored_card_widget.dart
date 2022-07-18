@@ -16,55 +16,50 @@ class SponsoredCardWidget extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 20),
       width: 350.w,
       height: Get.width > 390 ? 307.h : 380.h,
-      child: Column(
-        children: <Widget>[
-          Card(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Stack(
-                  children: [
-                    Image.asset(
-                      'assets/images/sponsored.png',
-                      width: 350.w,
-                      height: 320.h,
-                      fit: BoxFit.fill,
+      child: Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Stack(
+              children: [
+                Image.asset(
+                  'assets/images/sponsored.png',
+                  width: 350.w,
+                  height: 320.h,
+                  fit: BoxFit.fill,
+                ),
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Container(
+                    width: 70.w,
+                    height: 20.h,
+                    decoration: BoxDecoration(
+                        color: AppColors.ORANGE,
+                        borderRadius:
+                            BorderRadius.only(bottomLeft: Radius.circular(30))),
+                    child: Text(
+                      'Sponsorlu',
+                      textAlign: TextAlign.center,
+                      style: AppTextStyle()
+                          .getSfProDisplayRegular_H5(AppColors.WHITE),
                     ),
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: Container(
-                        width: 70.w,
-                        height: 20.h,
-                        decoration: BoxDecoration(
-                            color: AppColors.ORANGE,
-                            borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(30))),
-                        child: Text(
-                          'Sponsorlu',
-                          textAlign: TextAlign.center,
-                          style: AppTextStyle()
-                              .getSfProDisplayRegular_H5(AppColors.WHITE),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 10.h,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: buildStackedImages(direction: TextDirection.rtl),
-                ),
-                SizedBox(
-                  height: 10.h,
-                ),
+                  ),
+                )
               ],
             ),
-          ),
-        ],
+            SizedBox(
+              height: 10.h,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: buildStackedImages(direction: TextDirection.rtl),
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+          ],
+        ),
       ),
     );
   }
