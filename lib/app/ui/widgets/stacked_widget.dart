@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class StackedWidgets extends StatelessWidget {
+  
   final List<Widget> items;
   final TextDirection direction;
   final double size;
