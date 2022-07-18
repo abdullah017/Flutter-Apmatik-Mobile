@@ -13,8 +13,8 @@ class QuestionnaireCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20),
-      width: 350,
-      height: 307,
+      width: 350.w,
+      height: 307.h,
       child: Column(
         children: <Widget>[
           Card(

@@ -3,6 +3,7 @@ import 'package:apmatik_app/app/ui/style/text_style.dart';
 import 'package:apmatik_app/app/ui/widgets/stacked_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class SponsoredCardWidget extends StatelessWidget {
   const SponsoredCardWidget({
@@ -14,7 +15,7 @@ class SponsoredCardWidget extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20),
       width: 350.w,
-      height: 307.h,
+      height: Get.width > 390 ? 307.h : 380.h,
       child: Column(
         children: <Widget>[
           Card(
@@ -27,8 +28,8 @@ class SponsoredCardWidget extends StatelessWidget {
                   children: [
                     Image.asset(
                       'assets/images/sponsored.png',
-                      width: 350,
-                      height: 307,
+                      width: 350.w,
+                      height: 320.h,
                       fit: BoxFit.fill,
                     ),
                     Align(
@@ -53,7 +54,10 @@ class SponsoredCardWidget extends StatelessWidget {
                 SizedBox(
                   height: 10.h,
                 ),
-                buildStackedImages(direction: TextDirection.rtl),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: buildStackedImages(direction: TextDirection.rtl),
+                ),
                 SizedBox(
                   height: 10.h,
                 ),
