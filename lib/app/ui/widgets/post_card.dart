@@ -16,7 +16,7 @@ class PostCardWidget extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20.w),
       width: 350.w,
-      height: Get.width > 390 ? 307.h : 335.h,
+      height: Get.width >= 390 ? 268.h : 365.h,
       // Get.width > 390 ? Get.height * .15.h : Get.height * .10.h,
       child: Column(
         children: <Widget>[
@@ -39,6 +39,9 @@ class PostCardWidget extends StatelessWidget {
                 ),
                 buildPostTitleAndDescription(),
                 buildArrowIconButton(),
+                SizedBox(
+                  height: 10.h,
+                )
               ],
             ),
           ),
@@ -83,7 +86,7 @@ class PostCardWidget extends StatelessWidget {
         Image.asset(
           'assets/images/post.png',
           width: 350.w,
-          height: 135.h,
+          height: 158.h,
           fit: BoxFit.fill,
         ),
       ],
@@ -117,29 +120,44 @@ class PostCardWidget extends StatelessWidget {
             style: AppTextStyle().getSfProDisplayRegular_H6(AppColors.BLACK),
           ),
           buildStackedImages(direction: TextDirection.rtl),
-          //Container(width: 50, height: 50, child: InTEST()),
         ],
       ),
     );
   }
 
-  Row buildArrowIconButton() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        IconButton(
-          onPressed: () {},
-          icon: Icon(
-            Icons.arrow_circle_up_outlined,
-            color: AppColors.ORANGE,
+  Padding buildArrowIconButton() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20.0,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          IconButton(
+            padding: EdgeInsets.zero,
+            constraints: BoxConstraints(),
+            onPressed: () {},
+            icon: Icon(
+              Icons.arrow_circle_up_outlined,
+              size: 20.sm,
+              color: AppColors.ORANGE,
+            ),
           ),
-        ),
-        Transform.translate(
-          offset: Offset(-20, 0),
-          child: IconButton(
-              onPressed: () {}, icon: Icon(Icons.arrow_circle_down_outlined)),
-        ),
-      ],
+          Transform.translate(
+            offset: Offset(0, 0),
+            child: IconButton(
+              padding: EdgeInsets.zero,
+              constraints: BoxConstraints(),
+              onPressed: () {},
+              icon: Icon(
+                Icons.arrow_circle_down_outlined,
+                size: 20.sm,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

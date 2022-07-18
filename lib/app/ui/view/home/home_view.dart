@@ -16,24 +16,10 @@ import 'home_controller.dart';
 class HomeView extends BaseView<HomeController> {
   @override
   Widget vBuilder() => Scaffold(
-        // bottomNavigationBar: BottomNavigationBar(
-        //     onTap: (index) {
-        //       controller.tabChange(index);
-        //     },
-        //     unselectedItemColor: Colors.amber,
-        //     selectedItemColor: Colors.red,
-        //     showSelectedLabels: false,
-        //     showUnselectedLabels: false,
-        //     currentIndex: controller.tabIndex.value,
-        //     items: [
-        //       _bottomNavbarItem(),
-        //       _bottomNavbarItem(),
-        //     ]),
         appBar: CustomAppBar(),
         body: IndexedStack(
           index: controller.tabIndex.value,
           children: [
-
             ListView(children: [
               Padding(
                 padding:
