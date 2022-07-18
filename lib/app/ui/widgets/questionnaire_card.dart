@@ -3,6 +3,7 @@ import 'package:apmatik_app/app/ui/style/text_style.dart';
 import 'package:apmatik_app/app/ui/widgets/stacked_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class QuestionnaireCardWidget extends StatelessWidget {
   const QuestionnaireCardWidget({
@@ -14,7 +15,7 @@ class QuestionnaireCardWidget extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20),
       width: 350.w,
-      height: 307.h,
+      height: Get.width >= 390 ? 268.h : 305.h,
       child: Column(
         children: <Widget>[
           Card(
@@ -27,8 +28,8 @@ class QuestionnaireCardWidget extends StatelessWidget {
                   children: [
                     Image.asset(
                       'assets/images/anket.png',
-                      width: 350,
-                      height: 135,
+                      width: 350.sm,
+                      height: 135.sm,
                       fit: BoxFit.fill,
                     ),
                     Align(
