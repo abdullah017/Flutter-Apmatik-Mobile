@@ -14,7 +14,12 @@
 ///     },
 /// )
 
+// ignore_for_file: unused_local_variable
+
+import 'dart:io';
+
 import 'package:apmatik_app/app/core/base/base_controller.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
@@ -52,6 +57,7 @@ class AdditionalDetailsController extends BaseController {
   RxBool dontShowCheck = true.obs;
 
   TextEditingController dateText = TextEditingController();
+  var parse;
 
   @override
   void onInit() {
@@ -71,29 +77,71 @@ class AdditionalDetailsController extends BaseController {
 
   //DATETIME PICKER
   void chooseDate() async {
-    DateTime? pickedDate = await showDatePicker(
-      locale: Locale('tr'),
-      context: Get.context!,
-      initialDate: selectedDate.value,
-      firstDate: DateTime(1900),
-      lastDate: DateTime.now(),
-      initialEntryMode: DatePickerEntryMode.calendar,
-      initialDatePickerMode: DatePickerMode.day,
-      helpText: 'Doğum Tarihini Seçiniz',
-      cancelText: 'Kapat',
-      confirmText: 'Onayla',
-      errorFormatText: 'Enter valid date',
-      errorInvalidText: 'Enter valid date range',
-      fieldLabelText: 'Doğum Tarihini Giriniz',
-      fieldHintText: 'Month/Date/Year',
-      //selectableDayPredicate: disableDate
-    );
-    if (pickedDate != null && pickedDate != selectedDate.value) {
-      selectedDate.value = pickedDate;
-      dateText = TextEditingController(
-          text: DateFormat("dd.MM.yyyy").format(selectedDate.value).toString());
-      print(dateText);
+    if (Platform.isAndroid) {
+      DateTime? pickedDate = await showDatePicker(
+        locale: Locale('tr'),
+        context: Get.context!,
+        initialDate: selectedDate.value,
+        firstDate: DateTime(1900),
+        lastDate: DateTime.now(),
+        initialEntryMode: DatePickerEntryMode.calendar,
+        initialDatePickerMode: DatePickerMode.day,
+        helpText: 'Doğum Tarihini Seçiniz',
+        cancelText: 'Kapat',
+        confirmText: 'Onayla',
+        errorFormatText: 'Enter valid date',
+        errorInvalidText: 'Enter valid date range',
+        fieldLabelText: 'Doğum Tarihini Giriniz',
+        fieldHintText: 'Month/Date/Year',
+        //selectableDayPredicate: disableDate
+      );
+      if (pickedDate != null && pickedDate != selectedDate.value) {
+        selectedDate.value = pickedDate;
+        dateText = TextEditingController(
+            text:
+                DateFormat("dd.MM.yyyy").format(selectedDate.value).toString());
+        print(dateText);
+        update();
+      }
+    }
+    if (Platform.isIOS) {
+      DateTime? chosenDateTime = await showCupertinoModalPopup(
+          context: Get.context!,
+          builder: (BuildContext builder) {
+            return CupertinoActionSheet(
+              actions: [
+                Container(
+                  height:
+                      MediaQuery.of(Get.context!).copyWith().size.height * 0.25,
+                  color: Colors.white,
+                  child: CupertinoDatePicker(
+                    use24hFormat: true,
+                    mode: CupertinoDatePickerMode.date,
+                    onDateTimeChanged: (value) {
+                      selectedDate.value = value;
+                      parse =
+                          DateFormat('MM.dd.yyyy').format(selectedDate.value);
+                    },
+                    initialDateTime: selectedDate.value,
+                    minimumYear: 1900,
+                    maximumYear: 2222,
+                  ),
+                )
+              ],
+              cancelButton: CupertinoActionSheetAction(
+                child: Text('Tamam'),
+                onPressed: () {
+                  Get.close(0);
+                },
+              ),
+            );
+          });
       update();
+      if (parse != null && parse != selectedDate.value) {
+        dateText = TextEditingController(text: parse);
+        print(dateText);
+        update();
+      }
     }
     update();
   }

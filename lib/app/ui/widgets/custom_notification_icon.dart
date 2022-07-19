@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CustonNotificationIcon extends StatelessWidget {
   final IconData iconData;
@@ -33,7 +34,7 @@ class CustonNotificationIcon extends StatelessWidget {
               ],
             ),
             Positioned(
-              top: 20,
+              top: Get.width >= 390 ? 10 : 28,
               right: 20,
               child: Container(
                 width: 7,

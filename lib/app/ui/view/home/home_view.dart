@@ -1,22 +1,23 @@
 import 'package:apmatik_app/app/core/base/base_view.dart';
 import 'package:apmatik_app/app/core/constant/color_constants.dart';
 import 'package:apmatik_app/app/ui/style/text_style.dart';
-import 'package:apmatik_app/app/ui/view/blank/blank_view.dart';
-import 'package:apmatik_app/app/ui/widgets/custom_appbar.dart';
 import 'package:apmatik_app/app/ui/widgets/image_with_text_slider_card.dart';
+import 'package:apmatik_app/app/ui/widgets/login_appbar.dart';
 import 'package:apmatik_app/app/ui/widgets/post_card.dart';
 import 'package:apmatik_app/app/ui/widgets/questionnaire_card.dart';
 import 'package:apmatik_app/app/ui/widgets/sponsored_card_widget.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import 'home_controller.dart';
 
 class HomeView extends BaseView<HomeController> {
   @override
   Widget vBuilder() => Scaffold(
-        appBar: CustomAppBar(),
+        appBar: CustomLoginUserAppBar(),
         body: IndexedStack(
           index: controller.tabIndex.value,
           children: [
@@ -81,9 +82,37 @@ class HomeView extends BaseView<HomeController> {
                 thickness: 2.2,
                 color: Colors.blueGrey.shade100,
               ),
-              QuestionnaireCardWidget(),
-              PostCardWidget(),
-              SponsoredCardWidget()
+              Padding(
+                padding: Get.width >= 390
+                    ? EdgeInsets.only(right: 250.w, left: 25.w)
+                    : EdgeInsets.only(right: 260.w, left: 25.w),
+                child: DropdownButton(
+                    hint: Text(
+                      controller.selectedValue,
+                      style: AppTextStyle()
+                          .getSfProDisplayMedium_H6(AppColors.BLACK),
+                    ),
+                    value: controller.selectedValue,
+                    items: controller.cardlist.map((String val) {
+                      return DropdownMenuItem(
+                        value: val,
+                        child: Text(
+                          val,
+                          style: AppTextStyle()
+                              .getSfProDisplayMedium_H6(AppColors.BLACK),
+                        ),
+                      );
+                    }).toList(),
+                    onChanged: (String? item) {
+                      controller.selectedValue = item!;
+                      controller.update();
+                    }),
+              ),
+              if (controller.selectedValue == 'Anketler')
+                QuestionnaireCardWidget(),
+              if (controller.selectedValue == 'Duyurular') PostCardWidget(),
+              if (controller.selectedValue == 'Sponsorlar')
+                SponsoredCardWidget()
             ]),
           ],
         ),

@@ -1,6 +1,5 @@
 // ignore_for_file: must_be_immutable
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -11,7 +10,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({Key? key, this.onTap}) : super(key: key);
 
   @override
-  Size get preferredSize => Size.fromHeight(0.10.sw);
+  Size get preferredSize =>
+      Get.width >= 390 ? Size.fromHeight(0.10.sw) : Size.fromHeight(0.20.sw);
 
   @override
   Widget build(BuildContext context) {
