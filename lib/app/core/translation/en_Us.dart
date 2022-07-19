@@ -76,4 +76,6 @@ const Map<String, String> en = {
       'The apartment registration you have made has not been approved by the apartment management yet. Please try again when your account is confirmed',
   'tryAgain': 'Try Again',
   'reportProblem': 'Report Problem',
+  'otpBack':'Are you sure you want to cancel this action?',
+  'getBack':'Turn Back',
 };

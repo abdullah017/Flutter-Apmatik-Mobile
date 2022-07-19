@@ -27,6 +27,7 @@ class CustomUnderLineCheckBox extends StatelessWidget {
               flex: 1,
               child: CheckboxListTile(
                 contentPadding: EdgeInsets.only(right: 1),
+                side: BorderSide(),
                 // fillColor: MaterialStateProperty.all(Colors.orange),
                 tristate: true,
                 value: value, //controller.isCheck.value,
@@ -58,7 +59,7 @@ class CustomUnderLineCheckBox extends StatelessWidget {
         horizontal: 20.w,
       ),
       child: Divider(
-        color: Colors.black,
+        color: AppColors.GREY_OPACITY,
         height: 1.h,
       ),
     );

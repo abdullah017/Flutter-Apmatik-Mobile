@@ -21,7 +21,11 @@ class AdditionalDetailsView extends BaseView<AdditionalDetailsController> {
           key: controller.additionalFormKey,
           child: ListView(
             children: [
-              CustomPageTitle(titleText: 'additionalDetails'.tr),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 10.h),
+                child: CustomPageTitle(titleText: 'additionalDetails'.tr),
+              ),
+
               buildBirthDayPicker(),
               buildMaritalStatusDropdown(),
               buildChildDropdown(),
@@ -98,6 +102,18 @@ class AdditionalDetailsView extends BaseView<AdditionalDetailsController> {
           dropdownDecoratorProps: DropDownDecoratorProps(
             dropdownSearchDecoration: InputDecoration(
               labelText: "job".tr,
+              border: UnderlineInputBorder(
+                borderSide:
+                    BorderSide(color: AppColors.GREY_OPACITY, width: 0.2),
+              ),
+              focusedBorder: UnderlineInputBorder(
+                borderSide:
+                    BorderSide(color: AppColors.GREY_OPACITY, width: 0.2),
+              ),
+              enabledBorder: UnderlineInputBorder(
+                borderSide:
+                    BorderSide(color: AppColors.GREY_OPACITY, width: 0.2),
+              ),
             ),
           ),
           popupProps: PopupProps.menu(

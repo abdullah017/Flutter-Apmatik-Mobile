@@ -51,12 +51,18 @@ class OtpView extends BaseView<OtpController> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text('Bu işlemi İptal etmek istediğinize emin misiniz?'),
+                  Text('otpBack'.tr),
                   CustomElevatedButton(
+                    onPressed: () {
+                      Get.offNamedUntil('splash', (route) => false);
+                    },
+                    child: Text('goOn'.tr),
+                  ),
+                  TextButton(
                       onPressed: () {
-                        Get.offNamedUntil('splash', (route) => false);
+                        Get.close(0);
                       },
-                      child: Text('Devam Et'))
+                      child: Text('getBack'.tr))
                 ],
               ));
         });
@@ -66,7 +72,7 @@ class OtpView extends BaseView<OtpController> {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 25.w),
       width: Get.width,
-      height: Get.height * 0.05.h,
+      height: Get.width >= 390 ? Get.height * 0.05.h : Get.height * 0.07.h,
       child: CustomElevatedButton(
           onPressed: () {
             controller.statusPage();
@@ -105,7 +111,7 @@ class OtpView extends BaseView<OtpController> {
 
   Padding buildPinCodeTextField() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 54.0),
+      padding: EdgeInsets.symmetric(horizontal: 45.w),
       child: PinCodeTextField(
           length: 6,
           obscureText: false,
