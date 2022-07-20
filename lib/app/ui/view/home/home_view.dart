@@ -1,7 +1,6 @@
 import 'package:apmatik_app/app/core/base/base_view.dart';
 import 'package:apmatik_app/app/core/constant/color_constants.dart';
 import 'package:apmatik_app/app/ui/style/text_style.dart';
-import 'package:apmatik_app/app/ui/view/common/common_view.dart';
 import 'package:apmatik_app/app/ui/widgets/image_with_text_slider_card.dart';
 import 'package:apmatik_app/app/ui/widgets/login_appbar.dart';
 import 'package:apmatik_app/app/ui/widgets/post_card.dart';

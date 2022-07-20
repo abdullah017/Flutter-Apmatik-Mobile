@@ -114,6 +114,18 @@ extension StringValidatorExtensions on String {
     return null;
   }
 
+    ///  Apartman Adı giriş alanı için [Onaylama] kontrolü
+  String? validateApartmenName(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Lütfen Apartman adı alanını doldurun.';
+      //
+    }
+    if (value.length < 6 || value.length > 50 || !value.isValidName.value) {
+      return 'Apartman Adınız 5-50 karakter olabilir. Adınız a-z ve boşluk içerebilir.';
+    }
+    return null;
+  }
+
   ///  Null yada Boş mu?
   String? validateEmptyOrNull(String? value) {
     if (value == null || value.isEmpty) {

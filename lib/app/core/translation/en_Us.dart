@@ -82,5 +82,9 @@ const Map<String, String> en = {
   'noApertmenRecord': 'Your Apartment Record Not Found',
   'noApertmenRecordInfo':
       'We couldnt find your apartment record. Please follow the wizard to find your apartment!',
-  'noApertmenRecordButton': 'Find My Apartment'
+  'noApertmenRecordButton': 'Find My Apartment',
+  'apartmentRegistration': 'APARTMENT REGISTRATION',
+  'apartmentRegistrationInfo':
+      'You can save your apartment, which is a member of Apmatik, from the bottom side or with a QR code if you wish.',
+  'readQr': 'Read QR Code',
 };

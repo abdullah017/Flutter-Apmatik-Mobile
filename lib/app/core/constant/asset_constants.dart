@@ -3,4 +3,5 @@ class AppAssets {
   static const String splashLogo = 'assets/images/splash_logo.png';
   static const String statusPageLogo = 'assets/images/status_page_logo.png';
   static const String appbar = 'assets/images/men_face.png';
+    static const String medium_splash = 'assets/images/apmatik-medium.png';
 }

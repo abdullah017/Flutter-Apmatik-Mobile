@@ -82,5 +82,9 @@ const Map<String, String> tr = {
   'noApertmenRecord': 'Apartman Kaydınızı Bulunamadı',
   'noApertmenRecordInfo':
       'Apartman Kaydınızı Bulamadık. Lütfen dairenizi bulmak için sihirbazı takip edin!',
-  'noApertmenRecordButton': 'Apartmanımı Bul'
+  'noApertmenRecordButton': 'Apartmanımı Bul',
+  'apartmentRegistration': 'APARTMAN KAYDI',
+  'apartmentRegistrationInfo':
+      'Apmatik üyesi olan apartmanınızı dilerseniz alt taraftan veya dilerseniz QR kodu ile kaydedebilirsiniz.',
+  'readQr': 'QR Kodu Okut',
 };
