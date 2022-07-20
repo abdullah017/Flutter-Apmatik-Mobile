@@ -14,11 +14,15 @@ import 'base_controller.dart';
 /// Especialy in user interactions.
 /// You can find and use on your Controller wich is the Controller extends [BaseController].
 class BaseCommonPages implements _CommonPagesInterface {
-  registerSuccess(
+  statusPage(
       {String? title,
       String? info,
       IconData? icon,
       bool? showLogo,
+      bool? showIssueButton,
+      Color? iconBackgroundColor,
+      Color? iconColor,
+      String? status,
       required Function()? onPressed,
       required String buttonText}) {
     return Scaffold(
@@ -28,16 +32,13 @@ class BaseCommonPages implements _CommonPagesInterface {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
-              backgroundColor: AppColors.ORANGE,
+              backgroundColor: iconBackgroundColor ?? AppColors.ORANGE,
               radius: 40,
-              child: Icon(
-                icon ?? Icons.done_outline_rounded,
-                size: 50,
-                color: Colors.white,
-              ),
+              child: Icon(icon ?? Icons.done_outline_rounded,
+                  size: 67, color: iconColor ?? AppColors.WHITE),
             ),
             SizedBox(
-              height: 10.h,
+              height: 20.h,
             ),
             Text(
               title ?? 'Kaydınız Başarı İle Tamamlandı',
@@ -57,13 +58,16 @@ class BaseCommonPages implements _CommonPagesInterface {
               height: 20.h,
             ),
             CustomElevatedButton(
-                onPressed: onPressed ?? null, child: Text('$buttonText')),
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                'Sorun Bildir',
-                style:
-                    AppTextStyle().getSfProDisplayRegular_H6(AppColors.BLACK),
+                onPressed: onPressed ?? () {}, child: Text('$buttonText')),
+            Visibility(
+              visible: showIssueButton ?? true,
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  'Sorun Bildir',
+                  style:
+                      AppTextStyle().getSfProDisplayRegular_H6(AppColors.BLACK),
+                ),
               ),
             ),
             SizedBox(
@@ -82,11 +86,14 @@ class BaseCommonPages implements _CommonPagesInterface {
 }
 
 abstract class _CommonPagesInterface {
-  registerSuccess(
+  statusPage(
       {String? title,
       String? info,
       IconData? icon,
       bool? showLogo,
+      bool? showIssueButton,
+      Color? iconBackgroundColor,
+      Color? iconColor,
       required Function()? onPressed,
       required String buttonText});
 }

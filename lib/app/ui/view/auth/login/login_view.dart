@@ -98,7 +98,7 @@ class LoginView extends BaseView<LoginController> {
 
   CustomElevatedButton buildLoginButton() {
     return CustomElevatedButton(
-      buttonSize: Size(330.w, 45.h),
+      fixedSize: Size(330.w, 45.h),
       onPressed: () {
         controller.login();
       },

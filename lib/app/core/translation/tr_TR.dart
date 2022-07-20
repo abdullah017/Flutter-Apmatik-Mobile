@@ -62,8 +62,8 @@ const Map<String, String> tr = {
   'registerSuccess': 'Kaydınız Başarı ile Tamamlandı',
   'registerSuccessInfo':
       'Apmatik kaydınız tamamlanmıştır. Hemen muhiti olduğunuz apartmanı ekleyin ve sizde evinizi cebinizden takip edin!',
-  'resetPassowordSuccess': 'Şifren  Başarıyla Sıfırlandı',
-  'resetPassowordInfo':
+  'resetPasswordSuccess': 'Şifren  Başarıyla Sıfırlandı',
+  'resetPasswordInfo':
       'Şifre sıfırlama işlemin başarıyla tamamlandı. Seni tekrar burada gördüğümüz için çok mutluyuz!',
   'noConnection': 'İnternet Bağlantısı Kurulamadı',
   'noConnectionInfo':
@@ -71,6 +71,7 @@ const Map<String, String> tr = {
   'oldAppVersion': 'Uygulama Versiyonunuz Çok Eski',
   'oldAppVersionInfo':
       'Apmatik uygulmasını kullanmak için en düşük V2.4 e güncelleme yapmanız gerekmektedir. Lütfen uygulamanızı App',
+  'updateButton': 'Güncelle',
   'verifyError': 'Oturumunuz Henüz Onaylanmadı',
   'verifyErrorınfo':
       'Yapmış olduğunuz apartman kaydı henüz apartman yönetimi tarafından onaylanmadı. Lütfen hesabınız onaylandığında tekrar deneyin',
@@ -78,4 +79,8 @@ const Map<String, String> tr = {
   'reportProblem': 'Sorun Bildir',
   'otpBack': 'Bu işlemi İptal etmek istediğinize emin misiniz?',
   'getBack': 'Geri dön',
+  'noApertmenRecord': 'Apartman Kaydınızı Bulunamadı',
+  'noApertmenRecordInfo':
+      'Apartman Kaydınızı Bulamadık. Lütfen dairenizi bulmak için sihirbazı takip edin!',
+  'noApertmenRecordButton': 'Apartmanımı Bul'
 };

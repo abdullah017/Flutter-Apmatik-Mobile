@@ -9,7 +9,8 @@ class CustomElevatedButton extends StatelessWidget {
   final Gradient gradient;
   final VoidCallback? onPressed;
   final Widget child;
-  final Size? buttonSize;
+  final Size? fixedSize;
+  final EdgeInsetsGeometry? margin;
 
   const CustomElevatedButton({
     Key? key,
@@ -19,14 +20,15 @@ class CustomElevatedButton extends StatelessWidget {
     this.width,
     this.height = 44.0,
     this.gradient = AppColors.BUTTON_GRADIENT,
-    this.buttonSize,
+    this.fixedSize,
+    this.margin,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final borderRadius = this.borderRadius ?? BorderRadius.circular(0);
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 30.w),
+      margin: margin ?? EdgeInsets.symmetric(horizontal: 30.w),
       width: width,
       height: height,
       decoration: BoxDecoration(
@@ -36,10 +38,11 @@ class CustomElevatedButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-            primary: Colors.transparent,
-            shadowColor: Colors.transparent,
-            shape: RoundedRectangleBorder(borderRadius: borderRadius),
-            fixedSize: buttonSize ?? Size(263.w, 50.h)),
+          primary: Colors.transparent,
+          shadowColor: Colors.transparent,
+          shape: RoundedRectangleBorder(borderRadius: borderRadius),
+          fixedSize: fixedSize ?? Size(263.w, 50.h),
+        ),
         child: child,
       ),
     );

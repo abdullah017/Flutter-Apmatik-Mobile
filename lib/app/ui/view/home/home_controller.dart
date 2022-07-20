@@ -19,6 +19,7 @@ class HomeController extends BaseController {
   String selectedValue = 'Duyurular';
   int current = 0;
   var tabIndex = 0.obs;
+  var hasApertmenKey;
   final CarouselController carouselController = CarouselController();
 
   tabChange(int index) {
@@ -26,9 +27,24 @@ class HomeController extends BaseController {
     update();
   }
 
+  apertmenRecord() async {
+    await box.write('hasApertmen', false);
+    update();
+  }
+
+  updateRecordState() {
+    box.listenKey('hasApertmen', (newValue) {
+      //box.write('hasApertmen', newValue);
+      print(box.read('hasApertmen'));
+      hasApertmenKey = box.read('hasApertmen');
+      update();
+    });
+    update();
+  }
+
   @override
   void onInit() {
-    box.write('isLogin', true);
+    apertmenRecord();
     super.onInit();
   }
 }

@@ -75,7 +75,7 @@ class OtpView extends BaseView<OtpController> {
       height: Get.width >= 390 ? Get.height * 0.05.h : Get.height * 0.07.h,
       child: CustomElevatedButton(
           onPressed: () {
-            controller.statusPage();
+            controller.gostatusPage();
           },
           child: Text(
             'goOn'.tr,

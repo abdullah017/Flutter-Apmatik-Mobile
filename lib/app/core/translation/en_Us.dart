@@ -62,8 +62,8 @@ const Map<String, String> en = {
   'registerSuccess': 'Your Registration Has Been Successfully Completed',
   'registerSuccessInfo':
       'Your Apmatik registration is complete. Add the apartment you are in immediately and follow your home from your pocket!',
-  'resetPassowordSuccess': 'Your Password Has Been Reset Successfully',
-  'resetPassowordInfo':
+  'resetPasswordSuccess': 'Your Password Has Been Reset Successfully',
+  'resetPasswordInfo':
       'Password reset has been successfully completed. We are so happy to see you here again!',
   'noConnection': 'Internet Connection Failed',
   'noConnectionInfo':
@@ -71,11 +71,16 @@ const Map<String, String> en = {
   'oldAppVersion': 'Your App Version Is Too Old',
   'oldAppVersionInfo':
       'To use the Apmatik application, you need to update to the lowest V2.4. Please add your app',
+  'updateButton': 'Update',
   'verifyError': 'Your session is not yet confirmed',
   'verifyErrorınfo':
       'The apartment registration you have made has not been approved by the apartment management yet. Please try again when your account is confirmed',
   'tryAgain': 'Try Again',
   'reportProblem': 'Report Problem',
-  'otpBack':'Are you sure you want to cancel this action?',
-  'getBack':'Turn Back',
+  'otpBack': 'Are you sure you want to cancel this action?',
+  'getBack': 'Turn Back',
+  'noApertmenRecord': 'Your Apartment Record Not Found',
+  'noApertmenRecordInfo':
+      'We couldnt find your apartment record. Please follow the wizard to find your apartment!',
+  'noApertmenRecordButton': 'Find My Apartment'
 };

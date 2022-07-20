@@ -1,6 +1,7 @@
 import 'package:apmatik_app/app/core/base/base_view.dart';
 import 'package:apmatik_app/app/core/constant/color_constants.dart';
 import 'package:apmatik_app/app/ui/style/text_style.dart';
+import 'package:apmatik_app/app/ui/view/common/common_view.dart';
 import 'package:apmatik_app/app/ui/widgets/image_with_text_slider_card.dart';
 import 'package:apmatik_app/app/ui/widgets/login_appbar.dart';
 import 'package:apmatik_app/app/ui/widgets/post_card.dart';
@@ -17,11 +18,9 @@ import 'home_controller.dart';
 class HomeView extends BaseView<HomeController> {
   @override
   Widget vBuilder() => Scaffold(
-        appBar: CustomLoginUserAppBar(),
-        body: IndexedStack(
-          index: controller.tabIndex.value,
-          children: [
-            ListView(children: [
+      appBar: CustomLoginUserAppBar(),
+      body: controller.hasApertmenKey ?? false
+          ? ListView(children: [
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
@@ -113,10 +112,21 @@ class HomeView extends BaseView<HomeController> {
               if (controller.selectedValue == 'Duyurular') PostCardWidget(),
               if (controller.selectedValue == 'Sponsorlar')
                 SponsoredCardWidget()
-            ]),
-          ],
-        ),
-      );
+            ])
+          : commonPages.statusPage(
+              iconBackgroundColor: Colors.transparent,
+              iconColor: AppColors.BLACK,
+              buttonText: 'noApertmenRecordButton'.tr,
+              onPressed: () {
+                controller.box.write('hasApertmen', true);
+                controller.updateRecordState();
+                // controller.goLogin();
+              },
+              title: 'noApertmenRecord'.tr,
+              info: 'noApertmenRecordInfo'.tr,
+              icon: Icons.apartment,
+              showLogo: true,
+              showIssueButton: true));
 }
 
 // _bottomNavbarItem() {
