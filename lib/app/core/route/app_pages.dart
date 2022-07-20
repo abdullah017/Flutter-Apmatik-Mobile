@@ -1,5 +1,7 @@
 import 'package:apmatik_app/app/core/binding/home_binding.dart';
 import 'package:apmatik_app/app/core/binding/videos_details_binding.dart';
+import 'package:apmatik_app/app/ui/view/apertment/add_apertment_binding.dart';
+import 'package:apmatik_app/app/ui/view/apertment/add_apertment_view.dart';
 import 'package:apmatik_app/app/ui/view/auth/additional_details/additional_details_binding.dart';
 import 'package:apmatik_app/app/ui/view/auth/additional_details/additional_details_view.dart';
 import 'package:apmatik_app/app/ui/view/auth/forgot_password/forgotpassword_binding.dart';
@@ -28,7 +30,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.ADDITIONAL_DETAILS;
+  static const INITIAL = Routes.ADDAPERTMEN;
   static const HOME = Routes.HOME;
   static final routes = [
     // GetPage(
@@ -110,6 +112,11 @@ class AppPages {
       name: _Paths.BOTTOM,
       page: () => BottomNavbarView(),
       binding: BottomNavbarBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADDAPERTMEN,
+      page: () => AddApertmentView(),
+      binding: AddApertmentBinding(),
     ),
   ];
 }

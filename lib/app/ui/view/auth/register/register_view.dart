@@ -260,7 +260,7 @@ class RegisterView extends BaseView<RegisterController> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           CustomElevatedButton(
-            buttonSize: Size(330.w, 45.h),
+            fixedSize: Size(330.w, 45.h),
             onPressed: () {
               controller.register();
             },

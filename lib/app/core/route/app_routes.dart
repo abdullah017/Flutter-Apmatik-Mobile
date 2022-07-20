@@ -20,6 +20,7 @@ abstract class Routes {
   static const FORGOTPASSWORD = _Paths.FORGOTPASSWORD;
   static const BLANK = _Paths.BLANK;
   static const BOTTOM = _Paths.BOTTOM;
+  static const ADDAPERTMEN = _Paths.ADDAPERTMEN;
 }
 
 abstract class _Paths {
@@ -39,4 +40,5 @@ abstract class _Paths {
   static const FORGOTPASSWORD = '/forgotpassword';
   static const BLANK = '/blank';
   static const BOTTOM = '/bottom';
+  static const ADDAPERTMEN = '/add_apertmen';
 }

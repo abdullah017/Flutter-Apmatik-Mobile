@@ -48,9 +48,9 @@ class OtpController extends BaseController
     super.dispose();
   }
 
-  statusPage() {
+  gostatusPage() {
     try {
-      Get.toNamed('common', arguments: '1');
+      Get.toNamed('common', arguments: 'successResetPassword');
     } catch (e) {
       print(e);
     }

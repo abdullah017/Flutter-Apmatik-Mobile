@@ -173,7 +173,7 @@ class AdditionalDetailsView extends BaseView<AdditionalDetailsController> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           CustomElevatedButton(
-            buttonSize: Size(330.w, 45.h),
+            fixedSize: Size(330.w, 45.h),
             onPressed: () {
               controller.goOtpPage();
             },
