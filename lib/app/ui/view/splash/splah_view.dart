@@ -48,8 +48,9 @@ class SplashView extends BaseView<SplashController> {
       child: Align(
           alignment: Alignment.bottomCenter,
           child: Image.asset(
-            AppAssets.splashLogo,
-            scale: .7,
+            AppAssets.medium_splash,
+            width: 243,
+            height: 113,
           )),
     );
   }

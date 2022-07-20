@@ -29,6 +29,9 @@ class FormValidationHelper {
     return idNumber.validateIdentifyNumber(idNumber);
   }
 
+  apartmenName(String apartmenName) {
+    return apartmenName.validateApartmenName(apartmenName);
+  }
   // validatePassword(password) {
   //   if (password!.isEmpty) {
   //     isValidate.value = false;
