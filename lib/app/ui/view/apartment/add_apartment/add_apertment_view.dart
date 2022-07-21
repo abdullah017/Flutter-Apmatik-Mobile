@@ -3,7 +3,7 @@
 import 'package:apmatik_app/app/core/base/base_view.dart';
 import 'package:apmatik_app/app/core/constant/color_constants.dart';
 import 'package:apmatik_app/app/ui/style/text_style.dart';
-import 'package:apmatik_app/app/ui/view/apertment/add_apertment_controller.dart';
+import 'package:apmatik_app/app/ui/view/apartment/add_apartment/add_apertment_controller.dart';
 import 'package:apmatik_app/app/ui/widgets/custom_appbar.dart';
 import 'package:apmatik_app/app/ui/widgets/custom_dropdown_formfield_button.dart';
 import 'package:apmatik_app/app/ui/widgets/custom_elevated_button.dart';
@@ -16,6 +16,7 @@ import 'package:get/get.dart';
 class AddApertmentView extends BaseView<AddApertmentController> {
   @override
   Widget vBuilder() => Scaffold(
+    backgroundColor: AppColors.PAGEBACKGROUND,
       appBar: CustomAppBar(),
       body: ListView(
         children: [

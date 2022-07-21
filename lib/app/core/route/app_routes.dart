@@ -21,6 +21,7 @@ abstract class Routes {
   static const BLANK = _Paths.BLANK;
   static const BOTTOM = _Paths.BOTTOM;
   static const ADDAPERTMEN = _Paths.ADDAPERTMEN;
+  static const READQR = _Paths.READQR;
 }
 
 abstract class _Paths {
@@ -41,4 +42,5 @@ abstract class _Paths {
   static const BLANK = '/blank';
   static const BOTTOM = '/bottom';
   static const ADDAPERTMEN = '/add_apertmen';
+  static const READQR = '/readqr';
 }
