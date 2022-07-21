@@ -1,7 +1,9 @@
 import 'package:apmatik_app/app/core/binding/home_binding.dart';
 import 'package:apmatik_app/app/core/binding/videos_details_binding.dart';
-import 'package:apmatik_app/app/ui/view/apertment/add_apertment_binding.dart';
-import 'package:apmatik_app/app/ui/view/apertment/add_apertment_view.dart';
+import 'package:apmatik_app/app/ui/view/apartment/add_apartment/add_apertment_binding.dart';
+import 'package:apmatik_app/app/ui/view/apartment/add_apartment/add_apertment_view.dart';
+import 'package:apmatik_app/app/ui/view/apartment/qr/qr_binding.dart';
+import 'package:apmatik_app/app/ui/view/apartment/qr/qr_view.dart';
 import 'package:apmatik_app/app/ui/view/auth/additional_details/additional_details_binding.dart';
 import 'package:apmatik_app/app/ui/view/auth/additional_details/additional_details_view.dart';
 import 'package:apmatik_app/app/ui/view/auth/forgot_password/forgotpassword_binding.dart';
@@ -30,7 +32,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.SPLASH;
+  static const INITIAL = Routes.READQR;
   static const HOME = Routes.HOME;
   static final routes = [
     // GetPage(
@@ -117,6 +119,11 @@ class AppPages {
       name: _Paths.ADDAPERTMEN,
       page: () => AddApertmentView(),
       binding: AddApertmentBinding(),
+    ),
+    GetPage(
+      name: _Paths.READQR,
+      page: () => QrView(),
+      binding: QrBinding(),
     ),
   ];
 }
