@@ -28,7 +28,7 @@ class OtpView extends BaseView<OtpController> {
             SizedBox(
               height: 38.h,
             ),
-            buildPhoneNumberAndInfoText(),
+            Form(key: controller.formKey, child: buildPhoneNumberAndInfoText()),
             SizedBox(
               height: 35.h,
             ),
@@ -75,7 +75,7 @@ class OtpView extends BaseView<OtpController> {
       height: Get.width >= 390 ? Get.height * 0.05.h : Get.height * 0.07.h,
       child: CustomElevatedButton(
           onPressed: () {
-            controller.gostatusPage();
+            controller.gosAdditionalPage();
           },
           child: Text(
             'goOn'.tr,
@@ -111,7 +111,7 @@ class OtpView extends BaseView<OtpController> {
 
   Padding buildPinCodeTextField() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 45.w),
+      padding: EdgeInsets.symmetric(horizontal: 40.w),
       child: PinCodeTextField(
           length: 6,
           obscureText: false,

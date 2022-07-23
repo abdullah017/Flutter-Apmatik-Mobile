@@ -154,15 +154,12 @@ class AdditionalDetailsController extends BaseController {
   //   return false;
   // }
 
-  goOtpPage() async {
-    if (additionalFormKey.currentState!.validate()) {
-      await saveLocalStorage();
-      goOtp();
+  gostatusPage() {
+    try {
+      Get.toNamed('common', arguments: 'registerSuccess');
+    } catch (e) {
+      print(e);
     }
-  }
-
-  goOtp() {
-    Get.toNamed('otp');
   }
 
 //burada locale yazdırıyorum

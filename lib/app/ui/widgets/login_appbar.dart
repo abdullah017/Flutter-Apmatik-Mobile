@@ -26,6 +26,7 @@ class CustomLoginUserAppBar extends StatelessWidget
     return PreferredSize(
         preferredSize: preferredSize,
         child: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: AppColors.ORANGE,
           elevation: 10,
           shadowColor: AppColors.WHITE_OPACITY,

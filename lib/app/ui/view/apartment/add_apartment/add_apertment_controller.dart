@@ -9,18 +9,36 @@ class AddApertmentController extends BaseController
   String? selectedValue = 'Türkiye';
   String? selectedCity = 'İzmir';
   String? selectedDistrict = 'Bornova';
+  int toggleValue = 0;
   List<String> listOfCountry = ['Türkiye', 'Almanya'];
   List<String> listOfCitys = ['İstanbul', 'İzmir'];
   List<String> listOfDistricts = ['Tuzla', 'Bornova'];
+  List<bool> isSelected = [true, false, false];
 
   TextEditingController apartmenNameController = TextEditingController();
   GlobalKey<FormState> addApartmenFormKey = GlobalKey<FormState>();
 
   void goQrPage() {
-    if (addApartmenFormKey.currentState!.validate()) {
-      //Get.toNamed('/qrcode');
-    } else {
-      print('HATALI FORM');
+    Get.toNamed('/readqr');
+    // if (addApartmenFormKey.currentState!.validate()) {
+    //   //Get.toNamed('/qrcode');
+    // } else {
+    //   print('HATALI FORM');
+    // }
+  }
+
+  tabChange(int newIndex) {
+    for (int index = 0; index < isSelected.length; index++) {
+      if (index == newIndex) {
+        isSelected[index] = true;
+        print(index); //button index no
+        update();
+      } else {
+        isSelected[index] = false;
+        print(index); //button index no
+        update();
+      }
+      update();
     }
   }
 

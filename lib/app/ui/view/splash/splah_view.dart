@@ -58,7 +58,7 @@ class SplashView extends BaseView<SplashController> {
   Container buildSplashButtons() {
     return Container(
       width: Get.width,
-      height: Get.width > 390 ? Get.height * .15.h : Get.height * .10.h,
+      height: Get.width > 390 ? Get.height * .15.h : Get.height * .15.h,
       color: Colors.transparent,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
