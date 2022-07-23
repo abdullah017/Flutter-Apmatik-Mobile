@@ -1,4 +1,3 @@
-import 'package:apmatik_app/app/core/base/base_common_pages.dart';
 import 'package:apmatik_app/app/core/helper/form_validation_helper.dart';
 import 'package:apmatik_app/app/core//utils/utilities.dart';
 import 'package:apmatik_app/app/core/network/check_connection/check_connecition.dart';
@@ -32,12 +31,7 @@ import 'widget_state.dart';
 /// Please extends to your [Controller].
 /// read the [Example] above.
 class BaseController extends GetxController
-    with
-        BaseCommonWidgets,
-        BaseCommonPages,
-        Utilities,
-        WidgetState,
-        ScreenState {
+    with BaseCommonWidgets, Utilities, WidgetState, ScreenState {
   final box = GetStorage();
 
   bool isLoadMore = false;
@@ -51,7 +45,6 @@ class BaseController extends GetxController
   //     ConnectionStatusSingleton.getInstance();
   StreamSubscription? connectionChangeStream;
   CheckNetworkConnection connection = CheckNetworkConnection.instance;
-
   set setEnableScrollController(bool value) => withScrollController = value;
 
   ///[Calling showAlertIfNecessary with your app's
@@ -124,8 +117,9 @@ class BaseController extends GetxController
     // connectionChangeStream =
     //     connectionStatus.connectionChange.listen(connectionChanged);
 
-    connection.checkConnectionStatus().then(
-        (value) => value! ? 'BAĞLI' : Get.toNamed('common', arguments: '1'));
+    // connection.checkConnectionStatus().then((value) => value!
+    //     ? 'BAĞLI'
+    //     : Get.toNamed('common', arguments: 'registerApartmentSuccess'));
     connection.subConnectionStatus();
 
     ///[SCROLL CONTROLLER]

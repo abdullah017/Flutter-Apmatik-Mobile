@@ -1,6 +1,7 @@
 import 'package:apmatik_app/app/core/base/base_view.dart';
 import 'package:apmatik_app/app/core/constant/color_constants.dart';
 import 'package:apmatik_app/app/ui/style/text_style.dart';
+import 'package:apmatik_app/app/ui/view/common/common_view.dart';
 import 'package:apmatik_app/app/ui/widgets/image_with_text_slider_card.dart';
 import 'package:apmatik_app/app/ui/widgets/login_appbar.dart';
 import 'package:apmatik_app/app/ui/widgets/post_card.dart';
@@ -83,7 +84,7 @@ class HomeView extends BaseView<HomeController> {
               Padding(
                 padding: Get.width >= 390
                     ? EdgeInsets.only(right: 250.w, left: 25.w)
-                    : EdgeInsets.only(right: 260.w, left: 25.w),
+                    : EdgeInsets.only(right: 250.w, left: 25.w),
                 child: DropdownButton(
                     hint: Text(
                       controller.selectedValue,
@@ -112,20 +113,26 @@ class HomeView extends BaseView<HomeController> {
               if (controller.selectedValue == 'Sponsorlar')
                 SponsoredCardWidget()
             ])
-          : commonPages.statusPage(
-              iconBackgroundColor: Colors.transparent,
-              iconColor: AppColors.BLACK,
-              buttonText: 'noApertmenRecordButton'.tr,
-              onPressed: () {
-                controller.box.write('hasApertmen', true);
-                controller.updateRecordState();
-                // controller.goLogin();
-              },
-              title: 'noApertmenRecord'.tr,
-              info: 'noApertmenRecordInfo'.tr,
-              icon: Icons.apartment,
-              showLogo: true,
-              showIssueButton: true));
+          : Container(
+              width: double.infinity,
+              height: Get.height,
+              child: CommonView().buildNoApartmenRecord())
+
+      // commonPages.statusPage(
+      //     iconBackgroundColor: Colors.transparent,
+      //     iconColor: AppColors.BLACK,
+      //     buttonText: 'noApertmenRecordButton'.tr,
+      //     onPressed: () {
+      //       controller.box.write('hasApertmen', true);
+      //       controller.updateRecordState();
+      //       // controller.goLogin();
+      //     },
+      //     title: 'noApertmenRecord'.tr,
+      //     info: 'noApertmenRecordInfo'.tr,
+      //     icon: Icons.apartment,
+      //     showLogo: true,
+      //     showIssueButton: true)
+      );
 }
 
 // _bottomNavbarItem() {

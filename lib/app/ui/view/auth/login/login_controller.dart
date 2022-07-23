@@ -25,9 +25,10 @@ class LoginController extends BaseController {
 
   void login() {
     if (loginFormKey.currentState!.validate()) {
+      Get.toNamed('bottom')!.then((value) => box.write('isLogin', true));
       print('YES');
     } else {
-      print('NO');
+      print('NO!');
     }
   }
 

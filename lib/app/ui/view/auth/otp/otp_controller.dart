@@ -37,7 +37,7 @@ class OtpController extends BaseController
     animationController!.forward();
     errorController = StreamController<ErrorAnimationType>();
 
-    //getUserPhone();
+    getUserPhone();
     super.onInit();
   }
 
@@ -48,19 +48,21 @@ class OtpController extends BaseController
     super.dispose();
   }
 
-  gostatusPage() {
-    try {
-      Get.toNamed('common', arguments: 'successResetPassword');
-    } catch (e) {
-      print(e);
+  gosAdditionalPage() {
+    if (formKey.currentState!.validate()) {
+      try {
+        Get.toNamed('additional_details');
+      } catch (e) {
+        print(e);
+      }
     }
   }
 
-  // void getUserPhone() {
-  //   storageList.value = box.read('userData');
-  //   print(storageList[3]);
-  //   phone = storageList[3];
-  // }
+  void getUserPhone() {
+    storageList.value = box.read('userData');
+    print(storageList[3]);
+    phone = storageList[3];
+  }
 
   goHomePage() {
     Get.toNamed('home');

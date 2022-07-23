@@ -8,6 +8,7 @@ import 'package:apmatik_app/app/ui/widgets/custom_appbar.dart';
 import 'package:apmatik_app/app/ui/widgets/custom_dropdown_formfield_button.dart';
 import 'package:apmatik_app/app/ui/widgets/custom_elevated_button.dart';
 import 'package:apmatik_app/app/ui/widgets/custom_textformfield.dart';
+import 'package:apmatik_app/app/ui/widgets/custom_toggle_button.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,7 +17,7 @@ import 'package:get/get.dart';
 class AddApertmentView extends BaseView<AddApertmentController> {
   @override
   Widget vBuilder() => Scaffold(
-    backgroundColor: AppColors.PAGEBACKGROUND,
+      backgroundColor: AppColors.PAGEBACKGROUND,
       appBar: CustomAppBar(),
       body: ListView(
         children: [
@@ -54,7 +55,9 @@ class AddApertmentView extends BaseView<AddApertmentController> {
                   width: 148,
                   height: 30,
                   margin: EdgeInsets.zero,
-                  onPressed: () {},
+                  onPressed: () {
+                    controller.goQrPage();
+                  },
                   child: Text('QR Kodu Okut'),
                 ),
                 SizedBox(
@@ -81,159 +84,90 @@ class AddApertmentView extends BaseView<AddApertmentController> {
                             .getSfProDisplayRegular_H5(AppColors.GREY),
                       ),
                     ),
-                    Container(
-                      height: 45,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.orange,
-                          ),
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(0.0)),
-                      child: TabBar(
-                        controller: controller.tabController,
-                        indicator: BoxDecoration(
-                            color: AppColors.ORANGE,
-                            borderRadius: BorderRadius.circular(0.0)),
-                        labelColor: Colors.white,
-                        unselectedLabelColor: Colors.orange,
-                        indicatorColor: Colors.white,
-                        indicatorSize: TabBarIndicatorSize.tab,
-                        labelPadding: EdgeInsets.all(0),
-                        indicatorPadding: EdgeInsets.all(0),
-                        tabs: [
-                          Container(
-                            height:
-                                50 + MediaQuery.of(Get.context!).padding.bottom,
-                            padding: EdgeInsets.all(0),
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                                border: Border(
-                                    right: BorderSide(
-                                        color: Colors.orange,
-                                        width: 1,
-                                        style: BorderStyle.solid))),
-                            child: Tab(
-                              text: 'Ev Sahibi',
-                            ),
-                          ),
-                          Container(
-                            height:
-                                50 + MediaQuery.of(Get.context!).padding.bottom,
-                            padding: EdgeInsets.all(0),
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                                border: Border(
-                                    right: BorderSide(
-                                        color: Colors.orange,
-                                        width: 1,
-                                        style: BorderStyle.solid))),
-                            child: Tab(
-                              text: 'Kiracı',
-                            ),
-                          ),
-                          Container(
-                            height:
-                                50 + MediaQuery.of(Get.context!).padding.bottom,
-                            padding: EdgeInsets.all(0),
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                                border: Border(
-                                    right: BorderSide(
-                                        color: Colors.orange,
-                                        width: 1,
-                                        style: BorderStyle.solid))),
-                            child: Tab(
-                              text: 'Ev Sakini',
-                            ),
-                          ),
-                        ],
-                      ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                      child: CustomToggleButton(
+                          isSelected: controller.isSelected,
+                          onPressed: (int newindex) {
+                            controller.tabChange(newindex);
+                          }),
                     ),
-                    Expanded(
-                        child: TabBarView(
-                      controller: controller.tabController,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            CustomDropdownButtonFormField(
-                              labelText: 'Ülke',
-                              value: controller.selectedValue,
-                              items: controller.listOfCountry.map((String val) {
-                                return DropdownMenuItem(
-                                  value: val,
-                                  child: Text(
-                                    val,
-                                    style: AppTextStyle()
-                                        .getSfProDisplayMedium_H6(Colors.black),
-                                  ),
-                                );
-                              }).toList(),
-                            ),
-                            CustomDropdownButtonFormField(
-                              labelText: 'İl',
-                              value: controller.selectedCity,
-                              items: controller.listOfCitys.map((String val) {
-                                return DropdownMenuItem(
-                                  value: val,
-                                  child: Text(
-                                    val,
-                                    style: AppTextStyle()
-                                        .getSfProDisplayMedium_H6(Colors.black),
-                                  ),
-                                );
-                              }).toList(),
-                            ),
-                            CustomDropdownButtonFormField(
-                              labelText: 'İlçe',
-                              value: controller.selectedDistrict,
-                              items:
-                                  controller.listOfDistricts.map((String val) {
-                                return DropdownMenuItem(
-                                  value: val,
-                                  child: Text(
-                                    val,
-                                    style: AppTextStyle()
-                                        .getSfProDisplayMedium_H6(Colors.black),
-                                  ),
-                                );
-                              }).toList(),
-                            ),
-                            CustomTextFormField(
-                              labelText: 'Apartman Adı',
-                              textEditingController:
-                                  controller.apartmenNameController,
-                              validator: (nameSurname) {
-                                return controller.formValidationHelper
-                                    .apartmenName(nameSurname!);
-                              },
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 25.w),
+                        CustomDropdownButtonFormField(
+                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                          labelText: 'Ülke',
+                          value: controller.selectedValue,
+                          items: controller.listOfCountry.map((String val) {
+                            return DropdownMenuItem(
+                              value: val,
                               child: Text(
-                                '*Lütfen en az 5 karakter giriniz',
+                                val,
                                 style: AppTextStyle()
-                                    .getSfProDisplayLight_H6(Colors.black),
+                                    .getSfProDisplayMedium_H6(Colors.black),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.symmetric(vertical: 30.h),
-                              child: CustomElevatedButton(
-                                  onPressed: () {
-                                    controller.goQrPage();
-                                  },
-                                  child: Text('Devam')),
-                            )
-                          ],
+                            );
+                          }).toList(),
                         ),
-                        Center(
-                          child: Text("Status Pages"),
+                        CustomDropdownButtonFormField(
+                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                          labelText: 'İl',
+                          value: controller.selectedCity,
+                          items: controller.listOfCitys.map((String val) {
+                            return DropdownMenuItem(
+                              value: val,
+                              child: Text(
+                                val,
+                                style: AppTextStyle()
+                                    .getSfProDisplayMedium_H6(Colors.black),
+                              ),
+                            );
+                          }).toList(),
                         ),
-                        Center(
-                          child: Text('Calls Page'),
+                        CustomDropdownButtonFormField(
+                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                          labelText: 'İlçe',
+                          value: controller.selectedDistrict,
+                          items: controller.listOfDistricts.map((String val) {
+                            return DropdownMenuItem(
+                              value: val,
+                              child: Text(
+                                val,
+                                style: AppTextStyle()
+                                    .getSfProDisplayMedium_H6(Colors.black),
+                              ),
+                            );
+                          }).toList(),
                         ),
+                        CustomTextFormField(
+                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                          labelText: 'Apartman Adı',
+                          textEditingController:
+                              controller.apartmenNameController,
+                          validator: (nameSurname) {
+                            return controller.formValidationHelper
+                                .apartmenName(nameSurname!);
+                          },
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                          child: Text(
+                            '*Lütfen en az 5 karakter giriniz',
+                            style: AppTextStyle()
+                                .getSfProDisplayLight_H6(Colors.black),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.symmetric(vertical: 30.h),
+                          child: CustomElevatedButton(
+                              onPressed: () {
+                                //01controller.goQrPage();
+                              },
+                              child: Text('Devam')),
+                        )
                       ],
-                    ))
+                    ),
                   ],
                 ),
               ),

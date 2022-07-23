@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
+
 import 'package:get/get.dart';
 
 class CheckNetworkConnection {
@@ -31,7 +32,7 @@ class CheckNetworkConnection {
     checkStatusSubscription =
         _connectivity.onConnectivityChanged.listen((ConnectivityResult result) {
       if (result == ConnectivityResult.none) {
-        Get.toNamed('common', arguments: '1');
+        Get.toNamed('common', arguments: 'noConnection');
       }
       if (result == ConnectivityResult.mobile) {
         Get.back();

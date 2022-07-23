@@ -42,9 +42,16 @@ class HomeController extends BaseController {
     update();
   }
 
+  goToNoRecord() {
+    if (box.read('hasApertmen') == false) {
+      Get.toNamed('common', arguments: 'noRecordApartment');
+    }
+  }
+
   @override
   void onInit() {
     apertmenRecord();
+    updateRecordState();
     super.onInit();
   }
 }

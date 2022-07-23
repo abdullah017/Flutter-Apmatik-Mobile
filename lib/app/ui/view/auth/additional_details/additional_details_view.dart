@@ -175,7 +175,7 @@ class AdditionalDetailsView extends BaseView<AdditionalDetailsController> {
           CustomElevatedButton(
             fixedSize: Size(330.w, 45.h),
             onPressed: () {
-              controller.goOtpPage();
+              controller.gostatusPage();
             },
             child: Text('goOn'.tr),
           ),

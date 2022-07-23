@@ -59,7 +59,7 @@ class RegisterController extends BaseController {
             selectedValue,
             passwordController.text,
           ])
-          .whenComplete(() => goDetailPage())
+          .whenComplete(() => goOtp())
           .catchError((err) {
             print('Error: $err'); // Prints 401.
           });
@@ -74,8 +74,8 @@ class RegisterController extends BaseController {
     }
   }
 
-  void goDetailPage() {
-    Get.toNamed('additional_details');
+  void goOtp() {
+    Get.toNamed('otp');
   }
 
   @override

@@ -9,14 +9,15 @@ class CustomDropdownButtonFormField extends StatelessWidget {
   final List<DropdownMenuItem<Object>>? items;
   final String? Function(dynamic)? validator;
   final String? labelText;
+  final EdgeInsetsGeometry? padding;
   const CustomDropdownButtonFormField(
-      {Key? key, this.value, this.items, this.validator, this.labelText})
+      {Key? key, this.value, this.items, this.validator, this.labelText,  this.padding})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 5.h),
+      padding: padding ?? EdgeInsets.symmetric(horizontal: 25.w, vertical: 5.h),
       child: DropdownButtonFormField(
         style: AppTextStyle().getSfProDisplayMedium_H6(AppColors.BLACK),
         decoration: InputDecoration(
