@@ -138,7 +138,14 @@ class AppTextStyle {
         fontStyle: FontStyle.normal,
         color: color);
   }
-
+  TextStyle getSfProDisplayBold_H5(Color color) {
+    return TextStyle(
+        fontFamily: 'SF Pro',
+        fontSize: 22.sp,
+        fontWeight: FontWeight.w600,
+        fontStyle: FontStyle.normal,
+        color: color);
+  }
   TextStyle getSfProDisplayBold_h6(Color color) {
     return TextStyle(
         fontFamily: 'SF Pro',
@@ -179,6 +186,14 @@ class AppTextStyle {
   }
 
   ///[MEDIUM_FONT_TYPE]
+    TextStyle get_SfProRounded_Medium_H5(Color color) {
+    return TextStyle(
+        fontFamily: 'SF Pro Rounded',
+        fontSize: 15.sp,
+        fontWeight: FontWeight.w500,
+        fontStyle: FontStyle.normal,
+        color: color);
+  }
   TextStyle get_SfProRounded_Medium_H6(Color color) {
     return TextStyle(
         fontFamily: 'SF Pro Rounded',

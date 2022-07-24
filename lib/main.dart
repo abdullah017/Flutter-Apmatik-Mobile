@@ -16,7 +16,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Get.put(ApiBaseHelper(), permanent: true);
   Get.put(ApiRepository(Get.find()));
-
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive,
       overlays: <SystemUiOverlay>[]);
 
@@ -43,7 +42,7 @@ class MyApp extends StatelessWidget {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: [
-            Locale('tr', ''),
+            Locale('tr', ''), 
             Locale('en', ''),
           ],
           locale: TranslationService.locale,
