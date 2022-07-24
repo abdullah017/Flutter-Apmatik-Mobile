@@ -20,6 +20,8 @@ import 'package:apmatik_app/app/ui/view/bottom_navbar/bottom_navbar_binding.dart
 import 'package:apmatik_app/app/ui/view/bottom_navbar/bottom_navbar_view.dart';
 import 'package:apmatik_app/app/ui/view/common/common_binding.dart';
 import 'package:apmatik_app/app/ui/view/common/common_view.dart';
+import 'package:apmatik_app/app/ui/view/dashboard/dashboard_binding.dart';
+import 'package:apmatik_app/app/ui/view/dashboard/dashboard_view.dart';
 import 'package:apmatik_app/app/ui/view/home/home_binding.dart';
 import 'package:apmatik_app/app/ui/view/home/home_view.dart';
 
@@ -32,8 +34,8 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.SPLASH;
-  static const HOME = Routes.HOME;
+  static const INITIAL = Routes.DASHBOARD;
+  static const HOME = Routes.BOTTOM;
   static final routes = [
     GetPage(
       name: _Paths.SPLASH,
@@ -99,6 +101,11 @@ class AppPages {
       name: _Paths.COMMON,
       page: () => CommonView(),
       binding: CommonBinding(),
+    ),
+    GetPage(
+      name: _Paths.DASHBOARD,
+      page: () => DashBoardView(),
+      binding: DashBoardBinding(),
     ),
   ];
 }
