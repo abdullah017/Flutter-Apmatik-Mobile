@@ -34,7 +34,7 @@ class CustonNotificationIcon extends StatelessWidget {
               ],
             ),
             Positioned(
-              top: Get.width >= 390 ? 10 : 28,
+              top: Get.width >= 390 ? 15 : 28,
               right: 20,
               child: Container(
                 width: 7,

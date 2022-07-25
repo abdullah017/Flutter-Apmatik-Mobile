@@ -53,13 +53,13 @@ class CommonView extends BaseView<CommonController> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 23.0),
-            child: Icon(
-              Icons.wifi,
-              size: 66,
-              color: AppColors.BLACK,
-            ),
-          ),
+              padding: const EdgeInsets.symmetric(vertical: 23.0),
+              child: Image.asset(
+                AppAssets.wifi_icon,
+                width: 66,
+                height: 66,
+                color: AppColors.BLACK,
+              )),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
@@ -98,13 +98,13 @@ class CommonView extends BaseView<CommonController> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 23.0),
-            child: Icon(
-              Icons.warning_amber,
-              size: 66,
-              color: AppColors.BLACK,
-            ),
-          ),
+              padding: const EdgeInsets.symmetric(vertical: 23.0),
+              child: Image.asset(
+                AppAssets.old_app_icon,
+                width: 66,
+                height: 66,
+                color: AppColors.BLACK,
+              )),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
@@ -136,13 +136,13 @@ class CommonView extends BaseView<CommonController> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 23.0),
-            child: Icon(
-              Icons.security_update_warning,
-              size: 66,
-              color: AppColors.BLACK,
-            ),
-          ),
+              padding: const EdgeInsets.symmetric(vertical: 23.0),
+              child: Image.asset(
+                AppAssets.verify_icon,
+                width: 66,
+                height: 66,
+                color: AppColors.BLACK,
+              )),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
@@ -186,13 +186,13 @@ class CommonView extends BaseView<CommonController> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 23.0),
-            child: Icon(
-              Icons.apartment_outlined,
-              size: 66,
-              color: AppColors.BLACK,
-            ),
-          ),
+              padding: const EdgeInsets.symmetric(vertical: 23.0),
+              child: Image.asset(
+                AppAssets.apart_icon,
+                width: 66,
+                height: 66,
+                color: AppColors.BLACK,
+              )),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
@@ -238,13 +238,13 @@ class CommonView extends BaseView<CommonController> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 23.0),
-            child: Icon(
-              Icons.verified_outlined,
-              size: 66,
-              color: AppColors.BLACK,
-            ),
-          ),
+              padding: const EdgeInsets.symmetric(vertical: 23.0),
+              child: Image.asset(
+                AppAssets.success_record,
+                width: 66,
+                height: 66,
+                color: AppColors.BLACK,
+              )),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Text(
@@ -285,13 +285,13 @@ class CommonView extends BaseView<CommonController> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 23.0),
-            child: Icon(
-              Icons.verified,
-              size: 66,
-              color: AppColors.ORANGE,
-            ),
-          ),
+              padding: const EdgeInsets.symmetric(vertical: 23.0),
+              child: Image.asset(
+                AppAssets.done_icon,
+                width: 66,
+                height: 66,
+                color: AppColors.BLACK,
+              )),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Text('resetPasswordSuccess'.tr),
@@ -321,13 +321,13 @@ class CommonView extends BaseView<CommonController> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 23.0),
-            child: Icon(
-              Icons.verified,
-              size: 66,
-              color: AppColors.ORANGE,
-            ),
-          ),
+              padding: const EdgeInsets.symmetric(vertical: 23.0),
+              child: Image.asset(
+                AppAssets.done_icon,
+                width: 66,
+                height: 66,
+                color: AppColors.BLACK,
+              )),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Text('registerSuccess'.tr),

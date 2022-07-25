@@ -16,7 +16,7 @@ class CustomLoginUserAppBar extends StatelessWidget
 
   @override
   Size get preferredSize =>
-      Get.width >= 390 ? Size.fromHeight(0.10.sw) : Size.fromHeight(0.20.sw);
+      Get.width >= 390 ? Size.fromHeight(0.13.sw) : Size.fromHeight(0.20.sw);
 
   @override
   Widget build(BuildContext context) {
