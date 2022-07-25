@@ -18,7 +18,79 @@ class DashBoardView extends BaseView<DashBoardController> {
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
   @override
   Widget vBuilder() => Scaffold(
+        backgroundColor: AppColors.PAGEBACKGROUND,
         appBar: CustomLoginUserAppBar(),
+        // ignore: invalid_use_of_protected_member
+        bottomSheet: controller.duyuru.isNotEmpty
+            ? BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
+                child: Container(
+                  width: 390,
+                  height: 320,
+                  decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15),
+                          topRight: Radius.circular(15))),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        'Apartman Çalışması Hakkında',
+                        style: AppTextStyle()
+                            .getSfProDisplaySemiBold_h6(AppColors.BLACK),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        child: Text(
+                          'Apartmanda yapacağımız çalışma nedeniyle pazartesi ve çarşamba günleri arasında bakım çalışması yapacağımızdan giriş çıkışlara dikkat etmenizi öneririz. Herkese iyi bayramlar!',
+                          style: AppTextStyle()
+                              .getSfProDisplayRegular_H5(AppColors.BLACK),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      RadioListTile<int>(
+                        activeColor: Colors.orange,
+                        value: 1,
+                        groupValue: controller.radiovalue,
+                        title: Text('Tekrar Gösterme'),
+                        selected: controller.selectedRadio,
+                        //toggleable: true,
+                        onChanged: (value) {
+                          controller.radiovalue = value!;
+                          controller.selectedRadio = !controller.selectedRadio;
+                          controller.update();
+                        },
+                      ),
+                      CustomElevatedButton(
+                          onPressed: () {
+                            Get.back();
+                            controller.duyuru.removeAt(0);
+                            controller.update();
+                          },
+                          child: Text('TAMAM')),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        child: Text(
+                          'Bu bilgi apartman yöneticiniz tarafından sağlanmaktadır.',
+                          style: AppTextStyle()
+                              .getSfProDisplayLight_H5(AppColors.BLACK),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              )
+            : null,
         key: _scaffoldKey,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

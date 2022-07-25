@@ -34,7 +34,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.SPLASH;
+  static const INITIAL = Routes.DASHBOARD;
   static const HOME = Routes.BOTTOM;
   static final routes = [
     GetPage(

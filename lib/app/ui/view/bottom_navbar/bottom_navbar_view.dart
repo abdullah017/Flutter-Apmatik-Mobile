@@ -1,4 +1,5 @@
 import 'package:apmatik_app/app/core/base/base_view.dart';
+import 'package:apmatik_app/app/core/constant/asset_constants.dart';
 
 import 'package:apmatik_app/app/ui/view/blank/blank_view.dart';
 import 'package:apmatik_app/app/ui/view/bottom_navbar/bottom_navbar_controller.dart';
@@ -37,11 +38,11 @@ class BottomNavbarView extends BaseView<BottomNavbarController> {
               showUnselectedLabels: false,
               currentIndex: controller.tabIndex.value,
               items: [
-                _bottomNavbarItem(Icons.credit_card, ''),
-                _bottomNavbarItem(Icons.key, ''),
-                _bottomNavbarItem(Icons.home, ''),
-                _bottomNavbarItem(Icons.insert_page_break, ''),
-                _bottomNavbarItem(Icons.menu, ''),
+                _bottomNavbarItem(AppAssets.card_icon, ''),
+                _bottomNavbarItem(AppAssets.key_icon, ''),
+                _bottomNavbarItem(AppAssets.home_icon, ''),
+                _bottomNavbarItem(AppAssets.doc_icon, ''),
+                _bottomNavbarItem(AppAssets.menu_icon, ''),
               ]),
         ),
         body: IndexedStack(
@@ -57,16 +58,21 @@ class BottomNavbarView extends BaseView<BottomNavbarController> {
       );
 }
 
-_bottomNavbarItem(IconData icon, String label) {
+_bottomNavbarItem(String assetName, String label) {
   return BottomNavigationBarItem(
-    icon: Icon(icon),
+    icon: Image.asset(
+      assetName,
+      width: 24,
+      height: 24,
+      fit: BoxFit.contain,
+    ),
     activeIcon: Container(
       decoration: BoxDecoration(
         border: Border(
-          bottom: BorderSide(width: 1.5, color: Colors.orange),
+          bottom: BorderSide(width: 2, color: Colors.orange),
         ),
       ),
-      child: Icon(icon),
+      child: Image.asset(assetName),
     ),
     label: label,
   );
