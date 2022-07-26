@@ -25,6 +25,17 @@ class AppAssets {
   static const String verify_icon = 'assets/icons/verify_icon.png';
   static const String wifi_icon = 'assets/icons/wifi_icon.png';
 
+  ///[MENU PAGE ICONS]
+
+  static const String profile_icon = 'assets/icons/profil.png';
+  static const String setting_icon = 'assets/icons/setting.png';
+  static const String option_icon = 'assets/icons/option.png';
+  static const String car_icon = 'assets/icons/car.png';
+  static const String new_add = 'assets/icons/newadd.png';
+  static const String group_icon = 'assets/icons/group.png';
+  static const String exit_icon = 'assets/icons/exit.png';
+    static const String arrow_icon = 'assets/icons/arrow.png';
+
   ///[OTHER PAGE ICONS]
   static const String qr_icon = 'assets/icons/qr_icon.png';
   static const String edit_icon = 'assets/icons/edit_icon.png';

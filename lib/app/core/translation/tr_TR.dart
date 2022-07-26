@@ -87,7 +87,15 @@ const Map<String, String> tr = {
   'apartmentRegistrationInfo':
       'Apmatik üyesi olan apartmanınızı dilerseniz alt taraftan veya dilerseniz QR kodu ile kaydedebilirsiniz.',
   'readQr': 'QR Kodu Okut',
-  'successRecordApartmen':'Apartman Kaydınız Tamamlandı',
-  'successRecordApartmenInfo':'Apartman kaydınız tamamlanmıştır. Apartman yöneticiniz başvurunuzu onayladığı zaman size bir bildirim göndereceğiz.',
-  'completed':'Tamamlandı'
+  'successRecordApartmen': 'Apartman Kaydınız Tamamlandı',
+  'successRecordApartmenInfo':
+      'Apartman kaydınız tamamlanmıştır. Apartman yöneticiniz başvurunuzu onayladığı zaman size bir bildirim göndereceğiz.',
+  'completed': 'Tamamlandı',
+  'profile': 'Profil',
+  'cars': 'Araçlar',
+  'fault': 'Arıza Bildirimi',
+  'preferences':'Tercihler',
+  'newApartment':'Yeni Daire Girişi',
+  'managmentTeam':'Yönetim Kadrosu',
+  'exit':'Çıkış Yap',
 };
