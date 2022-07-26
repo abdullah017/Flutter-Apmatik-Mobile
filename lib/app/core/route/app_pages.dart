@@ -24,6 +24,8 @@ import 'package:apmatik_app/app/ui/view/dashboard/dashboard_binding.dart';
 import 'package:apmatik_app/app/ui/view/dashboard/dashboard_view.dart';
 import 'package:apmatik_app/app/ui/view/home/home_binding.dart';
 import 'package:apmatik_app/app/ui/view/home/home_view.dart';
+import 'package:apmatik_app/app/ui/view/menu/menu_binding.dart';
+import 'package:apmatik_app/app/ui/view/menu/menu_view.dart';
 
 import 'package:apmatik_app/app/ui/view/splash/splah_view.dart';
 import 'package:apmatik_app/app/ui/view/splash/splash_binding.dart';
@@ -34,7 +36,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.DASHBOARD;
+  static const INITIAL = Routes.BOTTOM;
   static const HOME = Routes.BOTTOM;
   static final routes = [
     GetPage(
@@ -106,6 +108,11 @@ class AppPages {
       name: _Paths.DASHBOARD,
       page: () => DashBoardView(),
       binding: DashBoardBinding(),
+    ),
+    GetPage(
+      name: _Paths.MENU,
+      page: () => MenuView(),
+      binding: MenuBinding(),
     ),
   ];
 }

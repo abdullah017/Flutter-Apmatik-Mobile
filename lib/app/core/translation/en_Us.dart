@@ -87,7 +87,15 @@ const Map<String, String> en = {
   'apartmentRegistrationInfo':
       'You can save your apartment, which is a member of Apmatik, from the bottom side or with a QR code if you wish.',
   'readQr': 'Read QR Code',
-  'successRecordApartmen':'Apartment Registration Complete',
-  'successRecordApartmenInfo':'Your apartment registration has been completed. We will send you a notification when your apartment manager approves your application.',
-  'completed':'completed'
+  'successRecordApartmen': 'Apartment Registration Complete',
+  'successRecordApartmenInfo':
+      'Your apartment registration has been completed. We will send you a notification when your apartment manager approves your application.',
+  'completed': 'Completed',
+  'profile': 'Profile',
+  'cars': 'Vehicles',
+  'fault': 'Fault Notification',
+  'preferences': 'Preferences',
+  'newApartment': 'New Apartment Entrance',
+  'managmentTeam': 'Management Staff',
+  'exit': 'Exit',
 };

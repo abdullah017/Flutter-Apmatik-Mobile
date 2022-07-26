@@ -3,6 +3,7 @@ import 'package:apmatik_app/app/ui/view/bottom_navbar/bottom_navbar_controller.d
 import 'package:apmatik_app/app/ui/view/common/common_controller.dart';
 import 'package:apmatik_app/app/ui/view/dashboard/dashboard_controller.dart';
 import 'package:apmatik_app/app/ui/view/home/home_controller.dart';
+import 'package:apmatik_app/app/ui/view/menu/menu_controller.dart';
 
 import 'package:get/get.dart';
 
@@ -14,5 +15,6 @@ class BottomNavbarBinding extends Bindings {
     Get.lazyPut(() => BlankController());
     Get.lazyPut(() => CommonController());
     Get.lazyPut(() => DashBoardController());
+    Get.lazyPut(() => MenuController());
   }
 }

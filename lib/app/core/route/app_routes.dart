@@ -23,6 +23,7 @@ abstract class Routes {
   static const ADDAPERTMEN = _Paths.ADDAPERTMEN;
   static const READQR = _Paths.READQR;
   static const SELECTAPARTMENT = _Paths.SELECTAPARTMENT;
+  static const MENU = _Paths.MENU;
 }
 
 abstract class _Paths {
@@ -45,4 +46,5 @@ abstract class _Paths {
   static const ADDAPERTMEN = '/add_apertmen';
   static const READQR = '/readqr';
   static const SELECTAPARTMENT = '/selectapartment';
+  static const MENU = '/menu';
 }

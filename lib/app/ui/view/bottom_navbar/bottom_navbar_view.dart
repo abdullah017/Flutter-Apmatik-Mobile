@@ -5,6 +5,7 @@ import 'package:apmatik_app/app/ui/view/blank/blank_view.dart';
 import 'package:apmatik_app/app/ui/view/bottom_navbar/bottom_navbar_controller.dart';
 import 'package:apmatik_app/app/ui/view/dashboard/dashboard_view.dart';
 import 'package:apmatik_app/app/ui/view/home/home_view.dart';
+import 'package:apmatik_app/app/ui/view/menu/menu_view.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,11 +24,11 @@ class BottomNavbarView extends BaseView<BottomNavbarController> {
               unselectedLabelStyle: TextStyle(fontSize: 0),
               unselectedFontSize: 0,
               unselectedIconTheme: IconThemeData(
-                size: Get.width > 390 ? 24.sm : 18.sm,
+                size: Get.width > 390 ? 24.sm : 24.sm,
               ),
               selectedFontSize: 0,
               selectedIconTheme: IconThemeData(
-                size: Get.width > 390 ? 24.sm : 18.sm,
+                size: Get.width > 390 ? 24.sm : 24.sm,
               ),
               selectedLabelStyle: TextStyle(fontSize: 0),
               type: BottomNavigationBarType.fixed,
@@ -52,7 +53,7 @@ class BottomNavbarView extends BaseView<BottomNavbarController> {
             BlankView(),
             HomeView(),
             BlankView(),
-            BlankView(),
+            MenuView()
           ],
         ),
       );
@@ -67,6 +68,8 @@ _bottomNavbarItem(String assetName, String label) {
       fit: BoxFit.contain,
     ),
     activeIcon: Container(
+      height: 35,
+      width: 24,
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(width: 2, color: Colors.orange),
