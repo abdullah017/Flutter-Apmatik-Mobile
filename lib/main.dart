@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: [
-            Locale('tr', ''), 
+            Locale('tr', ''),
             Locale('en', ''),
           ],
           locale: TranslationService.locale,

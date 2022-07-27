@@ -6,6 +6,7 @@ import 'package:apmatik_app/app/core/constant/color_constants.dart';
 import 'package:apmatik_app/app/ui/view/common/common_controller.dart';
 import 'package:apmatik_app/app/ui/widgets/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class CommonView extends BaseView<CommonController> {
@@ -53,22 +54,22 @@ class CommonView extends BaseView<CommonController> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-              padding: const EdgeInsets.symmetric(vertical: 23.0),
+              padding: EdgeInsets.symmetric(vertical: 23.0.h),
               child: Image.asset(
                 AppAssets.wifi_icon,
-                width: 66,
-                height: 66,
+                width: 66.w,
+                height: 66.h,
                 color: AppColors.BLACK,
               )),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            padding: EdgeInsets.symmetric(vertical: 8.0.h),
             child: Text(
               'noConnection'.tr,
               style: appTextStyle.get_SfProRounded_SemiBold_h5(AppColors.BLACK),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20),
+            padding: EdgeInsets.symmetric(vertical: 8.0.h, horizontal: 20.w),
             child: Text(
               'noConnectionInfo'.tr,
               style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
@@ -76,14 +77,14 @@ class CommonView extends BaseView<CommonController> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20.0),
+            padding: EdgeInsets.symmetric(vertical: 20.0.h),
             child: CustomElevatedButton(
               onPressed: () {},
               child: Text('tryAgain'.tr),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 81.0),
+            padding: EdgeInsets.symmetric(vertical: 81.0.h),
             child: Image.asset(AppAssets.statusPageLogo),
           )
         ],
@@ -186,22 +187,22 @@ class CommonView extends BaseView<CommonController> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-              padding: const EdgeInsets.symmetric(vertical: 23.0),
+              padding: EdgeInsets.symmetric(vertical: 20.0.h),
               child: Image.asset(
                 AppAssets.apart_icon,
-                width: 66,
-                height: 66,
+                width: 66.w,
+                height: 66.h,
                 color: AppColors.BLACK,
               )),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            padding: EdgeInsets.symmetric(vertical: 8.0.h),
             child: Text(
               'noApertmenRecord'.tr,
               style: appTextStyle.get_SfProRounded_SemiBold_h5(AppColors.BLACK),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20),
+            padding: EdgeInsets.symmetric(vertical: 8.0.h, horizontal: 20.w),
             child: Text(
               'noApertmenRecordInfo'.tr,
               style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
@@ -209,7 +210,7 @@ class CommonView extends BaseView<CommonController> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20.0),
+            padding: EdgeInsets.symmetric(vertical: 20.0.h),
             child: CustomElevatedButton(
               onPressed: () {
                 controller.goAddApartment();
@@ -223,7 +224,7 @@ class CommonView extends BaseView<CommonController> {
                 style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK)),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 81.0),
+            padding: EdgeInsets.symmetric(vertical: 81.0.h),
             child: Image.asset(AppAssets.statusPageLogo),
           )
         ],

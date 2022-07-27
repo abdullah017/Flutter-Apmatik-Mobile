@@ -16,7 +16,7 @@ class BottomNavbarView extends BaseView<BottomNavbarController> {
   Widget vBuilder() => Scaffold(
         bottomNavigationBar: SizedBox(
           width: Get.width,
-          height: 50.h,
+          height: 60.h,
           child: BottomNavigationBar(
               onTap: (index) {
                 controller.tabChange(index);
@@ -24,7 +24,7 @@ class BottomNavbarView extends BaseView<BottomNavbarController> {
               unselectedLabelStyle: TextStyle(fontSize: 0),
               unselectedFontSize: 0,
               unselectedIconTheme: IconThemeData(
-                size: Get.width > 390 ? 24.sm : 24.sm,
+                size: Get.width > 390 ? 24.sp : 24.sp,
               ),
               selectedFontSize: 0,
               selectedIconTheme: IconThemeData(
@@ -63,13 +63,13 @@ _bottomNavbarItem(String assetName, String label) {
   return BottomNavigationBarItem(
     icon: Image.asset(
       assetName,
-      width: 24,
-      height: 24,
+      width: 24.w,
+      height: 24.h,
       fit: BoxFit.contain,
     ),
     activeIcon: Container(
-      height: 35,
-      width: 24,
+      height: 24.h,
+      width: 24.w,
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(width: 2, color: Colors.orange),
