@@ -18,11 +18,13 @@ class AppTextStyle {
   TextStyle getSfProDisplayLight_H6(Color color) {
     return TextStyle(
         fontFamily: 'SF Pro',
-        fontSize: 7.sp,
+        fontSize: 9.sp,
         fontWeight: FontWeight.w300,
         fontStyle: FontStyle.normal,
         color: color);
   }
+
+  
 
   /// [LIGHT_ITALIC_FONT_TYPE]
   TextStyle getSfProDisplayLight_Italic_H6(Color color) {
@@ -138,6 +140,7 @@ class AppTextStyle {
         fontStyle: FontStyle.normal,
         color: color);
   }
+
   TextStyle getSfProDisplayBold_H5(Color color) {
     return TextStyle(
         fontFamily: 'SF Pro',
@@ -146,6 +149,7 @@ class AppTextStyle {
         fontStyle: FontStyle.normal,
         color: color);
   }
+
   TextStyle getSfProDisplayBold_h6(Color color) {
     return TextStyle(
         fontFamily: 'SF Pro',
@@ -166,6 +170,16 @@ class AppTextStyle {
 
 /////-----------------------[SF PRO ROUNDED FONT TYPE AREA!]------------------------------------/////
   ///[BOLD_FONT_TYPE]
+  ///
+
+  TextStyle get_SfProRounded_SemiBold_h4(Color color) {
+    return TextStyle(
+        fontFamily: 'SF Pro Rounded',
+        fontSize: 18.sp,
+        fontWeight: FontWeight.w600,
+        fontStyle: FontStyle.normal,
+        color: color);
+  }
 
   TextStyle get_SfProRounded_SemiBold_h5(Color color) {
     return TextStyle(
@@ -186,7 +200,7 @@ class AppTextStyle {
   }
 
   ///[MEDIUM_FONT_TYPE]
-    TextStyle get_SfProRounded_Medium_H5(Color color) {
+  TextStyle get_SfProRounded_Medium_H5(Color color) {
     return TextStyle(
         fontFamily: 'SF Pro Rounded',
         fontSize: 15.sp,
@@ -194,6 +208,7 @@ class AppTextStyle {
         fontStyle: FontStyle.normal,
         color: color);
   }
+
   TextStyle get_SfProRounded_Medium_H6(Color color) {
     return TextStyle(
         fontFamily: 'SF Pro Rounded',

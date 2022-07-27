@@ -14,15 +14,16 @@ import 'package:get/get.dart';
 class MenuView extends BaseView<MenuController> {
   @override
   Widget vBuilder() => Scaffold(
+      backgroundColor: AppColors.PAGEBACKGROUND,
       appBar: CustomLoginUserAppBar(),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 20.h),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: ListView(
           children: [
             Container(
                 width: 350.w,
-                height: Get.height * 0.55.h,
+                height:
+                    Get.width > 390 ? Get.height * 0.50.h : Get.height * 0.75.h,
                 child: Column(
                   children: [
                     buildMenuItemCard(
@@ -78,7 +79,7 @@ class MenuView extends BaseView<MenuController> {
                 )),
             Container(
               width: 350.w,
-              height: 84.h,
+              height: 75.h,
               color: AppColors.WHITE,
               child: Card(
                 elevation: 5,

@@ -34,10 +34,11 @@ class AppAssets {
   static const String new_add = 'assets/icons/newadd.png';
   static const String group_icon = 'assets/icons/group.png';
   static const String exit_icon = 'assets/icons/exit.png';
-    static const String arrow_icon = 'assets/icons/arrow.png';
+  static const String arrow_icon = 'assets/icons/arrow.png';
 
   ///[OTHER PAGE ICONS]
   static const String qr_icon = 'assets/icons/qr_icon.png';
   static const String edit_icon = 'assets/icons/edit_icon.png';
   static const String gift_icon = 'assets/icons/gift_icon.png';
+    static const String remove_icon = 'assets/icons/remove.png';
 }
