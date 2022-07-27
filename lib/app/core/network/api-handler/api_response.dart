@@ -1,14 +1,12 @@
 // ignore_for_file: library_prefixes
 
-
-import 'package:apmatik_app/app/core/constant/string_constants.dart';
+import 'package:apmatik/app/core/constant/string_constants.dart';
 import 'package:dio/dio.dart';
-
 
 import 'package:get/get.dart' as getXProgressLoader;
 
-
 import 'api-handler.dart';
+
 /// Wrapper class for Api Response
 class ApiResponse<T> {
   ApiStatus? status;
@@ -29,7 +27,8 @@ class ApiResponse<T> {
   }
 
   /// error
-  static ApiResponse<T> error<T>({ int? errCode, String? errMsg,  T? errBdy, T? data}) {
+  static ApiResponse<T> error<T>(
+      {int? errCode, String? errMsg, T? errBdy, T? data}) {
     var apiError =
         ApiError(statusCode: errCode, errorMessage: errMsg, errorBody: errBdy);
     return ApiResponse<T>(
@@ -38,7 +37,6 @@ class ApiResponse<T> {
 
   /// method wraps response in ApiResponse class
   static ApiResponse<T> returnResponse<T>(Response response, T apiResponse) {
-
     if (response.statusCode == ApiResponseCode.INTERNET_UNAVAILABLE) {
       getXProgressLoader.Get.back();
       return ApiResponse.error(
@@ -66,7 +64,6 @@ class ApiResponse<T> {
     }
   }
 
-
   @override
   String toString() {
     return "Status : $status \n Message : $message \n Data : $data";
@@ -81,6 +78,7 @@ class ApiError<T> {
 
   ApiError({this.statusCode, this.errorMessage, this.errorBody});
 }
+
 /// Enum to check Api Status
 // ignore: constant_identifier_names
 enum ApiStatus { LOADING, COMPLETED, ERROR }

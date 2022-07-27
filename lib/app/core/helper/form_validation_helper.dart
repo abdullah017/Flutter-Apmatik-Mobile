@@ -1,4 +1,4 @@
-import 'package:apmatik_app/app/core/helper/extension/form_validation_extension.dart';
+import 'package:apmatik/app/core/helper/extension/form_validation_extension.dart';
 
 import 'package:get/get.dart';
 

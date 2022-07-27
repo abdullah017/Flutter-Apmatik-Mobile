@@ -1,7 +1,7 @@
 // // ignore_for_file: must_be_immutable
 
-// import 'package:apmatik_app/app/style/widget-style.dart';
-// import 'package:apmatik_app/core/model/images.dart';
+// import 'package:apmatik/app/style/widget-style.dart';
+// import 'package:apmatik/core/model/images.dart';
 // import 'package:cached_network_image/cached_network_image.dart';
 
 // import 'package:flutter/material.dart';

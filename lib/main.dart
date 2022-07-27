@@ -1,9 +1,9 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:apmatik_app/app/core/network/api-handler/api-handler.dart';
-import 'package:apmatik_app/app/core/network/api-handler/api-repo.dart';
-import 'package:apmatik_app/app/core/route/app_pages.dart';
-import 'package:apmatik_app/app/core/utils/translation_service.dart';
+import 'package:apmatik/app/core/network/api-handler/api-handler.dart';
+import 'package:apmatik/app/core/network/api-handler/api-repo.dart';
+import 'package:apmatik/app/core/route/app_pages.dart';
+import 'package:apmatik/app/core/utils/translation_service.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

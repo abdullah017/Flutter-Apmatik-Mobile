@@ -1,5 +1,5 @@
-import 'package:apmatik_app/app/core/constant/api_constants.dart';
-import 'package:apmatik_app/app/core/network/api-handler/api-extention.dart';
+import 'package:apmatik/app/core/constant/api_constants.dart';
+import 'package:apmatik/app/core/network/api-handler/api-extention.dart';
 
 import 'api-handler.dart';
 

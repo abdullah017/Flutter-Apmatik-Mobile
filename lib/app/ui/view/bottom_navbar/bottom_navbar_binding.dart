@@ -1,9 +1,9 @@
-import 'package:apmatik_app/app/ui/view/blank/blank_controller.dart';
-import 'package:apmatik_app/app/ui/view/bottom_navbar/bottom_navbar_controller.dart';
-import 'package:apmatik_app/app/ui/view/common/common_controller.dart';
-import 'package:apmatik_app/app/ui/view/dashboard/dashboard_controller.dart';
-import 'package:apmatik_app/app/ui/view/home/home_controller.dart';
-import 'package:apmatik_app/app/ui/view/menu/menu_controller.dart';
+import 'package:apmatik/app/ui/view/blank/blank_controller.dart';
+import 'package:apmatik/app/ui/view/bottom_navbar/bottom_navbar_controller.dart';
+import 'package:apmatik/app/ui/view/common/common_controller.dart';
+import 'package:apmatik/app/ui/view/dashboard/dashboard_controller.dart';
+import 'package:apmatik/app/ui/view/home/home_controller.dart';
+import 'package:apmatik/app/ui/view/menu/menu_controller.dart';
 
 import 'package:get/get.dart';
 
