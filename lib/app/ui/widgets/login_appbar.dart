@@ -1,9 +1,9 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:apmatik_app/app/core/constant/asset_constants.dart';
-import 'package:apmatik_app/app/core/constant/color_constants.dart';
-import 'package:apmatik_app/app/ui/style/text_style.dart';
-import 'package:apmatik_app/app/ui/widgets/custom_notification_icon.dart';
+import 'package:apmatik/app/core/constant/asset_constants.dart';
+import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/ui/style/text_style.dart';
+import 'package:apmatik/app/ui/widgets/custom_notification_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

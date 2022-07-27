@@ -1,14 +1,14 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:apmatik_app/app/core/base/base_view.dart';
-import 'package:apmatik_app/app/core/constant/color_constants.dart';
-import 'package:apmatik_app/app/ui/style/text_style.dart';
-import 'package:apmatik_app/app/ui/view/apartment/add_apartment/add_apertment_controller.dart';
-import 'package:apmatik_app/app/ui/widgets/custom_appbar.dart';
-import 'package:apmatik_app/app/ui/widgets/custom_dropdown_formfield_button.dart';
-import 'package:apmatik_app/app/ui/widgets/custom_elevated_button.dart';
-import 'package:apmatik_app/app/ui/widgets/custom_textformfield.dart';
-import 'package:apmatik_app/app/ui/widgets/custom_toggle_button.dart';
+import 'package:apmatik/app/core/base/base_view.dart';
+import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/ui/style/text_style.dart';
+import 'package:apmatik/app/ui/view/apartment/add_apartment/add_apertment_controller.dart';
+import 'package:apmatik/app/ui/widgets/custom_appbar.dart';
+import 'package:apmatik/app/ui/widgets/custom_dropdown_formfield_button.dart';
+import 'package:apmatik/app/ui/widgets/custom_elevated_button.dart';
+import 'package:apmatik/app/ui/widgets/custom_textformfield.dart';
+import 'package:apmatik/app/ui/widgets/custom_toggle_button.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

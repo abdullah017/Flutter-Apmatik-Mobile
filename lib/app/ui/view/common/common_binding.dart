@@ -1,4 +1,4 @@
-import 'package:apmatik_app/app/ui/view/common/common_controller.dart';
+import 'package:apmatik/app/ui/view/common/common_controller.dart';
 
 import 'package:get/get.dart';
 

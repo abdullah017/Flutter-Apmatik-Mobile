@@ -1,6 +1,6 @@
-import 'package:apmatik_app/app/core/helper/form_validation_helper.dart';
-import 'package:apmatik_app/app/core//utils/utilities.dart';
-import 'package:apmatik_app/app/core/network/check_connection/check_connecition.dart';
+import 'package:apmatik/app/core/helper/form_validation_helper.dart';
+import 'package:apmatik/app/core//utils/utilities.dart';
+import 'package:apmatik/app/core/network/check_connection/check_connecition.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';

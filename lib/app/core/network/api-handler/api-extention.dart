@@ -2,10 +2,8 @@
 
 import 'dart:convert';
 
-
-
-import 'package:apmatik_app/app/core/base/base_common_widget.dart';
-import 'package:apmatik_app/app/core/constant/string_constants.dart';
+import 'package:apmatik/app/core/base/base_common_widget.dart';
+import 'package:apmatik/app/core/constant/string_constants.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
@@ -47,7 +45,7 @@ extension ApiExtension on Future<Response<dynamic>> {
   }
 }
 
-extension ControllerResponseExtension on Future<dynamic>  {
+extension ControllerResponseExtension on Future<dynamic> {
   Future getResponse<T>(Function(dynamic) responseData) async {
     //  showProgressBar();
 
@@ -62,7 +60,7 @@ extension ControllerResponseExtension on Future<dynamic>  {
       } else {
         message = response.apiError!.errorMessage!;
       }
-    
+
       showSnackBar("Error Message ", message, Colors.black, false, "error");
     }
   }

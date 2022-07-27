@@ -1,4 +1,4 @@
-import 'package:apmatik_app/app/core/base/base_controller.dart';
+import 'package:apmatik/app/core/base/base_controller.dart';
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:get/get.dart';
 

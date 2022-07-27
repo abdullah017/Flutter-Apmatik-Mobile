@@ -1,4 +1,4 @@
-package com.example.appmatik
+package com.oncutech.apmatik
 
 import io.flutter.embedding.android.FlutterActivity
 

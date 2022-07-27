@@ -1,4 +1,4 @@
-import 'package:apmatik_app/app/core/constant/regexp_constants.dart';
+import 'package:apmatik/app/core/constant/regexp_constants.dart';
 import 'package:get/get.dart';
 
 extension StringValidatorExtensions on String {
@@ -114,7 +114,7 @@ extension StringValidatorExtensions on String {
     return null;
   }
 
-    ///  Apartman Adı giriş alanı için [Onaylama] kontrolü
+  ///  Apartman Adı giriş alanı için [Onaylama] kontrolü
   String? validateApartmenName(String? value) {
     if (value == null || value.isEmpty) {
       return 'Lütfen Apartman adı alanını doldurun.';

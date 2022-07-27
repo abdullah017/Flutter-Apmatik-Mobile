@@ -3,7 +3,7 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:apmatik_app/app/core/constant/string_constants.dart';
+import 'package:apmatik/app/core/constant/string_constants.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -28,8 +28,6 @@ class Utilities {
       throw 'Could not launch $url';
     }
   }
-
-
 
   String moneyFormater(String value) {
     if (value == null || value == 'null') {

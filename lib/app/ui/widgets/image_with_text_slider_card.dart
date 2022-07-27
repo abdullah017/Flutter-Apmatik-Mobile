@@ -1,7 +1,6 @@
-import 'package:apmatik_app/app/core/constant/color_constants.dart';
-import 'package:apmatik_app/app/ui/style/text_style.dart';
+import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:flutter/material.dart';
-
 
 class ImageWithTextSliderCard extends StatelessWidget {
   final String imageTitle;

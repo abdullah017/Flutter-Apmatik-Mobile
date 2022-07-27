@@ -1,11 +1,11 @@
-import 'package:apmatik_app/app/core/base/base_view.dart';
-import 'package:apmatik_app/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/base/base_view.dart';
+import 'package:apmatik/app/core/constant/color_constants.dart';
 
-import 'package:apmatik_app/app/ui/view/auth/login/login_controller.dart';
-import 'package:apmatik_app/app/ui/widgets/custom_appbar.dart';
-import 'package:apmatik_app/app/ui/widgets/custom_elevated_button.dart';
-import 'package:apmatik_app/app/ui/widgets/custom_page_title.dart';
-import 'package:apmatik_app/app/ui/widgets/custom_textformfield.dart';
+import 'package:apmatik/app/ui/view/auth/login/login_controller.dart';
+import 'package:apmatik/app/ui/widgets/custom_appbar.dart';
+import 'package:apmatik/app/ui/widgets/custom_elevated_button.dart';
+import 'package:apmatik/app/ui/widgets/custom_page_title.dart';
+import 'package:apmatik/app/ui/widgets/custom_textformfield.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
