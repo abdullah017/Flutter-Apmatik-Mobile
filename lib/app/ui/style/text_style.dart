@@ -73,7 +73,14 @@ class AppTextStyle {
         fontStyle: FontStyle.normal,
         color: color);
   }
-
+  TextStyle getSfProDisplayRegular_H7(Color color) {
+    return TextStyle(
+        fontFamily: 'SF Pro',
+        fontSize: 8.sp,
+        fontWeight: FontWeight.w400,
+        fontStyle: FontStyle.normal,
+        color: color);
+  }
   TextStyle getSfProDisplayRegular_Italic_H6(Color color) {
     return TextStyle(
         fontFamily: 'SF Pro',
