@@ -6,10 +6,9 @@ import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/view/profile/edit_profile/edit_profile_controller.dart';
 import 'package:apmatik/app/ui/widgets/custom_appbar.dart';
+import 'package:apmatik/app/ui/widgets/custom_cupertinoswitch.dart';
 import 'package:apmatik/app/ui/widgets/custom_elevated_button.dart';
 import 'package:dropdown_search/dropdown_search.dart';
-import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -253,29 +252,12 @@ class EditProfileView extends BaseView<EditProfileController> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text('Beni Diğer Sakinlere Göster'),
-                    Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                              color: CupertinoColors.activeOrange, width: 2),
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
-                      child: SizedBox(
-                        width: 33.w,
-                        height: 17.h,
-                        child: Transform.scale(
-                          transformHitTests: false,
-                          scale: .7,
-                          child: CupertinoSwitch(
-                            value: controller.toggle,
-                            trackColor: Colors.transparent,
-                            onChanged: (value) {
-                              controller.toggle = value;
-                              controller.update();
-                            },
-                            activeColor: Colors.transparent,
-                            thumbColor: CupertinoColors.activeOrange,
-                          ),
-                        ),
-                      ),
+                    CustomCupertinoSwitch(
+                      value: controller.toggle,
+                      onChanged: (value) {
+                        controller.toggle = value;
+                        controller.update();
+                      },
                     )
                   ],
                 ),
