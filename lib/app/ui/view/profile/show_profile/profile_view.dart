@@ -4,7 +4,7 @@ import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
-import 'package:apmatik/app/ui/view/profile/profile_controller.dart';
+import 'package:apmatik/app/ui/view/profile/show_profile/profile_controller.dart';
 import 'package:apmatik/app/ui/widgets/custom_elevated_button.dart';
 import 'package:apmatik/app/ui/widgets/login_appbar.dart';
 import 'package:apmatik/app/ui/widgets/plate_card.dart';

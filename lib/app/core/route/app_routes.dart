@@ -25,6 +25,7 @@ abstract class Routes {
   static const SELECTAPARTMENT = _Paths.SELECTAPARTMENT;
   static const MENU = _Paths.MENU;
   static const PROFILE = _Paths.PROFILE;
+  static const EDITPROFILE = _Paths.EDITPROFILE;
 }
 
 abstract class _Paths {
@@ -49,4 +50,5 @@ abstract class _Paths {
   static const SELECTAPARTMENT = '/selectapartment';
   static const MENU = '/menu';
   static const PROFILE = '/profile';
+  static const EDITPROFILE = '/edit_profile';
 }
