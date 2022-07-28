@@ -66,6 +66,9 @@ class CustomLoginUserAppBar extends StatelessWidget
           ),
           actions: [
             CustonNotificationIcon(
+              onTap: () {
+                Get.toNamed('notifications');
+              },
               iconData: Icons.notifications_none,
             ),
             // IconButton(
