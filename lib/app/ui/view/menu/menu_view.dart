@@ -23,53 +23,85 @@ class MenuView extends BaseView<MenuController> {
             Container(
                 width: 350.w,
                 height:
-                    Get.width > 390 ? Get.height * 0.50.h : Get.height * 0.75.h,
+                    Get.width > 390 ? Get.height * 0.90.h : Get.height * 0.65.h,
                 child: Column(
                   children: [
                     buildMenuItemCard(
-                      () {},
+                      () {
+                        Get.toNamed('/profile');
+                      },
                       AppAssets.profile_icon,
                       'profile'.tr,
                       true,
                       appTextStyle.getSfProDisplaySemiBold_h6(AppColors.BLACK),
                     ),
+                    SizedBox(
+                      height: 5.h,
+                    ),
                     buildMenuItemCard(
-                      () {},
+                      () {
+                        Get.toNamed('/profile');
+                      },
                       AppAssets.car_icon,
                       'cars'.tr,
                       true,
                       appTextStyle.getSfProDisplaySemiBold_h6(AppColors.BLACK),
                     ),
+                    SizedBox(
+                      height: 5.h,
+                    ),
                     buildMenuItemCard(
-                      () {},
+                      () {
+                        Get.toNamed('/profile');
+                      },
                       AppAssets.setting_icon,
                       'fault'.tr,
                       true,
                       appTextStyle.getSfProDisplaySemiBold_h6(AppColors.BLACK),
                     ),
+                    SizedBox(
+                      height: 5.h,
+                    ),
                     buildMenuItemCard(
-                      () {},
+                      () {
+                        Get.toNamed('/profile');
+                      },
                       AppAssets.option_icon,
                       'preferences'.tr,
                       true,
                       appTextStyle.getSfProDisplaySemiBold_h6(AppColors.BLACK),
                     ),
+                    SizedBox(
+                      height: 5.h,
+                    ),
                     buildMenuItemCard(
-                      () {},
+                      () {
+                        Get.toNamed('/profile');
+                      },
                       AppAssets.new_add,
                       'newApartment'.tr,
                       true,
                       appTextStyle.getSfProDisplaySemiBold_h6(AppColors.BLACK),
                     ),
+                    SizedBox(
+                      height: 5.h,
+                    ),
                     buildMenuItemCard(
-                      () {},
+                      () {
+                        Get.toNamed('/profile');
+                      },
                       AppAssets.group_icon,
                       'managmentTeam'.tr,
                       true,
                       appTextStyle.getSfProDisplaySemiBold_h6(AppColors.BLACK),
                     ),
+                    SizedBox(
+                      height: 5.h,
+                    ),
                     buildMenuItemCard(
-                      () {},
+                      () {
+                        Get.toNamed('/profile');
+                      },
                       AppAssets.exit_icon,
                       'exit'.tr,
                       false,
@@ -106,23 +138,34 @@ class MenuView extends BaseView<MenuController> {
 
   Widget buildMenuItemCard(Function()? onTap, String icon, String menuName,
       bool arrowIconVisible, TextStyle? style) {
-    return InkWell(
-      onTap: () {},
-      child: Card(
-          child: ListTile(
-        leading: Image.asset(
-          icon,
-          width: 16,
-          height: 16,
-        ),
-        title: Text(
-          menuName,
-          style: style,
-        ),
-        trailing: Visibility(
+    return Container(
+      width: 350.w,
+      height: 40.h,
+      color: AppColors.WHITE,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Image.asset(icon),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(5.0),
+            child: Text(
+              menuName,
+              style: style,
+            ),
+          ),
+          Spacer(),
+          Visibility(
             visible: arrowIconVisible,
-            child: Image.asset(AppAssets.arrow_icon)),
-      )),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset(AppAssets.arrow_icon),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

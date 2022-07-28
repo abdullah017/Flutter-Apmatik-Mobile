@@ -33,7 +33,7 @@ class NotificationsView extends BaseView<NotificationsController> {
                       width: 350,
                       height: 66.h,
                       padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -76,7 +76,7 @@ class NotificationsView extends BaseView<NotificationsController> {
                       width: 350,
                       height: 66.h,
                       padding:
-                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
