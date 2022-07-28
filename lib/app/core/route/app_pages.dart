@@ -26,8 +26,10 @@ import 'package:apmatik/app/ui/view/home/home_binding.dart';
 import 'package:apmatik/app/ui/view/home/home_view.dart';
 import 'package:apmatik/app/ui/view/menu/menu_binding.dart';
 import 'package:apmatik/app/ui/view/menu/menu_view.dart';
-import 'package:apmatik/app/ui/view/profile/profile_binding.dart';
-import 'package:apmatik/app/ui/view/profile/profile_view.dart';
+import 'package:apmatik/app/ui/view/profile/edit_profile/edit_profile_binding.dart';
+import 'package:apmatik/app/ui/view/profile/edit_profile/edit_profile_view.dart';
+import 'package:apmatik/app/ui/view/profile/show_profile/profile_binding.dart';
+import 'package:apmatik/app/ui/view/profile/show_profile/profile_view.dart';
 
 import 'package:apmatik/app/ui/view/splash/splah_view.dart';
 import 'package:apmatik/app/ui/view/splash/splash_binding.dart';
@@ -38,7 +40,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.PROFILE;
+  static const INITIAL = Routes.EDITPROFILE;
   static const HOME = Routes.PROFILE;
   static final routes = [
     GetPage(
@@ -120,6 +122,11 @@ class AppPages {
       name: _Paths.PROFILE,
       page: () => ProfileView(),
       binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.EDITPROFILE,
+      page: () => EditProfileView(),
+      binding: EditProfileBinding(),
     ),
   ];
 }

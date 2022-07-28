@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -11,7 +12,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Size get preferredSize =>
-      Get.width >= 390 ? Size.fromHeight(0.10.sw) : Size.fromHeight(0.20.sw);
+      Get.width >= 390 ? Size.fromHeight(0.1.sw) : Size.fromHeight(0.15.sw);
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +75,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           //       )
           //     :
           AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.WHITE,
         leadingWidth: double.infinity,
         elevation: 0,
         toolbarHeight: preferredSize.height,
