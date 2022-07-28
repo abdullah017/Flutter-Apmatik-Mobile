@@ -32,6 +32,8 @@ import 'package:apmatik/app/ui/view/profile/edit_profile/edit_profile_binding.da
 import 'package:apmatik/app/ui/view/profile/edit_profile/edit_profile_view.dart';
 import 'package:apmatik/app/ui/view/profile/show_profile/profile_binding.dart';
 import 'package:apmatik/app/ui/view/profile/show_profile/profile_view.dart';
+import 'package:apmatik/app/ui/view/settings/settings_binding.dart';
+import 'package:apmatik/app/ui/view/settings/settings_view.dart';
 
 import 'package:apmatik/app/ui/view/splash/splah_view.dart';
 import 'package:apmatik/app/ui/view/splash/splash_binding.dart';
@@ -42,7 +44,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.NOTIFICATIONS;
+  static const INITIAL = Routes.SETTINGS;
   static const HOME = Routes.PROFILE;
   static final routes = [
     GetPage(
@@ -134,6 +136,11 @@ class AppPages {
       name: _Paths.NOTIFICATIONS,
       page: () => NotificationsView(),
       binding: NotificationsBinding(),
+    ),
+    GetPage(
+      name: _Paths.SETTINGS,
+      page: () => SettingsView(),
+      binding: SettingsBinding(),
     ),
   ];
 }
