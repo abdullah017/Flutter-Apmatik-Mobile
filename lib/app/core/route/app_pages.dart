@@ -1,3 +1,5 @@
+import 'package:apmatik/app/ui/view/aggrement/aggrement_binding.dart';
+import 'package:apmatik/app/ui/view/aggrement/aggrement_view.dart';
 import 'package:apmatik/app/ui/view/apartment/add_apartment/add_apertment_binding.dart';
 import 'package:apmatik/app/ui/view/apartment/add_apartment/add_apertment_view.dart';
 import 'package:apmatik/app/ui/view/apartment/qr/qr_binding.dart';
@@ -32,8 +34,10 @@ import 'package:apmatik/app/ui/view/profile/edit_profile/edit_profile_binding.da
 import 'package:apmatik/app/ui/view/profile/edit_profile/edit_profile_view.dart';
 import 'package:apmatik/app/ui/view/profile/show_profile/profile_binding.dart';
 import 'package:apmatik/app/ui/view/profile/show_profile/profile_view.dart';
-import 'package:apmatik/app/ui/view/settings/settings_binding.dart';
-import 'package:apmatik/app/ui/view/settings/settings_view.dart';
+import 'package:apmatik/app/ui/view/settings/languages/languages_binding.dart';
+import 'package:apmatik/app/ui/view/settings/languages/languages_view.dart';
+import 'package:apmatik/app/ui/view/settings/preferences/preferences_binding.dart';
+import 'package:apmatik/app/ui/view/settings/preferences/preferences_view.dart';
 
 import 'package:apmatik/app/ui/view/splash/splah_view.dart';
 import 'package:apmatik/app/ui/view/splash/splash_binding.dart';
@@ -44,7 +48,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.BOTTOM;
+  static const INITIAL = Routes.PREFERENCES;
   static const HOME = Routes.PROFILE;
   static final routes = [
     GetPage(
@@ -138,9 +142,19 @@ class AppPages {
       binding: NotificationsBinding(),
     ),
     GetPage(
-      name: _Paths.SETTINGS,
-      page: () => SettingsView(),
-      binding: SettingsBinding(),
+      name: _Paths.PREFERENCES,
+      page: () => PreferencesView(),
+      binding: PreferencesBinding(),
+    ),
+    GetPage(
+      name: _Paths.AGGREMENT,
+      page: () => AggrementView(),
+      binding: AggrementBinding(),
+    ),
+    GetPage(
+      name: _Paths.LANGUAGES,
+      page: () => LanguagesView(),
+      binding: LanguagesBinding(),
     ),
   ];
 }

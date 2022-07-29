@@ -5,6 +5,8 @@ class BottomNavbarController extends BaseController {
   int current = 2;
   var tabIndex = 2.obs;
 
+
+
   tabChange(int index) {
     tabIndex.value = index;
     update();

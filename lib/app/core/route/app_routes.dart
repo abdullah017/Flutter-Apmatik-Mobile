@@ -27,7 +27,9 @@ abstract class Routes {
   static const PROFILE = _Paths.PROFILE;
   static const EDITPROFILE = _Paths.EDITPROFILE;
   static const NOTIFICATIONS = _Paths.NOTIFICATIONS;
-    static const SETTINGS = _Paths.SETTINGS;
+  static const PREFERENCES = _Paths.PREFERENCES;
+  static const AGGREMENT = _Paths.AGGREMENT;
+  static const LANGUAGES = _Paths.LANGUAGES;
 }
 
 abstract class _Paths {
@@ -54,5 +56,7 @@ abstract class _Paths {
   static const PROFILE = '/profile';
   static const EDITPROFILE = '/edit_profile';
   static const NOTIFICATIONS = '/notifications';
-    static const SETTINGS = '/settings';
+  static const PREFERENCES = '/preferences';
+  static const AGGREMENT = '/aggrement';
+  static const LANGUAGES = '/languages';
 }

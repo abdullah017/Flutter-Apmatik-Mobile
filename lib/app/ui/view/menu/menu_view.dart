@@ -23,12 +23,12 @@ class MenuView extends BaseView<MenuController> {
             Container(
                 width: 350.w,
                 height:
-                    Get.width > 390 ? Get.height * 0.90.h : Get.height * 0.65.h,
+                    Get.width > 390 ? Get.height * 0.90.h : Get.height * 0.50.h,
                 child: Column(
                   children: [
                     buildMenuItemCard(
                       () {
-                        Get.toNamed('/profile');
+                        Get.toNamed('menu/profile');
                       },
                       AppAssets.profile_icon,
                       'profile'.tr,
@@ -112,7 +112,7 @@ class MenuView extends BaseView<MenuController> {
             Container(
               width: 350.w,
               height: 75.h,
-              color: AppColors.WHITE,
+              color: Colors.transparent,
               child: Card(
                 elevation: 5,
                 child: ListTile(
@@ -138,33 +138,36 @@ class MenuView extends BaseView<MenuController> {
 
   Widget buildMenuItemCard(Function()? onTap, String icon, String menuName,
       bool arrowIconVisible, TextStyle? style) {
-    return Container(
-      width: 350.w,
-      height: 40.h,
-      color: AppColors.WHITE,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Image.asset(icon),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Text(
-              menuName,
-              style: style,
-            ),
-          ),
-          Spacer(),
-          Visibility(
-            visible: arrowIconVisible,
-            child: Padding(
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        width: 350.w,
+        height: 40.h,
+        color: AppColors.WHITE,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.asset(AppAssets.arrow_icon),
+              child: Image.asset(icon),
             ),
-          )
-        ],
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Text(
+                menuName,
+                style: style,
+              ),
+            ),
+            Spacer(),
+            Visibility(
+              visible: arrowIconVisible,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset(AppAssets.arrow_icon),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
