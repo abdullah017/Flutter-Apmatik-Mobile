@@ -1,6 +1,6 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 
-class SettingsController extends BaseController {
+class PreferencesController extends BaseController {
   bool paySwitch = true;
   bool systemSwitch = true;
   bool advantageSwitch = false;

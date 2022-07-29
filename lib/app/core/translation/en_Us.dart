@@ -98,4 +98,16 @@ const Map<String, String> en = {
   'newApartment': 'New Apartment Entrance',
   'managmentTeam': 'Management Staff',
   'exit': 'Exit',
+  'turkish': 'Turkish',
+  'english': 'English',
+  'languageSettings': 'Language Settings',
+  'upPassword': 'Update Password',
+  'notification': 'Notifications',
+  'payments': 'Payments',
+  'system': 'system',
+  'advantages': 'Advantages',
+  'userAggrements': 'User Agreement',
+  'privateAggrements': 'Privacy Agreement',
+  'feedBack': 'Feedback',
+  'about': 'About'
 };

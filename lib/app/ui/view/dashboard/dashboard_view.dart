@@ -12,15 +12,14 @@ import 'package:apmatik/app/ui/widgets/login_appbar.dart';
 import 'package:apmatik/app/ui/widgets/ticket_card.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class DashBoardView extends BaseView<DashBoardController> {
-  GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
   @override
   Widget vBuilder() => Scaffold(
         backgroundColor: AppColors.PAGEBACKGROUND,
         appBar: CustomLoginUserAppBar(),
-        // ignore: invalid_use_of_protected_member
         bottomSheet: controller.duyuru.isNotEmpty
             ? BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
@@ -91,13 +90,13 @@ class DashBoardView extends BaseView<DashBoardController> {
                 ),
               )
             : null,
-        key: _scaffoldKey,
+        key: controller.scaffoldKey,
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              height: 260.0,
+              height: 260.0.h,
               child: Stack(
                 children: <Widget>[
                   Container(
@@ -110,9 +109,9 @@ class DashBoardView extends BaseView<DashBoardController> {
                     left: 0.0,
                     right: 0.0,
                     child: Container(
-                      width: 350,
-                      height: 240,
-                      padding: EdgeInsets.symmetric(horizontal: 20.0),
+                      width: 350.w,
+                      height: 240.h,
+                      padding: EdgeInsets.symmetric(horizontal: 20.0.w),
                       child: DecoratedBox(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(1.0),
@@ -136,8 +135,8 @@ class DashBoardView extends BaseView<DashBoardController> {
                                 trailing: Transform.translate(
                                   offset: Offset(30, 0),
                                   child: CustomElevatedButton(
-                                      width: 90,
-                                      height: 25,
+                                      width: 90.w,
+                                      height: 25.h,
                                       onPressed: () {},
                                       child: Text(
                                         'Hepsini Öde',
@@ -157,39 +156,11 @@ class DashBoardView extends BaseView<DashBoardController> {
                                 physics: NeverScrollableScrollPhysics(),
                                 itemCount: 3,
                                 itemBuilder: (context, index) {
-                                  return ListTile(
-                                    minVerticalPadding: 0,
-                                    minLeadingWidth: 0,
-                                    dense: true,
-                                    title: Text(
-                                      'Elektrik Borcu',
-                                      style: appTextStyle
-                                          .getSfProDisplayMedium_little(
-                                              AppColors.BLACK),
-                                    ),
-                                    subtitle: Text(
-                                      '22/02/2022',
-                                      style: appTextStyle
-                                          .getSfProDisplayMedium_little(
-                                              AppColors.GREY),
-                                    ),
-                                    trailing: Text(
-                                      '260.00₺',
-                                      style: appTextStyle
-                                          .getSfProDisplayMedium_little(
-                                              AppColors.ORANGE),
-                                    ),
-                                  );
+                                  return buildDeptCard();
                                 },
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                  'Apartman borç bilgileri apartman yöneticileri tarafından sağlanmaktadır.',
-                                  style: appTextStyle
-                                      .getSfProDisplayLight_H6(AppColors.GREY)),
-                            )
+                            buildMainPaymentCardInfoText()
                           ],
                         ),
                       ),
@@ -198,14 +169,7 @@ class DashBoardView extends BaseView<DashBoardController> {
                 ],
               ),
             ),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
-              child: Text(
-                'Son Ödemelerim',
-                style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
-              ),
-            ),
+            buildLastPaymentsTitleText(),
             Expanded(
               child: ListView.builder(
                 shrinkWrap: true,
@@ -215,110 +179,9 @@ class DashBoardView extends BaseView<DashBoardController> {
                     padding: const EdgeInsets.all(3.0),
                     child: InkWell(
                       onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (context) => BackdropFilter(
-                            filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-                            child: Container(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  FlutterTicketWidget(
-                                      width: 270,
-                                      height: 270,
-                                      child: Material(
-                                        child: Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            SizedBox(
-                                              height: 20,
-                                            ),
-                                            Text('260.00₺',
-                                                style: appTextStyle
-                                                    .getSfProDisplayBold_h6(
-                                                        AppColors.ORANGE)),
-                                            SizedBox(
-                                              height: 20,
-                                            ),
-                                            MySeparator(
-                                              color: AppColors.GREY,
-                                            ),
-                                            ListTile(
-                                              dense: true,
-                                              title: Text(
-                                                'Tarih',
-                                                style: appTextStyle
-                                                    .getSfProDisplayRegular_H6(
-                                                        AppColors.BLACK),
-                                              ),
-                                              subtitle: Text(
-                                                '12/02/2022 12:34',
-                                                style: appTextStyle
-                                                    .get_SfProRounded_Medium_H5(
-                                                        AppColors.BLACK),
-                                              ),
-                                            ),
-                                            ListTile(
-                                              dense: true,
-                                              title: Text(
-                                                'Ödeme Metodu',
-                                                style: appTextStyle
-                                                    .getSfProDisplayRegular_H6(
-                                                        AppColors.BLACK),
-                                              ),
-                                              subtitle: Text(
-                                                'Kredi Kartı',
-                                                style: appTextStyle
-                                                    .get_SfProRounded_Medium_H5(
-                                                        AppColors.BLACK),
-                                              ),
-                                            ),
-                                            ListTile(
-                                              dense: true,
-                                              title: Text(
-                                                'Durum',
-                                                style: appTextStyle
-                                                    .getSfProDisplayRegular_H6(
-                                                        AppColors.BLACK),
-                                              ),
-                                              subtitle: Text(
-                                                'Ödeme Tamamlandı',
-                                                style: appTextStyle
-                                                    .get_SfProRounded_Medium_H5(
-                                                        AppColors.BLACK),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      )),
-                                ],
-                              ),
-                            ),
-                          ),
-                        );
+                        buildShowPaymentDetailCard(context);
                       },
-                      child: Card(
-                        margin: EdgeInsets.symmetric(horizontal: 10),
-                        child: ListTile(
-                          dense: true,
-                          title: Text(
-                            'Apartman Aidatı',
-                            style: appTextStyle
-                                .getSfProDisplayMedium_little(AppColors.BLACK),
-                          ),
-                          subtitle: Text(
-                            '22/02/2022',
-                            style: appTextStyle
-                                .getSfProDisplayMedium_little(AppColors.GREY),
-                          ),
-                          trailing: Text(
-                            '260.00₺',
-                            style: appTextStyle
-                                .getSfProDisplayMedium_little(AppColors.ORANGE),
-                          ),
-                        ),
-                      ),
+                      child: buildLastPaymentsCard(),
                     ),
                   );
                 },
@@ -327,4 +190,144 @@ class DashBoardView extends BaseView<DashBoardController> {
           ],
         ),
       );
+
+  ListTile buildDeptCard() {
+    return ListTile(
+      minVerticalPadding: 0,
+      minLeadingWidth: 0,
+      dense: true,
+      title: Text(
+        'Elektrik Borcu',
+        style: appTextStyle.getSfProDisplayMedium_little(AppColors.BLACK),
+      ),
+      subtitle: Text(
+        '22/02/2022',
+        style: appTextStyle.getSfProDisplayMedium_little(AppColors.GREY),
+      ),
+      trailing: Text(
+        '260.00₺',
+        style: appTextStyle.getSfProDisplayMedium_little(AppColors.ORANGE),
+      ),
+    );
+  }
+
+  Padding buildMainPaymentCardInfoText() {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text(
+          'Apartman borç bilgileri apartman yöneticileri tarafından sağlanmaktadır.',
+          style: appTextStyle.getSfProDisplayLight_H6(AppColors.GREY)),
+    );
+  }
+
+  Padding buildLastPaymentsTitleText() {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 8.0.w, vertical: 8.0.h),
+      child: Text(
+        'Son Ödemelerim',
+        style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
+      ),
+    );
+  }
+
+  Future<dynamic> buildShowPaymentDetailCard(BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) => BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
+        child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              buildPaymentsDetailCard(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  FlutterTicketWidget buildPaymentsDetailCard() {
+    return FlutterTicketWidget(
+        width: 270.w,
+        height: 270.h,
+        child: Material(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 20.h,
+              ),
+              Text('260.00₺',
+                  style: appTextStyle.getSfProDisplayBold_h6(AppColors.ORANGE)),
+              SizedBox(
+                height: 20,
+              ),
+              MySeparator(
+                color: AppColors.GREY,
+              ),
+              ListTile(
+                dense: true,
+                title: Text(
+                  'Tarih',
+                  style:
+                      appTextStyle.getSfProDisplayRegular_H6(AppColors.BLACK),
+                ),
+                subtitle: Text(
+                  '12/02/2022 12:34',
+                  style:
+                      appTextStyle.get_SfProRounded_Medium_H5(AppColors.BLACK),
+                ),
+              ),
+              ListTile(
+                dense: true,
+                title: Text(
+                  'Ödeme Metodu',
+                  style:
+                      appTextStyle.getSfProDisplayRegular_H6(AppColors.BLACK),
+                ),
+                subtitle: Text(
+                  'Kredi Kartı',
+                  style:
+                      appTextStyle.get_SfProRounded_Medium_H5(AppColors.BLACK),
+                ),
+              ),
+              ListTile(
+                dense: true,
+                title: Text(
+                  'Durum',
+                  style:
+                      appTextStyle.getSfProDisplayRegular_H6(AppColors.BLACK),
+                ),
+                subtitle: Text(
+                  'Ödeme Tamamlandı',
+                  style:
+                      appTextStyle.get_SfProRounded_Medium_H5(AppColors.BLACK),
+                ),
+              ),
+            ],
+          ),
+        ));
+  }
+
+  Card buildLastPaymentsCard() {
+    return Card(
+      margin: EdgeInsets.symmetric(horizontal: 10),
+      child: ListTile(
+        dense: true,
+        title: Text(
+          'Apartman Aidatı',
+          style: appTextStyle.getSfProDisplayMedium_little(AppColors.BLACK),
+        ),
+        subtitle: Text(
+          '22/02/2022',
+          style: appTextStyle.getSfProDisplayMedium_little(AppColors.GREY),
+        ),
+        trailing: Text(
+          '260.00₺',
+          style: appTextStyle.getSfProDisplayMedium_little(AppColors.ORANGE),
+        ),
+      ),
+    );
+  }
 }

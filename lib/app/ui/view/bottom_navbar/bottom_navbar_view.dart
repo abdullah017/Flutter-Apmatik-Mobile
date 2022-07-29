@@ -53,7 +53,7 @@ class BottomNavbarView extends BaseView<BottomNavbarController> {
             BlankView(),
             HomeView(),
             BlankView(),
-            MenuView()
+            MenuView(),
           ],
         ),
       );

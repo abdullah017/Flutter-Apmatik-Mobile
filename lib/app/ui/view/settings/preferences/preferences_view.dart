@@ -1,13 +1,14 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
-import 'package:apmatik/app/ui/view/settings/settings_controller.dart';
+import 'package:apmatik/app/ui/view/settings/preferences/preferences_controller.dart';
 import 'package:apmatik/app/ui/widgets/custom_appbar.dart';
 import 'package:apmatik/app/ui/widgets/custom_cupertinoswitch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
-class SettingsView extends BaseView<SettingsController> {
+class PreferencesView extends BaseView<PreferencesController> {
   @override
   Widget vBuilder() => Scaffold(
       backgroundColor: AppColors.PAGEBACKGROUND,
@@ -15,18 +16,20 @@ class SettingsView extends BaseView<SettingsController> {
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
         children: [
-          buildSettingsCard('Dil ayarları'),
+          buildSettingsCard('languageSettings'.tr, () {
+            Get.toNamed('languages');
+          }),
           SizedBox(
             height: 5.h,
           ),
-          buildSettingsCard('Dil ayarları'),
+          buildSettingsCard('upPassword'.tr, () {}),
           SizedBox(
             height: 15.h,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
-              'Bildirimler',
+              'notifications'.tr,
             ),
           ),
           Container(
@@ -44,19 +47,19 @@ class SettingsView extends BaseView<SettingsController> {
           SizedBox(
             height: 15.h,
           ),
-          buildSettingsCard('Kullanıcı Sözleşmesi'),
+          buildSettingsCard('userAggrements'.tr, () {}),
           SizedBox(
             height: 5.h,
           ),
-          buildSettingsCard('Gizlilik Sözleşmesi'),
+          buildSettingsCard('privateAggrements'.tr, () {}),
           SizedBox(
             height: 5.h,
           ),
-          buildSettingsCard('Geri Bildirim'),
+          buildSettingsCard('feedBack'.tr, () {}),
           SizedBox(
             height: 5.h,
           ),
-          buildSettingsCard('Hakkında'),
+          buildSettingsCard('about'.tr, () {}),
         ],
       ));
 
@@ -67,7 +70,7 @@ class SettingsView extends BaseView<SettingsController> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            'Ödemeler',
+            'payments'.tr,
             style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
           ),
           CustomCupertinoSwitch(
@@ -87,7 +90,7 @@ class SettingsView extends BaseView<SettingsController> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            'Sistem',
+            'system'.tr,
             style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
           ),
           CustomCupertinoSwitch(
@@ -107,7 +110,7 @@ class SettingsView extends BaseView<SettingsController> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            'Avantajlar',
+            'advantages'.tr,
             style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
           ),
           CustomCupertinoSwitch(
@@ -120,23 +123,26 @@ class SettingsView extends BaseView<SettingsController> {
     );
   }
 
-  Container buildSettingsCard(String settingName) {
-    return Container(
-      width: 350.w,
-      height: 36.h,
-      padding: EdgeInsets.symmetric(
-        horizontal: 10.w,
-      ),
-      color: Colors.white,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            settingName,
-            style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
-          ),
-          Image.asset(AppAssets.arrow_icon)
-        ],
+  buildSettingsCard(String settingName, Function()? onTap) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        width: 350.w,
+        height: 36.h,
+        padding: EdgeInsets.symmetric(
+          horizontal: 10.w,
+        ),
+        color: Colors.white,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              settingName,
+              style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
+            ),
+            Image.asset(AppAssets.arrow_icon)
+          ],
+        ),
       ),
     );
   }

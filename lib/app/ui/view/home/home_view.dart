@@ -116,29 +116,5 @@ class HomeView extends BaseView<HomeController> {
           : Container(
               width: double.infinity,
               height: Get.height,
-              child: CommonView().buildNoApartmenRecord())
-
-      // commonPages.statusPage(
-      //     iconBackgroundColor: Colors.transparent,
-      //     iconColor: AppColors.BLACK,
-      //     buttonText: 'noApertmenRecordButton'.tr,
-      //     onPressed: () {
-      //       controller.box.write('hasApertmen', true);
-      //       controller.updateRecordState();
-      //       // controller.goLogin();
-      //     },
-      //     title: 'noApertmenRecord'.tr,
-      //     info: 'noApertmenRecordInfo'.tr,
-      //     icon: Icons.apartment,
-      //     showLogo: true,
-      //     showIssueButton: true)
-      );
+              child: CommonView().buildNoApartmenRecord()));
 }
-
-// _bottomNavbarItem() {
-//   return BottomNavigationBarItem(
-//       icon: Icon(
-//         Icons.home,
-//       ),
-//       label: 'HOME');
-// }
