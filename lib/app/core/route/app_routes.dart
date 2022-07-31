@@ -31,6 +31,7 @@ abstract class Routes {
   static const AGGREMENT = _Paths.AGGREMENT;
   static const LANGUAGES = _Paths.LANGUAGES;
   static const UPDATEPASSWORD = _Paths.UPDATEPASSWORD;
+  static const REPORT = _Paths.REPORT;
 }
 
 abstract class _Paths {
@@ -61,4 +62,5 @@ abstract class _Paths {
   static const AGGREMENT = '/aggrement';
   static const LANGUAGES = '/languages';
   static const UPDATEPASSWORD = '/update_password';
+  static const REPORT = '/report';
 }

@@ -32,6 +32,8 @@ import 'package:apmatik/app/ui/view/menu/menu_binding.dart';
 import 'package:apmatik/app/ui/view/menu/menu_view.dart';
 import 'package:apmatik/app/ui/view/notifications/notifications_binding.dart';
 import 'package:apmatik/app/ui/view/notifications/notifications_view.dart';
+import 'package:apmatik/app/ui/view/problem_report/report_binding.dart';
+import 'package:apmatik/app/ui/view/problem_report/report_view.dart';
 import 'package:apmatik/app/ui/view/profile/edit_profile/edit_profile_binding.dart';
 import 'package:apmatik/app/ui/view/profile/edit_profile/edit_profile_view.dart';
 import 'package:apmatik/app/ui/view/profile/show_profile/profile_binding.dart';
@@ -50,7 +52,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.UPDATEPASSWORD;
+  static const INITIAL = Routes.REPORT;
   static const HOME = Routes.PROFILE;
   static final routes = [
     GetPage(
@@ -162,6 +164,11 @@ class AppPages {
       name: _Paths.UPDATEPASSWORD,
       page: () => UpdatePasswordView(),
       binding: UpdatePasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.REPORT,
+      page: () => ReportView(),
+      binding: ReportBinding(),
     ),
   ];
 }
