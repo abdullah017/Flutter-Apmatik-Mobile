@@ -1,3 +1,5 @@
+import 'package:apmatik/app/ui/view/about/about_binding.dart';
+import 'package:apmatik/app/ui/view/about/about_view.dart';
 import 'package:apmatik/app/ui/view/aggrement/aggrement_binding.dart';
 import 'package:apmatik/app/ui/view/aggrement/aggrement_view.dart';
 import 'package:apmatik/app/ui/view/apartment/add_apartment/add_apertment_binding.dart';
@@ -52,7 +54,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.REPORT;
+  static const INITIAL = Routes.ABOUT;
   static const HOME = Routes.PROFILE;
   static final routes = [
     GetPage(
@@ -169,6 +171,11 @@ class AppPages {
       name: _Paths.REPORT,
       page: () => ReportView(),
       binding: ReportBinding(),
+    ),
+    GetPage(
+      name: _Paths.ABOUT,
+      page: () => AboutView(),
+      binding: AboutBinding(),
     ),
   ];
 }

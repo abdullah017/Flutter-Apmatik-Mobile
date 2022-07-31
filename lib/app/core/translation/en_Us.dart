@@ -44,6 +44,7 @@ const Map<String, String> en = {
   'maritalStatus': 'Marital Status',
   'childStatus': 'child Status',
   'job': 'Your Job',
+  'nameSurname': 'Name Surname',
   'jobInfo':
       'It is requested to inform you about the privileges that will be offered to you according to your profession and to inform the apartment management.',
   'pet': 'I Have a Pet',
@@ -110,5 +111,11 @@ const Map<String, String> en = {
   'privateAggrements': 'Privacy Agreement',
   'feedBack': 'Feedback',
   'about': 'About',
+  'description': 'Description',
+  'report': 'Report Problem',
+  'causeProblem': 'Cause Of The Problem',
   'resetPassword': 'Reset Password',
+  'appVersion': 'App Version',
+  'userId': 'User ID',
+  'contact': 'Apmatik Contact'
 };

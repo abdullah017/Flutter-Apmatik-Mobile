@@ -9,6 +9,7 @@ import 'package:dropdown_search/dropdown_search.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class ReportView extends BaseView<ReportController> {
   @override
@@ -25,7 +26,7 @@ class ReportView extends BaseView<ReportController> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 5.h),
               child: Text(
-                'İsim Soyisim',
+                'nameSurname'.tr,
                 style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
               ),
             ),
@@ -57,7 +58,7 @@ class ReportView extends BaseView<ReportController> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 5.h),
               child: Text(
-                'Sorunun Sebebi',
+                'causeProblem'.tr,
                 style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
               ),
             ),
@@ -98,7 +99,7 @@ class ReportView extends BaseView<ReportController> {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 5.h),
               child: Text(
-                'Açıklama',
+                'description'.tr,
                 style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
               ),
             ),
