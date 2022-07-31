@@ -16,6 +16,8 @@ import 'package:apmatik/app/ui/view/auth/otp/otp_binding.dart';
 import 'package:apmatik/app/ui/view/auth/otp/otp_view.dart';
 import 'package:apmatik/app/ui/view/auth/register/register_binding.dart';
 import 'package:apmatik/app/ui/view/auth/register/register_view.dart';
+import 'package:apmatik/app/ui/view/auth/update_password/update_password_binding.dart';
+import 'package:apmatik/app/ui/view/auth/update_password/update_password_view.dart';
 import 'package:apmatik/app/ui/view/blank/blank_binding.dart';
 import 'package:apmatik/app/ui/view/blank/blank_view.dart';
 import 'package:apmatik/app/ui/view/bottom_navbar/bottom_navbar_binding.dart';
@@ -48,7 +50,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.PREFERENCES;
+  static const INITIAL = Routes.UPDATEPASSWORD;
   static const HOME = Routes.PROFILE;
   static final routes = [
     GetPage(
@@ -155,6 +157,11 @@ class AppPages {
       name: _Paths.LANGUAGES,
       page: () => LanguagesView(),
       binding: LanguagesBinding(),
+    ),
+    GetPage(
+      name: _Paths.UPDATEPASSWORD,
+      page: () => UpdatePasswordView(),
+      binding: UpdatePasswordBinding(),
     ),
   ];
 }

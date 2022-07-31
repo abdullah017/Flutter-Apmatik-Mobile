@@ -109,5 +109,6 @@ const Map<String, String> tr = {
   'userAggrements':'Kullanıcı Sözleşmesi',
   'privateAggrements':'Gizlilik Sözleşmesi',
   'feedBack':'Geri Bildirim',
-  'about':'Hakkında'
+  'about':'Hakkında',
+  'resetPassword':'Şifremi Sıfırla',
 };

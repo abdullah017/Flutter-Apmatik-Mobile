@@ -109,5 +109,6 @@ const Map<String, String> en = {
   'userAggrements': 'User Agreement',
   'privateAggrements': 'Privacy Agreement',
   'feedBack': 'Feedback',
-  'about': 'About'
+  'about': 'About',
+  'resetPassword': 'Reset Password',
 };
