@@ -6,16 +6,36 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class QuestionnaireCardWidget extends StatelessWidget {
+  final EdgeInsetsGeometry? margin;
+  final Widget? image;
+  final String? title;
+  final String? description;
+  final String? time;
+  final bool? buttonVisible;
+  final bool? tagVisible;
   const QuestionnaireCardWidget({
     Key? key,
+    this.margin,
+    this.image,
+    this.title,
+    this.description,
+    this.time,
+    this.buttonVisible = true,
+    this.tagVisible = true,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20),
+      margin: margin ?? EdgeInsets.symmetric(horizontal: 20),
       width: 350.w,
-      height: Get.width >= 390 ? 255.h : 305.h,
+      height: buttonVisible == true
+          ? Get.width >= 390
+              ? 255.h
+              : 305.h
+          : Get.width >= 390
+              ? 220.h
+              : 305.h,
       child: Card(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -23,26 +43,30 @@ class QuestionnaireCardWidget extends StatelessWidget {
           children: <Widget>[
             Stack(
               children: [
-                Image.asset(
-                  'assets/images/anket.png',
-                  width: 350.sm,
-                  height: 135.sm,
-                  fit: BoxFit.fill,
-                ),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Container(
-                    width: 70.w,
-                    height: 20.h,
-                    decoration: BoxDecoration(
-                        color: AppColors.ORANGE,
-                        borderRadius:
-                            BorderRadius.only(bottomLeft: Radius.circular(30))),
-                    child: Text(
-                      'Anket',
-                      textAlign: TextAlign.center,
-                      style: AppTextStyle()
-                          .getSfProDisplayRegular_H5(AppColors.WHITE),
+                image ??
+                    Image.asset(
+                      'assets/images/anket.png',
+                      width: margin == EdgeInsets.zero ? 400.sm : 350.sm,
+                      height: 135.sm,
+                      fit: BoxFit.fill,
+                    ),
+                Visibility(
+                  visible: tagVisible ?? true,
+                  child: Align(
+                    alignment: Alignment.topRight,
+                    child: Container(
+                      width: 70.w,
+                      height: 20.h,
+                      decoration: BoxDecoration(
+                          color: AppColors.ORANGE,
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(30))),
+                      child: Text(
+                        'Anket',
+                        textAlign: TextAlign.center,
+                        style: AppTextStyle()
+                            .getSfProDisplayRegular_H5(AppColors.WHITE),
+                      ),
                     ),
                   ),
                 )
@@ -57,13 +81,13 @@ class QuestionnaireCardWidget extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    'Apartman Boyanması',
+                    title ?? 'Apartman Boyanması',
                     style: AppTextStyle().get_SfProRounded_SemiBold_h5(
                       AppColors.BLACK,
                     ),
                   ),
                   Text(
-                    '8 saat önce',
+                    time ?? '8 saat önce',
                     style: AppTextStyle().getSfProDisplayRegular_Italic_H6(
                         AppColors.GREY_OPACITY),
                   ),
@@ -73,7 +97,8 @@ class QuestionnaireCardWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Apartman Boyanması için apartmanımızda anket başlamıştır. Hemen katılıp bizimle fikirlerini paylaş!',
+                    description ??
+                        'Apartman Boyanması için apartmanımızda anket başlamıştır. Hemen katılıp bizimle fikirlerini paylaş!',
                     style: AppTextStyle()
                         .getSfProDisplayRegular_H6(AppColors.BLACK),
                   ),
@@ -81,27 +106,30 @@ class QuestionnaireCardWidget extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0.w),
-              child: TextButton(
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 8.0.w, right: 8.0.w),
-                    child: Text("Detaylar",
-                        style: AppTextStyle()
-                            .getSfProDisplayRegular_H5(AppColors.ORANGE)),
-                  ),
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
-                        side: BorderSide(color: AppColors.ORANGE),
+            Visibility(
+              visible: buttonVisible!,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0.w),
+                child: TextButton(
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 8.0.w, right: 8.0.w),
+                      child: Text("Detaylar",
+                          style: AppTextStyle()
+                              .getSfProDisplayRegular_H5(AppColors.ORANGE)),
+                    ),
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5),
+                          side: BorderSide(color: AppColors.ORANGE),
+                        ),
+                      ),
+                      fixedSize: MaterialStateProperty.all<Size>(
+                        Size(89.w, 27.h),
                       ),
                     ),
-                    fixedSize: MaterialStateProperty.all<Size>(
-                      Size(89.w, 27.h),
-                    ),
-                  ),
-                  onPressed: () => null),
+                    onPressed: () => null),
+              ),
             ),
             SizedBox(
               height: 17.h,
