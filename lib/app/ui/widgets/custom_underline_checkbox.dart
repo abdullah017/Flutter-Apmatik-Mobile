@@ -29,7 +29,6 @@ class CustomUnderLineCheckBox extends StatelessWidget {
                 contentPadding: EdgeInsets.only(right: 1),
                 side: BorderSide(),
                 // fillColor: MaterialStateProperty.all(Colors.orange),
-                tristate: true,
                 value: value, //controller.isCheck.value,
                 onChanged: onChanged,
                 activeColor: AppColors.ORANGE,

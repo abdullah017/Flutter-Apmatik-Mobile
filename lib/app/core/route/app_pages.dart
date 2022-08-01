@@ -40,6 +40,8 @@ import 'package:apmatik/app/ui/view/profile/edit_profile/edit_profile_binding.da
 import 'package:apmatik/app/ui/view/profile/edit_profile/edit_profile_view.dart';
 import 'package:apmatik/app/ui/view/profile/show_profile/profile_binding.dart';
 import 'package:apmatik/app/ui/view/profile/show_profile/profile_view.dart';
+import 'package:apmatik/app/ui/view/questionnaire_detail/questionnaire_detail_binding.dart';
+import 'package:apmatik/app/ui/view/questionnaire_detail/questionnaire_detail_view.dart';
 import 'package:apmatik/app/ui/view/settings/languages/languages_binding.dart';
 import 'package:apmatik/app/ui/view/settings/languages/languages_view.dart';
 import 'package:apmatik/app/ui/view/settings/preferences/preferences_binding.dart';
@@ -54,7 +56,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.SPLASH;
+  static const INITIAL = Routes.QUESTIONNAIRE;
   static const HOME = Routes.PROFILE;
   static final routes = [
     GetPage(
@@ -176,6 +178,11 @@ class AppPages {
       name: _Paths.ABOUT,
       page: () => AboutView(),
       binding: AboutBinding(),
+    ),
+    GetPage(
+      name: _Paths.QUESTIONNAIRE,
+      page: () => QuestionnaireDetailView(),
+      binding: QuestionnaireDetailBinding(),
     ),
   ];
 }
