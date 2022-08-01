@@ -3,8 +3,8 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/view/problem_report/report_controller.dart';
-import 'package:apmatik/app/ui/widgets/custom_appbar.dart';
-import 'package:apmatik/app/ui/widgets/custom_elevated_button.dart';
+import 'package:apmatik/app/ui/widgets/custom_appbars/custom_appbar.dart';
+import 'package:apmatik/app/ui/widgets/custom_buttons/custom_elevated_button.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 
 import 'package:flutter/material.dart';

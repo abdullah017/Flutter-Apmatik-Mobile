@@ -4,10 +4,11 @@ import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
+import 'package:apmatik/app/ui/view/bottom_navbar/bottom_navbar_view.dart';
 import 'package:apmatik/app/ui/view/profile/show_profile/profile_controller.dart';
-import 'package:apmatik/app/ui/widgets/custom_elevated_button.dart';
-import 'package:apmatik/app/ui/widgets/login_appbar.dart';
-import 'package:apmatik/app/ui/widgets/plate_card.dart';
+import 'package:apmatik/app/ui/widgets/custom_buttons/custom_elevated_button.dart';
+import 'package:apmatik/app/ui/widgets/custom_appbars/login_appbar.dart';
+import 'package:apmatik/app/ui/widgets/custom_cards/plate_card.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,7 +19,6 @@ class ProfileView extends BaseView<ProfileController> {
   Widget vBuilder() => Scaffold(
         backgroundColor: AppColors.PAGEBACKGROUND,
         appBar: CustomLoginUserAppBar(),
-       
         body: buildView(),
       );
 
@@ -324,7 +324,7 @@ class ProfileView extends BaseView<ProfileController> {
             SizedBox(
               height: 20.h,
             ),
-      
+           
           ],
         ),
       ],

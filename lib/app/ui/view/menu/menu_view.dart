@@ -5,7 +5,7 @@ import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/view/menu/menu_controller.dart';
-import 'package:apmatik/app/ui/widgets/login_appbar.dart';
+import 'package:apmatik/app/ui/widgets/custom_appbars/login_appbar.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -28,7 +28,7 @@ class MenuView extends BaseView<MenuController> {
                   children: [
                     buildMenuItemCard(
                       () {
-                        Get.toNamed('menu/profile');
+                        Get.toNamed('profile');
                       },
                       AppAssets.profile_icon,
                       'profile'.tr,
