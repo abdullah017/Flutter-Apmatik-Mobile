@@ -40,9 +40,6 @@ class BaseController extends GetxController
   ScrollController scrollController = ScrollController();
   PageController pageController = PageController();
   FormValidationHelper formValidationHelper = FormValidationHelper();
-  //NetworkConnectivity networkConnectivity = NetworkConnectivity.instance;
-  // ConnectionStatusSingleton connectionStatusSingleton =
-  //     ConnectionStatusSingleton.getInstance();
   StreamSubscription? connectionChangeStream;
   CheckNetworkConnection connection = CheckNetworkConnection.instance;
   set setEnableScrollController(bool value) => withScrollController = value;

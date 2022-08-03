@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/view/about/about_controller.dart';
@@ -7,6 +9,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class AboutView extends BaseView<AboutController> {
+  AboutView({Key? key})
+      : super(
+          key: key,
+          navBarHide: true, // false
+        );
+
   @override
   Widget vBuilder() => Scaffold(
       backgroundColor: AppColors.PAGEBACKGROUND,

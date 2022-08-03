@@ -15,6 +15,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class AddApertmentView extends BaseView<AddApertmentController> {
+    AddApertmentView({Key? key})
+      : super(
+          key: key,
+          navBarHide: true, // false
+        );
   @override
   Widget vBuilder() => Scaffold(
       backgroundColor: AppColors.PAGEBACKGROUND,

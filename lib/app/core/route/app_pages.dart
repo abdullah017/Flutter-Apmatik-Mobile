@@ -22,8 +22,6 @@ import 'package:apmatik/app/ui/view/auth/update_password/update_password_binding
 import 'package:apmatik/app/ui/view/auth/update_password/update_password_view.dart';
 import 'package:apmatik/app/ui/view/blank/blank_binding.dart';
 import 'package:apmatik/app/ui/view/blank/blank_view.dart';
-import 'package:apmatik/app/ui/view/bottom_navbar/bottom_navbar_binding.dart';
-import 'package:apmatik/app/ui/view/bottom_navbar/bottom_navbar_view.dart';
 import 'package:apmatik/app/ui/view/common/common_binding.dart';
 import 'package:apmatik/app/ui/view/common/common_view.dart';
 import 'package:apmatik/app/ui/view/dashboard/dashboard_binding.dart';
@@ -49,6 +47,8 @@ import 'package:apmatik/app/ui/view/settings/preferences/preferences_view.dart';
 
 import 'package:apmatik/app/ui/view/splash/splah_view.dart';
 import 'package:apmatik/app/ui/view/splash/splash_binding.dart';
+import 'package:apmatik/app/ui/view/staff/staff_binding.dart';
+import 'package:apmatik/app/ui/view/staff/staff_view.dart';
 
 import 'package:get/get.dart';
 
@@ -56,8 +56,8 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.QUESTIONNAIRE;
-  static const HOME = Routes.PROFILE;
+  static const INITIAL = Routes.SPLASH;
+  static const HOME = Routes.ABOUT;
   static final routes = [
     GetPage(
       name: _Paths.SPLASH,
@@ -98,11 +98,6 @@ class AppPages {
       name: _Paths.BLANK,
       page: () => BlankView(),
       binding: BlankBinding(),
-    ),
-    GetPage(
-      name: _Paths.BOTTOM,
-      page: () => BottomNavbarView(),
-      binding: BottomNavbarBinding(),
     ),
     GetPage(
       name: _Paths.ADDAPERTMEN,
@@ -183,6 +178,11 @@ class AppPages {
       name: _Paths.QUESTIONNAIRE,
       page: () => QuestionnaireDetailView(),
       binding: QuestionnaireDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.STAFF,
+      page: () => StaffView(),
+      binding: StaffBinding(),
     ),
   ];
 }

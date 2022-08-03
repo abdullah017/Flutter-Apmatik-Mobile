@@ -5,6 +5,7 @@ import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/view/menu/menu_controller.dart';
+
 import 'package:apmatik/app/ui/widgets/custom_appbars/login_appbar.dart';
 
 import 'package:flutter/material.dart';
@@ -12,134 +13,159 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class MenuView extends BaseView<MenuController> {
+  MenuView({Key? key})
+      : super(
+          key: key,
+          navBarHide: false, // false
+        );
+
   @override
   Widget vBuilder() => Scaffold(
-      backgroundColor: AppColors.PAGEBACKGROUND,
-      appBar: CustomLoginUserAppBar(),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 20.h),
-        child: ListView(
-          children: [
-            Container(
+        backgroundColor: AppColors.PAGEBACKGROUND,
+        appBar: CustomLoginUserAppBar(),
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 20.h),
+          child: ListView(
+            children: [
+              Container(
+                  width: 350.w,
+                  height: Get.width > 390
+                      ? Get.height * 0.90.h
+                      : Get.height * 0.50.h,
+                  child: Column(
+                    children: [
+                      buildMenuItemCard(
+                        //içeriye falan hiç girmiyor
+                        () {},
+                        AppAssets.profile_icon,
+                        'profile'.tr,
+                        true,
+                        appTextStyle
+                            .getSfProDisplaySemiBold_h6(AppColors.BLACK),
+                      ),
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      buildMenuItemCard(
+                        () {
+                          Get.toNamed('/profile');
+                        },
+                        AppAssets.car_icon,
+                        'cars'.tr,
+                        true,
+                        appTextStyle
+                            .getSfProDisplaySemiBold_h6(AppColors.BLACK),
+                      ),
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      buildMenuItemCard(
+                        () {
+                          Get.toNamed('/profile');
+                        },
+                        AppAssets.setting_icon,
+                        'fault'.tr,
+                        true,
+                        appTextStyle
+                            .getSfProDisplaySemiBold_h6(AppColors.BLACK),
+                      ),
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      buildMenuItemCard(
+                        () {
+                          Get.toNamed('/profile');
+                        },
+                        AppAssets.option_icon,
+                        'preferences'.tr,
+                        true,
+                        appTextStyle
+                            .getSfProDisplaySemiBold_h6(AppColors.BLACK),
+                      ),
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      buildMenuItemCard(
+                        () {
+                          Get.toNamed('/profile');
+                        },
+                        AppAssets.new_add,
+                        'newApartment'.tr,
+                        true,
+                        appTextStyle
+                            .getSfProDisplaySemiBold_h6(AppColors.BLACK),
+                      ),
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      buildMenuItemCard(
+                        () {
+                          Get.toNamed('/profile');
+                        },
+                        AppAssets.group_icon,
+                        'managmentTeam'.tr,
+                        true,
+                        appTextStyle
+                            .getSfProDisplaySemiBold_h6(AppColors.BLACK),
+                      ),
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      buildMenuItemCard(
+                        () {
+                          Get.toNamed('/profile');
+                        },
+                        AppAssets.exit_icon,
+                        'exit'.tr,
+                        false,
+                        appTextStyle
+                            .getSfProDisplaySemiBold_h6(AppColors.ORANGE),
+                      ),
+                    ],
+                  )),
+              Container(
                 width: 350.w,
-                height:
-                    Get.width > 390 ? Get.height * 0.90.h : Get.height * 0.50.h,
-                child: Column(
-                  children: [
-                    buildMenuItemCard(
-                      () {
-                        Get.toNamed('profile');
-                      },
-                      AppAssets.profile_icon,
-                      'profile'.tr,
-                      true,
-                      appTextStyle.getSfProDisplaySemiBold_h6(AppColors.BLACK),
+                height: 75.h,
+                color: Colors.transparent,
+                child: Card(
+                  elevation: 5,
+                  child: ListTile(
+                    dense: true,
+                    title: Text(
+                      'Eşşiz Apmatik Kampanyalarına Hemen Katıl',
+                      style: AppTextStyle()
+                          .getSfProDisplaySemiBold_h6(AppColors.ORANGE),
                     ),
-                    SizedBox(
-                      height: 5.h,
+                    subtitle: Padding(
+                      padding: const EdgeInsets.only(top: 5.0),
+                      child: Text('Eşşiz Apmatik Kampanyalarına Hemen Katıl',
+                          style: AppTextStyle()
+                              .getSfProDisplayRegular_H6(AppColors.DARK_GREY)),
                     ),
-                    buildMenuItemCard(
-                      () {
-                        Get.toNamed('/profile');
-                      },
-                      AppAssets.car_icon,
-                      'cars'.tr,
-                      true,
-                      appTextStyle.getSfProDisplaySemiBold_h6(AppColors.BLACK),
-                    ),
-                    SizedBox(
-                      height: 5.h,
-                    ),
-                    buildMenuItemCard(
-                      () {
-                        Get.toNamed('/profile');
-                      },
-                      AppAssets.setting_icon,
-                      'fault'.tr,
-                      true,
-                      appTextStyle.getSfProDisplaySemiBold_h6(AppColors.BLACK),
-                    ),
-                    SizedBox(
-                      height: 5.h,
-                    ),
-                    buildMenuItemCard(
-                      () {
-                        Get.toNamed('/profile');
-                      },
-                      AppAssets.option_icon,
-                      'preferences'.tr,
-                      true,
-                      appTextStyle.getSfProDisplaySemiBold_h6(AppColors.BLACK),
-                    ),
-                    SizedBox(
-                      height: 5.h,
-                    ),
-                    buildMenuItemCard(
-                      () {
-                        Get.toNamed('/profile');
-                      },
-                      AppAssets.new_add,
-                      'newApartment'.tr,
-                      true,
-                      appTextStyle.getSfProDisplaySemiBold_h6(AppColors.BLACK),
-                    ),
-                    SizedBox(
-                      height: 5.h,
-                    ),
-                    buildMenuItemCard(
-                      () {
-                        Get.toNamed('/profile');
-                      },
-                      AppAssets.group_icon,
-                      'managmentTeam'.tr,
-                      true,
-                      appTextStyle.getSfProDisplaySemiBold_h6(AppColors.BLACK),
-                    ),
-                    SizedBox(
-                      height: 5.h,
-                    ),
-                    buildMenuItemCard(
-                      () {
-                        Get.toNamed('/profile');
-                      },
-                      AppAssets.exit_icon,
-                      'exit'.tr,
-                      false,
-                      appTextStyle.getSfProDisplaySemiBold_h6(AppColors.ORANGE),
-                    ),
-                  ],
-                )),
-            Container(
-              width: 350.w,
-              height: 75.h,
-              color: Colors.transparent,
-              child: Card(
-                elevation: 5,
-                child: ListTile(
-                  dense: true,
-                  title: Text(
-                    'Eşşiz Apmatik Kampanyalarına Hemen Katıl',
-                    style: AppTextStyle()
-                        .getSfProDisplaySemiBold_h6(AppColors.ORANGE),
+                    trailing: Image.asset(AppAssets.gift_icon),
                   ),
-                  subtitle: Padding(
-                    padding: const EdgeInsets.only(top: 5.0),
-                    child: Text('Eşşiz Apmatik Kampanyalarına Hemen Katıl',
-                        style: AppTextStyle()
-                            .getSfProDisplayRegular_H6(AppColors.DARK_GREY)),
-                  ),
-                  trailing: Image.asset(AppAssets.gift_icon),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
-      ));
+      );
 
   Widget buildMenuItemCard(Function()? onTap, String icon, String menuName,
       bool arrowIconVisible, TextStyle? style) {
-    return InkWell(
-      onTap: onTap,
+    return GestureDetector(
+      onTap: () {
+        Get.toNamed('profile');
+        // Navigator.push(Get.context!,
+        //         MaterialPageRoute(builder: ((context) => ProfileView())))
+        //     .then((value) {
+        //   controller.bottomNavbarController.showProfilePage.value = true;
+        //   controller.update();
+        //   controller.bottomNavbarController.update();
+        //   print(controller.bottomNavbarController.showProfilePage.value);
+        //   //içeriye girmiyor evet bir saniye bi şey bakıp geklıyorum
+        // });
+      },
       child: Container(
         width: 350.w,
         height: 40.h,
