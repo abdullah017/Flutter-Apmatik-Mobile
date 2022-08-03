@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
@@ -9,6 +11,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class PreferencesView extends BaseView<PreferencesController> {
+  PreferencesView({Key? key})
+      : super(
+          key: key,
+          navBarHide: true, // false
+        );
   @override
   Widget vBuilder() => Scaffold(
       backgroundColor: AppColors.PAGEBACKGROUND,

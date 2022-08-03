@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
     var isLoginValue = box.read('isLogin') ?? false;
     return ScreenUtilInit(
       minTextAdapt: true,
+      
       builder: (context, child) {
         return GetMaterialApp(
           localizationsDelegates: [
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
           initialRoute: isLoginValue ? AppPages.HOME : AppPages.INITIAL,
           getPages: AppPages.routes,
           debugShowCheckedModeBanner: false,
+          
           // theme: Themes.light,
           // darkTheme: Themes.dark,
           // themeMode: ThemeService().theme,

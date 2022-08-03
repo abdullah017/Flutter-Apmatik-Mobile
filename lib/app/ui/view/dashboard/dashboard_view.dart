@@ -16,6 +16,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class DashBoardView extends BaseView<DashBoardController> {
+  DashBoardView({Key? key})
+      : super(
+          key: key,
+          navBarHide: false, // false
+        );
   @override
   Widget vBuilder() => Scaffold(
         backgroundColor: AppColors.PAGEBACKGROUND,
