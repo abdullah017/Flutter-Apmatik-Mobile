@@ -101,7 +101,7 @@ class DashBoardView extends BaseView<DashBoardController> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              height: 260.0.h,
+              height: 220.0.h,
               child: Stack(
                 children: <Widget>[
                   Container(
@@ -115,7 +115,7 @@ class DashBoardView extends BaseView<DashBoardController> {
                     right: 0.0,
                     child: Container(
                       width: 350.w,
-                      height: 240.h,
+                      height: 200.h,
                       padding: EdgeInsets.symmetric(horizontal: 20.0.w),
                       child: DecoratedBox(
                         decoration: BoxDecoration(
