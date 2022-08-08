@@ -7,9 +7,6 @@ enum State {
   LOADING
 }
 
-/// createdby Daewu Bintara
-/// Saturday, 1/30/21
-
 ///
 /// --------------------------------------------
 /// There are several [State]s in this class.

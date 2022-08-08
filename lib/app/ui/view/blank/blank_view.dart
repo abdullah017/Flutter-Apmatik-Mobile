@@ -12,9 +12,9 @@ class BlankView extends BaseView<BlankController> {
           navBarHide: false, // false
         );
   @override
-  Widget vBuilder() => Scaffold(
-        body: Center(
-          child: Text('HELLOOO!'),
-        ),
-      );
+  Widget vBuilder() {
+    return Center(
+      child: Text('HELLOOO!'),
+    );
+  }
 }

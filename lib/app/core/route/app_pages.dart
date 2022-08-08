@@ -1,7 +1,3 @@
-import 'package:apmatik/app/ui/view/about/about_binding.dart';
-import 'package:apmatik/app/ui/view/about/about_view.dart';
-import 'package:apmatik/app/ui/view/aggrement/aggrement_binding.dart';
-import 'package:apmatik/app/ui/view/aggrement/aggrement_view.dart';
 import 'package:apmatik/app/ui/view/apartment/add_apartment/add_apertment_binding.dart';
 import 'package:apmatik/app/ui/view/apartment/add_apartment/add_apertment_view.dart';
 import 'package:apmatik/app/ui/view/apartment/qr/qr_binding.dart';
@@ -30,34 +26,40 @@ import 'package:apmatik/app/ui/view/home/home_binding.dart';
 import 'package:apmatik/app/ui/view/home/home_view.dart';
 import 'package:apmatik/app/ui/view/menu/menu_binding.dart';
 import 'package:apmatik/app/ui/view/menu/menu_view.dart';
+import 'package:apmatik/app/ui/view/menu/preferences/preferences_binding.dart';
+import 'package:apmatik/app/ui/view/menu/preferences/preferences_view.dart';
+import 'package:apmatik/app/ui/view/menu/preferences/settings/about/about_binding.dart';
+import 'package:apmatik/app/ui/view/menu/preferences/settings/about/about_view.dart';
+import 'package:apmatik/app/ui/view/menu/preferences/settings/aggrement/aggrement_binding.dart';
+import 'package:apmatik/app/ui/view/menu/preferences/settings/aggrement/aggrement_view.dart';
+import 'package:apmatik/app/ui/view/menu/preferences/settings/languages/languages_binding.dart';
+import 'package:apmatik/app/ui/view/menu/preferences/settings/languages/languages_view.dart';
+import 'package:apmatik/app/ui/view/menu/preferences/settings/problem_report/report_binding.dart';
+import 'package:apmatik/app/ui/view/menu/preferences/settings/problem_report/report_view.dart';
+import 'package:apmatik/app/ui/view/menu/profile/edit_profile/edit_profile_binding.dart';
+import 'package:apmatik/app/ui/view/menu/profile/edit_profile/edit_profile_view.dart';
+import 'package:apmatik/app/ui/view/menu/profile/show_profile/profile_binding.dart';
+import 'package:apmatik/app/ui/view/menu/profile/show_profile/profile_view.dart';
+import 'package:apmatik/app/ui/view/menu/staff/staff_binding.dart';
 import 'package:apmatik/app/ui/view/notifications/notifications_binding.dart';
 import 'package:apmatik/app/ui/view/notifications/notifications_view.dart';
-import 'package:apmatik/app/ui/view/problem_report/report_binding.dart';
-import 'package:apmatik/app/ui/view/problem_report/report_view.dart';
-import 'package:apmatik/app/ui/view/profile/edit_profile/edit_profile_binding.dart';
-import 'package:apmatik/app/ui/view/profile/edit_profile/edit_profile_view.dart';
-import 'package:apmatik/app/ui/view/profile/show_profile/profile_binding.dart';
-import 'package:apmatik/app/ui/view/profile/show_profile/profile_view.dart';
+
 import 'package:apmatik/app/ui/view/questionnaire_detail/questionnaire_detail_binding.dart';
 import 'package:apmatik/app/ui/view/questionnaire_detail/questionnaire_detail_view.dart';
-import 'package:apmatik/app/ui/view/settings/languages/languages_binding.dart';
-import 'package:apmatik/app/ui/view/settings/languages/languages_view.dart';
-import 'package:apmatik/app/ui/view/settings/preferences/preferences_binding.dart';
-import 'package:apmatik/app/ui/view/settings/preferences/preferences_view.dart';
 
 import 'package:apmatik/app/ui/view/splash/splah_view.dart';
 import 'package:apmatik/app/ui/view/splash/splash_binding.dart';
-import 'package:apmatik/app/ui/view/staff/staff_binding.dart';
-import 'package:apmatik/app/ui/view/staff/staff_view.dart';
 
 import 'package:get/get.dart';
+
+import '../../ui/view/menu/staff/staff_view.dart';
 
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
   static const INITIAL = Routes.SPLASH;
-  static const HOME = Routes.ABOUT;
+  static const HOME = Routes.HOME;
   static final routes = [
     GetPage(
       name: _Paths.SPLASH,

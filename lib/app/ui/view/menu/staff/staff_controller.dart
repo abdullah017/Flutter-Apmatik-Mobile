@@ -1,9 +1,9 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 
-class BlankController extends BaseController {
+class StaffController extends BaseController {
   @override
   void onInit() {
     super.onInit();
-  tabIndex = 1;
+    tabIndex = 4;
   }
 }

@@ -46,5 +46,6 @@ class AddApertmentController extends BaseController
   void onInit() {
     super.onInit();
     tabController = TabController(length: 3, vsync: this);
+    tabIndex = 4;
   }
 }

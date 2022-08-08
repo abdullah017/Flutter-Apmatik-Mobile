@@ -24,13 +24,13 @@ class QrView extends BaseView<QrController> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Text(
-              'QR Kodunu Okutunuz',
+              'read_qr'.tr,
               style: AppTextStyle().getSfProDisplaySemiBold_h6(AppColors.BLACK),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Text(
-                'Yöneticinizde bulunan QR kodunu buraya okutarak apartmana hızlı bir şekilde kaydınızı oluşturabilirsiniz. Okuttuğunuz apartmana hızlıca yerleşeceksiniz.',
+                'read_qr_info'.tr,
                 style:
                     AppTextStyle().getSfProDisplayRegular_H5(AppColors.BLACK),
                 textAlign: TextAlign.justify,
@@ -40,7 +40,7 @@ class QrView extends BaseView<QrController> {
                 onPressed: () {
                   Get.back();
                 },
-                child: Text('VAZGEÇ'))
+                child: Text('give_up'.tr))
           ],
         ),
       ),

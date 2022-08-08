@@ -105,7 +105,7 @@ const Map<String, String> en = {
   'upPassword': 'Update Password',
   'notification': 'Notifications',
   'payments': 'Payments',
-  'system': 'system',
+  'system': 'System',
   'advantages': 'Advantages',
   'userAggrements': 'User Agreement',
   'privateAggrements': 'Privacy Agreement',
@@ -117,5 +117,41 @@ const Map<String, String> en = {
   'resetPassword': 'Reset Password',
   'appVersion': 'App Version',
   'userId': 'User ID',
-  'contact': 'Apmatik Contact'
+  'contact': 'Apmatik Contact',
+  'manage_cars': 'Manage Cars',
+  'edit_profile': 'Edit Profile',
+  'registered_cars': 'Registered Cars',
+  'about_membership': 'About Membership',
+  'date_of_registration': 'Date Of Registration',
+  'invoices_number': 'Invoices Number',
+  'payment_plan': 'Payment Plan',
+
+  'show_other_info':
+      'Residents can see your name, surname and profile picture in the surveys you have completed and the posts you have shared. Your other information is kept confidential.',
+  'show_me_other': 'Show Me Other Residence',
+
+  'have_pet': 'Pet',
+  'number_children': 'Number Of Child',
+  'marital': 'Marital Status',
+
+  'send_button': 'Send',
+  'old_password': 'Old Password',
+  'new_password': 'New Password',
+  're_new_password': 'New Password Again',
+
+  'resident_status': 'Resident Status',
+  'home_owner': 'Homeowner',
+  'tenant': 'Tenant',
+  'resident': 'Resident',
+
+  'country': 'Country',
+  'city': 'City',
+  'district': 'District',
+  'aparment_name': 'Apartment Name',
+  'apartment_name_info': '*Please enter at least 5 characters',
+
+  'read_qr': 'Read the QR Code',
+  'read_qr_info':
+      'You can quickly create your registration for the apartment by scanning the QR code found in your manager here. You will quickly settle in the apartment you have taught.',
+  'give_up': 'Give Up',
 };
