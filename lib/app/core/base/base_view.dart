@@ -42,8 +42,7 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
   final String? tag = null;
   final AppTextStyle appTextStyle = AppTextStyle();
   final FormValidationHelper formValidationHelper = FormValidationHelper();
-  int current = 2;
-  var tabIndex = 2.obs;
+
   T get controller => GetInstance().find<T>(tag: tag);
 
   @override
@@ -51,53 +50,106 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
     return GetBuilder<T>(
       builder: (controller) {
         return Scaffold(
-          //appBar: AppBar(title: Text(appBarTitle)),
-
           bottomNavigationBar: !navBarHide
-              ? BottomNavigationBar(
-                  onTap: (index) {
-                    tabChange(index);
-                    controller.update();
-                    if (index == 0) {
-                      Get.offAndToNamed('dashboard');
-                    }
-                    if (index == 1) {
-                      Get.offAndToNamed('blank');
-                    }
-                    if (index == 2) {
-                      Get.offAndToNamed('home');
-                    }
-                    if (index == 3) {
-                      Get.offAndToNamed('blank');
-                    }
-                    if (index == 4) {
-                      Get.offAndToNamed('menu');
-                    }
-                  },
-                  unselectedLabelStyle: TextStyle(fontSize: 0),
-                  unselectedFontSize: 0,
-                  unselectedIconTheme: IconThemeData(
-                    size: Get.width > 390 ? 24.sp : 24.sp,
+              ? SafeArea(
+                  minimum: EdgeInsets.symmetric(horizontal: 1),
+                  bottom: false,
+                  child: Container(
+                    width: Get.width,
+                    height: 56.h,
+                    child: LayoutBuilder(
+                      builder: (context, constraints) => Stack(
+                        children: [
+                          Wrap(
+                            children: [
+                              BottomNavigationBar(
+                                  iconSize: 32,
+                                  onTap: (index) {
+                                    debugPrint(controller.tabIndex.toString());
+                                    controller.tabChange(index);
+                                    controller.update();
+                                    if (index == 0) {
+                                      Get.offAndToNamed('dashboard');
+                                    } else if (index == 1) {
+                                      Get.offAndToNamed('blank');
+                                    } else if (index == 2) {
+                                      Get.offAndToNamed('home');
+                                    } else if (index == 3) {
+                                      Get.offAndToNamed('blank');
+                                    } else if (index == 4) {
+                                      Get.offAndToNamed('menu');
+                                    }
+                                  },
+                                  unselectedLabelStyle: TextStyle(fontSize: 0),
+                                  unselectedFontSize: 0,
+                                  // unselectedIconTheme: IconThemeData(
+                                  //   size: 24,
+                                  // ),
+                                  selectedFontSize: 0,
+                                  // selectedIconTheme: IconThemeData(
+                                  //   size: 24,
+                                  // ),
+                                  selectedLabelStyle: TextStyle(fontSize: 0),
+                                  type: BottomNavigationBarType.fixed,
+                                  landscapeLayout:
+                                      BottomNavigationBarLandscapeLayout.linear,
+                                  unselectedItemColor: Colors.black,
+                                  selectedItemColor: Colors.orange,
+                                  showSelectedLabels: false,
+                                  showUnselectedLabels: false,
+                                  currentIndex: controller.tabIndex,
+                                  items: [
+                                    _bottomNavbarItem(
+                                      AppAssets.card_icon,
+                                      '',
+                                    ),
+                                    _bottomNavbarItem(
+                                      AppAssets.key_icon,
+                                      '',
+                                    ),
+                                    _bottomNavbarItem(
+                                      AppAssets.home_icon,
+                                      '',
+                                    ),
+                                    _bottomNavbarItem(
+                                      AppAssets.doc_icon,
+                                      '',
+                                    ),
+                                    _bottomNavbarItem(
+                                      AppAssets.menu_icon,
+                                      '',
+                                    ),
+                                  ]),
+                            ],
+                          ),
+                          AnimatedPositioned(
+                            bottom: 0,
+                            left: constraints.maxWidth /
+                                    5 *
+                                    (controller
+                                        .tabIndex) + //space of current index
+                                (constraints.maxWidth /
+                                    9) - // minimize the half of it
+                                30, // minimize the width of dash
+                            child: Container(
+                              width: 60,
+                              height: 8,
+                              decoration: const BoxDecoration(
+                                  color: Colors.amber,
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(12),
+                                    topRight: Radius.circular(12),
+                                  )),
+                            ),
+                            duration: const Duration(
+                              milliseconds: 500,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
-                  selectedFontSize: 0,
-                  selectedIconTheme: IconThemeData(
-                    size: Get.width > 390 ? 24.sm : 24.sm,
-                  ),
-                  selectedLabelStyle: TextStyle(fontSize: 0),
-                  type: BottomNavigationBarType.fixed,
-                  landscapeLayout: BottomNavigationBarLandscapeLayout.spread,
-                  unselectedItemColor: Colors.black,
-                  selectedItemColor: Colors.orange,
-                  showSelectedLabels: true,
-                  showUnselectedLabels: true,
-                  currentIndex: tabIndex.value,
-                  items: [
-                      _bottomNavbarItem(AppAssets.card_icon, ''),
-                      _bottomNavbarItem(AppAssets.key_icon, ''),
-                      _bottomNavbarItem(AppAssets.home_icon, ''),
-                      _bottomNavbarItem(AppAssets.doc_icon, ''),
-                      _bottomNavbarItem(AppAssets.menu_icon, ''),
-                    ])
+                )
               : null,
           body: vBuilder(),
         );
@@ -111,26 +163,17 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
     return BottomNavigationBarItem(
       icon: Image.asset(
         assetName,
-        width: 24.w,
-        height: 24.h,
+        width: 25.w,
+        height: 22.h,
         fit: BoxFit.contain,
       ),
-      activeIcon: Container(
-        height: 24.h,
-        width: 24.w,
-        decoration: BoxDecoration(
-          border: Border(
-            bottom: BorderSide(width: 2, color: Colors.orange),
-          ),
-        ),
-        child: Image.asset(assetName),
+      activeIcon: Image.asset(
+        assetName,
+        width: 25.w,
+        height: 22.h,
+        fit: BoxFit.contain,
       ),
       label: label,
     );
-  }
-
-  tabChange(int index) {
-    tabIndex.value = index;
-    print(tabIndex.value);
   }
 }

@@ -35,8 +35,9 @@ class MenuView extends BaseView<MenuController> {
                   child: Column(
                     children: [
                       buildMenuItemCard(
-                        //içeriye falan hiç girmiyor
-                        () {},
+                        () {
+                          controller.goToProfileView();
+                        },
                         AppAssets.profile_icon,
                         'profile'.tr,
                         true,
@@ -74,7 +75,7 @@ class MenuView extends BaseView<MenuController> {
                       ),
                       buildMenuItemCard(
                         () {
-                          Get.toNamed('/profile');
+                          controller.goToSettingsView();
                         },
                         AppAssets.option_icon,
                         'preferences'.tr,
@@ -87,7 +88,7 @@ class MenuView extends BaseView<MenuController> {
                       ),
                       buildMenuItemCard(
                         () {
-                          Get.toNamed('/profile');
+                          controller.goToAddApartmentView();
                         },
                         AppAssets.new_add,
                         'newApartment'.tr,
@@ -100,7 +101,7 @@ class MenuView extends BaseView<MenuController> {
                       ),
                       buildMenuItemCard(
                         () {
-                          Get.toNamed('/profile');
+                          controller.goToAddStaffView();
                         },
                         AppAssets.group_icon,
                         'managmentTeam'.tr,
@@ -111,16 +112,44 @@ class MenuView extends BaseView<MenuController> {
                       SizedBox(
                         height: 5.h,
                       ),
-                      buildMenuItemCard(
-                        () {
-                          Get.toNamed('/profile');
+                      GestureDetector(
+                        onTap: () {
+                          controller.clearStorage();
                         },
-                        AppAssets.exit_icon,
-                        'exit'.tr,
-                        false,
-                        appTextStyle
-                            .getSfProDisplaySemiBold_h6(AppColors.ORANGE),
-                      ),
+                        child: Container(
+                          width: 350.w,
+                          height: 40.h,
+                          color: AppColors.WHITE,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Image.asset(
+                                  AppAssets.exit_icon,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(5.0),
+                                child: Text(
+                                  'exit'.tr,
+                                  style:
+                                      appTextStyle.getSfProDisplaySemiBold_h6(
+                                          AppColors.ORANGE),
+                                ),
+                              ),
+                              Spacer(),
+                              Visibility(
+                                visible: false,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Image.asset(AppAssets.arrow_icon),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      )
                     ],
                   )),
               Container(
@@ -154,18 +183,7 @@ class MenuView extends BaseView<MenuController> {
   Widget buildMenuItemCard(Function()? onTap, String icon, String menuName,
       bool arrowIconVisible, TextStyle? style) {
     return GestureDetector(
-      onTap: () {
-        Get.toNamed('profile');
-        // Navigator.push(Get.context!,
-        //         MaterialPageRoute(builder: ((context) => ProfileView())))
-        //     .then((value) {
-        //   controller.bottomNavbarController.showProfilePage.value = true;
-        //   controller.update();
-        //   controller.bottomNavbarController.update();
-        //   print(controller.bottomNavbarController.showProfilePage.value);
-        //   //içeriye girmiyor evet bir saniye bi şey bakıp geklıyorum
-        // });
-      },
+      onTap: onTap,
       child: Container(
         width: 350.w,
         height: 40.h,

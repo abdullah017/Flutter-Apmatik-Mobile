@@ -1,4 +1,3 @@
-// ignore_for_file: must_be_immutable
 
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
@@ -21,10 +20,12 @@ class HomeView extends BaseView<HomeController> {
   HomeView({Key? key})
       : super(
           key: key,
-          navBarHide: false, // false
+          navBarHide: false,
+        
         );
   @override
   Widget vBuilder() => Scaffold(
+
       appBar: CustomLoginUserAppBar(),
       body: controller.hasApertmenKey ?? false
           ? ListView(children: [

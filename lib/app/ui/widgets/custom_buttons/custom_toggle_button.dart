@@ -1,5 +1,7 @@
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class CustomToggleButton extends StatelessWidget {
   final String? firstText;
@@ -20,8 +22,8 @@ class CustomToggleButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 350,
-      height: 35,
+      width: 350.w,
+      height: 35.h,
       color: AppColors.PAGEBACKGROUND,
       child: ToggleButtons(
           isSelected: isSelected,
@@ -34,17 +36,17 @@ class CustomToggleButton extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Text(firstText ?? 'Ev Sahibi',
+              child: Text(firstText ?? 'home_owner'.tr,
                   style: TextStyle(fontSize: 12)),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 35),
-              child:
-                  Text(secondText ?? 'Kiracı', style: TextStyle(fontSize: 12)),
+              child: Text(secondText ?? 'tenant'.tr,
+                  style: TextStyle(fontSize: 12)),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Text(thirdText ?? 'Ev Sakini',
+              child: Text(thirdText ?? 'resident'.tr,
                   style: TextStyle(fontSize: 12)),
             ),
           ],

@@ -15,7 +15,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class AddApertmentView extends BaseView<AddApertmentController> {
-    AddApertmentView({Key? key})
+  AddApertmentView({Key? key})
       : super(
           key: key,
           navBarHide: true, // false
@@ -63,7 +63,7 @@ class AddApertmentView extends BaseView<AddApertmentController> {
                   onPressed: () {
                     controller.goQrPage();
                   },
-                  child: Text('QR Kodu Okut'),
+                  child: Text('readQr'.tr),
                 ),
                 SizedBox(
                   height: 20,
@@ -84,7 +84,7 @@ class AddApertmentView extends BaseView<AddApertmentController> {
                     Container(
                       margin: EdgeInsets.only(bottom: 10, left: 5),
                       child: Text(
-                        'Sakin Seçimi',
+                        'resident_status'.tr,
                         style: AppTextStyle()
                             .getSfProDisplayRegular_H5(AppColors.GREY),
                       ),
@@ -102,7 +102,7 @@ class AddApertmentView extends BaseView<AddApertmentController> {
                       children: [
                         CustomDropdownButtonFormField(
                           padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          labelText: 'Ülke',
+                          labelText: 'country'.tr,
                           value: controller.selectedValue,
                           items: controller.listOfCountry.map((String val) {
                             return DropdownMenuItem(
@@ -117,7 +117,7 @@ class AddApertmentView extends BaseView<AddApertmentController> {
                         ),
                         CustomDropdownButtonFormField(
                           padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          labelText: 'İl',
+                          labelText: 'city'.tr,
                           value: controller.selectedCity,
                           items: controller.listOfCitys.map((String val) {
                             return DropdownMenuItem(
@@ -132,7 +132,7 @@ class AddApertmentView extends BaseView<AddApertmentController> {
                         ),
                         CustomDropdownButtonFormField(
                           padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          labelText: 'İlçe',
+                          labelText: 'district'.tr,
                           value: controller.selectedDistrict,
                           items: controller.listOfDistricts.map((String val) {
                             return DropdownMenuItem(
@@ -147,7 +147,7 @@ class AddApertmentView extends BaseView<AddApertmentController> {
                         ),
                         CustomTextFormField(
                           padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          labelText: 'Apartman Adı',
+                          labelText: 'aparment_name'.tr,
                           textEditingController:
                               controller.apartmenNameController,
                           validator: (nameSurname) {
@@ -158,7 +158,7 @@ class AddApertmentView extends BaseView<AddApertmentController> {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10.0),
                           child: Text(
-                            '*Lütfen en az 5 karakter giriniz',
+                            'apartment_name_info'.tr,
                             style: AppTextStyle()
                                 .getSfProDisplayLight_H6(Colors.black),
                           ),
@@ -169,7 +169,7 @@ class AddApertmentView extends BaseView<AddApertmentController> {
                               onPressed: () {
                                 //01controller.goQrPage();
                               },
-                              child: Text('Devam')),
+                              child: Text('goOn'.tr)),
                         )
                       ],
                     ),

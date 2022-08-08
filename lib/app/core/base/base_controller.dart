@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:new_version/new_version.dart';
+
 import 'base_common_widgets.dart';
 import 'widget_state.dart';
 
@@ -33,6 +34,11 @@ import 'widget_state.dart';
 class BaseController extends GetxController
     with BaseCommonWidgets, Utilities, WidgetState, ScreenState {
   final box = GetStorage();
+  var tabIndex = 2;
+  tabChange(int index) {
+    tabIndex = index;
+    update();
+  }
 
   bool isLoadMore = false;
   bool withScrollController = false;

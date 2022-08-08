@@ -43,7 +43,7 @@ const Map<String, String> tr = {
   'birtday': 'Doğum Tarihi',
   'maritalStatus': 'Medeni Hali',
   'childStatus': 'Çocuk Durumu',
-  'nameSurname':'İsim Soyisim',
+  'nameSurname': 'İsim Soyisim',
   'job': 'Mesleğiniz',
   'jobInfo':
       'Sahip olduğunuz mesleğe göre size sunulacak ayrıcalıklar ve apartman yönetimini bilgilendirmek için talep edilmektedir.',
@@ -117,5 +117,42 @@ const Map<String, String> tr = {
   'resetPassword': 'Şifremi Sıfırla',
   'appVersion': 'Uygulama Versiyonu',
   'userId': 'Kullanıcı ID',
-  'contact': 'Apmatik İletişim'
+  'contact': 'Apmatik İletişim',
+  'manage_cars': 'Araçları Yönet',
+  'edit_profile': 'Profilimi Düzenle',
+  'registered_cars': 'Kayıtlı Araçlar',
+  'about_membership': 'Üyelik Hakkında',
+  'date_of_registration': 'Kayıt Tarihi',
+  'invoices_number': 'Fatura Sayısı',
+  'payment_plan': 'Ödeme Planı',
+
+  'show_other_info':
+      'Sakinler sizin tamaladığınız anketleri ve paylaştığınız postlarda isim soyisim ve profil resminizi görebilir. Diğer bilgileriniz saklı tutulur.',
+  'show_me_other': 'Beni Diğer Sakinlere Göster',
+
+  'have_pet': 'Evcil Hayvanım',
+  'number_children': 'Çocuk Sayısı',
+  'marital': 'Medeni Durumu',
+
+  'send_button': 'Gönder',
+
+  'old_password': 'Eski Şifre',
+  'new_password': 'Yeni Şifre',
+  're_new_password': 'Yeni Şifre Tekrar',
+
+  'resident_status': 'Sakin Seçimi',
+  'home_owner': 'Ev Sahibi',
+  'tenant': 'Kiracı',
+  'resident': 'Ev Sakini',
+
+  'country': 'Ülke',
+  'city': 'İl',
+  'district': 'İlçe',
+  'aparment_name': 'Apartman Adı',
+  'apartment_name_info': '*Lütfen en az 5 karakter giriniz',
+
+  'read_qr': 'QR Kodu okutunuz',
+  'read_qr_info':
+      'Yöneticinizde bulunan QR kodunu buraya okutarak apartmana hızlı bir şekilde kaydınızı oluşturabilirsiniz. Okuttuğunuz apartmana hızlıca yerleşeceksiniz',
+  'give_up': 'Vazgeç',
 };

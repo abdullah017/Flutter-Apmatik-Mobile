@@ -4,7 +4,6 @@ import 'package:apmatik/app/core/network/api-handler/api-handler.dart';
 import 'package:apmatik/app/core/network/api-handler/api-repo.dart';
 import 'package:apmatik/app/core/route/app_pages.dart';
 import 'package:apmatik/app/core/utils/translation_service.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -14,11 +13,11 @@ import 'package:get_storage/get_storage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
   Get.put(ApiBaseHelper(), permanent: true);
   Get.put(ApiRepository(Get.find()));
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive,
       overlays: <SystemUiOverlay>[]);
-
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
     runApp(MyApp());
@@ -26,16 +25,22 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  GetStorage box = GetStorage();
-  // This widget is the root of your application.
+  MyApp({
+    Key? key,
+  }) : super(key: key);
+  final storage = GetStorage();
+
   @override
   Widget build(BuildContext context) {
-    var isLoginValue = box.read('isLogin') ?? false;
+    print(storage.read('isLogin'));
+    print(storage.read('languages'));
+    var isLogin = storage.read('isLogin') ?? false;
+    var language = storage.read('languages') ?? 0;
     return ScreenUtilInit(
       minTextAdapt: true,
-      
       builder: (context, child) {
         return GetMaterialApp(
+          defaultTransition: Transition.noTransition,
           localizationsDelegates: [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
@@ -45,14 +50,14 @@ class MyApp extends StatelessWidget {
             Locale('tr', ''),
             Locale('en', ''),
           ],
-          locale: TranslationService.locale,
+          locale: language == 0 ? Locale('tr', 'TR') : Locale('en', 'US'),
           fallbackLocale: TranslationService.fallbackLocale,
           translations: TranslationService(),
           title: "Application",
-          initialRoute: isLoginValue ? AppPages.HOME : AppPages.INITIAL,
+          initialRoute: isLogin ? AppPages.HOME : AppPages.INITIAL,
           getPages: AppPages.routes,
           debugShowCheckedModeBanner: false,
-          
+
           // theme: Themes.light,
           // darkTheme: Themes.dark,
           // themeMode: ThemeService().theme,
