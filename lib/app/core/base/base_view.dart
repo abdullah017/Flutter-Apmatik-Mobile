@@ -56,7 +56,7 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
                   bottom: false,
                   child: Container(
                     width: Get.width,
-                    height: 56.h,
+                    height: Get.width > 390 ? 49.h : 50.h,
                     child: LayoutBuilder(
                       builder: (context, constraints) => Stack(
                         children: [
