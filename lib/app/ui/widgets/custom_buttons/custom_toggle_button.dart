@@ -35,17 +35,17 @@ class CustomToggleButton extends StatelessWidget {
           highlightColor: Colors.orange,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
+              padding: EdgeInsets.symmetric(horizontal: 30.w),
               child: Text(firstText ?? 'home_owner'.tr,
                   style: TextStyle(fontSize: 12)),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 35),
+              padding: EdgeInsets.symmetric(horizontal: 35.w),
               child: Text(secondText ?? 'tenant'.tr,
                   style: TextStyle(fontSize: 12)),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
+              padding: EdgeInsets.symmetric(horizontal: 25.w),
               child: Text(thirdText ?? 'resident'.tr,
                   style: TextStyle(fontSize: 12)),
             ),

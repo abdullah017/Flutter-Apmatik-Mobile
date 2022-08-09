@@ -5,11 +5,16 @@ import 'package:get/get.dart';
 class DashBoardController extends BaseController {
   List duyuru = [].obs;
 
-  int radiovalue = -1;
+  RxInt? radiValue = 1.obs;
 
   bool selectedRadio = false;
 
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+
+  selectUS(int? value) {
+    radiValue!.value = value!;
+    update();
+  }
 
   addDuyuru() {
     duyuru.add('VALUE');
@@ -20,6 +25,6 @@ class DashBoardController extends BaseController {
   void onInit() {
     super.onInit();
     addDuyuru();
-  tabIndex = 0;
+    tabIndex = 0;
   }
 }

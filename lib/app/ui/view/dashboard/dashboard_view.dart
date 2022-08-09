@@ -61,22 +61,19 @@ class DashBoardView extends BaseView<DashBoardController> {
                           textAlign: TextAlign.center,
                         ),
                       ),
-                      RadioListTile<int>(
+                      RadioListTile(
                         activeColor: Colors.orange,
                         value: 1,
-                        groupValue: controller.radiovalue,
+                        groupValue: controller.radiValue!.value,
                         title: Text('Tekrar Gösterme'),
                         selected: controller.selectedRadio,
-                        //toggleable: true,
-                        onChanged: (value) {
-                          controller.radiovalue = value!;
-                          controller.selectedRadio = !controller.selectedRadio;
+                        onChanged: (int? value) {
+                          controller.selectUS(value);
                           controller.update();
                         },
                       ),
                       CustomElevatedButton(
                           onPressed: () {
-                            Get.back();
                             controller.duyuru.removeAt(0);
                             controller.update();
                           },
@@ -157,7 +154,8 @@ class DashBoardView extends BaseView<DashBoardController> {
                             ),
                             Expanded(
                               child: ListView.builder(
-                                itemExtent: 40,
+                                shrinkWrap: true,
+                                itemExtent: 30,
                                 physics: NeverScrollableScrollPhysics(),
                                 itemCount: 3,
                                 itemBuilder: (context, index) {
@@ -196,22 +194,33 @@ class DashBoardView extends BaseView<DashBoardController> {
         ),
       );
 
-  ListTile buildDeptCard() {
-    return ListTile(
-      minVerticalPadding: 0,
-      minLeadingWidth: 0,
-      dense: true,
-      title: Text(
-        'Elektrik Borcu',
-        style: appTextStyle.getSfProDisplayMedium_little(AppColors.BLACK),
-      ),
-      subtitle: Text(
-        '22/02/2022',
-        style: appTextStyle.getSfProDisplayMedium_little(AppColors.GREY),
-      ),
-      trailing: Text(
-        '260.00₺',
-        style: appTextStyle.getSfProDisplayMedium_little(AppColors.ORANGE),
+  buildDeptCard() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text.rich(
+            TextSpan(
+                text: 'Elektrik Borcu\n',
+                style:
+                    appTextStyle.getSfProDisplayMedium_little(AppColors.BLACK),
+                children: [
+                  TextSpan(
+                    text: '22/02/2022',
+                    style: appTextStyle
+                        .getSfProDisplayMedium_little(AppColors.GREY),
+                  )
+                ]),
+          ),
+          Text.rich(
+            TextSpan(
+              text: '260.00₺',
+              style:
+                  appTextStyle.getSfProDisplayMedium_little(AppColors.ORANGE),
+            ),
+          ),
+        ],
       ),
     );
   }

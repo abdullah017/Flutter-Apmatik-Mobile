@@ -1,5 +1,3 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
@@ -27,157 +25,191 @@ class AddApertmentView extends BaseView<AddApertmentController> {
       body: ListView(
         children: [
           Container(
-            color: Colors.white,
+            color: AppColors.WHITE,
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'apartmentRegistration'.tr,
-                  style:
-                      AppTextStyle().getSfProDisplayMedium_H6(AppColors.BLACK),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Flexible(
-                      child: Text(
-                        'apartmentRegistrationInfo'.tr,
-                        textAlign: TextAlign.justify,
-                        style: AppTextStyle()
-                            .getSfProDisplayRegular_H6(AppColors.BLACK),
-                      ),
-                    ),
-                    Container(
-                        margin: EdgeInsets.only(left: 20),
-                        child: Image.asset('assets/images/code.png'))
-                  ],
-                ),
-                CustomElevatedButton(
-                  width: 148,
-                  height: 30,
-                  margin: EdgeInsets.zero,
-                  onPressed: () {
-                    controller.goQrPage();
-                  },
-                  child: Text('readQr'.tr),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-              ],
-            ),
+            child: buildReadQrArea(),
           ),
-          Form(
-            key: controller.addApartmenFormKey,
-            child: Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Container(
-                width: 250,
-                height: Get.height,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(bottom: 10, left: 5),
-                      child: Text(
-                        'resident_status'.tr,
-                        style: AppTextStyle()
-                            .getSfProDisplayRegular_H5(AppColors.GREY),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                      child: CustomToggleButton(
-                          isSelected: controller.isSelected,
-                          onPressed: (int newindex) {
-                            controller.tabChange(newindex);
-                          }),
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomDropdownButtonFormField(
-                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          labelText: 'country'.tr,
-                          value: controller.selectedValue,
-                          items: controller.listOfCountry.map((String val) {
-                            return DropdownMenuItem(
-                              value: val,
-                              child: Text(
-                                val,
-                                style: AppTextStyle()
-                                    .getSfProDisplayMedium_H6(Colors.black),
-                              ),
-                            );
-                          }).toList(),
-                        ),
-                        CustomDropdownButtonFormField(
-                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          labelText: 'city'.tr,
-                          value: controller.selectedCity,
-                          items: controller.listOfCitys.map((String val) {
-                            return DropdownMenuItem(
-                              value: val,
-                              child: Text(
-                                val,
-                                style: AppTextStyle()
-                                    .getSfProDisplayMedium_H6(Colors.black),
-                              ),
-                            );
-                          }).toList(),
-                        ),
-                        CustomDropdownButtonFormField(
-                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          labelText: 'district'.tr,
-                          value: controller.selectedDistrict,
-                          items: controller.listOfDistricts.map((String val) {
-                            return DropdownMenuItem(
-                              value: val,
-                              child: Text(
-                                val,
-                                style: AppTextStyle()
-                                    .getSfProDisplayMedium_H6(Colors.black),
-                              ),
-                            );
-                          }).toList(),
-                        ),
-                        CustomTextFormField(
-                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          labelText: 'aparment_name'.tr,
-                          textEditingController:
-                              controller.apartmenNameController,
-                          validator: (nameSurname) {
-                            return controller.formValidationHelper
-                                .apartmenName(nameSurname!);
-                          },
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          child: Text(
-                            'apartment_name_info'.tr,
-                            style: AppTextStyle()
-                                .getSfProDisplayLight_H6(Colors.black),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(vertical: 30.h),
-                          child: CustomElevatedButton(
-                              onPressed: () {
-                                //01controller.goQrPage();
-                              },
-                              child: Text('goOn'.tr)),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          )
+          buildManualApartmentArea()
         ],
       ));
+
+  Form buildManualApartmentArea() {
+    return Form(
+      key: controller.addApartmenFormKey,
+      child: Container(
+        padding: EdgeInsets.all(5.0.sm),
+        width: 250.w,
+        height: Get.height,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              margin: EdgeInsets.only(bottom: 10.h, left: 5.w),
+              child: Text(
+                'resident_status'.tr,
+                style: AppTextStyle().getSfProDisplayRegular_H5(AppColors.GREY),
+              ),
+            ),
+            buildToggleTabButton(),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                buildCountry(),
+                buildCity(),
+                buildDistrict(),
+                buildApartmentName(),
+                buildApartmentInfoText(),
+                buildGoOnButton()
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Column buildReadQrArea() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          height: 20.h,
+        ),
+        Text(
+          'apartmentRegistration'.tr,
+          style: AppTextStyle().getSfProDisplayMedium_H6(AppColors.BLACK),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [buildQrInfoText(), buildQrImage()],
+        ),
+        buildReadQrButton(),
+        SizedBox(
+          height: 20.h,
+        ),
+      ],
+    );
+  }
+
+  Flexible buildQrInfoText() {
+    return Flexible(
+      child: Text(
+        'apartmentRegistrationInfo'.tr,
+        textAlign: TextAlign.justify,
+        style: AppTextStyle().getSfProDisplayRegular_H6(AppColors.BLACK),
+      ),
+    );
+  }
+
+  Container buildQrImage() {
+    return Container(
+        margin: EdgeInsets.only(left: 20),
+        child: Image.asset('assets/images/code.png'));
+  }
+
+  CustomElevatedButton buildReadQrButton() {
+    return CustomElevatedButton(
+      width: 148.w,
+      height: 30.h,
+      margin: EdgeInsets.zero,
+      onPressed: () {
+        controller.goQrPage();
+      },
+      child: Text('readQr'.tr),
+    );
+  }
+
+  Padding buildToggleTabButton() {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 5.0.w),
+      child: CustomToggleButton(
+          isSelected: controller.isSelected,
+          onPressed: (int newindex) {
+            controller.tabChange(newindex);
+          }),
+    );
+  }
+
+  CustomDropdownButtonFormField buildCountry() {
+    return CustomDropdownButtonFormField(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      labelText: 'country'.tr,
+      value: controller.selectedValue,
+      items: controller.listOfCountry.map((String val) {
+        return DropdownMenuItem(
+          value: val,
+          child: Text(
+            val,
+            style: AppTextStyle().getSfProDisplayMedium_H6(Colors.black),
+          ),
+        );
+      }).toList(),
+    );
+  }
+
+  CustomDropdownButtonFormField buildCity() {
+    return CustomDropdownButtonFormField(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      labelText: 'city'.tr,
+      value: controller.selectedCity,
+      items: controller.listOfCitys.map((String val) {
+        return DropdownMenuItem(
+          value: val,
+          child: Text(
+            val,
+            style: AppTextStyle().getSfProDisplayMedium_H6(Colors.black),
+          ),
+        );
+      }).toList(),
+    );
+  }
+
+  CustomDropdownButtonFormField buildDistrict() {
+    return CustomDropdownButtonFormField(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      labelText: 'district'.tr,
+      value: controller.selectedDistrict,
+      items: controller.listOfDistricts.map((String val) {
+        return DropdownMenuItem(
+          value: val,
+          child: Text(
+            val,
+            style: AppTextStyle().getSfProDisplayMedium_H6(Colors.black),
+          ),
+        );
+      }).toList(),
+    );
+  }
+
+  CustomTextFormField buildApartmentName() {
+    return CustomTextFormField(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      labelText: 'aparment_name'.tr,
+      textEditingController: controller.apartmenNameController,
+      validator: (nameSurname) {
+        return controller.formValidationHelper.apartmenName(nameSurname!);
+      },
+    );
+  }
+
+  Padding buildApartmentInfoText() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      child: Text(
+        'apartment_name_info'.tr,
+        style: AppTextStyle().getSfProDisplayLight_H6(Colors.black),
+      ),
+    );
+  }
+
+  Padding buildGoOnButton() {
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 30.h),
+      child: CustomElevatedButton(
+          onPressed: () {
+            Get.toNamed('selectapartment');
+          },
+          child: Text('goOn'.tr)),
+    );
+  }
 }

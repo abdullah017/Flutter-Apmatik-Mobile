@@ -1,5 +1,3 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:apmatik/app/core/network/api-handler/api-handler.dart';
 import 'package:apmatik/app/core/network/api-handler/api-repo.dart';
 import 'package:apmatik/app/core/route/app_pages.dart';
