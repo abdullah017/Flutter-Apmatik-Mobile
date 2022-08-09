@@ -1,4 +1,3 @@
-
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
@@ -21,11 +20,9 @@ class HomeView extends BaseView<HomeController> {
       : super(
           key: key,
           navBarHide: false,
-        
         );
   @override
   Widget vBuilder() => Scaffold(
-
       appBar: CustomLoginUserAppBar(),
       body: controller.hasApertmenKey ?? false
           ? ListView(children: [
@@ -116,7 +113,9 @@ class HomeView extends BaseView<HomeController> {
                     }),
               ),
               if (controller.selectedValue == 'Anketler')
-                QuestionnaireCardWidget(),
+                QuestionnaireCardWidget(onPressed: () {
+                  Get.toNamed('questionnaire_detail');
+                }),
               if (controller.selectedValue == 'Duyurular') PostCardWidget(),
               if (controller.selectedValue == 'Sponsorlar')
                 SponsoredCardWidget()

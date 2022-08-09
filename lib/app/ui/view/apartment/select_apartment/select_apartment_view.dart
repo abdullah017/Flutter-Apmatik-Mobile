@@ -1,6 +1,3 @@
-
-// ignore_for_file: must_be_immutable
-
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 
@@ -11,6 +8,7 @@ import 'package:apmatik/app/ui/widgets/custom_appbars/custom_appbar.dart';
 import 'package:apmatik/app/ui/widgets/custom_cards/select_apartment_card.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class SelectApartmentView extends BaseView<SelectApartmentController> {
@@ -21,13 +19,13 @@ class SelectApartmentView extends BaseView<SelectApartmentController> {
       body: ListView(
         children: [
           Container(
-            color: Colors.white,
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            color: AppColors.WHITE,
+            padding: EdgeInsets.symmetric(horizontal: 20.0.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 20,
+                  height: 20.h,
                 ),
                 Text(
                   'apartmentRegistration'.tr,
@@ -48,7 +46,7 @@ class SelectApartmentView extends BaseView<SelectApartmentController> {
                   ],
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 20.h,
                 ),
               ],
             ),
@@ -71,13 +69,16 @@ class SelectApartmentView extends BaseView<SelectApartmentController> {
                   ),
                 );
               })),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 20.0,
-            ),
-            child: Text(
-                'Apartmanınızı bu listede bulamıyorsanız lütfen apartman yöneticiniz ile iletişime geçiniz.'),
-          )
+          buildInfoText()
         ],
       ));
+
+  Padding buildInfoText() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 20.0,
+      ),
+      child: Text('select_apartment_info'.tr),
+    );
+  }
 }

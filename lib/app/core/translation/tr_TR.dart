@@ -155,4 +155,7 @@ const Map<String, String> tr = {
   'read_qr_info':
       'Yöneticinizde bulunan QR kodunu buraya okutarak apartmana hızlı bir şekilde kaydınızı oluşturabilirsiniz. Okuttuğunuz apartmana hızlıca yerleşeceksiniz',
   'give_up': 'Vazgeç',
+
+  'select_apartment_info':
+      'Apartmanınızı bu listede bulamıyorsanız lütfen apartman yöneticiniz ile iletişime geçiniz.',
 };

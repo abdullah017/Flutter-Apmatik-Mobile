@@ -41,7 +41,7 @@ class PreferencesView extends BaseView<PreferencesController> {
           ),
           Container(
             width: 350.w,
-            height: 101.h,
+            height: 110.h,
             color: Colors.white,
             child: Column(
               children: [

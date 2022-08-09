@@ -24,7 +24,7 @@ class QuestionnaireDetailView extends BaseView<QuestionnaireDetailController> {
           ),
           Container(
             width: 390.w,
-            height: 200.h,
+            height: 235.h,
             color: AppColors.WHITE,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

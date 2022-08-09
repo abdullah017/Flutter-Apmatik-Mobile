@@ -13,6 +13,7 @@ class QuestionnaireCardWidget extends StatelessWidget {
   final String? time;
   final bool? buttonVisible;
   final bool? tagVisible;
+  final Function()? onPressed;
   const QuestionnaireCardWidget({
     Key? key,
     this.margin,
@@ -22,20 +23,21 @@ class QuestionnaireCardWidget extends StatelessWidget {
     this.time,
     this.buttonVisible = true,
     this.tagVisible = true,
+    this.onPressed,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: margin ?? EdgeInsets.symmetric(horizontal: 20),
+      margin: margin ?? EdgeInsets.symmetric(horizontal: 20.w),
       width: 350.w,
-      height: buttonVisible == true
+      height: buttonVisible!
           ? Get.width >= 390
-              ? 255.h
-              : 305.h
+              ? 280.h
+              : 301.h
           : Get.width >= 390
-              ? 220.h
-              : 305.h,
+              ? 250.h
+              : 251.h,
       child: Card(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -46,8 +48,8 @@ class QuestionnaireCardWidget extends StatelessWidget {
                 image ??
                     Image.asset(
                       'assets/images/anket.png',
-                      width: margin == EdgeInsets.zero ? 400.sm : 350.sm,
-                      height: 135.sm,
+                      width: margin == EdgeInsets.zero ? 400.w : 350.w,
+                      height: 135.h,
                       fit: BoxFit.fill,
                     ),
                 Visibility(
@@ -128,7 +130,7 @@ class QuestionnaireCardWidget extends StatelessWidget {
                         Size(89.w, 27.h),
                       ),
                     ),
-                    onPressed: () => null),
+                    onPressed: onPressed),
               ),
             ),
             SizedBox(

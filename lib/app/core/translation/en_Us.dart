@@ -154,4 +154,9 @@ const Map<String, String> en = {
   'read_qr_info':
       'You can quickly create your registration for the apartment by scanning the QR code found in your manager here. You will quickly settle in the apartment you have taught.',
   'give_up': 'Give Up',
+
+    'select_apartment_info':'If you cannot find your apartment in this list, please contact your apartment manager.'
+
+
+
 };

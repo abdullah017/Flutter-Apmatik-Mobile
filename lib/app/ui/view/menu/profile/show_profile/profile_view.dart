@@ -76,6 +76,9 @@ class ProfileView extends BaseView<ProfileController> {
             ],
           ),
         ),
+        SizedBox(
+          height: 10.h,
+        ),
         ListView(
           shrinkWrap: true,
           children: [
@@ -259,7 +262,7 @@ class ProfileView extends BaseView<ProfileController> {
           ),
         ),
         SizedBox(
-          height: 15.h,
+          height: 10.h,
         ),
       ],
     );
