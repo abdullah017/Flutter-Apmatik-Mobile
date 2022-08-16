@@ -3,6 +3,7 @@
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/helper/form_validation_helper.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
+import 'package:apmatik/app/ui/view/menu/menu_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -64,21 +65,35 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
                             children: [
                               BottomNavigationBar(
                                   iconSize: 32,
-                                  onTap: (index) {
+                                  onTap: (index) async {
                                     debugPrint(controller.tabIndex.toString());
                                     controller.tabChange(index);
-                                    controller.update();
+
                                     if (index == 0) {
-                                      Get.offAndToNamed('dashboard');
-                                    } else if (index == 1) {
-                                      Get.offAndToNamed('blank');
-                                    } else if (index == 2) {
-                                      Get.offAndToNamed('home');
-                                    } else if (index == 3) {
-                                      Get.offAndToNamed('blank');
-                                    } else if (index == 4) {
-                                      Get.offAndToNamed('menu');
+                                      await Get.offAndToNamed('dashboard');
+                                      Get.delete<MenuController>();
+                                      controller.update();
                                     }
+                                    if (index == 1) {
+                                      await Get.offAndToNamed('blank');
+                                      Get.delete<MenuController>();
+                                      controller.update();
+                                    }
+                                    if (index == 2) {
+                                      await Get.offAndToNamed('home');
+                                      Get.delete<MenuController>();
+                                      controller.update();
+                                    }
+                                    if (index == 3) {
+                                      await Get.offAndToNamed('blank');
+                                      Get.delete<MenuController>();
+                                      controller.update();
+                                    }
+                                    if (index == 4) {
+                                      await Get.offAndToNamed('menu');
+                                      controller.update();
+                                    }
+                                    controller.update();
                                   },
                                   unselectedLabelStyle: TextStyle(fontSize: 0),
                                   unselectedFontSize: 0,

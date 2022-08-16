@@ -152,26 +152,34 @@ class MenuView extends BaseView<MenuController> {
                       )
                     ],
                   )),
-              Container(
-                width: 350.w,
-                height: 75.h,
-                color: Colors.transparent,
-                child: Card(
-                  elevation: 5,
-                  child: ListTile(
-                    dense: true,
-                    title: Text(
-                      'Eşşiz Apmatik Kampanyalarına Hemen Katıl',
-                      style: AppTextStyle()
-                          .getSfProDisplaySemiBold_h6(AppColors.ORANGE),
-                    ),
-                    subtitle: Padding(
-                      padding: const EdgeInsets.only(top: 5.0),
-                      child: Text('Eşşiz Apmatik Kampanyalarına Hemen Katıl',
+              Padding(
+                padding: Get.width >= 390
+                    ? EdgeInsets.symmetric(vertical: 25.0.h)
+                    : EdgeInsets.symmetric(vertical: 85.0.h),
+                child: Container(
+                  width: 350.w,
+                  height: 75.h,
+                  color: Colors.transparent,
+                  child: Center(
+                    child: Card(
+                      elevation: 5,
+                      child: ListTile(
+                        dense: true,
+                        title: Text(
+                          'Eşşiz Apmatik Kampanyalarına Hemen Katıl',
                           style: AppTextStyle()
-                              .getSfProDisplayRegular_H6(AppColors.DARK_GREY)),
+                              .getSfProDisplaySemiBold_h6(AppColors.ORANGE),
+                        ),
+                        subtitle: Padding(
+                          padding: const EdgeInsets.only(top: 5.0),
+                          child: Text(
+                              'Eşşiz Apmatik Kampanyalarına Hemen Katıl',
+                              style: AppTextStyle().getSfProDisplayRegular_H6(
+                                  AppColors.DARK_GREY)),
+                        ),
+                        trailing: Image.asset(AppAssets.gift_icon),
+                      ),
                     ),
-                    trailing: Image.asset(AppAssets.gift_icon),
                   ),
                 ),
               )

@@ -1,7 +1,4 @@
-// ignore_for_file: must_be_immutable
-
 import 'dart:ui';
-
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
@@ -10,7 +7,6 @@ import 'package:apmatik/app/ui/widgets/custom_buttons/custom_elevated_button.dar
 import 'package:apmatik/app/ui/widgets/custom_clippath/dotted_seperator.dart';
 import 'package:apmatik/app/ui/widgets/custom_appbars/login_appbar.dart';
 import 'package:apmatik/app/ui/widgets/custom_clippath/ticket_card.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -19,7 +15,7 @@ class DashBoardView extends BaseView<DashBoardController> {
   DashBoardView({Key? key})
       : super(
           key: key,
-          navBarHide: false, // false
+          navBarHide: false,
         );
   @override
   Widget vBuilder() => Scaffold(
@@ -29,8 +25,8 @@ class DashBoardView extends BaseView<DashBoardController> {
             ? BackdropFilter(
                 filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
                 child: Container(
-                  width: 390,
-                  height: 320,
+                  width: 390.w,
+                  height: 320.h,
                   decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
@@ -98,13 +94,13 @@ class DashBoardView extends BaseView<DashBoardController> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              height: 220.0.h,
+              height: Get.width >= 390 ? 205.h : 220.h,
               child: Stack(
                 children: <Widget>[
                   Container(
                     color: AppColors.ORANGE,
                     width: MediaQuery.of(Get.context!).size.width,
-                    height: 180.0,
+                    height: 180.0, // ORANGE BACKGROUND
                   ),
                   Positioned(
                     top: 10.0,
@@ -112,10 +108,21 @@ class DashBoardView extends BaseView<DashBoardController> {
                     right: 0.0,
                     child: Container(
                       width: 350.w,
-                      height: 200.h,
+                      height: Get.width >= 390 ? 190.h : 200.h,
                       padding: EdgeInsets.symmetric(horizontal: 20.0.w),
                       child: DecoratedBox(
                         decoration: BoxDecoration(
+                            boxShadow: <BoxShadow>[
+                              BoxShadow(
+                                color: AppColors.GREY,
+                                blurRadius: 15.0, // soften the shadow
+                                spreadRadius: 0.0, //extend the shadow
+                                offset: Offset(
+                                  0.0, // Move to right 10  horizontally
+                                  5.0, // Move to bottom 10 Vertically
+                                ),
+                              )
+                            ],
                             borderRadius: BorderRadius.circular(1.0),
                             border: Border.all(
                                 color: Colors.grey.withOpacity(0.5),
@@ -155,7 +162,7 @@ class DashBoardView extends BaseView<DashBoardController> {
                             Expanded(
                               child: ListView.builder(
                                 shrinkWrap: true,
-                                itemExtent: 30,
+                                itemExtent: 40,
                                 physics: NeverScrollableScrollPhysics(),
                                 itemCount: 3,
                                 itemBuilder: (context, index) {
@@ -176,7 +183,7 @@ class DashBoardView extends BaseView<DashBoardController> {
             Expanded(
               child: ListView.builder(
                 shrinkWrap: true,
-                itemCount: 20,
+                itemCount: Get.width >= 390 ? 20 : 30,
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.all(3.0),
@@ -196,7 +203,7 @@ class DashBoardView extends BaseView<DashBoardController> {
 
   buildDeptCard() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      padding: EdgeInsets.symmetric(horizontal: 20.0.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -236,10 +243,10 @@ class DashBoardView extends BaseView<DashBoardController> {
 
   Padding buildLastPaymentsTitleText() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8.0.w, vertical: 8.0.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 8.0.h),
       child: Text(
         'Son Ödemelerim',
-        style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
+        style: appTextStyle.getSfProDisplayRegular_H5(AppColors.DARK_GREY),
       ),
     );
   }
@@ -326,7 +333,7 @@ class DashBoardView extends BaseView<DashBoardController> {
 
   Card buildLastPaymentsCard() {
     return Card(
-      margin: EdgeInsets.symmetric(horizontal: 10),
+      margin: EdgeInsets.symmetric(horizontal: 20.w),
       child: ListTile(
         dense: true,
         title: Text(
