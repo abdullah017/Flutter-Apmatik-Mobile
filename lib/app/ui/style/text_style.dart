@@ -24,8 +24,6 @@ class AppTextStyle {
         color: color);
   }
 
-  
-
   /// [LIGHT_ITALIC_FONT_TYPE]
   TextStyle getSfProDisplayLight_Italic_H6(Color color) {
     return TextStyle(
@@ -73,6 +71,7 @@ class AppTextStyle {
         fontStyle: FontStyle.normal,
         color: color);
   }
+
   TextStyle getSfProDisplayRegular_H7(Color color) {
     return TextStyle(
         fontFamily: 'SF Pro',
@@ -81,6 +80,7 @@ class AppTextStyle {
         fontStyle: FontStyle.normal,
         color: color);
   }
+
   TextStyle getSfProDisplayRegular_Italic_H6(Color color) {
     return TextStyle(
         fontFamily: 'SF Pro',

@@ -16,7 +16,7 @@ class EditProfileView extends BaseView<EditProfileController> {
   EditProfileView({Key? key})
       : super(
           key: key,
-          navBarHide: false, // false
+          navBarHide: true, // false
         );
   @override
   Widget vBuilder() => Scaffold(
