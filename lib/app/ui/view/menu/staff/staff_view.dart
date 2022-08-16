@@ -31,8 +31,13 @@ class StaffView extends BaseView<StaffController> {
                   child: ListTile(
                     dense: true,
                     isThreeLine: true,
-                    leading: Image.asset(
-                      AppAssets.appbar,
+                    leading: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset(
+                        AppAssets.appbar,
+                        width: 50,
+                        height: 50,
+                      ),
                     ),
                     title: Text(
                       'YÖNETİCİ 1',

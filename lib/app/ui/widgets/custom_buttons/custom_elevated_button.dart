@@ -26,7 +26,7 @@ class CustomElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final borderRadius = this.borderRadius ?? BorderRadius.circular(0);
+    final borderRadius = this.borderRadius ?? BorderRadius.circular(3);
     return Container(
       margin: margin ?? EdgeInsets.symmetric(horizontal: 30.w),
       width: width,

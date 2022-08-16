@@ -114,19 +114,16 @@ class DashBoardView extends BaseView<DashBoardController> {
                         decoration: BoxDecoration(
                             boxShadow: <BoxShadow>[
                               BoxShadow(
-                                color: AppColors.GREY,
-                                blurRadius: 15.0, // soften the shadow
-                                spreadRadius: 0.0, //extend the shadow
+                                color: Colors.black12,
+                                blurRadius: 4.0, // soften the shadow
+                                spreadRadius: 1.0, //extend the shadow
                                 offset: Offset(
                                   0.0, // Move to right 10  horizontally
-                                  5.0, // Move to bottom 10 Vertically
+                                  3.0, // Move to bottom 10 Vertically
                                 ),
                               )
                             ],
-                            borderRadius: BorderRadius.circular(1.0),
-                            border: Border.all(
-                                color: Colors.grey.withOpacity(0.5),
-                                width: 1.0),
+                            borderRadius: BorderRadius.circular(5.0),
                             color: Colors.white),
                         child: Column(
                           children: [
