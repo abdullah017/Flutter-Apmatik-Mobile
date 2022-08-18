@@ -4,7 +4,6 @@ import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/view/auth/additional_details/additional_details_controller.dart';
-import 'package:apmatik/app/ui/widgets/custom_appbars/custom_appbar.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_dropdown_formfield_button.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_elevated_button.dart';
 import 'package:apmatik/app/ui/widgets/custom_page_title.dart';
@@ -17,9 +16,7 @@ import 'package:get/get.dart';
 
 class AdditionalDetailsView extends BaseView<AdditionalDetailsController> {
   @override
-  Widget vBuilder() => Scaffold(
-        appBar: CustomAppBar(),
-        body: Form(
+  Widget vBuilder() =>  Form(
           key: controller.additionalFormKey,
           child: ListView(
             children: [
@@ -42,8 +39,7 @@ class AdditionalDetailsView extends BaseView<AdditionalDetailsController> {
               buildButtons()
             ],
           ),
-        ),
-      );
+  );
 
   InkWell buildBirthDayPicker() {
     return InkWell(

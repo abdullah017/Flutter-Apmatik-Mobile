@@ -22,14 +22,14 @@ class HomeView extends BaseView<HomeController> {
   Widget vBuilder() => controller.hasApertmenKey ?? false
       ? ListView(children: [
           Padding(
-            padding: AppPadding.guideLineVertical8,
+            padding: AppPadding.guideLine10Vertical8,
             child: Text(
               'Avantajlarımız',
               style: AppTextStyle().getSfProDisplayRegular_H5(AppColors.BLACK),
             ),
           ),
           Padding(
-            padding: AppPadding.guideLineVertical8,
+            padding: AppPadding.guideLine10Vertical8,
             child: CarouselSlider.builder(
               itemCount: controller.imgList.length,
               itemBuilder:
@@ -80,6 +80,32 @@ class HomeView extends BaseView<HomeController> {
             thickness: 2.2,
             color: Colors.blueGrey.shade100,
           ),
+          // PopupMenuButton<int>(
+          //   icon: Icon(Icons.arrow_back),
+          //   onSelected: (value) {
+          //     print(value);
+          //     controller.subPageId = value;
+          //     controller.update();
+          //   },
+          //   itemBuilder: (context) => const [
+          //     PopupMenuItem<int>(
+          //         value: 0,
+          //         child: Text(
+          //           'Duyurular',
+          //         )),
+          //     PopupMenuItem<int>(
+          //         value: 1,
+          //         child: Text(
+          //           'Anketler',
+          //         )),
+          //     PopupMenuItem<int>(
+          //         value: 2,
+          //         child: Text(
+          //           'Sponsorlar',
+          //         )),
+          //   ],
+          //   child: Text('Duyurular'),
+          // ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -108,26 +134,95 @@ class HomeView extends BaseView<HomeController> {
                       }).toList(),
                       onChanged: (String? item) {
                         controller.selectedValue = item!;
+                        print(controller.selectedValue);
+                        if (item == 'Anketler') {
+                          controller.subPageId = 0;
+                        }
+                        if (item == 'Duyurular') {
+                          controller.subPageId = 1;
+                        }
+                        if (item == 'Sponsorlar') {
+                          controller.subPageId = 2;
+                        }
+                        if (item == 'Tümü') {
+                          controller.subPageId = 3;
+                        }
                         controller.update();
                       }),
                 ),
               ),
             ],
           ),
-          if (controller.selectedValue == 'Anketler')
-            QuestionnaireCardWidget(onPressed: () {
-              Get.toNamed('questionnaire_detail');
-            }),
-          if (controller.selectedValue == 'Duyurular') PostCardWidget(),
-          if (controller.selectedValue == 'Sponsorlar') SponsoredCardWidget(),
-          // if (controller.selectedValue == 'Tümü')
-          //   {
-          //     QuestionnaireCardWidget(onPressed: () {
-          //       Get.toNamed('questionnaire_detail');
-          //     }),
-          //     PostCardWidget(),
-          //     SponsoredCardWidget()
-          //   }
+          if (controller.subPageId == 0)
+            ListView.builder(
+              physics: NeverScrollableScrollPhysics(),
+              padding: EdgeInsets.zero,
+              shrinkWrap: true,
+              itemCount: 2,
+              itemBuilder: ((context, index) {
+                return QuestionnaireCardWidget(
+                  onPressed: () {
+                    Get.toNamed('questionnaire_detail');
+                  },
+                );
+              }),
+            ),
+          if (controller.subPageId == 1)
+            ListView.builder(
+              padding: EdgeInsets.zero,
+              shrinkWrap: true,
+              itemCount: 1,
+              itemBuilder: ((context, index) {
+                return PostCardWidget(
+                  postUserImage: 'https://via.placeholder.com/150',
+                  postUser: 'Ahmet Pehlivan',
+                  postImage:
+                      "https://images.squarespace-cdn.com/content/v1/5c4e41d2b40b9d6e2ab467ff/1612855779673-B5L9FMMXBC4NWRG4N0YF/residential-trash-services.jpg?format=1500w",
+                  postDescription:
+                      'Çevremize ve binamıza verdiğimiz önem desteklerinizi bekliyor',
+                  postTime: '8',
+                  postTitle: 'Çöpler Hakkında',
+                );
+              }),
+            ),
+          if (controller.subPageId == 2)
+            SponsoredCardWidget(
+              imageUrl:
+                  'https://jiujitsutimes.com/wp-content/uploads/sponsored-slider.png',
+            ),
+
+          if (controller.subPageId == 3)
+            Column(
+              children: [
+                ListView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  padding: EdgeInsets.zero,
+                  shrinkWrap: true,
+                  itemCount: 2,
+                  itemBuilder: ((context, index) {
+                    return QuestionnaireCardWidget(
+                      onPressed: () {
+                        Get.toNamed('questionnaire_detail');
+                      },
+                    );
+                  }),
+                ),
+                PostCardWidget(
+                  postUserImage: 'https://via.placeholder.com/150',
+                  postUser: 'Ahmet Pehlivan',
+                  postImage:
+                      "https://images.squarespace-cdn.com/content/v1/5c4e41d2b40b9d6e2ab467ff/1612855779673-B5L9FMMXBC4NWRG4N0YF/residential-trash-services.jpg?format=1500w",
+                  postDescription:
+                      'Çevremize ve binamıza verdiğimiz önem desteklerinizi bekliyor',
+                  postTime: '8',
+                  postTitle: 'Çöpler Hakkında',
+                ),
+                SponsoredCardWidget(
+                  imageUrl:
+                      'https://jiujitsutimes.com/wp-content/uploads/sponsored-slider.png',
+                ),
+              ],
+            )
         ])
       : Container(
           margin: EdgeInsets.only(top: Get.height * 0.15),

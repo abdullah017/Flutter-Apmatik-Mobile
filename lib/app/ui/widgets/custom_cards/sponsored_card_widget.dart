@@ -1,19 +1,23 @@
 import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/widgets/stacked_widget.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class SponsoredCardWidget extends StatelessWidget {
   const SponsoredCardWidget({
-    Key? key,
+    Key? key, required this.imageUrl,
   }) : super(key: key);
+
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20),
+      margin: AppPadding.guideLine,
       width: 350.w,
       height: Get.width > 390 ? 307.h : 380.h,
       child: Card(
@@ -23,12 +27,12 @@ class SponsoredCardWidget extends StatelessWidget {
           children: <Widget>[
             Stack(
               children: [
-                Image.asset(
-                  'assets/images/sponsored.png',
-                  width: 350.w,
-                  height: 320.h,
-                  fit: BoxFit.fill,
-                ),
+                CachedNetworkImage(
+                        imageUrl: imageUrl,
+                        fit: BoxFit.fill,
+                        width: 350.w,
+                        height: 320.h,
+                      ),
                 Align(
                   alignment: Alignment.topRight,
                   child: Container(

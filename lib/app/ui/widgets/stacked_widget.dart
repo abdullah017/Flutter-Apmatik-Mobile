@@ -10,10 +10,10 @@ class StackedWidgets extends StatelessWidget {
   final double xShift;
   final String label;
 
-  const StackedWidgets({
+   StackedWidgets({
     Key? key,
     required this.items,
-    this.direction = TextDirection.ltr,
+    required this.direction,
     this.size = 100,
     this.xShift = 20,
     this.label = '',

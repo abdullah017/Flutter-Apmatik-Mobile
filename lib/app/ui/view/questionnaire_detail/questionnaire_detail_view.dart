@@ -1,23 +1,17 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:apmatik/app/core/base/base_common_widget.dart';
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/view/questionnaire_detail/questionnaire_detail_controller.dart';
-import 'package:apmatik/app/ui/widgets/custom_appbars/custom_appbar.dart';
 import 'package:apmatik/app/ui/widgets/custom_cards/questionnaire_card.dart';
-import 'package:flutter/gestures.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class QuestionnaireDetailView extends BaseView<QuestionnaireDetailController> {
+  QuestionnaireDetailView({Key? key})
+      : super(key: key, navBarHide: true, appBarHide: false);
   @override
-  Widget vBuilder() => Scaffold(
-      backgroundColor: AppColors.PAGEBACKGROUND,
-      appBar: CustomAppBar(),
-      body: ListView(
+  Widget vBuilder() => ListView(
         children: [
           QuestionnaireCardWidget(
             buttonVisible: false,
@@ -111,7 +105,7 @@ class QuestionnaireDetailView extends BaseView<QuestionnaireDetailController> {
                 }),
           ),
         ],
-      ));
+      );
 
   buildRadioButton(dynamic value, dynamic groupValue, String? text,
       Function(dynamic)? onChanged) {

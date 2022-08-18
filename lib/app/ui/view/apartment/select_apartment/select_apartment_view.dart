@@ -3,8 +3,6 @@ import 'package:apmatik/app/core/constant/color_constants.dart';
 
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/view/apartment/select_apartment/select_apartment_controller.dart';
-
-import 'package:apmatik/app/ui/widgets/custom_appbars/custom_appbar.dart';
 import 'package:apmatik/app/ui/widgets/custom_cards/select_apartment_card.dart';
 
 import 'package:flutter/material.dart';
@@ -13,10 +11,7 @@ import 'package:get/get.dart';
 
 class SelectApartmentView extends BaseView<SelectApartmentController> {
   @override
-  Widget vBuilder() => Scaffold(
-      appBar: CustomAppBar(),
-      backgroundColor: AppColors.PAGEBACKGROUND,
-      body: ListView(
+  Widget vBuilder() =>  ListView(
         children: [
           Container(
             color: AppColors.WHITE,
@@ -71,7 +66,7 @@ class SelectApartmentView extends BaseView<SelectApartmentController> {
               })),
           buildInfoText()
         ],
-      ));
+      );
 
   Padding buildInfoText() {
     return Padding(
