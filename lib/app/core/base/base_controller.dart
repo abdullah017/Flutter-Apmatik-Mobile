@@ -40,9 +40,13 @@ class BaseController extends GetxController
     update();
   }
 
+  var isLogin;
   bool isLoadMore = false;
   bool withScrollController = false;
   String? msg;
+  String? pageTitle;
+  bool? isPageMenuItem = false;
+  bool? isSettingItem = false;
   ScrollController scrollController = ScrollController();
   PageController pageController = PageController();
   FormValidationHelper formValidationHelper = FormValidationHelper();
@@ -108,6 +112,8 @@ class BaseController extends GetxController
   @override
   void onInit() {
     super.onInit();
+
+    isLogin = box.read('isLogin') ?? false;
 
     ///[CHECK APP VERSION]
     // checkAppVersion();

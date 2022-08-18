@@ -18,7 +18,6 @@ class ImageWithTextSliderCard extends StatelessWidget {
     return Stack(
       children: [
         Card(
-            color: Colors.red,
             elevation: 15,
             shadowColor: Colors.transparent,
             semanticContainer: true,

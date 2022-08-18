@@ -4,6 +4,15 @@ import 'package:get/get.dart';
 
 class AddApertmentController extends BaseController
     with GetSingleTickerProviderStateMixin {
+  @override
+  // PAGE TITLE AREA IS HERE!
+  String? get pageTitle => '';
+  // NOTICE HERE THAT THE PAGE IS A MENU AND SETTING ITEM TO CHANGE THE APPBAR
+  @override
+  bool? get isPageMenuItem => true;
+  @override
+  bool? get isSettingItem => false;
+
   TabController? tabController;
 
   String? selectedValue = 'Türkiye';
@@ -20,11 +29,14 @@ class AddApertmentController extends BaseController
 
   void goQrPage() {
     Get.toNamed('/readqr');
-    // if (addApartmenFormKey.currentState!.validate()) {
-    //   //Get.toNamed('/qrcode');
-    // } else {
-    //   print('HATALI FORM');
-    // }
+  }
+
+  void goManualSearchResult() {
+    if (addApartmenFormKey.currentState!.validate()) {
+      Get.toNamed('/selectapartment');
+    } else {
+      print('HATALI FORM');
+    }
   }
 
   tabChange(int newIndex) {

@@ -3,10 +3,10 @@ import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/view/menu/profile/edit_profile/edit_profile_controller.dart';
-import 'package:apmatik/app/ui/widgets/custom_appbars/custom_appbar.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_cupertinoswitch.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_dropdown_formfield_button.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_elevated_button.dart';
+import 'package:apmatik/app/ui/widgets/custom_inputs/custom_filled_textformfield.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,15 +14,9 @@ import 'package:get/get.dart';
 
 class EditProfileView extends BaseView<EditProfileController> {
   EditProfileView({Key? key})
-      : super(
-          key: key,
-          navBarHide: true, // false
-        );
+      : super(key: key, navBarHide: true, appBarHide: false);
   @override
-  Widget vBuilder() => Scaffold(
-      backgroundColor: AppColors.PAGEBACKGROUND,
-      appBar: CustomAppBar(),
-      body: ListView(
+  Widget vBuilder() => ListView(
         children: [
           buildProfilePhoto(),
           buildNameAndMail(),
@@ -93,7 +87,7 @@ class EditProfileView extends BaseView<EditProfileController> {
             child: Text('updateButton'.tr),
           ),
         ],
-      ));
+      );
 
   Padding buildProfilePhoto() {
     return Padding(
@@ -147,24 +141,9 @@ class EditProfileView extends BaseView<EditProfileController> {
     );
   }
 
-  Padding buildPhoneNumberTextFormField() {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.0.w),
-      child: Container(
-        width: 330.w,
-        height: 30.h,
-        child: TextFormField(
-          controller: controller.phoneNumberController,
-          style: appTextStyle.getSfProDisplayMedium_H6(AppColors.BLACK),
-          decoration: InputDecoration(
-            contentPadding:
-                EdgeInsets.symmetric(vertical: 10.0.h, horizontal: 10.0.h),
-            border: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.grey, width: 2.0),
-            ),
-          ),
-        ),
-      ),
+  buildPhoneNumberTextFormField() {
+    return CustomFilledTextFormField(
+      textEditingController: controller.phoneNumberController,
     );
   }
 
@@ -175,7 +154,7 @@ class EditProfileView extends BaseView<EditProfileController> {
         data: ThemeData(
             textTheme: TextTheme(
                 subtitle1:
-                    appTextStyle.getSfProDisplayMedium_H6(AppColors.BLACK))),
+                    appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK))),
         child: Container(
           width: 330.w,
           height: 30.h,
@@ -183,15 +162,26 @@ class EditProfileView extends BaseView<EditProfileController> {
             dropdownButtonProps: DropdownButtonProps(
               icon: Transform.translate(
                   offset: Offset(-8, 0),
-                  child: Icon(Icons.arrow_drop_down,
-                      size: 24, color: AppColors.DARK_GREY)),
+                  child: Image.asset(AppAssets.dropdown_icon)),
               padding: EdgeInsets.only(left: 20.w),
             ),
             dropdownDecoratorProps: DropDownDecoratorProps(
               dropdownSearchDecoration: InputDecoration(
+                filled: true,
+                fillColor: AppColors.WHITE,
                 contentPadding: const EdgeInsets.symmetric(
                     vertical: 10.0, horizontal: 10.0),
-                border: OutlineInputBorder(),
+                border: OutlineInputBorder(
+                  borderSide:
+                      BorderSide(color: AppColors.WHITE_GREY, width: 1.0),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide:
+                      BorderSide(color: AppColors.WHITE_GREY, width: 1.0),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: AppColors.ORANGE, width: 1.0),
+                ),
               ),
             ),
             popupProps: PopupProps.menu(
@@ -215,7 +205,8 @@ class EditProfileView extends BaseView<EditProfileController> {
       child: Theme(
         data: ThemeData(
           textTheme: TextTheme(
-            subtitle1: AppTextStyle().getSfProDisplayMedium_H6(AppColors.BLACK),
+            subtitle1:
+                AppTextStyle().getSfProDisplayRegular_H5(AppColors.BLACK),
           ),
         ),
         child: Container(
@@ -245,7 +236,8 @@ class EditProfileView extends BaseView<EditProfileController> {
       child: Theme(
         data: ThemeData(
           textTheme: TextTheme(
-            subtitle1: AppTextStyle().getSfProDisplayMedium_H6(AppColors.BLACK),
+            subtitle1:
+                AppTextStyle().getSfProDisplayRegular_H5(AppColors.BLACK),
           ),
         ),
         child: Container(
@@ -275,7 +267,8 @@ class EditProfileView extends BaseView<EditProfileController> {
       child: Theme(
         data: ThemeData(
           textTheme: TextTheme(
-            subtitle1: AppTextStyle().getSfProDisplayMedium_H6(AppColors.BLACK),
+            subtitle1:
+                AppTextStyle().getSfProDisplayRegular_H5(AppColors.BLACK),
           ),
         ),
         child: Container(

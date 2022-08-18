@@ -1,4 +1,9 @@
+// ignore_for_file: deprecated_member_use
+
+import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 showProgressBar() {
@@ -10,11 +15,33 @@ showProgressBar() {
       barrierDismissible: false);
 }
 
+showSimple({String message = ""}) {
+  Get.showSnackbar(GetBar(
+    backgroundColor: AppColors.ORANGE,
+    borderRadius: 5,
+    boxShadows: [
+      BoxShadow(
+        color: Colors.orange.withOpacity(0.5),
+        spreadRadius: 0,
+        blurRadius: 5,
+        offset: Offset(0, 3),
+      ),
+    ],
+    margin: EdgeInsets.symmetric(horizontal: 18.w),
+    messageText: Text(message, style: TextStyle(color: Colors.white)),
+    duration: Duration(seconds: 2),
+  ));
+}
+
 showSnackBarTwo(String title, String message, Color backgroundColor) {
-  Get.snackbar(title, message,
-      snackPosition: SnackPosition.TOP,
-      backgroundColor: backgroundColor,
-      colorText: Colors.white);
+  Get.snackbar(
+    title,
+    message,
+    padding: EdgeInsets.only(top: 5, bottom: 5),
+    snackPosition: SnackPosition.BOTTOM,
+    backgroundColor: backgroundColor,
+    colorText: Colors.white,
+  );
 }
 
 showSnackBar(String title, String message, Color backgroundColor,

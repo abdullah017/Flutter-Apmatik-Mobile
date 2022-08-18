@@ -1,7 +1,17 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
 
 class UpdatePasswordController extends BaseController {
+  // PAGE TITLE AREA IS HERE!
+  String? get pageTitle => 'upPassword'.tr;
+  // NOTICE HERE THAT THE PAGE IS A MENU ITEM TO CHANGE THE APPBAR
+  @override
+  bool? get isPageMenuItem => true;
+
+  @override
+  bool? get isSettingItem => true;
+
   GlobalKey<FormState> updatePasswordFormKey = GlobalKey<FormState>();
 
   TextEditingController oldPassController = TextEditingController();

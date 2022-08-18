@@ -59,7 +59,7 @@ const Map<String, String> tr = {
   'verificationTimer': 'Saniye sonra tekrar gönder',
   'go': 'Devam',
   'forgostPasswordInfo':
-      'Şifrenizi sıfırlamak için size bir email göndereceğiz. Lütfen mail adresinizi doğru girdiğinizden emin olunuz.',
+      'Şifrenizi sıfırlamak için size bir sms göndereceğiz. Lütfen telefon numaranızı doğru girdiğinizden emin olunuz',
   'registerSuccess': 'Kaydınız Başarı ile Tamamlandı',
   'registerSuccessInfo':
       'Apmatik kaydınız tamamlanmıştır. Hemen muhiti olduğunuz apartmanı ekleyin ve sizde evinizi cebinizden takip edin!',
@@ -77,7 +77,7 @@ const Map<String, String> tr = {
   'verifyErrorınfo':
       'Yapmış olduğunuz apartman kaydı henüz apartman yönetimi tarafından onaylanmadı. Lütfen hesabınız onaylandığında tekrar deneyin',
   'tryAgain': 'Tekrar Dene',
-  'reportProblem': 'Sorun Bildir',
+
   'otpBack': 'Bu işlemi İptal etmek istediğinize emin misiniz?',
   'getBack': 'Geri dön',
   'noApertmenRecord': 'Apartman Kaydınızı Bulunamadı',
@@ -92,25 +92,23 @@ const Map<String, String> tr = {
   'successRecordApartmenInfo':
       'Apartman kaydınız tamamlanmıştır. Apartman yöneticiniz başvurunuzu onayladığı zaman size bir bildirim göndereceğiz.',
   'completed': 'Tamamlandı',
-  'profile': 'Profil',
+
   'cars': 'Araçlar',
   'fault': 'Arıza Bildirimi',
-  'preferences': 'Tercihler',
+
   'newApartment': 'Yeni Daire Girişi',
   'managmentTeam': 'Yönetim Kadrosu',
   'exit': 'Çıkış Yap',
   'turkish': 'Türkçe',
   'english': 'İngilizce',
-  'languageSettings': 'Dil Ayarları',
-  'upPassword': 'Şifremi Güncelle',
-  'notification': 'Bildirimler',
+
   'payments': 'Ödemeler',
   'system': 'Sistem',
   'advantages': 'Avantajlar',
-  'userAggrements': 'Kullanıcı Sözleşmesi',
+
   'privateAggrements': 'Gizlilik Sözleşmesi',
   'feedBack': 'Geri Bildirim',
-  'about': 'Hakkında',
+
   'description': 'Açıklama',
   'report': 'Sorun Bildir',
   'causeProblem': 'Sorunun Sebebi',
@@ -119,7 +117,7 @@ const Map<String, String> tr = {
   'userId': 'Kullanıcı ID',
   'contact': 'Apmatik İletişim',
   'manage_cars': 'Araçları Yönet',
-  'edit_profile': 'Profilimi Düzenle',
+
   'registered_cars': 'Kayıtlı Araçlar',
   'about_membership': 'Üyelik Hakkında',
   'date_of_registration': 'Kayıt Tarihi',
@@ -158,4 +156,15 @@ const Map<String, String> tr = {
 
   'select_apartment_info':
       'Apartmanınızı bu listede bulamıyorsanız lütfen apartman yöneticiniz ile iletişime geçiniz.',
+
+  //MENU SAYFA BAŞLIKLARI
+  'profile': 'Profil',
+  'edit_profile': 'Profilimi Düzenle',
+  'notification': 'Bildirimler',
+  'preferences': 'Tercihler',
+  'userAggrements': 'Kullanıcı Sözleşmesi',
+  'languageSettings': 'Dil Ayarları',
+  'upPassword': 'Şifremi Güncelle',
+  'reportProblem': 'Sorun Bildir',
+  'about': 'Hakkında',
 };

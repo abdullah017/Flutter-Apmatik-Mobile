@@ -7,9 +7,11 @@ class RegisterController extends BaseController {
   GlobalKey<FormState> registerFormKey = GlobalKey<FormState>();
   RxBool isPasswordHidden = true.obs;
   RxBool isRePasswordHidden = true.obs;
-  RxString error = "Lütfen numaranızı doğru girin.".obs;
+  RxString error = "".obs;
   RxBool correctPhone = false.obs;
   PhoneNumber? phoneNumberWithRegion;
+
+  RxBool validForm = true.obs;
 
   String? selectedValue = 'Erkek';
   List<String> listOfValue = ['Erkek', 'Kadın'];
@@ -48,7 +50,7 @@ class RegisterController extends BaseController {
   }
 
   void register() async {
-    if (registerFormKey.currentState!.validate()) {
+    if (registerFormKey.currentState!.validate() && validForm.value == false) {
       formValidation = AutovalidateMode.disabled;
       await box
           .write('userData', [
@@ -61,7 +63,7 @@ class RegisterController extends BaseController {
           ])
           .whenComplete(() => goOtp())
           .catchError((err) {
-            print('Error: $err'); // Prints 401.
+            print('Error: $err');
           });
       print('YES');
 
@@ -70,6 +72,8 @@ class RegisterController extends BaseController {
     } else {
       print('NO');
       formValidation = AutovalidateMode.always;
+      //error.value = 'Lütfen Telefon Numaranızı Doğru şekilde Girin';
+      validForm.value = true;
       update();
     }
   }

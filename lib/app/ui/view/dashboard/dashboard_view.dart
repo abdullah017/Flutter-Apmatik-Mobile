@@ -1,9 +1,11 @@
 import 'dart:ui';
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/view/dashboard/dashboard_controller.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_elevated_button.dart';
+import 'package:apmatik/app/ui/widgets/custom_buttons/custom_outline_textbutton.dart';
 import 'package:apmatik/app/ui/widgets/custom_clippath/dotted_seperator.dart';
 import 'package:apmatik/app/ui/widgets/custom_appbars/login_appbar.dart';
 import 'package:apmatik/app/ui/widgets/custom_clippath/ticket_card.dart';
@@ -109,7 +111,7 @@ class DashBoardView extends BaseView<DashBoardController> {
                     child: Container(
                       width: 350.w,
                       height: Get.width >= 390 ? 190.h : 200.h,
-                      padding: EdgeInsets.symmetric(horizontal: 20.0.w),
+                      padding: AppPadding.guideLine,
                       child: DecoratedBox(
                         decoration: BoxDecoration(
                             boxShadow: <BoxShadow>[
@@ -200,7 +202,7 @@ class DashBoardView extends BaseView<DashBoardController> {
 
   buildDeptCard() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.0.w),
+      padding: AppPadding.guideLine,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -240,7 +242,7 @@ class DashBoardView extends BaseView<DashBoardController> {
 
   Padding buildLastPaymentsTitleText() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 8.0.h),
+      padding: EdgeInsets.symmetric(horizontal: 18.0.w, vertical: 8.0.h),
       child: Text(
         'Son Ödemelerim',
         style: appTextStyle.getSfProDisplayRegular_H5(AppColors.DARK_GREY),
@@ -323,14 +325,29 @@ class DashBoardView extends BaseView<DashBoardController> {
                       appTextStyle.get_SfProRounded_Medium_H5(AppColors.BLACK),
                 ),
               ),
+              CustomOutlineTextButton(
+                  fixedSize: Size(220, 27),
+                  buttonText: 'Mailime Gönder',
+                  onPressed: () {}),
             ],
           ),
         ));
   }
 
-  Card buildLastPaymentsCard() {
-    return Card(
-      margin: EdgeInsets.symmetric(horizontal: 20.w),
+  buildLastPaymentsCard() {
+    return Container(
+      decoration: BoxDecoration(boxShadow: <BoxShadow>[
+        BoxShadow(
+          color: Colors.black12,
+          blurRadius: 1.0, // soften the shadow
+          spreadRadius: 1.0, //extend the shadow
+          offset: Offset(
+            0.0, // Move to right 10  horizontally
+            1.0, // Move to bottom 10 Vertically
+          ),
+        )
+      ], borderRadius: BorderRadius.circular(5.0), color: Colors.white),
+      margin: AppPadding.guideLine,
       child: ListTile(
         dense: true,
         title: Text(

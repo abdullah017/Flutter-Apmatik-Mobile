@@ -11,20 +11,22 @@ class QuestionnaireCardWidget extends StatelessWidget {
   final String? title;
   final String? description;
   final String? time;
+  final double? elevation;
   final bool? buttonVisible;
   final bool? tagVisible;
   final Function()? onPressed;
-  const QuestionnaireCardWidget({
-    Key? key,
-    this.margin,
-    this.image,
-    this.title,
-    this.description,
-    this.time,
-    this.buttonVisible = true,
-    this.tagVisible = true,
-    this.onPressed,
-  }) : super(key: key);
+  const QuestionnaireCardWidget(
+      {Key? key,
+      this.margin,
+      this.image,
+      this.title,
+      this.description,
+      this.time,
+      this.buttonVisible = true,
+      this.tagVisible = true,
+      this.onPressed,
+      this.elevation})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +41,7 @@ class QuestionnaireCardWidget extends StatelessWidget {
               ? 250.h
               : 251.h,
       child: Card(
+        elevation: elevation ?? 1,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,

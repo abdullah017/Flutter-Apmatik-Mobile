@@ -8,20 +8,25 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 class OtpController extends BaseController
     with GetSingleTickerProviderStateMixin {
   final formKey = GlobalKey<FormState>();
+
   RxInt counter = 0.obs;
   RxInt levelClock = 120.obs;
   Rx<bool> hasError = false.obs;
   RxString currentText = "".obs;
   RxList storageList = [].obs;
   var phone;
+  var dataRegister;
+  var dataForgotPassword = Get.arguments;
   int endTime = DateTime.now().millisecondsSinceEpoch + 1000 * 30;
 
   TextEditingController textEditingController = TextEditingController();
   StreamController<ErrorAnimationType>? errorController;
   AnimationController? animationController;
+  FocusNode myFocusNode = FocusNode();
 
   @override
   void onInit() {
+    myFocusNode;
     animationController = AnimationController(
       vsync: this,
       duration: Duration(seconds: levelClock.value),
@@ -36,33 +41,41 @@ class OtpController extends BaseController
 
     animationController!.forward();
     errorController = StreamController<ErrorAnimationType>();
+    dataRegister = box.read('userData');
+    if (dataRegister != null) {
+      getUserPhone();
+    }
+    if (dataForgotPassword != null) {
+      print(dataForgotPassword);
+      phone = dataForgotPassword;
+    }
 
-    //getUserPhone();
     super.onInit();
   }
 
   @override
-  void dispose() {
+  void onClose() {
     errorController!.close();
     animationController!.dispose();
-    super.dispose();
+    super.onClose();
   }
 
   gosAdditionalPage() {
     if (formKey.currentState!.validate()) {
-      try {
-        Get.toNamed('additional_details');
-      } catch (e) {
-        print(e);
-      }
+      Get.toNamed('additional_details');
+      print(hasError.value);
+      print('EWVET');
+    } else {
+      print(hasError.value);
+      print('OTP HATA VERDİ');
     }
   }
 
-  //void getUserPhone() {
-   // storageList.value = box.read('userData');
-    //print(storageList[3]);
-    //phone = storageList[3];
-  //}
+  void getUserPhone() {
+    storageList.value = box.read('userData');
+    print(storageList[3]);
+    phone = storageList[3];
+  }
 
   goHomePage() {
     Get.toNamed('home');

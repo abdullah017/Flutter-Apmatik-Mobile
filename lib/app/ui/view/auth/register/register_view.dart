@@ -1,14 +1,11 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/view/auth/register/register_controller.dart';
-import 'package:apmatik/app/ui/widgets/custom_appbars/custom_appbar.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_dropdown_formfield_button.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_elevated_button.dart';
 import 'package:apmatik/app/ui/widgets/custom_page_title.dart';
-import 'package:apmatik/app/ui/widgets/custom_textformfield.dart';
+import 'package:apmatik/app/ui/widgets/custom_inputs/custom_textformfield.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,25 +13,25 @@ import 'package:get/get.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 class RegisterView extends BaseView<RegisterController> {
+  RegisterView({Key? key})
+      : super(key: key, navBarHide: true, appBarHide: false // false
+            );
   @override
-  Widget vBuilder() => Scaffold(
-        appBar: CustomAppBar(),
-        body: Form(
-          key: controller.registerFormKey,
-          autovalidateMode: controller.formValidation,
-          child: ListView(
-            children: [
-              buildPageTitle(),
-              buildNameSurnameTextField(),
-              buildEmailTextField(),
-              buildIdentifyNumber(),
-              buildPhoneNumber(),
-              buildGenderDropdownButton(),
-              buildPasswordTextField(),
-              buildRePasswordTextField(),
-              buildRegisterButton(),
-            ],
-          ),
+  Widget vBuilder() => Form(
+        key: controller.registerFormKey,
+        autovalidateMode: controller.formValidation,
+        child: ListView(
+          children: [
+            buildPageTitle(),
+            buildNameSurnameTextField(),
+            buildEmailTextField(),
+            buildIdentifyNumber(),
+            buildPhoneNumber(),
+            buildGenderDropdownButton(),
+            buildPasswordTextField(),
+            buildRePasswordTextField(),
+            buildRegisterButton(),
+          ],
         ),
       );
 
@@ -78,111 +75,120 @@ class RegisterView extends BaseView<RegisterController> {
 
   Padding buildPhoneNumber() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
+      padding: EdgeInsets.only(top: 20.0, left: 20.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            'phoneNumberLabel'.tr,
+          const Text(
+            'Telefon Numarası',
             style: TextStyle(color: Colors.grey),
           ),
-          Stack(
-            children: [
-              Positioned(
-                bottom: 10,
-                top: 10,
-                left: 10,
-                child: Container(
-                  height: 30,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade300,
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: Row(
-                    children: [
-                      Spacer(),
-                      Icon(
-                        CupertinoIcons.chevron_down,
-                        size: 11.sp,
-                      ),
-                      SizedBox(
-                        width: 5.w,
-                      ),
-                    ],
+          Container(
+            margin: EdgeInsets.only(left: 5, right: 20),
+            decoration: const BoxDecoration(
+                border: Border(
+                    bottom: BorderSide(width: 1, color: Color(0xffE6E6E6)))),
+            child: Stack(
+              children: [
+                Positioned(
+                  bottom: 10,
+                  top: 10,
+                  left: 0,
+                  child: Container(
+                    height: 30,
+                    width: 80,
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade300,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Row(
+                      children: const [
+                        Spacer(),
+                        Icon(
+                          CupertinoIcons.chevron_down,
+                          size: 16,
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 50,
-                child: InternationalPhoneNumberInput(
-                  selectorButtonOnErrorPadding: 20,
-                  spaceBetweenSelectorAndTextField: 12,
-                  selectorTextStyle: appTextStyle
-                      .getSfProDisplayMedium_little(AppColors.BLACK),
-                  validator: (number) {
-                    if (number == null) {
-                      return 'Lütfen Telefon Numarası alanını doldurun';
-                    }
-                    if (!controller.correctPhone.value) {
-                      return controller.error.value;
-                    }
-                    return null;
-                  },
-                  searchBoxDecoration:
-                      InputDecoration(hintText: 'searchCountry'.tr),
-                  hintText: 'phoneNumberLabel'.tr,
-                  onInputChanged: (PhoneNumber number) {
-                    print(number.phoneNumber);
-                    print(number.dialCode);
-                    controller.phoneNumberWithRegion = number;
-                  },
-                  onInputValidated: (bool value) {
-                    print(value);
-                    if (!value) {
-                      controller.error.value = 'Lütfen numaranızı doğru girin.';
-                      controller.correctPhone.value = false;
-                    } else {
-                      controller.correctPhone.value = true;
-                      controller.error.value = '';
-                    }
-                  },
-                  ignoreBlank: false,
-                  autoValidateMode: AutovalidateMode.onUserInteraction,
-                  selectorConfig: const SelectorConfig(
-                    selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
-                    setSelectorButtonAsPrefixIcon: false,
-                    leadingPadding: 10,
-                    showFlags: false,
-                    trailingSpace: true,
-                  ),
-                  initialValue: PhoneNumber(isoCode: 'TR'),
-                  textFieldController: controller.phoneNumberController,
-                  formatInput: false,
-                  keyboardType: TextInputType.numberWithOptions(
-                      signed: true, decimal: true),
-                  inputDecoration: const InputDecoration(
-                    errorBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(color: Colors.red)),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide:
-                          BorderSide(color: AppColors.GREY_OPACITY, width: 0.2),
-                    ),
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide:
-                          BorderSide(color: AppColors.GREY_OPACITY, width: 0.2),
-                    ),
+                SizedBox(
+                  height: 50,
+                  child: InternationalPhoneNumberInput(
+                    errorMessage: null,
+                    hintText: 'Telefon Numarası',
+                    onInputValidated: (bool value) {
+                      print(value);
+                      if (!value) {
+                        controller.error.value =
+                            'Telefon numarası alanını doğru şekilde doldurun!';
+                        controller.validForm.value = true;
+                        print(
+                            'DOĞRU NO GİRİLMEDİYSE=> ${controller.validForm.value}');
+                        controller.update();
+                      } else {
+                        controller.error.value = '';
 
-                    //labelText: 'Telefon Numarası',
+                        controller.validForm.value = false;
+                        print(
+                            'DOĞRU NO GİRİLDİYSE=> ${controller.validForm.value}');
+                        controller.update();
+                      }
+                    },
+                    onInputChanged: (PhoneNumber number) {
+                      print(number.phoneNumber);
+                      controller.phoneNumberWithRegion = number;
+                    },
+                    ignoreBlank: false,
+                    autoValidateMode: AutovalidateMode.always,
+                    selectorTextStyle: const TextStyle(
+                      color: Colors.black,
+                    ),
+                    selectorConfig: const SelectorConfig(
+                      selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+                      setSelectorButtonAsPrefixIcon: false,
+                      leadingPadding: 10,
+                      showFlags: false,
+                      trailingSpace: true,
+                    ),
+                    initialValue: PhoneNumber(isoCode: 'TR'),
+                    textFieldController: TextEditingController(),
+                    formatInput: false,
+                    keyboardType: TextInputType.numberWithOptions(
+                        signed: true, decimal: true),
+                    inputDecoration: const InputDecoration(
+                      contentPadding: EdgeInsets.only(bottom: 4),
+                      border: InputBorder.none,
+                      enabledBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.transparent, width: 0)),
+                      errorBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.transparent, width: 0)),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.transparent, width: 0)),
+                      floatingLabelAlignment: FloatingLabelAlignment.start,
+                      // labelText: 'Telefon Numarası',
+                    ),
+                    textStyle: const TextStyle(color: Colors.black),
+                    onSaved: (PhoneNumber number) {
+                      print('On Saved: $number');
+                    },
                   ),
-                  textStyle:
-                      appTextStyle.getSfProDisplayMedium_H6(AppColors.BLACK),
-                  onSaved: (PhoneNumber number) {
-                    print('On Saved: $number');
-                  },
                 ),
-              ),
-            ],
+              ],
+            ),
+          ),
+          Visibility(
+            visible: controller.validForm.value,
+            child: Text(
+              controller.error.value,
+              style: AppTextStyle().getSfProDisplayRegular_Other(Colors.red),
+            ),
           ),
         ],
       ),
@@ -212,6 +218,8 @@ class RegisterView extends BaseView<RegisterController> {
       obscureText: controller.isPasswordHidden.value,
       obscureCharacter: '*',
       suffixIcon: IconButton(
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
         onPressed: () {
           controller.changePasswordShowStatus();
         },
@@ -220,6 +228,7 @@ class RegisterView extends BaseView<RegisterController> {
               ? Icons.visibility
               : Icons.visibility_off,
           size: 19.sm,
+          color: AppColors.ORANGE,
         ),
       ),
       validator: (password) {
@@ -236,6 +245,8 @@ class RegisterView extends BaseView<RegisterController> {
       obscureText: controller.isRePasswordHidden.value,
       obscureCharacter: '*',
       suffixIcon: IconButton(
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
         onPressed: () {
           controller.changeRePasswordShowStatus();
         },
@@ -244,6 +255,7 @@ class RegisterView extends BaseView<RegisterController> {
               ? Icons.visibility
               : Icons.visibility_off,
           size: 19.sm,
+          color: AppColors.ORANGE,
         ),
       ),
       validator: (repassword) {

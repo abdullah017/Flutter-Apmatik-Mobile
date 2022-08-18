@@ -4,16 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomUnderLineCheckBox extends StatelessWidget {
-  const CustomUnderLineCheckBox({
-    Key? key,
-    required this.value,
-    required this.onChanged,
-    required this.checkBoxText,
-    required this.checkBoxInfoText,
-  }) : super(key: key);
+  const CustomUnderLineCheckBox(
+      {Key? key,
+      required this.value,
+      required this.onChanged,
+      required this.checkBoxText,
+      required this.checkBoxInfoText,
+      this.textOnTap})
+      : super(key: key);
 
   final bool value;
   final dynamic Function(bool?)? onChanged;
+  final void Function()? textOnTap;
   final String checkBoxText;
   final String checkBoxInfoText;
   @override
@@ -46,9 +48,12 @@ class CustomUnderLineCheckBox extends StatelessWidget {
   Expanded buildCheckboxText() {
     return Expanded(
         flex: 6,
-        child: Text(
-          checkBoxText,
-          style: AppTextStyle().getSfProDisplayMedium_H6(AppColors.BLACK),
+        child: GestureDetector(
+          onTap: textOnTap,
+          child: Text(
+            checkBoxText,
+            style: AppTextStyle().getSfProDisplayMedium_H6(AppColors.BLACK),
+          ),
         ));
   }
 

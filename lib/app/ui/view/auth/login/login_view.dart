@@ -1,45 +1,40 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
-
 import 'package:apmatik/app/ui/view/auth/login/login_controller.dart';
-import 'package:apmatik/app/ui/widgets/custom_appbars/custom_appbar.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_elevated_button.dart';
 import 'package:apmatik/app/ui/widgets/custom_page_title.dart';
-import 'package:apmatik/app/ui/widgets/custom_textformfield.dart';
-
+import 'package:apmatik/app/ui/widgets/custom_inputs/custom_textformfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class LoginView extends BaseView<LoginController> {
+  LoginView({Key? key})
+      : super(key: key, navBarHide: true, appBarHide: false // false
+            );
   @override
-  Widget vBuilder() => Scaffold(
-        appBar: CustomAppBar(),
-        body: ListView(
-          children: [
-            Form(
-              key: controller.loginFormKey,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 20.0.h),
-                    child: buildPageTitle(),
-                  ),
-                  buildEMailField(),
-                  buildPasswordField(),
-                  SizedBox(
-                    height: 45.h,
-                  ),
-                  buildButtonsCapsule(),
-                ],
-              ),
+  Widget vBuilder() => ListView(
+        children: [
+          Form(
+            key: controller.loginFormKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 20.0.h),
+                  child: buildPageTitle(),
+                ),
+                buildEMailField(),
+                buildPasswordField(),
+                SizedBox(
+                  height: 45.h,
+                ),
+                buildButtonsCapsule(),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       );
 
   CustomPageTitle buildPageTitle() {
@@ -49,7 +44,7 @@ class LoginView extends BaseView<LoginController> {
   CustomTextFormField buildEMailField() {
     return CustomTextFormField(
       textEditingController: controller.emailController,
-      padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 5.h),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
       labelText: 'emailLabel'.tr,
       validator: (email) {
         return controller.formValidationHelper.emailValidator(email!);
@@ -60,11 +55,16 @@ class LoginView extends BaseView<LoginController> {
   CustomTextFormField buildPasswordField() {
     return CustomTextFormField(
       textEditingController: controller.passwordController,
-      padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 1.h),
+      padding: EdgeInsets.symmetric(
+        horizontal: 20.w,
+      ),
       labelText: 'passowordLabel'.tr,
       obscureText: controller.isPasswordHidden.value,
       obscureCharacter: '*',
       suffixIcon: IconButton(
+          splashColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+          color: AppColors.ORANGE,
           onPressed: () {
             controller.changePasswordShowStatus();
           },
@@ -121,7 +121,7 @@ class LoginView extends BaseView<LoginController> {
       },
       child: Text(
         'forgotPasswordButton'.tr,
-        style: appTextStyle.getSfProDisplayRegular_H6(AppColors.GREY_OPACITY),
+        style: appTextStyle.getSfProDisplayRegular_H5(AppColors.GREY_OPACITY),
       ),
     );
   }

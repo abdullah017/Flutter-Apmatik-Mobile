@@ -1,3 +1,4 @@
+import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,8 +17,7 @@ class CustomCupertinoSwitch extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           border: Border.all(
-              color:
-                  value ? CupertinoColors.activeOrange : CupertinoColors.black,
+              color: value ? CupertinoColors.activeOrange : AppColors.BLACK12,
               width: 2),
           borderRadius: BorderRadius.all(Radius.circular(20))),
       child: SizedBox(
@@ -32,7 +32,7 @@ class CustomCupertinoSwitch extends StatelessWidget {
             onChanged: onChanged,
             activeColor: Colors.transparent,
             thumbColor:
-                value ? CupertinoColors.activeOrange : CupertinoColors.black,
+                value ? CupertinoColors.activeOrange : AppColors.BLACK12,
           ),
         ),
       ),

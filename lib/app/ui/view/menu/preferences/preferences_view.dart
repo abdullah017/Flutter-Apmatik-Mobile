@@ -2,7 +2,6 @@ import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/view/menu/preferences/preferences_controller.dart';
-import 'package:apmatik/app/ui/widgets/custom_appbars/custom_appbar.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_cupertinoswitch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -10,16 +9,11 @@ import 'package:get/get.dart';
 
 class PreferencesView extends BaseView<PreferencesController> {
   PreferencesView({Key? key})
-      : super(
-          key: key,
-          navBarHide: true, // false
-        );
+      : super(key: key, navBarHide: true, appBarHide: false // false
+            );
   @override
-  Widget vBuilder() => Scaffold(
-      backgroundColor: AppColors.PAGEBACKGROUND,
-      appBar: CustomAppBar(),
-      body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
+  Widget vBuilder() => ListView(
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 90.h),
         children: [
           buildSettingsCard('languageSettings'.tr, () {
             controller.goToLanguageSettingView();
@@ -76,7 +70,7 @@ class PreferencesView extends BaseView<PreferencesController> {
             controller.goToAboutView();
           }),
         ],
-      ));
+      );
 
   buildPaySwitchSettings() {
     return Padding(
@@ -155,7 +149,7 @@ class PreferencesView extends BaseView<PreferencesController> {
               settingName,
               style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
             ),
-            Image.asset(AppAssets.arrow_icon)
+            Image.asset(AppAssets.arrow_icon, color: AppColors.WHITE_GREY)
           ],
         ),
       ),

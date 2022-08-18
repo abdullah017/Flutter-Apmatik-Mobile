@@ -3,6 +3,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class EditProfileController extends BaseController {
+  @override
+  // PAGE TITLE AREA IS HERE!
+  String? get pageTitle => 'edit_profile'.tr;
+  // NOTICE HERE THAT THE PAGE IS A MENU AND SETTING ITEM TO CHANGE THE APPBAR
+  @override
+  bool? get isPageMenuItem => true;
+  @override
+  bool? get isSettingItem => false;
+
   List<String> joblist = [
     "Öğrenci",
     "Öğretmen",

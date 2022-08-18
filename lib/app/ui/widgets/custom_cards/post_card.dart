@@ -127,6 +127,8 @@ class PostCardWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           IconButton(
+            splashColor: Colors.transparent,
+ highlightColor: Colors.transparent,
             padding: EdgeInsets.zero,
             constraints: BoxConstraints(),
             onPressed: () {},
@@ -139,6 +141,8 @@ class PostCardWidget extends StatelessWidget {
           Transform.translate(
             offset: Offset(0, 0),
             child: IconButton(
+              splashColor: Colors.transparent,
+ highlightColor: Colors.transparent,
               padding: EdgeInsets.zero,
               constraints: BoxConstraints(),
               onPressed: () {},

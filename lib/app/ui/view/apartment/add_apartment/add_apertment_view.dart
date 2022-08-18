@@ -2,10 +2,9 @@ import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/view/apartment/add_apartment/add_apertment_controller.dart';
-import 'package:apmatik/app/ui/widgets/custom_appbars/custom_appbar.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_dropdown_formfield_button.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_elevated_button.dart';
-import 'package:apmatik/app/ui/widgets/custom_textformfield.dart';
+import 'package:apmatik/app/ui/widgets/custom_inputs/custom_textformfield.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_toggle_button.dart';
 
 import 'package:flutter/material.dart';
@@ -14,15 +13,10 @@ import 'package:get/get.dart';
 
 class AddApertmentView extends BaseView<AddApertmentController> {
   AddApertmentView({Key? key})
-      : super(
-          key: key,
-          navBarHide: true, // false
-        );
+      : super(key: key, navBarHide: true, appBarHide: false // false
+            );
   @override
-  Widget vBuilder() => Scaffold(
-      backgroundColor: AppColors.PAGEBACKGROUND,
-      appBar: CustomAppBar(),
-      body: ListView(
+  Widget vBuilder() => ListView(
         children: [
           Container(
             color: AppColors.WHITE,
@@ -31,7 +25,7 @@ class AddApertmentView extends BaseView<AddApertmentController> {
           ),
           buildManualApartmentArea()
         ],
-      ));
+      );
 
   Form buildManualApartmentArea() {
     return Form(
@@ -134,9 +128,11 @@ class AddApertmentView extends BaseView<AddApertmentController> {
     return CustomDropdownButtonFormField(
       padding: const EdgeInsets.symmetric(horizontal: 10.0),
       labelText: 'country'.tr,
+      labelTextStyle: appTextStyle.getSfProDisplayRegular_H5(AppColors.GREY),
       value: controller.selectedValue,
       items: controller.listOfCountry.map((String val) {
         return DropdownMenuItem(
+          alignment: Alignment.centerLeft,
           value: val,
           child: Text(
             val,
@@ -206,10 +202,12 @@ class AddApertmentView extends BaseView<AddApertmentController> {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 30.h),
       child: CustomElevatedButton(
+          width: 350,
+          height: 35,
           onPressed: () {
-            Get.toNamed('selectapartment');
+            controller.goManualSearchResult();
           },
-          child: Text('goOn'.tr)),
+          child: Text('go'.tr)),
     );
   }
 }

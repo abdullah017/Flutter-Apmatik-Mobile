@@ -24,10 +24,13 @@ class MenuView extends BaseView<MenuController> {
         backgroundColor: AppColors.PAGEBACKGROUND,
         appBar: CustomLoginUserAppBar(),
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 20.h),
+          padding: EdgeInsets.symmetric(
+            horizontal: 20.0.w,
+          ),
           child: ListView(
             children: [
               Container(
+                  padding: EdgeInsets.only(top: 20.h),
                   width: 350.w,
                   height: Get.width > 390
                       ? Get.height * 0.90.h

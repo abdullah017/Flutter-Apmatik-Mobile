@@ -11,7 +11,7 @@ class FlutterTicketWidget extends StatefulWidget {
       {required this.width,
       required this.height,
       required this.child,
-      this.color = Colors.white,
+      this.color = Colors.transparent,
       this.isCornerRounded = false});
 
   @override
@@ -22,6 +22,7 @@ class _FlutterTicketWidgetState extends State<FlutterTicketWidget> {
   @override
   Widget build(BuildContext context) {
     return ClipPath(
+      clipBehavior: Clip.hardEdge,
       clipper: TicketClipper(),
       child: AnimatedContainer(
         duration: Duration(seconds: 3),
