@@ -23,7 +23,7 @@ class CustomToggleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 350.w,
-      height: 35.h,
+      height: 30.h,
       color: AppColors.PAGEBACKGROUND,
       child: ToggleButtons(
           isSelected: isSelected,
@@ -31,6 +31,8 @@ class CustomToggleButton extends StatelessWidget {
           color: AppColors.ORANGE,
           fillColor: AppColors.ORANGE,
           renderBorder: true,
+          borderColor: AppColors.ORANGE,
+          borderWidth: 0,
           //splashColor: Colors.red,
           highlightColor: Colors.orange,
           children: <Widget>[

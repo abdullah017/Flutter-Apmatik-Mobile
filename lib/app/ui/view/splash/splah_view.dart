@@ -70,7 +70,7 @@ class SplashView extends BaseView<SplashController> {
               controller.goLoginPage();
             },
             child: Text(
-              'loginTitle'.tr,
+              'loginButton'.tr,
               style: appTextStyle.getSfProDisplayRegular_H5(Colors.white),
             ),
           ),

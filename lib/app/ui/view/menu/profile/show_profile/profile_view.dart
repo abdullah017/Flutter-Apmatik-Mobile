@@ -1,9 +1,9 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/ui/view/menu/profile/show_profile/profile_controller.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_elevated_button.dart';
-import 'package:apmatik/app/ui/widgets/custom_appbars/login_appbar.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_outline_textbutton.dart';
 import 'package:apmatik/app/ui/widgets/custom_cards/plate_card.dart';
 
@@ -13,91 +13,97 @@ import 'package:get/get.dart';
 
 class ProfileView extends BaseView<ProfileController> {
   ProfileView({Key? key})
-      : super(
-          key: key,
-          navBarHide: true, // false
-        );
+      : super(key: key, navBarHide: true, appBarHide: false // false
+            );
   @override
-  Widget vBuilder() => Scaffold(
-        backgroundColor: AppColors.PAGEBACKGROUND,
-        appBar: CustomLoginUserAppBar(),
-        body: buildView(),
-      );
+  Widget vBuilder() => buildView();
 
-  Column buildView() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
+  buildView() {
+    return ListView(
+      padding: EdgeInsets.zero,
+      physics: NeverScrollableScrollPhysics(),
       children: [
-        Container(
-          height: Get.width >= 390 ? 250.0.h : 280.h,
-          child: Stack(
-            children: <Widget>[
-              Container(
-                color: AppColors.ORANGE,
-                width: Get.size.height,
-                height: 180.0.h,
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 80.h,
+            ),
+            Container(
+              height: Get.width >= 390 ? 250.0.h : 280.h,
+              child: Stack(
+                children: <Widget>[
+                  Positioned(
+                    top: 10.0,
+                    left: 0.0,
+                    right: 0.0,
+                    child: Container(
+                      width: 350.w,
+                      height: Get.width >= 390 ? 230.h : 270.h,
+                      padding: EdgeInsets.symmetric(horizontal: 20.0),
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5.0),
+                            border: Border.all(
+                                color: Colors.grey.withOpacity(0.5),
+                                width: 1.0),
+                            color: Colors.white),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Expanded(
+                              flex: 0,
+                              child: buildUserCardHeader(),
+                            ),
+                            buildUserPhoneNumber(),
+                            buildUserMaritalStatusAndJob(),
+                            buildUserChildrenAndPet(),
+                            Transform.translate(
+                              offset: Offset(0, -10),
+                              child: CustomOutlineTextButton(
+                                fixedSize: Size(310, 35),
+                                buttonText: 'edit_profile'.tr,
+                                onPressed: () {
+                                  controller.goEditProfileView();
+                                },
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              Positioned(
-                top: 10.0,
-                left: 0.0,
-                right: 0.0,
-                child: Container(
-                  width: 350.w,
-                  height: Get.width >= 390 ? 230.h : 270.h,
-                  padding: EdgeInsets.symmetric(horizontal: 20.0),
-                  child: DecoratedBox(
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+            ListView(
+              padding: EdgeInsets.zero,
+              shrinkWrap: true,
+              children: [
+                Container(
+                    margin: AppPadding.guideLine,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.0),
                         border: Border.all(
                             color: Colors.grey.withOpacity(0.5), width: 1.0),
                         color: Colors.white),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Expanded(
-                          flex: 0,
-                          child: buildUserCardHeader(),
-                        ),
-                        buildUserPhoneNumber(),
-                        buildUserMaritalStatusAndJob(),
-                        buildUserChildrenAndPet(),
-                        Transform.translate(
-                          offset: Offset(0, -10),
-                          child: CustomOutlineTextButton(
-                            fixedSize: Size(310, 35),
-                            buttonText: 'edit_profile'.tr,
-                            onPressed: () {
-                              controller.goEditProfileView();
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                    child: buildRegisteredCars()),
+                SizedBox(
+                  height: 10.h,
                 ),
-              ),
-            ],
-          ),
-        ),
-        SizedBox(
-          height: 10.h,
-        ),
-        ListView(
-          shrinkWrap: true,
-          children: [
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20.w),
-              width: 350.w,
-              height: Get.width >= 390 ? 115.h : 128.h,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5.0),
-                  color: AppColors.WHITE),
-              child: buildRegisteredCars(),
+                Container(
+                    margin: AppPadding.guideLine,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5.0),
+                        border: Border.all(
+                            color: Colors.grey.withOpacity(0.5), width: 1.0),
+                        color: Colors.white),
+                    child: buildAboutMembership()),
+              ],
             ),
-            SizedBox(
-              height: 10.h,
-            ),
-            buildAboutMembership(),
           ],
         ),
       ],
@@ -106,9 +112,8 @@ class ProfileView extends BaseView<ProfileController> {
 
   Container buildAboutMembership() {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20.w),
       width: 350.w,
-      height: Get.width >= 390 ? 120.h : 100.h,
+      height: Get.width >= 390 ? 110.h : 100.h,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5.0), color: AppColors.WHITE),
       child: Column(
@@ -217,44 +222,74 @@ class ProfileView extends BaseView<ProfileController> {
         ),
 
         ///
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: PlateCardWidget(
-            width: 310.w,
-            height: 30.h,
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 14.w),
-              width: 310.w,
-              height: 30.h,
-              color: AppColors.ORANGE,
-              child: Center(
-                  child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'DJT 456 61',
-                    style: appTextStyle
-                        .get_SfProRounded_SemiBold_h5(AppColors.WHITE),
-                  ),
-                  GestureDetector(
-                      onTap: () {}, child: Image.asset(AppAssets.remove_icon))
-                ],
-              )),
-            ),
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.0),
-          child: Center(
-            child: CustomOutlineTextButton(
-              fixedSize: Size(310, 35),
-              buttonText: 'manage_cars'.tr,
-              onPressed: () {
-                controller.goEditProfileView();
-              },
-            ),
-          ),
-        ),
+        ///
+        ///
+
+        controller.cars.length == 0
+            ? Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 1.h),
+                child: Text(
+                  'Kayıtlı Araç bulunamıyor',
+                  style: appTextStyle
+                      .getSfProDisplayLight_Italic_H6(AppColors.BLACK),
+                ),
+              )
+            : Container(
+                width: 350.w,
+                child: ListView.builder(
+                    padding: EdgeInsets.zero,
+                    shrinkWrap: true,
+                    itemCount: controller.cars.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 20.w, vertical: 3),
+                        child: PlateCardWidget(
+                          width: 310.w,
+                          height: 30.h,
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 14.w),
+                            width: 310.w,
+                            height: 30.h,
+                            color: AppColors.ORANGE,
+                            child: Center(
+                                child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  controller.cars[index],
+                                  style:
+                                      appTextStyle.get_SfProRounded_SemiBold_h5(
+                                          AppColors.WHITE),
+                                ),
+                                GestureDetector(
+                                    onTap: () {},
+                                    child: Image.asset(AppAssets.remove_icon))
+                              ],
+                            )),
+                          ),
+                        ),
+                      );
+                    }),
+              ),
+        controller.cars.length == 0
+            ? CustomElevatedButton(
+                margin: EdgeInsets.only(top: 10, left: 20),
+                width: 100,
+                height: 30,
+                onPressed: () {},
+                child: Text('Araç Ekle'),
+              )
+            : Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child: CustomOutlineTextButton(
+                  fixedSize: Size(310, 35),
+                  buttonText: 'manage_cars'.tr,
+                  onPressed: () {
+                    controller.goEditProfileView();
+                  },
+                )),
         SizedBox(
           height: 10.h,
         ),

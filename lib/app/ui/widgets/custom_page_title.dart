@@ -13,7 +13,7 @@ class CustomPageTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 23.0.w),
+      padding: EdgeInsets.only(left: 15.0.w),
       child: Text(
         titleText,
         style: AppTextStyle().getSfProDisplayRegular_H1(Colors.black),

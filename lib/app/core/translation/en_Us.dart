@@ -59,7 +59,7 @@ const Map<String, String> en = {
   'verificationTimer': 'Resend in seconds',
   'go': 'Go',
   'forgostPasswordInfo':
-      'We will send you an email to reset your password. Please make sure you have entered your e-mail address correctly.',
+      'We will send you an sms to reset your password. Please make sure you have entered your phone number correctly.',
   'registerSuccess': 'Your Registration Has Been Successfully Completed',
   'registerSuccessInfo':
       'Your Apmatik registration is complete. Add the apartment you are in immediately and follow your home from your pocket!',

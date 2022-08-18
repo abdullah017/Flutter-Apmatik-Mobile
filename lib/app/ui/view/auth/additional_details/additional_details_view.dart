@@ -8,7 +8,7 @@ import 'package:apmatik/app/ui/widgets/custom_appbars/custom_appbar.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_dropdown_formfield_button.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_elevated_button.dart';
 import 'package:apmatik/app/ui/widgets/custom_page_title.dart';
-import 'package:apmatik/app/ui/widgets/custom_textformfield.dart';
+import 'package:apmatik/app/ui/widgets/custom_inputs/custom_textformfield.dart';
 import 'package:apmatik/app/ui/widgets/custom_underline_checkbox.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
@@ -151,6 +151,10 @@ class AdditionalDetailsView extends BaseView<AdditionalDetailsController> {
           controller.petCheck.value = !controller.petCheck.value;
           controller.update();
         },
+        textOnTap: () {
+          controller.petCheck.value = !controller.petCheck.value;
+          controller.update();
+        },
         checkBoxText: 'pet'.tr,
         checkBoxInfoText: 'petInfo'.tr);
   }
@@ -159,6 +163,10 @@ class AdditionalDetailsView extends BaseView<AdditionalDetailsController> {
     return CustomUnderLineCheckBox(
         value: controller.dontShowCheck.value,
         onChanged: (Value) {
+          controller.dontShowCheck.value = !controller.dontShowCheck.value;
+          controller.update();
+        },
+        textOnTap: () {
           controller.dontShowCheck.value = !controller.dontShowCheck.value;
           controller.update();
         },

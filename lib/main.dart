@@ -14,8 +14,9 @@ void main() async {
   await GetStorage.init();
   Get.put(ApiBaseHelper(), permanent: true);
   Get.put(ApiRepository(Get.find()));
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive,
-      overlays: <SystemUiOverlay>[]);
+  
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+      overlays: <SystemUiOverlay>[SystemUiOverlay.top]);
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
     runApp(MyApp());

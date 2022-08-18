@@ -1,10 +1,7 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/view/auth/otp/otp_controller.dart';
-import 'package:apmatik/app/ui/widgets/custom_appbars/custom_appbar.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_elevated_button.dart';
 import 'package:apmatik/app/ui/widgets/custom_page_title.dart';
 import 'package:flutter/material.dart';
@@ -14,23 +11,19 @@ import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
 class OtpView extends BaseView<OtpController> {
+  OtpView({Key? key})
+      : super(key: key, navBarHide: true, appBarHide: false // false
+            );
   @override
-  Widget vBuilder() => Scaffold(
-        backgroundColor: AppColors.PAGEBACKGROUND,
-        appBar: CustomAppBar(
-          onTap: () async {
-            await buildShowModalBottomSheeet();
-          },
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-        floatingActionButton: buildGoOnButton(),
-        body: ListView(
+  Widget vBuilder() => Form(
+        key: controller.formKey,
+        child: ListView(
           children: [
             buildPageTitle(),
             SizedBox(
               height: 38.h,
             ),
-            Form(key: controller.formKey, child: buildPhoneNumberAndInfoText()),
+            buildPhoneNumberAndInfoText(),
             SizedBox(
               height: 35.h,
             ),
@@ -39,6 +32,7 @@ class OtpView extends BaseView<OtpController> {
               height: 21.h,
             ),
             buildTimerCountdown(),
+            buildGoOnButton()
           ],
         ),
       );
@@ -72,9 +66,9 @@ class OtpView extends BaseView<OtpController> {
 
   Container buildGoOnButton() {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 25.w),
+      margin: EdgeInsets.only(top: Get.height * 0.35),
       width: Get.width,
-      height: Get.width >= 390 ? Get.height * 0.05.h : Get.height * 0.07.h,
+      height: Get.width >= 390 ? Get.height * 0.045.h : Get.height * 0.07.h,
       child: CustomElevatedButton(
           onPressed: () {
             controller.gosAdditionalPage();
@@ -103,7 +97,7 @@ class OtpView extends BaseView<OtpController> {
             TextSpan(
                 text: 'verificationCodeInfo'.tr,
                 style: AppTextStyle()
-                    .getSfProDisplayRegular_H6(AppColors.GREY_OPACITY)),
+                    .getSfProDisplayRegular_H5(AppColors.GREY_OPACITY)),
           ],
         ),
         textAlign: TextAlign.center,
@@ -118,6 +112,10 @@ class OtpView extends BaseView<OtpController> {
           length: 6,
           obscureText: false,
           animationType: AnimationType.fade,
+          focusNode: controller.myFocusNode,
+          autoDisposeControllers: false,
+          autoFocus: true,
+          autoUnfocus: false,
           pinTheme: PinTheme(
               inactiveColor: Colors.grey.shade300, //inactive border side
               inactiveFillColor: AppColors.WHITE_OPACITY,
@@ -137,14 +135,18 @@ class OtpView extends BaseView<OtpController> {
           errorAnimationController: controller.errorController,
           controller: controller.textEditingController,
           validator: (value) {
-            if (value == null || value.length < 5) {
-              return "Lütfen Tüm alanları Doldurun!";
+            if (value == null || value.length < 6) {
+              print(value);
+              controller.hasError.value = true;
+
+              return "";
             } else {
               return null;
             }
           },
           onCompleted: (v) {
             print("Completed");
+            controller.myFocusNode;
           },
           onChanged: (value) {
             print(value);

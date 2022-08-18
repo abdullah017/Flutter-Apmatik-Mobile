@@ -12,6 +12,7 @@ class HomeController extends BaseController {
     'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
   ];
   List<String> cardlist = [
+    'Tümü',
     'Duyurular',
     'Anketler',
     'Sponsorlar',

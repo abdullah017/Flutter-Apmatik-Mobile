@@ -327,7 +327,7 @@ class CommonView extends BaseView<CommonController> {
                 AppAssets.done_icon,
                 width: 66,
                 height: 66,
-                color: AppColors.BLACK,
+                color: AppColors.ORANGE,
               )),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
