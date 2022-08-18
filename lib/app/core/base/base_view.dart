@@ -5,6 +5,7 @@ import 'package:apmatik/app/core/helper/form_validation_helper.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/view/menu/menu_controller.dart';
 import 'package:apmatik/app/ui/widgets/custom_appbars/login_appbar.dart';
+import 'package:apmatik/app/ui/widgets/custom_bottomsheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -59,6 +60,17 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
         return Scaffold(
           extendBodyBehindAppBar: true,
           backgroundColor: AppColors.PAGEBACKGROUND,
+          bottomSheet: controller.isNotification!.value
+              ? Visibility(
+                  visible: controller.showBottomSheet!,
+                  child: CustomBottomSheet(
+                    onPressed: () {
+                      controller.showBottomSheet = false;
+                      controller.update();
+                    },
+                  ),
+                )
+              : null, //controller.duyuru.isNotEmpty ? CustomBottomSheet() : null,
           appBar: !appBarHide
               ? controller.isLogin
                   ? controller.isPageMenuItem!
@@ -203,7 +215,7 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
             Get.back();
           },
           child: Container(
-            padding: AppPadding.guideLine,
+            padding: AppPadding.guideLine20,
             width: 24,
             height: 24,
             child: controller.isSettingItem!
@@ -213,8 +225,8 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
                   )
                 : SvgPicture.asset(
                     'assets/icons/back_button.svg',
-                    width: 24,
-                    height: 24,
+                    width: 12,
+                    height: 12,
                   ),
           ),
         ),

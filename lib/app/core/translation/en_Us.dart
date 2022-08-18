@@ -125,7 +125,7 @@ const Map<String, String> en = {
   'date_of_registration': 'Date Of Registration',
   'invoices_number': 'Invoices Number',
   'payment_plan': 'Payment Plan',
-
+  'backToFlow': 'Back To Flow',
   'show_other_info':
       'Residents can see your name, surname and profile picture in the surveys you have completed and the posts you have shared. Your other information is kept confidential.',
   'show_me_other': 'Show Me Other Residence',
@@ -155,8 +155,6 @@ const Map<String, String> en = {
       'You can quickly create your registration for the apartment by scanning the QR code found in your manager here. You will quickly settle in the apartment you have taught.',
   'give_up': 'Give Up',
 
-    'select_apartment_info':'If you cannot find your apartment in this list, please contact your apartment manager.'
-
-
-
+  'select_apartment_info':
+      'If you cannot find your apartment in this list, please contact your apartment manager.'
 };

@@ -2,8 +2,6 @@ import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/view/menu/staff/staff_controller.dart';
-import 'package:apmatik/app/ui/widgets/custom_appbars/custom_appbar.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -15,9 +13,7 @@ class StaffView extends BaseView<StaffController> {
           navBarHide: true,
         );
   @override
-  Widget vBuilder() => Scaffold(
-      appBar: CustomAppBar(),
-      body: ListView(
+  Widget vBuilder() =>  ListView(
         children: [
           Container(
             width: Get.width,
@@ -57,5 +53,5 @@ class StaffView extends BaseView<StaffController> {
             ),
           )
         ],
-      ));
+      );
 }

@@ -7,7 +7,6 @@ import 'package:apmatik/app/ui/view/dashboard/dashboard_controller.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_elevated_button.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_outline_textbutton.dart';
 import 'package:apmatik/app/ui/widgets/custom_clippath/dotted_seperator.dart';
-import 'package:apmatik/app/ui/widgets/custom_appbars/login_appbar.dart';
 import 'package:apmatik/app/ui/widgets/custom_clippath/ticket_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,194 +14,123 @@ import 'package:get/get.dart';
 
 class DashBoardView extends BaseView<DashBoardController> {
   DashBoardView({Key? key})
-      : super(
-          key: key,
-          navBarHide: false,
-        );
+      : super(key: key, navBarHide: false, appBarHide: false);
   @override
-  Widget vBuilder() => Scaffold(
-        backgroundColor: AppColors.PAGEBACKGROUND,
-        appBar: CustomLoginUserAppBar(),
-        bottomSheet: controller.duyuru.isNotEmpty
-            ? BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-                child: Container(
-                  width: 390.w,
-                  height: 320.h,
-                  decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3), // changes position of shadow
-                        ),
-                      ],
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(15),
-                          topRight: Radius.circular(15))),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        'Apartman Çalışması Hakkında',
-                        style: AppTextStyle()
-                            .getSfProDisplaySemiBold_h6(AppColors.BLACK),
+  Widget vBuilder() => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(
+            height: Get.height * 0.1,
+          ),
+          Container(
+            height: Get.width >= 390 ? 205.h : 220.h,
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  color: AppColors.ORANGE,
+                  width: MediaQuery.of(Get.context!).size.width,
+                  height: 180.0, // ORANGE BACKGROUND
+                ),
+                Positioned(
+                  top: 10.0,
+                  left: 0.0,
+                  right: 0.0,
+                  child: Container(
+                    width: 350.w,
+                    height: Get.width >= 390 ? 190.h : 200.h,
+                    padding: AppPadding.guideLine,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                          boxShadow: <BoxShadow>[
+                            BoxShadow(
+                              color: Colors.black12,
+                              blurRadius: 4.0, // soften the shadow
+                              spreadRadius: 1.0, //extend the shadow
+                              offset: Offset(
+                                0.0, // Move to right 10  horizontally
+                                3.0, // Move to bottom 10 Vertically
+                              ),
+                            )
+                          ],
+                          borderRadius: BorderRadius.circular(5.0),
+                          color: Colors.white),
+                      child: Column(
+                        children: [
+                          Expanded(
+                            flex: 0,
+                            child: ListTile(
+                              dense: true,
+                              title: Text('Toplam Borç',
+                                  style: appTextStyle.getSfProDisplayMedium_H5(
+                                      AppColors.BLACK)),
+                              subtitle: Text('2.879,00',
+                                  style: appTextStyle.getSfProDisplayBold_H5(
+                                      AppColors.ORANGE)),
+                              trailing: Transform.translate(
+                                offset: Offset(30, 0),
+                                child: CustomElevatedButton(
+                                    width: 90.w,
+                                    height: 25.h,
+                                    onPressed: () {},
+                                    child: Text(
+                                      'Hepsini Öde',
+                                      style: AppTextStyle()
+                                          .getSfProDisplayMedium_little(
+                                              AppColors.WHITE),
+                                    )),
+                              ),
+                            ),
+                          ),
+                          Divider(
+                            color: AppColors.ORANGE,
+                          ),
+                          Expanded(
+                            child: ListView.builder(
+                              padding: EdgeInsets.zero,
+                              shrinkWrap: true,
+                              //itemExtent: 40,
+                              physics: NeverScrollableScrollPhysics(),
+                              itemCount: 3,
+                              itemBuilder: (context, index) {
+                                return buildDeptCard();
+                              },
+                            ),
+                          ),
+                          buildMainPaymentCardInfoText()
+                        ],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: Text(
-                          'Apartmanda yapacağımız çalışma nedeniyle pazartesi ve çarşamba günleri arasında bakım çalışması yapacağımızdan giriş çıkışlara dikkat etmenizi öneririz. Herkese iyi bayramlar!',
-                          style: AppTextStyle()
-                              .getSfProDisplayRegular_H5(AppColors.BLACK),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      RadioListTile(
-                        activeColor: Colors.orange,
-                        value: 1,
-                        groupValue: controller.radiValue!.value,
-                        title: Text('Tekrar Gösterme'),
-                        selected: controller.selectedRadio,
-                        onChanged: (int? value) {
-                          controller.selectUS(value);
-                          controller.update();
-                        },
-                      ),
-                      CustomElevatedButton(
-                          onPressed: () {
-                            controller.duyuru.removeAt(0);
-                            controller.update();
-                          },
-                          child: Text('TAMAM')),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: Text(
-                          'Bu bilgi apartman yöneticiniz tarafından sağlanmaktadır.',
-                          style: AppTextStyle()
-                              .getSfProDisplayLight_H5(AppColors.BLACK),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
-              )
-            : null,
-        key: controller.scaffoldKey,
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              height: Get.width >= 390 ? 205.h : 220.h,
-              child: Stack(
-                children: <Widget>[
-                  Container(
-                    color: AppColors.ORANGE,
-                    width: MediaQuery.of(Get.context!).size.width,
-                    height: 180.0, // ORANGE BACKGROUND
-                  ),
-                  Positioned(
-                    top: 10.0,
-                    left: 0.0,
-                    right: 0.0,
-                    child: Container(
-                      width: 350.w,
-                      height: Get.width >= 390 ? 190.h : 200.h,
-                      padding: AppPadding.guideLine,
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                            boxShadow: <BoxShadow>[
-                              BoxShadow(
-                                color: Colors.black12,
-                                blurRadius: 4.0, // soften the shadow
-                                spreadRadius: 1.0, //extend the shadow
-                                offset: Offset(
-                                  0.0, // Move to right 10  horizontally
-                                  3.0, // Move to bottom 10 Vertically
-                                ),
-                              )
-                            ],
-                            borderRadius: BorderRadius.circular(5.0),
-                            color: Colors.white),
-                        child: Column(
-                          children: [
-                            Expanded(
-                              flex: 0,
-                              child: ListTile(
-                                dense: true,
-                                title: Text('Toplam Borç',
-                                    style:
-                                        appTextStyle.getSfProDisplayMedium_H5(
-                                            AppColors.BLACK)),
-                                subtitle: Text('2.879,00',
-                                    style: appTextStyle.getSfProDisplayBold_H5(
-                                        AppColors.ORANGE)),
-                                trailing: Transform.translate(
-                                  offset: Offset(30, 0),
-                                  child: CustomElevatedButton(
-                                      width: 90.w,
-                                      height: 25.h,
-                                      onPressed: () {},
-                                      child: Text(
-                                        'Hepsini Öde',
-                                        style: AppTextStyle()
-                                            .getSfProDisplayMedium_little(
-                                                AppColors.WHITE),
-                                      )),
-                                ),
-                              ),
-                            ),
-                            Divider(
-                              color: AppColors.ORANGE,
-                            ),
-                            Expanded(
-                              child: ListView.builder(
-                                shrinkWrap: true,
-                                itemExtent: 40,
-                                physics: NeverScrollableScrollPhysics(),
-                                itemCount: 3,
-                                itemBuilder: (context, index) {
-                                  return buildDeptCard();
-                                },
-                              ),
-                            ),
-                            buildMainPaymentCardInfoText()
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+              ],
             ),
-            buildLastPaymentsTitleText(),
-            Expanded(
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: Get.width >= 390 ? 20 : 30,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: InkWell(
-                      onTap: () {
-                        buildShowPaymentDetailCard(context);
-                      },
-                      child: buildLastPaymentsCard(),
-                    ),
-                  );
-                },
-              ),
-            )
-          ],
-        ),
+          ),
+          buildLastPaymentsTitleText(),
+          Expanded(
+            child: ListView.builder(
+              padding: EdgeInsets.zero,
+              shrinkWrap: true,
+              itemCount: Get.width >= 390 ? 20 : 30,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.all(3.0),
+                  child: InkWell(
+                    onTap: () {
+                      buildShowPaymentDetailCard(context);
+                    },
+                    child: buildLastPaymentsCard(),
+                  ),
+                );
+              },
+            ),
+          )
+        ],
       );
 
   buildDeptCard() {
     return Padding(
-      padding: AppPadding.guideLine,
+      padding: AppPadding.guideLineVertical3,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -242,7 +170,7 @@ class DashBoardView extends BaseView<DashBoardController> {
 
   Padding buildLastPaymentsTitleText() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 18.0.w, vertical: 8.0.h),
+      padding: AppPadding.guideLine10Vertical8,
       child: Text(
         'Son Ödemelerim',
         style: appTextStyle.getSfProDisplayRegular_H5(AppColors.DARK_GREY),

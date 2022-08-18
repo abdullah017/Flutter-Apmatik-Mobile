@@ -47,6 +47,8 @@ class BaseController extends GetxController
   String? pageTitle;
   bool? isPageMenuItem = false;
   bool? isSettingItem = false;
+  RxBool? isNotification = false.obs;
+  bool? showBottomSheet = true;
   ScrollController scrollController = ScrollController();
   PageController pageController = PageController();
   FormValidationHelper formValidationHelper = FormValidationHelper();

@@ -1,161 +1,259 @@
+// ignore_for_file: must_be_immutable
+
+import 'package:apmatik/app/core/base/base_common_widget.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/widgets/stacked_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart' as intl;
 
-class PostCardWidget extends StatelessWidget {
-  const PostCardWidget({
+class PostCardWidget extends StatefulWidget {
+  PostCardWidget({
     Key? key,
+    required this.postUserImage,
+    required this.postUser,
+    required this.postImage,
+    required this.postTitle,
+    required this.postDescription,
+    required this.postTime,
   }) : super(key: key);
+
+  final String postUserImage;
+  final String postUser;
+  final String postImage;
+  final String postTitle;
+  final String postDescription;
+  String postTime;
+
+  @override
+  State<PostCardWidget> createState() => _PostCardWidgetState();
+}
+
+class _PostCardWidgetState extends State<PostCardWidget> {
+  @override
+  void initState() {
+    formatTime();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 20.w),
-      width: 350.w,
-      height: Get.width >= 390 ? 315.h : 340.h,
-      // Get.width > 390 ? Get.height * .15.h : Get.height * .10.h,
-      child: Card(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            ListTile(
-              leading: buildPostUserImage(),
-              minLeadingWidth: 0.0,
-              contentPadding: EdgeInsets.symmetric(horizontal: 14),
-              dense: true,
-              title: buildPostUserNameAndMoreIcon(),
-            ),
-            buildPostImage(),
-            SizedBox(
-              height: 10.h,
-            ),
-            buildPostTitleAndDescription(),
-            buildArrowIconButton(),
-          ],
-        ),
-      ),
-    );
+        margin: AppPadding.guideLine,
+        width: 350.w,
+        height: Get.width >= 390 ? 315.h : 340.h,
+        child: Card(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              ListTile(
+                  leading: CircleAvatar(
+                    radius: 12,
+                    backgroundColor: Colors.deepOrangeAccent,
+                    child: ClipOval(
+                      child: CachedNetworkImage(
+                        imageUrl: widget.postUserImage,
+                        fit: BoxFit.fill,
+                        width: 17.w,
+                        height: 17.h,
+                      ),
+                    ),
+                  ),
+                  minLeadingWidth: 0.0,
+                  contentPadding: EdgeInsets.symmetric(horizontal: 14),
+                  dense: true,
+                  title: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        widget.postUser,
+                        style: AppTextStyle().get_SfProRounded_Medium_H6(
+                          AppColors.BLACK,
+                        ),
+                      ),
+                      Icon(Icons.more_horiz),
+                    ],
+                  )),
+              Stack(
+                children: [
+                  CachedNetworkImage(
+                    imageUrl: widget.postImage,
+                    fit: BoxFit.fill,
+                    width: 350.w,
+                    height: 158.h,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              ListTile(
+                title: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      widget.postTitle,
+                      style: AppTextStyle().get_SfProRounded_SemiBold_h5(
+                        AppColors.BLACK,
+                      ),
+                    ),
+                    Text(
+                      widget.postTime,
+                      style: AppTextStyle().getSfProDisplayRegular_Italic_H6(
+                          AppColors.GREY_OPACITY),
+                    ),
+                  ],
+                ),
+                subtitle: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      widget.postDescription,
+                      style: AppTextStyle()
+                          .getSfProDisplayRegular_H6(AppColors.BLACK),
+                    ),
+                    buildStackedImages(
+                      direction: TextDirection.rtl,
+                    ),
+                  ],
+                ),
+              ),
+              buildArrowIconButton(),
+            ],
+          ),
+        ));
   }
 
-  CircleAvatar buildPostUserImage() {
-    return CircleAvatar(
-      radius: 12,
-      backgroundColor: Colors.deepOrangeAccent,
-      child: ClipOval(
-        child: CachedNetworkImage(
-          imageUrl: "https://via.placeholder.com/140x100",
-          fit: BoxFit.fill,
-          width: 17.w,
-          height: 17.h,
-        ),
-      ),
-    );
+  formatTime() {
+    var now = DateTime.now();
+    var formatterTime = intl.DateFormat('hh:mm');
+    widget.postTime = formatterTime.format(now);
   }
+}
 
-  Row buildPostUserNameAndMoreIcon() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+// CircleAvatar buildPostUserImage() {
+//   return CircleAvatar(
+//     radius: 12,
+//     backgroundColor: Colors.deepOrangeAccent,
+//     child: ClipOval(
+//       child: CachedNetworkImage(
+//         imageUrl: imageUrl,
+//         fit: BoxFit.fill,
+//         width: 17.w,
+//         height: 17.h,
+//       ),
+//     ),
+//   );
+// }
+
+// Row buildPostUserNameAndMoreIcon() {
+//   return Row(
+//     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//     children: [
+//       Text(
+//         'Ahmet Pehlivan',
+//         style: AppTextStyle().get_SfProRounded_Medium_H6(
+//           AppColors.BLACK,
+//         ),
+//       ),
+//       Icon(Icons.more_horiz),
+//     ],
+//   );
+// }
+
+// Stack buildPostImage() {
+//   return Stack(
+//     children: [
+//       Image.asset(
+//         'assets/images/post.png',
+//         width: 350.w,
+//         height: 158.h,
+//         fit: BoxFit.fill,
+//       ),
+//     ],
+//   );
+// }
+
+// ListTile buildPostTitleAndDescription() {
+//   return ListTile(
+//     title: Row(
+//       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//       mainAxisSize: MainAxisSize.min,
+//       children: [
+//         Text(
+//           'Kapı Çöpleri Hakkında',
+//           style: AppTextStyle().get_SfProRounded_SemiBold_h5(
+//             AppColors.BLACK,
+//           ),
+//         ),
+//         Text(
+//           '8 saat önce',
+//           style: AppTextStyle()
+//               .getSfProDisplayRegular_Italic_H6(AppColors.GREY_OPACITY),
+//         ),
+//       ],
+//     ),
+//     subtitle: Column(
+//       crossAxisAlignment: CrossAxisAlignment.start,
+//       children: [
+//         Text(
+//           'Apartman Boyanması için apartmanımızda anket başlamıştır. Hemen katılıp bizimle fikirlerini paylaş!',
+//           style: AppTextStyle().getSfProDisplayRegular_H6(AppColors.BLACK),
+//         ),
+//         buildStackedImages(direction: TextDirection.rtl),
+//       ],
+//     ),
+//   );
+// }
+
+Padding buildArrowIconButton() {
+  return Padding(
+    padding: const EdgeInsets.symmetric(
+      horizontal: 20.0,
+    ),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
-        Text(
-          'Ahmet Pehlivan',
-          style: AppTextStyle().get_SfProRounded_Medium_H6(
-            AppColors.BLACK,
+        IconButton(
+          splashColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+          padding: EdgeInsets.zero,
+          constraints: BoxConstraints(),
+          onPressed: () {
+            showSimple(message: 'Katıldığınız için teşekkürler');
+          },
+          icon: Icon(
+            Icons.arrow_circle_up_outlined,
+            size: 20.sm,
+            color: AppColors.ORANGE,
           ),
         ),
-        Icon(Icons.more_horiz),
-      ],
-    );
-  }
-
-  Stack buildPostImage() {
-    return Stack(
-      children: [
-        Image.asset(
-          'assets/images/post.png',
-          width: 350.w,
-          height: 158.h,
-          fit: BoxFit.fill,
-        ),
-      ],
-    );
-  }
-
-  ListTile buildPostTitleAndDescription() {
-    return ListTile(
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            'Kapı Çöpleri Hakkında',
-            style: AppTextStyle().get_SfProRounded_SemiBold_h5(
-              AppColors.BLACK,
-            ),
-          ),
-          Text(
-            '8 saat önce',
-            style: AppTextStyle()
-                .getSfProDisplayRegular_Italic_H6(AppColors.GREY_OPACITY),
-          ),
-        ],
-      ),
-      subtitle: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Apartman Boyanması için apartmanımızda anket başlamıştır. Hemen katılıp bizimle fikirlerini paylaş!',
-            style: AppTextStyle().getSfProDisplayRegular_H6(AppColors.BLACK),
-          ),
-          buildStackedImages(direction: TextDirection.rtl),
-        ],
-      ),
-    );
-  }
-
-  Padding buildArrowIconButton() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 20.0,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          IconButton(
+        Transform.translate(
+          offset: Offset(0, 0),
+          child: IconButton(
             splashColor: Colors.transparent,
- highlightColor: Colors.transparent,
+            highlightColor: Colors.transparent,
             padding: EdgeInsets.zero,
             constraints: BoxConstraints(),
-            onPressed: () {},
+            onPressed: () {
+              showSimple(message: 'Katıldığınız için teşekkürler');
+            },
             icon: Icon(
-              Icons.arrow_circle_up_outlined,
+              Icons.arrow_circle_down_outlined,
               size: 20.sm,
-              color: AppColors.ORANGE,
             ),
           ),
-          Transform.translate(
-            offset: Offset(0, 0),
-            child: IconButton(
-              splashColor: Colors.transparent,
- highlightColor: Colors.transparent,
-              padding: EdgeInsets.zero,
-              constraints: BoxConstraints(),
-              onPressed: () {},
-              icon: Icon(
-                Icons.arrow_circle_down_outlined,
-                size: 20.sm,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
 }
 
 Widget buildStackedImages({

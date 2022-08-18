@@ -1,4 +1,5 @@
 import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/widgets/stacked_widget.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +32,7 @@ class QuestionnaireCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: margin ?? EdgeInsets.symmetric(horizontal: 20.w),
+      margin: margin ?? AppPadding.guideLine,
       width: 350.w,
       height: buttonVisible!
           ? Get.width >= 390

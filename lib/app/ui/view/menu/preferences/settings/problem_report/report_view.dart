@@ -1,7 +1,6 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/view/menu/preferences/settings/problem_report/report_controller.dart';
-import 'package:apmatik/app/ui/widgets/custom_appbars/custom_appbar.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_elevated_button.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 
@@ -16,10 +15,7 @@ class ReportView extends BaseView<ReportController> {
           navBarHide: true, // false
         );
   @override
-  Widget vBuilder() => Scaffold(
-      appBar: CustomAppBar(),
-      backgroundColor: AppColors.PAGEBACKGROUND,
-      body: Form(
+  Widget vBuilder() =>  Form(
         key: controller.reportFormKey,
         child: ListView(
           children: [
@@ -137,5 +133,5 @@ class ReportView extends BaseView<ReportController> {
                 onPressed: () {}, child: Text('send_button'.tr))
           ],
         ),
-      ));
+      );
 }
