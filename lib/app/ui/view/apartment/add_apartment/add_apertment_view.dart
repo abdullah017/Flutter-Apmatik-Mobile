@@ -33,7 +33,6 @@ class AddApertmentView extends BaseView<AddApertmentController> {
       child: Container(
         padding: EdgeInsets.all(5.0.sm),
         width: 250.w,
-        height: Get.height,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
