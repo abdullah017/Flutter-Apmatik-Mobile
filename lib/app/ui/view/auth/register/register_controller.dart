@@ -11,7 +11,8 @@ class RegisterController extends BaseController {
   RxBool correctPhone = false.obs;
   PhoneNumber? phoneNumberWithRegion;
 
-  RxBool validForm = true.obs;
+  RxBool validForm = false.obs;
+    RxBool showhideErrorMessage = true.obs;
   var langStorage = 0;
   String? selectedValue = 'Erkek';
   List<String> listOfValue = ['Erkek', 'Kadın'];
@@ -51,7 +52,7 @@ class RegisterController extends BaseController {
   }
 
   void register() async {
-    if (registerFormKey.currentState!.validate() && validForm.value == false) {
+    if (registerFormKey.currentState!.validate() && validForm.value == true) {
       formValidation = AutovalidateMode.disabled;
       await box
           .write('userData', [
