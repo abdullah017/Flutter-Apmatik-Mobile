@@ -3,6 +3,7 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/view/common/common_controller.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
@@ -215,7 +216,9 @@ class CommonView extends BaseView<CommonController> {
               onPressed: () {
                 controller.goAddApartment();
               },
-              child: Text('noApertmenRecordButton'.tr),
+              child: Text(
+                'noApertmenRecordButton'.tr,
+              ),
             ),
           ),
           TextButton(
@@ -295,7 +298,10 @@ class CommonView extends BaseView<CommonController> {
               )),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: Text('resetPasswordSuccess'.tr),
+            child: Text(
+              'resetPasswordSuccess'.tr,
+              style: AppTextStyle().getSfProDisplayBold_H5(AppColors.BLACK),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -325,19 +331,23 @@ class CommonView extends BaseView<CommonController> {
               padding: const EdgeInsets.symmetric(vertical: 23.0),
               child: Image.asset(
                 AppAssets.done_icon,
-                width: 66,
-                height: 66,
+                width: 90,
+                height: 90,
                 color: AppColors.ORANGE,
               )),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: Text('registerSuccess'.tr),
+            child: Text(
+              'registerSuccess'.tr,
+              style: AppTextStyle().getSfProDisplayBold_H5(AppColors.BLACK),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20),
             child: Text(
               'registerSuccessInfo'.tr,
               textAlign: TextAlign.center,
+              style: AppTextStyle().getSfProDisplayRegular_H5(AppColors.BLACK),
             ),
           ),
           Padding(
