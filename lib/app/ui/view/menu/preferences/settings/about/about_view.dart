@@ -10,7 +10,6 @@ class AboutView extends BaseView<AboutController> {
   AboutView({Key? key})
       : super(
           key: key,
-          navBarHide: true,
           appBarHide: false,
         );
   @override

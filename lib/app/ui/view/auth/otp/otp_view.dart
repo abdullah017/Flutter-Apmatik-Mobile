@@ -12,7 +12,7 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 
 class OtpView extends BaseView<OtpController> {
   OtpView({Key? key})
-      : super(key: key, navBarHide: true, appBarHide: false // false
+      : super(key: key,  appBarHide: false // false
             );
   @override
   Widget vBuilder() => Form(

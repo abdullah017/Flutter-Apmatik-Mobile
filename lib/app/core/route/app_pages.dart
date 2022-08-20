@@ -58,7 +58,7 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.QUESTIONNAIRE;
+  static const INITIAL = Routes.HOME;
   static const HOME = Routes.HOME;
   static final routes = [
     GetPage(

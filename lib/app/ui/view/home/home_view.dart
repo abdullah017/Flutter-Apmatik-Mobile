@@ -17,7 +17,7 @@ import 'package:get/get.dart';
 import 'home_controller.dart';
 
 class HomeView extends BaseView<HomeController> {
-  HomeView({Key? key}) : super(key: key, navBarHide: false, appBarHide: false);
+  HomeView({Key? key}) : super(key: key,  appBarHide: false);
   @override
   Widget vBuilder() => controller.hasApertmenKey ?? false
       ? ListView(children: [
@@ -80,32 +80,6 @@ class HomeView extends BaseView<HomeController> {
             thickness: 2.2,
             color: Colors.blueGrey.shade100,
           ),
-          // PopupMenuButton<int>(
-          //   icon: Icon(Icons.arrow_back),
-          //   onSelected: (value) {
-          //     print(value);
-          //     controller.subPageId = value;
-          //     controller.update();
-          //   },
-          //   itemBuilder: (context) => const [
-          //     PopupMenuItem<int>(
-          //         value: 0,
-          //         child: Text(
-          //           'Duyurular',
-          //         )),
-          //     PopupMenuItem<int>(
-          //         value: 1,
-          //         child: Text(
-          //           'Anketler',
-          //         )),
-          //     PopupMenuItem<int>(
-          //         value: 2,
-          //         child: Text(
-          //           'Sponsorlar',
-          //         )),
-          //   ],
-          //   child: Text('Duyurular'),
-          // ),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -190,7 +164,6 @@ class HomeView extends BaseView<HomeController> {
               imageUrl:
                   'https://jiujitsutimes.com/wp-content/uploads/sponsored-slider.png',
             ),
-
           if (controller.subPageId == 3)
             Column(
               children: [

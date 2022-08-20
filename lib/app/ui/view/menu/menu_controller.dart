@@ -2,6 +2,12 @@ import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:get/get.dart';
 
 class MenuController extends BaseController {
+  @override
+  RxBool get navBarHide => false.obs;
+
+  @override
+  bool? get showBottomSheet => false;
+
   void goToProfileView() {
     Get.toNamed('profile');
   }
@@ -26,6 +32,7 @@ class MenuController extends BaseController {
 
   @override
   void onInit() {
+    navBarHide.value = false;
     super.onInit();
     tabIndex = 4;
   }

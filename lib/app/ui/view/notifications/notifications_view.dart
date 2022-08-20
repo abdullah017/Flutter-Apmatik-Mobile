@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NotificationsView extends BaseView<NotificationsController> {
   NotificationsView({Key? key})
-      : super(key: key, navBarHide: true, appBarHide: false // false
+      : super(key: key,  appBarHide: false // false
             );
   @override
   Widget vBuilder() =>  Padding(

@@ -14,7 +14,7 @@ import 'package:get/get.dart';
 
 class DashBoardView extends BaseView<DashBoardController> {
   DashBoardView({Key? key})
-      : super(key: key, navBarHide: false, appBarHide: false);
+      : super(key: key,  appBarHide: false);
   @override
   Widget vBuilder() => Column(
         crossAxisAlignment: CrossAxisAlignment.start,

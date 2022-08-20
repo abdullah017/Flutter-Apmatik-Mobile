@@ -9,7 +9,7 @@ class BlankView extends BaseView<BlankController> {
   BlankView({Key? key})
       : super(
           key: key,
-          navBarHide: false, // false
+          // navBarHide: false, // false
         );
   @override
   Widget vBuilder() {

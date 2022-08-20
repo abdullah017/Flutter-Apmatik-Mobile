@@ -40,10 +40,8 @@ export 'base_controller.dart';
 abstract class BaseView<T extends BaseController> extends StatelessWidget {
   Size get preferredSize =>
       Get.width >= 390 ? Size.fromHeight(0.1.sw) : Size.fromHeight(0.15.sw);
-  BaseView({Key? key, this.navBarHide = true, this.appBarHide = true})
-      : super(key: key);
+  BaseView({Key? key, this.appBarHide = true}) : super(key: key);
 
-  final bool navBarHide;
   final bool appBarHide;
   final String? tag = null;
   final String? pageTitle = null;
@@ -78,112 +76,118 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
                       : CustomLoginUserAppBar()
                   : buildBackButtonAppBar(controller.pageTitle)
               : null,
-          bottomNavigationBar: !navBarHide
-              ? Container(
-                  width: Get.width,
-                  height: Get.width >= 390 ? 70.h : 60.h,
-                  child: LayoutBuilder(
-                    builder: (context, constraints) => Stack(
-                      children: [
-                        Wrap(
+          bottomNavigationBar: !controller.navBarHide.value
+              ? !controller.showBottomSheet!
+                  ? Container(
+                      alignment: Alignment.bottomCenter,
+                      width: Get.width,
+                      height: Get.width >= 390 ? 70.h : 60.h,
+                      child: LayoutBuilder(
+                        builder: (context, constraints) => Stack(
                           children: [
-                            BottomNavigationBar(
-                                iconSize: 32,
-                                onTap: (index) async {
-                                  debugPrint(controller.tabIndex.toString());
-                                  controller.tabChange(index);
+                            Wrap(
+                              children: [
+                                BottomNavigationBar(
+                                    iconSize: 32,
+                                    onTap: (index) async {
+                                      debugPrint(
+                                          controller.tabIndex.toString());
+                                      controller.tabChange(index);
 
-                                  if (index == 0) {
-                                    await Get.offAndToNamed('dashboard');
-                                    Get.delete<MenuController>();
-                                    controller.update();
-                                  }
-                                  if (index == 1) {
-                                    await Get.offAndToNamed('blank');
-                                    Get.delete<MenuController>();
-                                    controller.update();
-                                  }
-                                  if (index == 2) {
-                                    await Get.offAndToNamed('home');
-                                    Get.delete<MenuController>();
-                                    controller.update();
-                                  }
-                                  if (index == 3) {
-                                    await Get.offAndToNamed('blank');
-                                    Get.delete<MenuController>();
-                                    controller.update();
-                                  }
-                                  if (index == 4) {
-                                    await Get.offAndToNamed('menu');
-                                    controller.update();
-                                  }
-                                  controller.update();
-                                },
-                                unselectedLabelStyle: TextStyle(fontSize: 0),
-                                unselectedFontSize: 0,
-                                // unselectedIconTheme: IconThemeData(
-                                //   size: 24,
-                                // ),
-                                selectedFontSize: 0,
-                                // selectedIconTheme: IconThemeData(
-                                //   size: 24,
-                                // ),
-                                selectedLabelStyle: TextStyle(fontSize: 0),
-                                type: BottomNavigationBarType.fixed,
-                                landscapeLayout:
-                                    BottomNavigationBarLandscapeLayout.linear,
-                                unselectedItemColor: Colors.black,
-                                selectedItemColor: Colors.orange,
-                                showSelectedLabels: false,
-                                showUnselectedLabels: false,
-                                currentIndex: controller.tabIndex,
-                                items: [
-                                  _bottomNavbarItem(
-                                    AppAssets.card_icon,
-                                    '',
-                                  ),
-                                  _bottomNavbarItem(
-                                    AppAssets.key_icon,
-                                    '',
-                                  ),
-                                  _bottomNavbarItem(
-                                    AppAssets.home_icon,
-                                    '',
-                                  ),
-                                  _bottomNavbarItem(
-                                    AppAssets.doc_icon,
-                                    '',
-                                  ),
-                                  _bottomNavbarItem(
-                                    AppAssets.menu_icon,
-                                    '',
-                                  ),
-                                ]),
+                                      if (index == 0) {
+                                        await Get.offAndToNamed('dashboard');
+                                        Get.delete<MenuController>();
+                                        controller.update();
+                                      }
+                                      if (index == 1) {
+                                        await Get.offAndToNamed('blank');
+                                        Get.delete<MenuController>();
+                                        controller.update();
+                                      }
+                                      if (index == 2) {
+                                        await Get.offAndToNamed('home');
+                                        Get.delete<MenuController>();
+                                        controller.update();
+                                      }
+                                      if (index == 3) {
+                                        await Get.offAndToNamed('blank');
+                                        Get.delete<MenuController>();
+                                        controller.update();
+                                      }
+                                      if (index == 4) {
+                                        await Get.offAndToNamed('menu');
+                                        controller.update();
+                                      }
+                                      controller.update();
+                                    },
+                                    unselectedLabelStyle:
+                                        TextStyle(fontSize: 0),
+                                    unselectedFontSize: 0,
+                                    // unselectedIconTheme: IconThemeData(
+                                    //   size: 24,
+                                    // ),
+                                    selectedFontSize: 0,
+                                    // selectedIconTheme: IconThemeData(
+                                    //   size: 24,
+                                    // ),
+                                    selectedLabelStyle: TextStyle(fontSize: 0),
+                                    type: BottomNavigationBarType.fixed,
+                                    landscapeLayout:
+                                        BottomNavigationBarLandscapeLayout
+                                            .linear,
+                                    unselectedItemColor: Colors.black,
+                                    selectedItemColor: Colors.orange,
+                                    showSelectedLabels: false,
+                                    showUnselectedLabels: false,
+                                    currentIndex: controller.tabIndex,
+                                    items: [
+                                      _bottomNavbarItem(
+                                        AppAssets.card_icon,
+                                        '',
+                                      ),
+                                      _bottomNavbarItem(
+                                        AppAssets.key_icon,
+                                        '',
+                                      ),
+                                      _bottomNavbarItem(
+                                        AppAssets.home_icon,
+                                        '',
+                                      ),
+                                      _bottomNavbarItem(
+                                        AppAssets.doc_icon,
+                                        '',
+                                      ),
+                                      _bottomNavbarItem(
+                                        AppAssets.menu_icon,
+                                        '',
+                                      ),
+                                    ]),
+                              ],
+                            ),
+                            AnimatedPositioned(
+                              bottom: Get.width >= 390 ? 25 : 0,
+                              left: constraints.maxWidth /
+                                      5 *
+                                      (controller
+                                          .tabIndex) + //space of current index
+                                  (constraints.maxWidth /
+                                      9) - // minimize the half of it
+                                  30, // minimize the width of dash
+                              child: Container(
+                                width: 50,
+                                height: 3,
+                                decoration: const BoxDecoration(
+                                    color: AppColors.ORANGE),
+                              ),
+                              duration: const Duration(
+                                milliseconds: 500,
+                              ),
+                            ),
                           ],
                         ),
-                        AnimatedPositioned(
-                          bottom: 25,
-                          left: constraints.maxWidth /
-                                  5 *
-                                  (controller
-                                      .tabIndex) + //space of current index
-                              (constraints.maxWidth /
-                                  9) - // minimize the half of it
-                              30, // minimize the width of dash
-                          child: Container(
-                            width: 50,
-                            height: 3,
-                            decoration:
-                                const BoxDecoration(color: AppColors.ORANGE),
-                          ),
-                          duration: const Duration(
-                            milliseconds: 500,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                )
+                      ),
+                    )
+                  : null
               : null,
           body: vBuilder(),
         );

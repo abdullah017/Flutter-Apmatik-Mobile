@@ -10,7 +10,7 @@ class StaffView extends BaseView<StaffController> {
   StaffView({Key? key})
       : super(
           key: key,
-          navBarHide: true,
+        
         );
   @override
   Widget vBuilder() =>  ListView(
