@@ -6,7 +6,7 @@ class AggrementView extends BaseView<AggrementController> {
   AggrementView({Key? key})
       : super(
           key: key,
-      
+          appBarHide: false,
         );
   @override
   Widget vBuilder() => ListView(

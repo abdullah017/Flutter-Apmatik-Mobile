@@ -14,7 +14,7 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 class RegisterView extends BaseView<RegisterController> {
   RegisterView({Key? key})
-      : super(key: key,  appBarHide: false // false
+      : super(key: key, appBarHide: false // false
             );
   @override
   Widget vBuilder() => Form(
@@ -118,6 +118,7 @@ class RegisterView extends BaseView<RegisterController> {
                 SizedBox(
                   height: 50,
                   child: InternationalPhoneNumberInput(
+                    locale: controller.langStorage == 0 ? 'tr' : 'en',
                     errorMessage: null,
                     hintText: 'Telefon Numarası',
                     onInputValidated: (bool value) {
@@ -154,6 +155,8 @@ class RegisterView extends BaseView<RegisterController> {
                       showFlags: false,
                       trailingSpace: true,
                     ),
+                    searchBoxDecoration:
+                        InputDecoration(labelText: 'phoneNumberSearchText'.tr),
                     initialValue: PhoneNumber(isoCode: 'TR'),
                     textFieldController: TextEditingController(),
                     formatInput: false,

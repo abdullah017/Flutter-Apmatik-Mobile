@@ -156,5 +156,9 @@ const Map<String, String> en = {
   'give_up': 'Give Up',
 
   'select_apartment_info':
-      'If you cannot find your apartment in this list, please contact your apartment manager.'
+      'If you cannot find your apartment in this list, please contact your apartment manager.',
+
+      'phoneNumberSearchText':'Enter area code or country name'
+
+      
 };
