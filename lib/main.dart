@@ -14,7 +14,7 @@ void main() async {
   await GetStorage.init();
   Get.put(ApiBaseHelper(), permanent: true);
   Get.put(ApiRepository(Get.find()));
-  
+
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
       overlays: <SystemUiOverlay>[SystemUiOverlay.top]);
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
@@ -25,12 +25,14 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   MyApp({
-    Key? key,
+    Key? key, 
   }) : super(key: key);
   final storage = GetStorage();
 
   @override
   Widget build(BuildContext context) {
+    print(Get.width);
+    print(Get.height);
     print(storage.read('isLogin'));
     print(storage.read('languages'));
     var isLogin = storage.read('isLogin') ?? false;

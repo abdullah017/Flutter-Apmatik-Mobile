@@ -17,7 +17,7 @@ import 'package:get/get.dart';
 import 'home_controller.dart';
 
 class HomeView extends BaseView<HomeController> {
-  HomeView({Key? key}) : super(key: key,  appBarHide: false);
+  HomeView({Key? key}) : super(key: key, appBarHide: false);
   @override
   Widget vBuilder() => controller.hasApertmenKey ?? false
       ? ListView(children: [
@@ -85,9 +85,9 @@ class HomeView extends BaseView<HomeController> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Padding(
-                padding: Get.width >= 390.w
+                padding: Get.width == 390.w
                     ? EdgeInsets.only(left: 250.w, right: 24.w)
-                    : EdgeInsets.only(left: 250.w, right: 24.w),
+                    : EdgeInsets.only(left: 250.w, right: 20.w),
                 child: DropdownButtonHideUnderline(
                   child: DropdownButton(
                       hint: Text(

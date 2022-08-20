@@ -165,7 +165,7 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
                               ],
                             ),
                             AnimatedPositioned(
-                              bottom: Get.width >= 390 ? 25 : 0,
+                              bottom: Get.width == 390 ? 25 : 0,
                               left: constraints.maxWidth /
                                       5 *
                                       (controller
