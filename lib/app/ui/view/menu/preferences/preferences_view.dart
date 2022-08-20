@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 
 class PreferencesView extends BaseView<PreferencesController> {
   PreferencesView({Key? key})
-      : super(key: key, navBarHide: true, appBarHide: false // false
+      : super(key: key,  appBarHide: false // false
             );
   @override
   Widget vBuilder() => ListView(

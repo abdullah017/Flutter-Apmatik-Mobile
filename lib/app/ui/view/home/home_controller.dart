@@ -2,10 +2,11 @@ import 'package:apmatik/app/core/base/base_controller.dart';
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:get/get.dart';
 
-
-
 class HomeController extends BaseController {
 
+  @override
+
+  RxBool get navBarHide => hasApartmenValue;
 
   var subPageId = 0;
 
@@ -29,10 +30,12 @@ class HomeController extends BaseController {
   String selectedValue = 'Duyurular';
   int current = 0;
   var hasApertmenKey;
+  RxBool hasApartmenValue = false.obs;
   final CarouselController carouselController = CarouselController();
 
   apertmenRecord() async {
     await box.write('hasApertmen', false);
+
     update();
   }
 
@@ -41,6 +44,10 @@ class HomeController extends BaseController {
       //box.write('hasApertmen', newValue);
       print(box.read('hasApertmen'));
       hasApertmenKey = box.read('hasApertmen');
+      print(hasApertmenKey);
+      if (hasApertmenKey == true) {
+        hasApartmenValue.value = false;
+      }
       update();
     });
   }
@@ -55,6 +62,12 @@ class HomeController extends BaseController {
   void onInit() {
     apertmenRecord();
     updateRecordState();
+    if (hasApertmenKey == false || hasApertmenKey == null) {
+      print(hasApertmenKey);
+
+      hasApartmenValue.value = true;
+      update();
+    }
     tabIndex = 2;
     box.write('isLogin', true);
     super.onInit();

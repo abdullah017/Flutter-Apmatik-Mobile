@@ -14,7 +14,7 @@ import 'package:get/get.dart';
 
 class EditProfileView extends BaseView<EditProfileController> {
   EditProfileView({Key? key})
-      : super(key: key, navBarHide: true, appBarHide: false);
+      : super(key: key,  appBarHide: false);
   @override
   Widget vBuilder() => ListView(
         children: [

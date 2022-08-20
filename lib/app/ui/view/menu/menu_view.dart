@@ -16,7 +16,7 @@ class MenuView extends BaseView<MenuController> {
   MenuView({Key? key})
       : super(
           key: key,
-          navBarHide: false, // false
+         
         );
 
   @override

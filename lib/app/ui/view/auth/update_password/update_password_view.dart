@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 
 class UpdatePasswordView extends BaseView<UpdatePasswordController> {
   UpdatePasswordView({Key? key})
-      : super(key: key, navBarHide: true, appBarHide: false);
+      : super(key: key, appBarHide: false);
   @override
   Widget vBuilder() => Form(
         key: controller.updatePasswordFormKey,

@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 
 class QuestionnaireDetailView extends BaseView<QuestionnaireDetailController> {
   QuestionnaireDetailView({Key? key})
-      : super(key: key, navBarHide: true, appBarHide: false);
+      : super(key: key,  appBarHide: false);
   @override
   Widget vBuilder() => ListView(
         children: [

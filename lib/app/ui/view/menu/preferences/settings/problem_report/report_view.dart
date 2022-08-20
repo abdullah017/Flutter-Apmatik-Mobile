@@ -12,7 +12,7 @@ class ReportView extends BaseView<ReportController> {
   ReportView({Key? key})
       : super(
           key: key,
-          navBarHide: true, // false
+         
         );
   @override
   Widget vBuilder() =>  Form(

@@ -14,7 +14,7 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 class RegisterView extends BaseView<RegisterController> {
   RegisterView({Key? key})
-      : super(key: key, navBarHide: true, appBarHide: false // false
+      : super(key: key,  appBarHide: false // false
             );
   @override
   Widget vBuilder() => Form(
