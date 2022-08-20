@@ -13,7 +13,7 @@ class CommonController extends BaseController {
   }
 
   void goToHome() {
-    Get.toNamed('home');
+    Get.offAndToNamed('home');
     box.write('hasApertmen', true);
   }
 

@@ -18,7 +18,7 @@ class CustomFilledTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: AppPadding.guideLine,
+      padding: AppPadding.guideLine9,
       child: Container(
         width: 330.w,
         height: 30.h,
@@ -32,7 +32,7 @@ class CustomFilledTextFormField extends StatelessWidget {
             filled: true,
             fillColor: Colors.white,
             contentPadding:
-                EdgeInsets.symmetric(vertical: 10.0.h, horizontal: 10.0.h),
+                EdgeInsets.symmetric(vertical: 5.0.h, horizontal: 5.0.h),
             border: OutlineInputBorder(
               borderSide: BorderSide(color: AppColors.WHITE_GREY, width: 1.0),
             ),

@@ -4,11 +4,9 @@ import 'package:get/get.dart';
 
 class DashBoardController extends BaseController {
   @override
-  // TODO: implement navBarHide
   RxBool get navBarHide => false.obs;
 
   @override
-  // TODO: implement showBottomSheet
   bool? get showBottomSheet => false;
 
   List duyuru = [].obs;

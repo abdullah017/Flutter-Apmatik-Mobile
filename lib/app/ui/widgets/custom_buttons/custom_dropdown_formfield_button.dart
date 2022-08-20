@@ -46,9 +46,8 @@ class CustomDropdownButtonFormField extends StatelessWidget {
             ? InputDecoration(
                 filled: true,
                 fillColor: AppColors.WHITE,
-                contentPadding: const EdgeInsets.symmetric(
-                  vertical: 10.0,
-                ),
+                contentPadding:
+                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5),
                 border: OutlineInputBorder(
                   borderSide:
                       BorderSide(color: AppColors.WHITE_GREY, width: 1.0),
