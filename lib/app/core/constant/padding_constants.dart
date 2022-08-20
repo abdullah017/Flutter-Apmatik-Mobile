@@ -10,4 +10,6 @@ class AppPadding {
       EdgeInsets.symmetric(horizontal: 10.0.w, vertical: 8.h);
   static EdgeInsetsGeometry guideLineVertical3 =
       EdgeInsets.symmetric(horizontal: 18.0.w, vertical: 3.h);
+  static EdgeInsetsGeometry guideLine10Vertical10 =
+      EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h);
 }

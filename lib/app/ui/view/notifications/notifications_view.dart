@@ -1,16 +1,17 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/ui/view/notifications/notifications_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NotificationsView extends BaseView<NotificationsController> {
   NotificationsView({Key? key})
-      : super(key: key,  appBarHide: false // false
+      : super(key: key, appBarHide: false // false
             );
   @override
-  Widget vBuilder() =>  Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
+  Widget vBuilder() => Padding(
+        padding: AppPadding.guideLine10Vertical10,
         child: ListView(
           children: [
             Text(
