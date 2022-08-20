@@ -2,22 +2,22 @@ import 'package:apmatik/app/core/base/base_common_widget.dart';
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/view/questionnaire_detail/questionnaire_detail_controller.dart';
-import 'package:apmatik/app/ui/widgets/custom_cards/questionnaire_card.dart';
+import 'package:apmatik/app/ui/widgets/custom_cards/questionnire_detail_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class QuestionnaireDetailView extends BaseView<QuestionnaireDetailController> {
-  QuestionnaireDetailView({Key? key})
-      : super(key: key,  appBarHide: false);
+  QuestionnaireDetailView({Key? key}) : super(key: key, appBarHide: false);
   @override
   Widget vBuilder() => ListView(
         children: [
-          QuestionnaireCardWidget(
-            buttonVisible: false,
-            margin: EdgeInsets.zero,
-            tagVisible: false,
-            elevation: 0,
+          QuestionnaireDetailCardWidget(
+            imageUrl:
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1clx_t9_PqFR5EcpZcdpBpJdYMmgSB1wecQ&usqp=CAU',
+            title: 'Apartman Isı Yalıtımı',
+            description:
+                'Apartmanda ısı yalıtımı için anket başlattık.Ankete katıl,fikirlerini hemen paylaş.',
           ),
           ListView.builder(
             shrinkWrap: true,
