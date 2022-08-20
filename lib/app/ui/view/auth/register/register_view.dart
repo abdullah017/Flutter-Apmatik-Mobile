@@ -118,42 +118,51 @@ class RegisterView extends BaseView<RegisterController> {
                 SizedBox(
                   height: 50,
                   child: InternationalPhoneNumberInput(
+                    errorMessage: controller.error.value,
+                    selectorButtonOnErrorPadding: 0,
                     locale: controller.langStorage == 0 ? 'tr' : 'en',
-                    errorMessage: null,
                     hintText: 'Telefon Numarası',
                     onInputValidated: (bool value) {
                       print(value);
-                      if (!value) {
-                        controller.error.value =
-                            'Telefon numarası alanını doğru şekilde doldurun!';
+                      if (value == true) {
                         controller.validForm.value = true;
-                        print(
-                            'DOĞRU NO GİRİLMEDİYSE=> ${controller.validForm.value}');
+                        controller.showhideErrorMessage.value = false;
                         controller.update();
                       } else {
-                        controller.error.value = '';
-
                         controller.validForm.value = false;
-                        print(
-                            'DOĞRU NO GİRİLDİYSE=> ${controller.validForm.value}');
+                        controller.showhideErrorMessage.value = true;
                         controller.update();
                       }
+                    },
+                    validator: (number) {
+                      print(number);
+                      if (controller.validForm.value == false) {
+                        controller.error.value =
+                            'Telefon numarası alanını doğru şekilde doldurun!';
+                        print(
+                            'DOĞRU NO GİRİLMEDİYSE=> ${controller.validForm.value}');
+                      } else {
+                        controller.validForm.value = true;
+                        print(
+                            'DOĞRU NO GİRİLDİYSE=> ${controller.validForm.value}');
+                      }
+                      return null;
                     },
                     onInputChanged: (PhoneNumber number) {
                       print(number.phoneNumber);
                       controller.phoneNumberWithRegion = number;
                     },
                     ignoreBlank: false,
-                    autoValidateMode: AutovalidateMode.always,
+                    autoValidateMode: controller.formValidation,
                     selectorTextStyle: const TextStyle(
                       color: Colors.black,
                     ),
                     selectorConfig: const SelectorConfig(
                       selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
                       setSelectorButtonAsPrefixIcon: false,
-                      leadingPadding: 10,
+                      leadingPadding: 0,
                       showFlags: false,
-                      trailingSpace: true,
+                      trailingSpace: false,
                     ),
                     searchBoxDecoration:
                         InputDecoration(labelText: 'phoneNumberSearchText'.tr),
@@ -163,7 +172,7 @@ class RegisterView extends BaseView<RegisterController> {
                     keyboardType: TextInputType.numberWithOptions(
                         signed: true, decimal: true),
                     inputDecoration: const InputDecoration(
-                      contentPadding: EdgeInsets.only(bottom: 4),
+                      contentPadding: EdgeInsets.only(bottom: 4, left: 25),
                       border: InputBorder.none,
                       enabledBorder: OutlineInputBorder(
                           borderSide:
@@ -187,12 +196,15 @@ class RegisterView extends BaseView<RegisterController> {
             ),
           ),
           Visibility(
-            visible: controller.validForm.value,
+            replacement: SizedBox.fromSize(
+              size: Size(0, 0),
+            ),
+            visible: controller.showhideErrorMessage.value,
             child: Text(
               controller.error.value,
               style: AppTextStyle().getSfProDisplayRegular_Other(Colors.red),
             ),
-          ),
+          )
         ],
       ),
     );
