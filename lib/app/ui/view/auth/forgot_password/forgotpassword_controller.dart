@@ -29,11 +29,20 @@ class ForgotPasswordController extends BaseController {
     super.onInit();
   }
 
+  @override
+  void onClose() {
+    phoneNumberController;
+    super.onClose();
+  }
+
   void goOtpPage() {
     try {
       if (forgotPasswordFormKey.currentState!.validate() &&
           validForm.value == false) {
-        Get.toNamed('otp', arguments: number);
+        Get.toNamed('otp', arguments: [
+          {"number": number},
+          {"page": 'forgot'}
+        ]);
       } else {
         print('NONONO');
       }

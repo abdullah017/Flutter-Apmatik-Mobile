@@ -14,9 +14,10 @@ class OtpController extends BaseController
   Rx<bool> hasError = false.obs;
   RxString currentText = "".obs;
   RxList storageList = [].obs;
+
   var phone;
   var dataRegister;
-  var dataForgotPassword = Get.arguments;
+  dynamic dataForgotPassword = Get.arguments;
   int endTime = DateTime.now().millisecondsSinceEpoch + 1000 * 30;
 
   TextEditingController textEditingController = TextEditingController();
@@ -26,6 +27,8 @@ class OtpController extends BaseController
 
   @override
   void onInit() {
+    print(dataForgotPassword[1]['page']);
+
     myFocusNode;
     animationController = AnimationController(
       vsync: this,
@@ -47,7 +50,9 @@ class OtpController extends BaseController
     }
     if (dataForgotPassword != null) {
       print(dataForgotPassword);
-      phone = dataForgotPassword;
+      phone = dataForgotPassword[0]['number'];
+    } else {
+      phone = 'BİLİNMEYEN NUMARA';
     }
 
     super.onInit();
@@ -57,12 +62,20 @@ class OtpController extends BaseController
   void onClose() {
     errorController!.close();
     animationController!.dispose();
+    textEditingController;
+
     super.onClose();
   }
 
   gosAdditionalPage() {
     if (formKey.currentState!.validate()) {
-      Get.toNamed('additional_details');
+      Get.offAndToNamed('additional_details');
+      print(hasError.value);
+      print('EWVET');
+    }
+    if (formKey.currentState!.validate() &&
+        dataForgotPassword[1]['page'] == 'forgot') {
+      Get.offNamedUntil('login', (route) => false);
       print(hasError.value);
       print('EWVET');
     } else {
@@ -80,8 +93,4 @@ class OtpController extends BaseController
   goHomePage() {
     Get.toNamed('home');
   }
-
-  // snackBar(String? message) {
-  //   return showSnackBar('HATA', message!, Colors.black, true, '');
-  // }
 }
