@@ -92,7 +92,7 @@ const Map<String, String> tr = {
   'successRecordApartmenInfo':
       'Apartman kaydınız tamamlanmıştır. Apartman yöneticiniz başvurunuzu onayladığı zaman size bir bildirim göndereceğiz.',
   'completed': 'Tamamlandı',
-  'backToFlow':'Akışa Geri Dön',
+  'backToFlow': 'Akışa Geri Dön',
   'cars': 'Araçlar',
   'fault': 'Arıza Bildirimi',
 
@@ -156,6 +156,8 @@ const Map<String, String> tr = {
 
   'select_apartment_info':
       'Apartmanınızı bu listede bulamıyorsanız lütfen apartman yöneticiniz ile iletişime geçiniz.',
+
+  'phoneNumberSearchText': 'Alan kodunu ya da ülke adını giriniz',
 
   //MENU SAYFA BAŞLIKLARI
   'profile': 'Profil',

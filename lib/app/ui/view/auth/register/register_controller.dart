@@ -12,7 +12,7 @@ class RegisterController extends BaseController {
   PhoneNumber? phoneNumberWithRegion;
 
   RxBool validForm = true.obs;
-
+  var langStorage = 0;
   String? selectedValue = 'Erkek';
   List<String> listOfValue = ['Erkek', 'Kadın'];
 
@@ -35,6 +35,7 @@ class RegisterController extends BaseController {
     emailController;
     passwordController;
     phoneNumberWithRegion;
+    langStorage = box.read('languages') ?? 0;
   }
 
   void changePasswordShowStatus() {

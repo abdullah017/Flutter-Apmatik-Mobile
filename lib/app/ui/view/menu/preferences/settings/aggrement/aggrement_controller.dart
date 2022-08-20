@@ -2,9 +2,9 @@ import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:get/get.dart';
 
 class AggrementController extends BaseController {
-    @override
+  @override
   // PAGE TITLE AREA IS HERE!
-  String? get pageTitle => 'languageSettings'.tr;
+  String? get pageTitle => 'userAggrements'.tr;
   // NOTICE HERE THAT THE PAGE IS A MENU ITEM TO CHANGE THE APPBAR
   @override
   bool? get isPageMenuItem => true;

@@ -10,7 +10,6 @@ class LanguagesView extends BaseView<LanguagesController> {
   LanguagesView({Key? key})
       : super(
           key: key,
-        
           appBarHide: false,
         );
   @override

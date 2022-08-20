@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 class ReportController extends BaseController {
   @override
   // PAGE TITLE AREA IS HERE!
-  String? get pageTitle => 'languageSettings'.tr;
+  String? get pageTitle => 'report'.tr;
   // NOTICE HERE THAT THE PAGE IS A MENU ITEM TO CHANGE THE APPBAR
   @override
   bool? get isPageMenuItem => true;
