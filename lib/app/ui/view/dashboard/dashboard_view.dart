@@ -13,32 +13,31 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class DashBoardView extends BaseView<DashBoardController> {
-  DashBoardView({Key? key})
-      : super(key: key,  appBarHide: false);
+  DashBoardView({Key? key}) : super(key: key, appBarHide: false);
   @override
   Widget vBuilder() => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
           SizedBox(
-            height: Get.height * 0.1,
+            height: Get.height * 0.11,
           ),
           Container(
-            height: Get.width >= 390 ? 205.h : 220.h,
+            height: Get.width == 390 ? 205.h : 220.h,
             child: Stack(
               children: <Widget>[
                 Container(
                   color: AppColors.ORANGE,
                   width: MediaQuery.of(Get.context!).size.width,
-                  height: 180.0, // ORANGE BACKGROUND
+                  height: 190.0, // ORANGE BACKGROUND
                 ),
                 Positioned(
-                  top: 10.0,
+                  top: 15.0,
                   left: 0.0,
                   right: 0.0,
                   child: Container(
                     width: 350.w,
-                    height: Get.width >= 390 ? 190.h : 200.h,
+                    height: Get.width == 390 ? 180.h : 200.h,
                     padding: AppPadding.guideLine,
                     child: DecoratedBox(
                       decoration: BoxDecoration(
@@ -53,7 +52,7 @@ class DashBoardView extends BaseView<DashBoardController> {
                               ),
                             )
                           ],
-                          borderRadius: BorderRadius.circular(5.0),
+                          borderRadius: BorderRadius.circular(10.0),
                           color: Colors.white),
                       child: Column(
                         children: [
@@ -84,6 +83,8 @@ class DashBoardView extends BaseView<DashBoardController> {
                           ),
                           Divider(
                             color: AppColors.ORANGE,
+                            indent: 20,
+                            endIndent: 20,
                           ),
                           Expanded(
                             child: ListView.builder(
@@ -97,7 +98,10 @@ class DashBoardView extends BaseView<DashBoardController> {
                               },
                             ),
                           ),
-                          buildMainPaymentCardInfoText()
+                          buildMainPaymentCardInfoText(),
+                          SizedBox(
+                            height: 10,
+                          )
                         ],
                       ),
                     ),
@@ -143,7 +147,7 @@ class DashBoardView extends BaseView<DashBoardController> {
                   TextSpan(
                     text: '22/02/2022',
                     style: appTextStyle
-                        .getSfProDisplayMedium_little(AppColors.GREY),
+                        .getSfProDisplayMedium_Size8(AppColors.GREY),
                   )
                 ]),
           ),
