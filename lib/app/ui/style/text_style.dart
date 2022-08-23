@@ -161,7 +161,16 @@ class AppTextStyle {
   TextStyle getSfProDisplayMedium_little(Color color) {
     return TextStyle(
         fontFamily: 'SF Pro Display',
-        fontSize: 10.sp,
+        fontSize: 11.sp,
+        fontWeight: FontWeight.w500,
+        fontStyle: FontStyle.normal,
+        color: color);
+  }
+
+  TextStyle getSfProDisplayMedium_Size8(Color color) {
+    return TextStyle(
+        fontFamily: 'SF Pro Display',
+        fontSize: 8.sp,
         fontWeight: FontWeight.w500,
         fontStyle: FontStyle.normal,
         color: color);
