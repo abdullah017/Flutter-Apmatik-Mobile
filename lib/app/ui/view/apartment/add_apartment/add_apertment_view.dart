@@ -13,7 +13,7 @@ import 'package:get/get.dart';
 
 class AddApertmentView extends BaseView<AddApertmentController> {
   AddApertmentView({Key? key})
-      : super(key: key, appBarHide: false // false
+      : super(key: key, appBarHide: true // false
             );
   @override
   Widget vBuilder() => ListView(
@@ -30,32 +30,36 @@ class AddApertmentView extends BaseView<AddApertmentController> {
   Form buildManualApartmentArea() {
     return Form(
       key: controller.addApartmenFormKey,
-      child: Container(
-        padding: EdgeInsets.all(5.0.sm),
-        width: 250.w,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              margin: EdgeInsets.only(bottom: 10.h, left: 5.w),
-              child: Text(
-                'resident_status'.tr,
-                style: AppTextStyle().getSfProDisplayRegular_H5(AppColors.GREY),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        child: Container(
+          padding: EdgeInsets.all(5.0.sm),
+          width: 250.w,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: EdgeInsets.only(bottom: 10.h, left: 5.w),
+                child: Text(
+                  'resident_status'.tr,
+                  style:
+                      AppTextStyle().getSfProDisplayRegular_H5(AppColors.GREY),
+                ),
               ),
-            ),
-            buildToggleTabButton(),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                buildCountry(),
-                buildCity(),
-                buildDistrict(),
-                buildApartmentName(),
-                buildApartmentInfoText(),
-                buildGoOnButton()
-              ],
-            ),
-          ],
+              buildToggleTabButton(),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  buildCountry(),
+                  buildCity(),
+                  buildDistrict(),
+                  buildApartmentName(),
+                  buildApartmentInfoText(),
+                  buildGoOnButton()
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

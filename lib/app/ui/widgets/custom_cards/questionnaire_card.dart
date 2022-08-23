@@ -35,10 +35,10 @@ class QuestionnaireCardWidget extends StatelessWidget {
       margin: margin ?? AppPadding.guideLine,
       width: 350.w,
       height: buttonVisible!
-          ? Get.width >= 390
+          ? Get.width == 390
               ? 280.h
               : 301.h
-          : Get.width >= 390
+          : Get.width == 390
               ? 250.h
               : 251.h,
       child: Card(
@@ -64,9 +64,11 @@ class QuestionnaireCardWidget extends StatelessWidget {
                       width: 70.w,
                       height: 20.h,
                       decoration: BoxDecoration(
-                          color: AppColors.ORANGE,
-                          borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(30))),
+                        color: AppColors.ORANGE,
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(30),
+                            topRight: Radius.circular(5)),
+                      ),
                       child: Text(
                         'Anket',
                         textAlign: TextAlign.center,

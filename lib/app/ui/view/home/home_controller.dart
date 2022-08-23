@@ -1,11 +1,14 @@
+import 'dart:io';
+
 import 'package:apmatik/app/core/base/base_controller.dart';
 import 'package:carousel_slider/carousel_controller.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class HomeController extends BaseController {
-
   @override
-
   RxBool get navBarHide => hasApartmenValue;
 
   var subPageId = 0;
@@ -32,6 +35,37 @@ class HomeController extends BaseController {
   var hasApertmenKey;
   RxBool hasApartmenValue = false.obs;
   final CarouselController carouselController = CarouselController();
+
+  Future<bool> onWillPop() async {
+    if (Platform.isIOS) {
+      await showCupertinoDialog(
+        context: Get.context!,
+        builder: (context) => CupertinoAlertDialog(
+          title: Text('DENEME'),
+          content: Text('DENEME'),
+          actions: <Widget>[
+            CupertinoDialogAction(
+              child: Text('CANCEL'),
+              onPressed: () => Navigator.of(context).pop(false),
+            ),
+            CupertinoDialogAction(
+              child: Text('DEFAULT'),
+              onPressed: () => Navigator.of(context).pop(true),
+            ),
+          ],
+        ),
+      );
+    } else {
+      true;
+      SystemNavigator.pop();
+    }
+
+    return (await showDialog(
+          context: Get.context!,
+          builder: (context) => new AlertDialog(),
+        )) ??
+        false;
+  }
 
   apertmenRecord() async {
     await box.write('hasApertmen', false);

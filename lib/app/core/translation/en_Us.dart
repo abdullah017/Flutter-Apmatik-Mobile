@@ -149,7 +149,8 @@ const Map<String, String> en = {
   'district': 'District',
   'aparment_name': 'Apartment Name',
   'apartment_name_info': '*Please enter at least 5 characters',
-
+  'selectApart': 'Select Apartment',
+  'registerWithQr': 'Register With QR Code',
   'read_qr': 'Read the QR Code',
   'read_qr_info':
       'You can quickly create your registration for the apartment by scanning the QR code found in your manager here. You will quickly settle in the apartment you have taught.',
@@ -158,7 +159,5 @@ const Map<String, String> en = {
   'select_apartment_info':
       'If you cannot find your apartment in this list, please contact your apartment manager.',
 
-      'phoneNumberSearchText':'Enter area code or country name'
-
-      
+  'phoneNumberSearchText': 'Enter area code or country name'
 };

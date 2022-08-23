@@ -10,8 +10,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class SelectApartmentView extends BaseView<SelectApartmentController> {
+  SelectApartmentView({Key? key})
+      : super(key: key, appBarHide: false // false
+            );
   @override
-  Widget vBuilder() =>  ListView(
+  Widget vBuilder() => ListView(
         children: [
           Container(
             color: AppColors.WHITE,

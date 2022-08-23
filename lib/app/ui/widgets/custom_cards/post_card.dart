@@ -45,7 +45,7 @@ class _PostCardWidgetState extends State<PostCardWidget> {
     return Container(
         margin: AppPadding.guideLine,
         width: 350.w,
-        height: Get.width >= 390 ? 315.h : 340.h,
+        height: Get.width == 390 ? 315.h : 320.h,
         child: Card(
           child: Column(
             mainAxisSize: MainAxisSize.min,
