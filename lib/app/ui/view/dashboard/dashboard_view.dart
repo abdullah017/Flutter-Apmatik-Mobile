@@ -52,13 +52,14 @@ class DashBoardView extends BaseView<DashBoardController> {
                               ),
                             )
                           ],
-                          borderRadius: BorderRadius.circular(10.0),
+                          borderRadius: BorderRadius.circular(15.0),
                           color: Colors.white),
                       child: Column(
                         children: [
                           Expanded(
                             flex: 0,
                             child: ListTile(
+                              contentPadding: AppPadding.guideLine20,
                               dense: true,
                               title: Text('Toplam Borç',
                                   style: appTextStyle.getSfProDisplayMedium_H5(
@@ -91,8 +92,8 @@ class DashBoardView extends BaseView<DashBoardController> {
                               padding: EdgeInsets.zero,
                               shrinkWrap: true,
                               //itemExtent: 40,
-                              physics: NeverScrollableScrollPhysics(),
-                              itemCount: 3,
+
+                              itemCount: 9,
                               itemBuilder: (context, index) {
                                 return buildDeptCard();
                               },
