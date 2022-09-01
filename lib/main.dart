@@ -1,6 +1,7 @@
 import 'package:apmatik/app/core/network/api-handler/api-handler.dart';
 import 'package:apmatik/app/core/network/api-handler/api-repo.dart';
 import 'package:apmatik/app/core/route/app_pages.dart';
+import 'package:apmatik/app/core/services/dependency_injection_service.dart';
 import 'package:apmatik/app/core/utils/translation_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -14,7 +15,7 @@ void main() async {
   await GetStorage.init();
   Get.put(ApiBaseHelper(), permanent: true);
   Get.put(ApiRepository(Get.find()));
-
+  DependecyInjection.init();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
       overlays: <SystemUiOverlay>[SystemUiOverlay.top]);
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
@@ -25,7 +26,7 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   MyApp({
-    Key? key, 
+    Key? key,
   }) : super(key: key);
   final storage = GetStorage();
 
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       builder: (context, child) {
         return GetMaterialApp(
+          transitionDuration: Duration(seconds: 0),
           defaultTransition: Transition.noTransition,
           localizationsDelegates: [
             GlobalMaterialLocalizations.delegate,
