@@ -43,17 +43,12 @@ import 'package:apmatik/app/ui/view/menu/profile/show_profile/profile_view.dart'
 import 'package:apmatik/app/ui/view/menu/staff/staff_binding.dart';
 import 'package:apmatik/app/ui/view/notifications/notifications_binding.dart';
 import 'package:apmatik/app/ui/view/notifications/notifications_view.dart';
-
 import 'package:apmatik/app/ui/view/questionnaire_detail/questionnaire_detail_binding.dart';
 import 'package:apmatik/app/ui/view/questionnaire_detail/questionnaire_detail_view.dart';
-
 import 'package:apmatik/app/ui/view/splash/splah_view.dart';
 import 'package:apmatik/app/ui/view/splash/splash_binding.dart';
-
 import 'package:get/get.dart';
-
 import '../../ui/view/menu/staff/staff_view.dart';
-
 part 'app_routes.dart';
 
 class AppPages {
@@ -65,11 +60,15 @@ class AppPages {
       name: _Paths.SPLASH,
       page: () => SplashView(),
       binding: SplashBinding(),
+      transition: Transition.noTransition,
+      transitionDuration: Duration(seconds: 0, milliseconds: 0),
     ),
     GetPage(
       name: _Paths.LOGIN,
       page: () => LoginView(),
       binding: LoginBinding(),
+      transition: Transition.noTransition,
+      transitionDuration: Duration(seconds: 0, milliseconds: 0),
     ),
     GetPage(
       name: _Paths.REGISTER,

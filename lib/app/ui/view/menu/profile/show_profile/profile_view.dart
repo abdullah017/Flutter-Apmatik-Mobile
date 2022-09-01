@@ -13,7 +13,7 @@ import 'package:get/get.dart';
 
 class ProfileView extends BaseView<ProfileController> {
   ProfileView({Key? key})
-      : super(key: key,  appBarHide: false // false
+      : super(key: key, appBarHide: false // false
             );
   @override
   Widget vBuilder() => buildView();
@@ -40,7 +40,7 @@ class ProfileView extends BaseView<ProfileController> {
                     child: Container(
                       width: 350.w,
                       height: Get.width >= 390 ? 230.h : 270.h,
-                      padding: EdgeInsets.symmetric(horizontal: 20.0),
+                      padding: AppPadding.guideLine,
                       child: DecoratedBox(
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(5.0),

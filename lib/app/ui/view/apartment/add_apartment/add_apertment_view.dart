@@ -1,5 +1,6 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/view/apartment/add_apartment/add_apertment_controller.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_dropdown_formfield_button.dart';
@@ -39,7 +40,7 @@ class AddApertmentView extends BaseView<AddApertmentController> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                margin: EdgeInsets.only(bottom: 10.h, left: 5.w),
+                margin: EdgeInsets.only(bottom: 10.h, left: 10.w),
                 child: Text(
                   'resident_status'.tr,
                   style:
@@ -116,9 +117,9 @@ class AddApertmentView extends BaseView<AddApertmentController> {
     );
   }
 
-  Padding buildToggleTabButton() {
+  buildToggleTabButton() {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 5.0.w),
+      padding: AppPadding.guideLine,
       child: CustomToggleButton(
           isSelected: controller.isSelected,
           onPressed: (int newindex) {
