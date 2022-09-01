@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 class SelectApartmentController extends BaseController {
   @override
   // PAGE TITLE AREA IS HERE!
-  String? get pageTitle => 'apartmentRegistration'.tr;
+  String? get pageTitle => 'selectApart'.tr;
   // NOTICE HERE THAT THE PAGE IS A MENU AND SETTING ITEM TO CHANGE THE APPBAR
   @override
   bool? get isPageMenuItem => true;
@@ -13,7 +13,7 @@ class SelectApartmentController extends BaseController {
   bool? get isSettingItem => false;
 
   void goCommonPage() {
-    Get.toNamed('common', arguments: 'registerApartmentSuccess');
+    Get.offAndToNamed('common', arguments: 'registerApartmentSuccess');
   }
 
   @override

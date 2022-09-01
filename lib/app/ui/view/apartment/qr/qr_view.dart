@@ -12,6 +12,9 @@ import 'package:get/get.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 
 class QrView extends BaseView<QrController> {
+  QrView({Key? key})
+      : super(key: key, appBarHide: false // false
+            );
   @override
   Widget vBuilder() => Scaffold(
       backgroundColor: AppColors.PAGEBACKGROUND,
