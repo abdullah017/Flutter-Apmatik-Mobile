@@ -20,8 +20,8 @@ class SplashController extends BaseController {
     super.onInit();
     print(Get.height);
     print(Get.width);
-    print(MediaQuery.of(Get.context!).size.height);
-    print(MediaQuery.of(Get.context!).size.width);
+    // print(MediaQuery.of(Get.context!).size.height);
+    // print(MediaQuery.of(Get.context!).size.width);
     getVersionApp();
 
     // id.value = '2014422';

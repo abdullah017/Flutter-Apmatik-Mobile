@@ -25,7 +25,7 @@ class MenuController extends BaseController {
   }
 
   void clearStorage() {
-    box.remove('isLogin');
+    box.write('isLogin', false);
     print(box.read('isLogin'));
     Get.offAllNamed('splash');
   }
