@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 
 class PreferencesView extends BaseView<PreferencesController> {
   PreferencesView({Key? key})
-      : super(key: key,  appBarHide: false // false
+      : super(key: key, appBarHide: false // false
             );
   @override
   Widget vBuilder() => ListView(
@@ -35,7 +35,7 @@ class PreferencesView extends BaseView<PreferencesController> {
           ),
           Container(
             width: 350.w,
-            height: 110.h,
+            height: 115.h,
             color: Colors.white,
             child: Column(
               children: [

@@ -203,7 +203,7 @@ class DashBoardView extends BaseView<DashBoardController> {
   FlutterTicketWidget buildPaymentsDetailCard() {
     return FlutterTicketWidget(
         width: 270.w,
-        height: 270.h,
+        height: Get.width == 390 ? 270.h : 335.h,
         child: Material(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -212,7 +212,7 @@ class DashBoardView extends BaseView<DashBoardController> {
                 height: 20.h,
               ),
               Text('260.00₺',
-                  style: appTextStyle.getSfProDisplayBold_h6(AppColors.ORANGE)),
+                  style: appTextStyle.getSfProDisplayBold_H5(AppColors.ORANGE)),
               SizedBox(
                 height: 20,
               ),
@@ -224,7 +224,7 @@ class DashBoardView extends BaseView<DashBoardController> {
                 title: Text(
                   'Tarih',
                   style:
-                      appTextStyle.getSfProDisplayRegular_H6(AppColors.BLACK),
+                      appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
                 ),
                 subtitle: Text(
                   '12/02/2022 12:34',
@@ -237,7 +237,7 @@ class DashBoardView extends BaseView<DashBoardController> {
                 title: Text(
                   'Ödeme Metodu',
                   style:
-                      appTextStyle.getSfProDisplayRegular_H6(AppColors.BLACK),
+                      appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
                 ),
                 subtitle: Text(
                   'Kredi Kartı',
@@ -250,7 +250,7 @@ class DashBoardView extends BaseView<DashBoardController> {
                 title: Text(
                   'Durum',
                   style:
-                      appTextStyle.getSfProDisplayRegular_H6(AppColors.BLACK),
+                      appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
                 ),
                 subtitle: Text(
                   'Ödeme Tamamlandı',

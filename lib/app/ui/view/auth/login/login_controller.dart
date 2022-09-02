@@ -25,7 +25,12 @@ class LoginController extends BaseController {
 
   void login() {
     if (loginFormKey.currentState!.validate()) {
-      Get.toNamed('home')!.then((value) => box.write('isLogin', true));
+      //Get.offNamedUntil('splash', (route) => false);
+      Get.offNamedUntil('home', (route) => false)!.then((value) {
+        box.write('isLogin', true);
+        emailController.clear();
+        passwordController.clear();
+      });
       print('YES');
     } else {
       print('NO!');

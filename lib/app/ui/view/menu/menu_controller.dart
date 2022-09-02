@@ -25,9 +25,27 @@ class MenuController extends BaseController {
   }
 
   void clearStorage() {
-    box.write('isLogin', false);
-    print(box.read('isLogin'));
-    Get.offAllNamed('splash');
+    var loginStatus = box.read('isLogin');
+    print(loginStatus);
+    if (loginStatus == true) {
+      box.write('isLogin', false);
+      Get.offNamedUntil('splash', (route) => false);
+      Get.deleteAll();
+    }
+    // box.listenKey('isLogin', (newValue) {
+    //   //box.write('hasApertmen', newValue);
+    //   print(box.read('isLogin'));
+    //   var loginStatus = box.read('isLogin');
+    //   print(loginStatus);
+    //   if (loginStatus == true) {
+    //     box.remove('isLogin');
+    //     Get.offNamedUntil('splash', (route) => false);
+    //   }
+    //   update();
+    // });
+    // box.remove('isLogin');
+    // print(box.read('isLogin'));
+    // Get.offNamedUntil('splash', (route) => false);
   }
 
   @override

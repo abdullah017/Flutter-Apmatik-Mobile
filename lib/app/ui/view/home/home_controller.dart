@@ -69,7 +69,6 @@ class HomeController extends BaseController {
 
   apertmenRecord() async {
     await box.write('hasApertmen', false);
-
     update();
   }
 
@@ -102,8 +101,9 @@ class HomeController extends BaseController {
       hasApartmenValue.value = true;
       update();
     }
-    tabIndex = 2;
+
     box.write('isLogin', true);
     super.onInit();
+    tabIndex = 2;
   }
 }
