@@ -140,9 +140,9 @@ class MenuView extends BaseView<MenuController> {
             Padding(
               padding: Get.width == 390
                   ? EdgeInsets.symmetric(
-                      vertical: 25.0.h,
+                      vertical: 20.0.h,
                     )
-                  : EdgeInsets.symmetric(vertical: 85.0.h),
+                  : EdgeInsets.symmetric(vertical: 75.0.h),
               child: Container(
                 width: 350.w,
                 height: 75.h,

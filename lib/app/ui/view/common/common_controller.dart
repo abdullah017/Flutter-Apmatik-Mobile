@@ -13,8 +13,9 @@ class CommonController extends BaseController {
   }
 
   void goToHome() {
-    Get.offAndToNamed('home');
-    box.write('hasApertmen', true);
+    box.write('hasApertmen', true).whenComplete(() {
+      Get.offNamedUntil('home', (route) => true);
+    });
   }
 
   @override

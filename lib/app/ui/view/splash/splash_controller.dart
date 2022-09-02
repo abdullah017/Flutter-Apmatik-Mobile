@@ -1,6 +1,5 @@
 import 'package:apmatik/app/core/base/base_controller.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class SplashController extends BaseController {

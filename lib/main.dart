@@ -1,7 +1,6 @@
 import 'package:apmatik/app/core/network/api-handler/api-handler.dart';
 import 'package:apmatik/app/core/network/api-handler/api-repo.dart';
 import 'package:apmatik/app/core/route/app_pages.dart';
-import 'package:apmatik/app/core/services/dependency_injection_service.dart';
 import 'package:apmatik/app/core/utils/translation_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -15,7 +14,7 @@ void main() async {
   await GetStorage.init();
   Get.put(ApiBaseHelper(), permanent: true);
   Get.put(ApiRepository(Get.find()));
-  DependecyInjection.init();
+  //GlobalBinding().dependencies();
   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
       overlays: <SystemUiOverlay>[SystemUiOverlay.top]);
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
@@ -60,7 +59,7 @@ class MyApp extends StatelessWidget {
           initialRoute: isLogin ? AppPages.HOME : AppPages.INITIAL,
           getPages: AppPages.routes,
           debugShowCheckedModeBanner: false,
-
+          //initialBinding: GlobalBinding(),
           // theme: Themes.light,
           // darkTheme: Themes.dark,
           // themeMode: ThemeService().theme,

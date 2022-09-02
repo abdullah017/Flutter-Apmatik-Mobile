@@ -1,10 +1,8 @@
 import 'package:apmatik/app/ui/view/apartment/add_apartment/add_apertment_controller.dart';
-import 'package:apmatik/app/ui/view/apartment/qr/qr_controller.dart';
 import 'package:apmatik/app/ui/view/apartment/select_apartment/select_apartment_controller.dart';
 import 'package:apmatik/app/ui/view/auth/additional_details/additional_details_controller.dart';
 import 'package:apmatik/app/ui/view/auth/forgot_password/forgotpassword_controller.dart';
 import 'package:apmatik/app/ui/view/auth/login/login_controller.dart';
-import 'package:apmatik/app/ui/view/auth/otp/otp_controller.dart';
 import 'package:apmatik/app/ui/view/auth/register/register_controller.dart';
 import 'package:apmatik/app/ui/view/auth/update_password/update_password_controller.dart';
 import 'package:apmatik/app/ui/view/blank/blank_controller.dart';
@@ -25,8 +23,9 @@ import 'package:apmatik/app/ui/view/questionnaire_detail/questionnaire_detail_co
 import 'package:apmatik/app/ui/view/splash/splash_controller.dart';
 import 'package:get/get.dart';
 
-class DependecyInjection {
-  static void init() {
+class GlobalBinding extends Bindings {
+  @override
+  void dependencies() {
     Get.put<SplashController>(SplashController());
     Get.put<LoginController>(LoginController());
     Get.put<RegisterController>(RegisterController());
@@ -37,7 +36,7 @@ class DependecyInjection {
     Get.put<AdditionalDetailsController>(AdditionalDetailsController());
     Get.put<ForgotPasswordController>(ForgotPasswordController());
     Get.put<BlankController>(BlankController());
-    Get.put<QrController>(QrController());
+    //Get.put<QrController>(QrController());
     Get.put<SelectApartmentController>(SelectApartmentController());
     Get.put<DashBoardController>(DashBoardController());
 
