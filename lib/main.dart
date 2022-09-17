@@ -31,8 +31,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(Get.width);
-    print(Get.height);
+
     print(storage.read('isLogin'));
     print(storage.read('languages'));
     var isLogin = storage.read('isLogin') ?? false;
