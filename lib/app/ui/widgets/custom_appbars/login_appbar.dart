@@ -43,7 +43,7 @@ class CustomLoginUserAppBar extends StatelessWidget
                   border: Border.all(
                     color: AppColors.WHITE,
                   ),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                       image: AssetImage(AppAssets.appbar), fit: BoxFit.cover),
                 ),
               ),

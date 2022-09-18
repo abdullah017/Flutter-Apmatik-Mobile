@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
@@ -38,7 +40,7 @@ class RegisterView extends BaseView<RegisterController> {
   buildPageTitle() {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 20.0.h),
-      child: CustomPageTitle(titleText: 'Kaydol'),
+      child: const CustomPageTitle(titleText: 'Kaydol'),
     );
   }
 
@@ -68,7 +70,7 @@ class RegisterView extends BaseView<RegisterController> {
       labelText: 'identifyLabel'.tr,
       textEditingController: controller.identifyNumberController,
       validator: (tc) {
-        return controller.formValidationHelper.IdentificationNumber(tc!);
+        return controller.formValidationHelper.identificationNumber(tc!);
       },
     );
   }
@@ -84,7 +86,7 @@ class RegisterView extends BaseView<RegisterController> {
             style: TextStyle(color: Colors.grey),
           ),
           Container(
-            margin: EdgeInsets.only(left: 5, right: 20),
+            margin: const EdgeInsets.only(left: 5, right: 20),
             decoration: const BoxDecoration(
                 border: Border(
                     bottom: BorderSide(width: 1, color: Color(0xffE6E6E6)))),
@@ -169,7 +171,7 @@ class RegisterView extends BaseView<RegisterController> {
                     initialValue: PhoneNumber(isoCode: 'TR'),
                     textFieldController: TextEditingController(),
                     formatInput: false,
-                    keyboardType: TextInputType.numberWithOptions(
+                    keyboardType: const TextInputType.numberWithOptions(
                         signed: true, decimal: true),
                     inputDecoration: const InputDecoration(
                       contentPadding: EdgeInsets.only(bottom: 4, left: 25),
@@ -197,7 +199,7 @@ class RegisterView extends BaseView<RegisterController> {
           ),
           Visibility(
             replacement: SizedBox.fromSize(
-              size: Size(0, 0),
+              size: const Size(0, 0),
             ),
             visible: controller.showhideErrorMessage.value,
             child: Text(

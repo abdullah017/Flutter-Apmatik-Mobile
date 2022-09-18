@@ -23,12 +23,12 @@ showSimple({String message = ""}) {
         color: Colors.orange.withOpacity(0.5),
         spreadRadius: 0,
         blurRadius: 5,
-        offset: Offset(0, 3),
+        offset: const Offset(0, 3),
       ),
     ],
     margin: EdgeInsets.symmetric(horizontal: 18.w),
-    messageText: Text(message, style: TextStyle(color: Colors.white)),
-    duration: Duration(seconds: 2),
+    messageText: Text(message, style: const TextStyle(color: Colors.white)),
+    duration: const Duration(seconds: 2),
   ));
 }
 
@@ -36,7 +36,7 @@ showSnackBarTwo(String title, String message, Color backgroundColor) {
   Get.snackbar(
     title,
     message,
-    padding: EdgeInsets.only(top: 5, bottom: 5),
+    padding: const EdgeInsets.only(top: 5, bottom: 5),
     snackPosition: SnackPosition.BOTTOM,
     backgroundColor: backgroundColor,
     colorText: Colors.white,

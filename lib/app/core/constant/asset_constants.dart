@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 class AppAssets {
   static const String splashBackground = 'assets/images/splash_image.png';
   static const String splashLogo = 'assets/images/splash_logo.png';

@@ -1,4 +1,5 @@
 import 'package:apmatik/app/core/base/base_view.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
 
 class CommonController extends BaseController {
@@ -14,13 +15,9 @@ class CommonController extends BaseController {
 
   void goToHome() {
     box.write('hasApertmen', true).whenComplete(() {
-      Get.offNamedUntil('home', (route) => true);
+      SchedulerBinding.instance.addPostFrameCallback((_) {
+        Get.offNamedUntil('home', (route) => true);
+      });
     });
-  }
-
-  @override
-  void onInit() {
-    super.onInit();
-    // status = Get.arguments ;
   }
 }

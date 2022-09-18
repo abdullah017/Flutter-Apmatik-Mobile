@@ -1,3 +1,6 @@
+// ignore_for_file: prefer_typing_uninitialized_variables, avoid_print
+
+import 'dart:async';
 import 'dart:io';
 
 import 'package:apmatik/app/core/base/base_controller.dart';
@@ -41,15 +44,15 @@ class HomeController extends BaseController {
       await showCupertinoDialog(
         context: Get.context!,
         builder: (context) => CupertinoAlertDialog(
-          title: Text('DENEME'),
-          content: Text('DENEME'),
+          title: const Text('DENEME'),
+          content: const Text('DENEME'),
           actions: <Widget>[
             CupertinoDialogAction(
-              child: Text('CANCEL'),
+              child: const Text('CANCEL'),
               onPressed: () => Navigator.of(context).pop(false),
             ),
             CupertinoDialogAction(
-              child: Text('DEFAULT'),
+              child: const Text('DEFAULT'),
               onPressed: () => Navigator.of(context).pop(true),
             ),
           ],
@@ -62,13 +65,13 @@ class HomeController extends BaseController {
 
     return (await showDialog(
           context: Get.context!,
-          builder: (context) => new AlertDialog(),
+          builder: (context) => const AlertDialog(),
         )) ??
         false;
   }
 
-  apertmenRecord() async {
-    await box.write('hasApertmen', false);
+  apertmenRecord() {
+    box.write('hasApertmen', false);
     update();
   }
 
@@ -97,11 +100,8 @@ class HomeController extends BaseController {
     updateRecordState();
     if (hasApertmenKey == false || hasApertmenKey == null) {
       print(hasApertmenKey);
-
       hasApartmenValue.value = true;
-      update();
     }
-
     box.write('isLogin', true);
     super.onInit();
     tabIndex = 2;

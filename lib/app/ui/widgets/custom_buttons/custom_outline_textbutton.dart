@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last
+
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +32,7 @@ class CustomOutlineTextButton extends StatelessWidget {
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5),
-              side: BorderSide(color: AppColors.ORANGE),
+              side: const BorderSide(color: AppColors.ORANGE),
             ),
           ),
           fixedSize: MaterialStateProperty.all<Size>(

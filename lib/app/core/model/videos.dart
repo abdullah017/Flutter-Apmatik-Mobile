@@ -38,42 +38,42 @@ class VideoListModel {
     image = json['image'];
     favorite = json.containsKey("favorite") ? json['favorite'] : "0" ;
     avgColor = json['avg_color'];
-    user = json['user'] != null ? new User.fromJson(json['user']) : null;
+    user = json['user'] != null ? User.fromJson(json['user']) : null;
     if (json['video_files'] != null) {
       videoFiles = <VideoFiles>[];
       json['video_files'].forEach((v) {
-        videoFiles!.add(new VideoFiles.fromJson(v));
+        videoFiles!.add(VideoFiles.fromJson(v));
       });
     }
     if (json['video_pictures'] != null) {
       videoPictures = <VideoPictures>[];
       json['video_pictures'].forEach((v) {
-        videoPictures!.add(new VideoPictures.fromJson(v));
+        videoPictures!.add(VideoPictures.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['width'] = this.width;
-    data['height'] = this.height;
-    data['duration'] = this.duration;
-    data['full_res'] = this.fullRes;
-    data['tags'] = this.tags;
-    data['favorite'] = this.favorite;
-    data['url'] = this.url;
-    data['image'] = this.image;
-    data['avg_color'] = this.avgColor;
-    if (this.user != null) {
-      data['user'] = this.user!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['width'] = width;
+    data['height'] = height;
+    data['duration'] = duration;
+    data['full_res'] = fullRes;
+    data['tags'] = tags;
+    data['favorite'] = favorite;
+    data['url'] = url;
+    data['image'] = image;
+    data['avg_color'] = avgColor;
+    if (user != null) {
+      data['user'] = user!.toJson();
     }
-    if (this.videoFiles != null) {
-      data['video_files'] = this.videoFiles!.map((v) => v.toJson()).toList();
+    if (videoFiles != null) {
+      data['video_files'] = videoFiles!.map((v) => v.toJson()).toList();
     }
-    if (this.videoPictures != null) {
+    if (videoPictures != null) {
       data['video_pictures'] =
-          this.videoPictures!.map((v) => v.toJson()).toList();
+          videoPictures!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -93,10 +93,10 @@ class User {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['name'] = this.name;
-    data['url'] = this.url;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['name'] = name;
+    data['url'] = url;
     return data;
   }
 }
@@ -127,13 +127,13 @@ class VideoFiles {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['quality'] = this.quality;
-    data['file_type'] = this.fileType;
-    data['width'] = this.width;
-    data['height'] = this.height;
-    data['link'] = this.link;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['quality'] = quality;
+    data['file_type'] = fileType;
+    data['width'] = width;
+    data['height'] = height;
+    data['link'] = link;
     return data;
   }
 }
@@ -152,10 +152,10 @@ class VideoPictures {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['nr'] = this.nr;
-    data['picture'] = this.picture;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['nr'] = nr;
+    data['picture'] = picture;
     return data;
   }
 }

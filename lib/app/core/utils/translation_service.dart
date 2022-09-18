@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class TranslationService extends Translations {
-  static final locale = Locale('tr', 'TR');
-  static final fallbackLocale = Locale('tr', 'TR');
+  static const locale = Locale('tr', 'TR');
+  static const fallbackLocale = Locale('tr', 'TR');
 
-  static final Languages = ['Turkish', 'English'];
+  static final languages = ['Turkish', 'English'];
 
-  static final locales = [Locale('tr', 'TR'), Locale('en', 'US')];
+  static final locales = [const Locale('tr', 'TR'), const Locale('en', 'US')];
 
   @override
   Map<String, Map<String, String>> get keys => {'en': en, 'tr': tr};
@@ -19,8 +19,8 @@ class TranslationService extends Translations {
   }
 
   Locale _getLocaleFromLanguages(String lang) {
-    for (var i = 0; i < Languages.length; i++) {
-      if (lang == Languages[i]) return locales[i];
+    for (var i = 0; i < languages.length; i++) {
+      if (lang == languages[i]) return locales[i];
     }
     return Get.locale!;
   }

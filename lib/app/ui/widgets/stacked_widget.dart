@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last
+
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +12,7 @@ class StackedWidgets extends StatelessWidget {
   final double xShift;
   final String label;
 
-   StackedWidgets({
+   const StackedWidgets({
     Key? key,
     required this.items,
     required this.direction,

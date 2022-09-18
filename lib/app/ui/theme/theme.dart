@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class Themes {
   static final light = ThemeData.light().copyWith(
     backgroundColor: Colors.white,
-    primaryColor: Color(0xffd08400),
+    primaryColor: const Color(0xffd08400),
     textTheme: const TextTheme(
       headline1: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold,color: Colors.black),
       headline6: TextStyle(fontSize: 12.0,color: Color(0xffd08400)),

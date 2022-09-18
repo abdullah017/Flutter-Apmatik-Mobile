@@ -14,7 +14,7 @@
 ///     },
 /// )
 
-// ignore_for_file: unused_local_variable
+// ignore_for_file: unused_local_variable, prefer_typing_uninitialized_variables, avoid_print
 
 import 'dart:io';
 
@@ -65,10 +65,6 @@ class AdditionalDetailsController extends BaseController {
     dateText.text = DateFormat("dd.MM.yyyy").format(DateTime(2000)).toString();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
 
   @override
   void onClose() {
@@ -79,7 +75,7 @@ class AdditionalDetailsController extends BaseController {
   void chooseDate() async {
     if (Platform.isAndroid) {
       DateTime? pickedDate = await showDatePicker(
-        locale: Locale('tr'),
+        locale: const Locale('tr'),
         context: Get.context!,
         initialDate: selectedDate.value,
         firstDate: DateTime(1900),
@@ -129,7 +125,7 @@ class AdditionalDetailsController extends BaseController {
                 )
               ],
               cancelButton: CupertinoActionSheetAction(
-                child: Text('Tamam'),
+                child: const Text('Tamam'),
                 onPressed: () {
                   Get.close(0);
                 },

@@ -52,7 +52,7 @@ class UpdatePasswordView extends BaseView<UpdatePasswordController> {
 
   buildTextFormField(String hint, TextEditingController controller,
       String? Function(String?)? validator) {
-    return Container(
+    return SizedBox(
         width: 330.w,
         height: 50.h,
         child: CustomFilledTextFormField(

@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:apmatik/app/core/constant/regexp_constants.dart';
 import 'package:get/get.dart';
 

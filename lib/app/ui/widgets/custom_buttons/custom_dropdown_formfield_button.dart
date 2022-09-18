@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
@@ -43,11 +45,11 @@ class CustomDropdownButtonFormField extends StatelessWidget {
         ),
         style: AppTextStyle().getSfProDisplayRegular_H5(AppColors.BLACK),
         decoration: isBordered
-            ? InputDecoration(
+            ? const InputDecoration(
                 filled: true,
                 fillColor: AppColors.WHITE,
                 contentPadding:
-                    const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5),
+                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 5),
                 border: OutlineInputBorder(
                   borderSide:
                       BorderSide(color: AppColors.WHITE_GREY, width: 1.0),
@@ -66,17 +68,17 @@ class CustomDropdownButtonFormField extends StatelessWidget {
                     AppTextStyle()
                         .getSfProDisplayRegular_H5(AppColors.GREY_OPACITY),
                 border: border ??
-                    UnderlineInputBorder(
+                    const UnderlineInputBorder(
                       borderSide:
                           BorderSide(color: AppColors.GREY_OPACITY, width: 0.2),
                     ),
                 focusedBorder: focusBorder ??
-                    UnderlineInputBorder(
+                    const UnderlineInputBorder(
                       borderSide:
                           BorderSide(color: AppColors.GREY_OPACITY, width: 0.2),
                     ),
                 enabledBorder: enabledBorder ??
-                    UnderlineInputBorder(
+                    const UnderlineInputBorder(
                       borderSide:
                           BorderSide(color: AppColors.GREY_OPACITY, width: 0.2),
                     ),

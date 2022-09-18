@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_typing_uninitialized_variables, avoid_print
+
 import 'package:apmatik/app/core/helper/form_validation_helper.dart';
 import 'package:apmatik/app/core//utils/utilities.dart';
 import 'package:apmatik/app/core/network/check_connection/check_connecition.dart';

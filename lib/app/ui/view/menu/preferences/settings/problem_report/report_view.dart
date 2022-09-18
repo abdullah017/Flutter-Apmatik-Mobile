@@ -31,7 +31,7 @@ class ReportView extends BaseView<ReportController> {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0.w),
-              child: Container(
+              child: SizedBox(
                 width: 330.w,
                 height: 30.h,
                 child: TextFormField(
@@ -47,7 +47,7 @@ class ReportView extends BaseView<ReportController> {
                         .getSfProDisplayRegular_H5(AppColors.ORANGE),
                     contentPadding: EdgeInsets.symmetric(
                         vertical: 10.0.h, horizontal: 10.0.h),
-                    border: OutlineInputBorder(
+                    border: const OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey, width: 2.0),
                     ),
                   ),
@@ -68,16 +68,16 @@ class ReportView extends BaseView<ReportController> {
                     textTheme: TextTheme(
                         subtitle1: appTextStyle
                             .getSfProDisplayMedium_H6(AppColors.ORANGE))),
-                child: Container(
+                child: SizedBox(
                   width: 330.w,
                   height: 30.h,
                   child: DropdownSearch<String>(
                     dropdownButtonProps: DropdownButtonProps(
                       padding: EdgeInsets.only(left: 20.w),
                     ),
-                    dropdownDecoratorProps: DropDownDecoratorProps(
+                    dropdownDecoratorProps: const DropDownDecoratorProps(
                       dropdownSearchDecoration: InputDecoration(
-                        contentPadding: const EdgeInsets.symmetric(
+                        contentPadding: EdgeInsets.symmetric(
                             vertical: 10.0, horizontal: 10.0),
                         border: OutlineInputBorder(),
                       ),
@@ -104,7 +104,7 @@ class ReportView extends BaseView<ReportController> {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0.w),
-              child: Container(
+              child: SizedBox(
                 width: 330.w,
                 height: 137.h,
                 child: TextFormField(
@@ -122,7 +122,7 @@ class ReportView extends BaseView<ReportController> {
                         .getSfProDisplayRegular_H5(AppColors.ORANGE),
                     contentPadding: EdgeInsets.symmetric(
                         vertical: 10.0.h, horizontal: 10.0.h),
-                    border: OutlineInputBorder(
+                    border: const OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.grey, width: 2.0),
                     ),
                   ),

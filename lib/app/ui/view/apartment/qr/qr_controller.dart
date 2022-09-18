@@ -14,8 +14,4 @@ class QrController extends BaseController {
 
   MobileScannerController qrController = MobileScannerController();
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
 }

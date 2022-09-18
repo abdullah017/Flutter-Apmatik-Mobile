@@ -15,6 +15,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class AdditionalDetailsView extends BaseView<AdditionalDetailsController> {
+  AdditionalDetailsView({super.key});
+
   @override
   Widget vBuilder() =>  Form(
           key: controller.additionalFormKey,
@@ -100,15 +102,15 @@ class AdditionalDetailsView extends BaseView<AdditionalDetailsController> {
           dropdownDecoratorProps: DropDownDecoratorProps(
             dropdownSearchDecoration: InputDecoration(
               labelText: "job".tr,
-              border: UnderlineInputBorder(
+              border: const UnderlineInputBorder(
                 borderSide:
                     BorderSide(color: AppColors.GREY_OPACITY, width: 0.2),
               ),
-              focusedBorder: UnderlineInputBorder(
+              focusedBorder: const UnderlineInputBorder(
                 borderSide:
                     BorderSide(color: AppColors.GREY_OPACITY, width: 0.2),
               ),
-              enabledBorder: UnderlineInputBorder(
+              enabledBorder: const UnderlineInputBorder(
                 borderSide:
                     BorderSide(color: AppColors.GREY_OPACITY, width: 0.2),
               ),
@@ -143,7 +145,7 @@ class AdditionalDetailsView extends BaseView<AdditionalDetailsController> {
   CustomUnderLineCheckBox buildPetCheckbox() {
     return CustomUnderLineCheckBox(
         value: controller.petCheck.value,
-        onChanged: (Value) {
+        onChanged: (value) {
           controller.petCheck.value = !controller.petCheck.value;
           controller.update();
         },
@@ -158,7 +160,7 @@ class AdditionalDetailsView extends BaseView<AdditionalDetailsController> {
   CustomUnderLineCheckBox buildDontShowMeToOtherResidentsCheckbox() {
     return CustomUnderLineCheckBox(
         value: controller.dontShowCheck.value,
-        onChanged: (Value) {
+        onChanged: (value) {
           controller.dontShowCheck.value = !controller.dontShowCheck.value;
           controller.update();
         },
@@ -190,7 +192,7 @@ class AdditionalDetailsView extends BaseView<AdditionalDetailsController> {
           ),
           TextButton(
             style: ButtonStyle(
-              fixedSize: MaterialStateProperty.all<Size>(Size(260, 40)),
+              fixedSize: MaterialStateProperty.all<Size>(const Size(260, 40)),
             ),
             onPressed: () {
               // controller.goRegisterPage();

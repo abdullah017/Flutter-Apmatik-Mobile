@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:apmatik/app/core/network/api-handler/api-handler.dart';
 import 'package:apmatik/app/core/network/api-handler/api-repo.dart';
 import 'package:apmatik/app/core/route/app_pages.dart';
@@ -41,18 +43,18 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       builder: (context, child) {
         return GetMaterialApp(
-          transitionDuration: Duration(seconds: 0),
+          transitionDuration: const Duration(seconds: 0),
           defaultTransition: Transition.noTransition,
-          localizationsDelegates: [
+          localizationsDelegates: const [
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          supportedLocales: [
+          supportedLocales: const [
             Locale('tr', ''),
             Locale('en', ''),
           ],
-          locale: language == 0 ? Locale('tr', 'TR') : Locale('en', 'US'),
+          locale: language == 0 ? const Locale('tr', 'TR') : const Locale('en', 'US'),
           fallbackLocale: TranslationService.fallbackLocale,
           translations: TranslationService(),
           title: "Application",

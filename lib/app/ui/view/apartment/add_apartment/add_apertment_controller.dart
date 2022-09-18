@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print, avoid_renaming_method_parameters
+
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -39,6 +41,7 @@ class AddApertmentController extends BaseController
     }
   }
 
+  @override
   tabChange(int newIndex) {
     for (int index = 0; index < isSelected.length; index++) {
       if (index == newIndex) {

@@ -16,8 +16,4 @@ class SelectApartmentController extends BaseController {
     Get.offAndToNamed('common', arguments: 'registerApartmentSuccess');
   }
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
 }

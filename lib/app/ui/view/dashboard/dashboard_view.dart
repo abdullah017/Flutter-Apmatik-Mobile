@@ -22,7 +22,7 @@ class DashBoardView extends BaseView<DashBoardController> {
           SizedBox(
             height: Get.height * 0.11,
           ),
-          Container(
+          SizedBox(
             height: Get.width == 390 ? 205.h : 220.h,
             child: Stack(
               children: <Widget>[
@@ -41,7 +41,7 @@ class DashBoardView extends BaseView<DashBoardController> {
                     padding: AppPadding.guideLine,
                     child: DecoratedBox(
                       decoration: BoxDecoration(
-                          boxShadow: <BoxShadow>[
+                          boxShadow: const <BoxShadow>[
                             BoxShadow(
                               color: Colors.black12,
                               blurRadius: 4.0, // soften the shadow
@@ -68,7 +68,7 @@ class DashBoardView extends BaseView<DashBoardController> {
                                   style: appTextStyle.getSfProDisplayBold_H5(
                                       AppColors.ORANGE)),
                               trailing: Transform.translate(
-                                offset: Offset(30, 0),
+                                offset: const Offset(30, 0),
                                 child: CustomElevatedButton(
                                     width: 90.w,
                                     height: 25.h,
@@ -82,7 +82,7 @@ class DashBoardView extends BaseView<DashBoardController> {
                               ),
                             ),
                           ),
-                          Divider(
+                          const Divider(
                             color: AppColors.ORANGE,
                             indent: 20,
                             endIndent: 20,
@@ -100,7 +100,7 @@ class DashBoardView extends BaseView<DashBoardController> {
                             ),
                           ),
                           buildMainPaymentCardInfoText(),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           )
                         ],
@@ -188,13 +188,11 @@ class DashBoardView extends BaseView<DashBoardController> {
       context: context,
       builder: (context) => BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 3, sigmaY: 3),
-        child: Container(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              buildPaymentsDetailCard(),
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            buildPaymentsDetailCard(),
+          ],
         ),
       ),
     );
@@ -213,10 +211,10 @@ class DashBoardView extends BaseView<DashBoardController> {
               ),
               Text('260.00₺',
                   style: appTextStyle.getSfProDisplayBold_H5(AppColors.ORANGE)),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              MySeparator(
+              const MySeparator(
                 color: AppColors.GREY,
               ),
               ListTile(
@@ -259,7 +257,7 @@ class DashBoardView extends BaseView<DashBoardController> {
                 ),
               ),
               CustomOutlineTextButton(
-                  fixedSize: Size(220, 27),
+                  fixedSize: const Size(220, 27),
                   buttonText: 'Mailime Gönder',
                   onPressed: () {}),
             ],
@@ -269,7 +267,7 @@ class DashBoardView extends BaseView<DashBoardController> {
 
   buildLastPaymentsCard() {
     return Container(
-      decoration: BoxDecoration(boxShadow: <BoxShadow>[
+      decoration: BoxDecoration(boxShadow: const <BoxShadow>[
         BoxShadow(
           color: Colors.black12,
           blurRadius: 1.0, // soften the shadow

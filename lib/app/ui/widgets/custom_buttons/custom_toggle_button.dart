@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last
+
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,17 +41,17 @@ class CustomToggleButton extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 30.w),
               child: Text(firstText ?? 'home_owner'.tr,
-                  style: TextStyle(fontSize: 12)),
+                  style: const TextStyle(fontSize: 12)),
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 35.w),
               child: Text(secondText ?? 'tenant'.tr,
-                  style: TextStyle(fontSize: 12)),
+                  style: const TextStyle(fontSize: 12)),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25.w),
+              padding: EdgeInsets.symmetric(horizontal: 18.w),
               child: Text(thirdText ?? 'resident'.tr,
-                  style: TextStyle(fontSize: 12)),
+                  style: const TextStyle(fontSize: 12)),
             ),
           ],
           onPressed: onPressed),

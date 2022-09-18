@@ -28,8 +28,8 @@ class CustomUnderLineCheckBox extends StatelessWidget {
             Expanded(
               flex: 1,
               child: CheckboxListTile(
-                contentPadding: EdgeInsets.only(right: 1),
-                side: BorderSide(),
+                contentPadding: const EdgeInsets.only(right: 1),
+                side: const BorderSide(),
                 // fillColor: MaterialStateProperty.all(Colors.orange),
                 value: value, //controller.isCheck.value,
                 onChanged: onChanged,

@@ -10,8 +10,5 @@ class NotificationsController extends BaseController {
   bool? get isPageMenuItem => true;
   @override
   bool? get isSettingItem => false;
-  @override
-  void onInit() {
-    super.onInit();
-  }
+
 }

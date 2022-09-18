@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
@@ -141,7 +143,7 @@ class ForgotPasswordView extends BaseView<ForgotPasswordController> {
                     initialValue: PhoneNumber(isoCode: 'TR'),
                     textFieldController: TextEditingController(),
                     formatInput: false,
-                    keyboardType: TextInputType.numberWithOptions(
+                    keyboardType: const TextInputType.numberWithOptions(
                         signed: true, decimal: true),
                     inputDecoration: const InputDecoration(
                       contentPadding: EdgeInsets.only(bottom: 4),

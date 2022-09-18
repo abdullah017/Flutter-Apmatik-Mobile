@@ -13,7 +13,7 @@ class BlankView extends BaseView<BlankController> {
         );
   @override
   Widget vBuilder() {
-    return Center(
+    return const Center(
       child: Text('HELLOOO!'),
     );
   }
