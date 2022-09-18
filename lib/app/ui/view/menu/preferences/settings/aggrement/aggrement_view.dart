@@ -10,7 +10,7 @@ class AggrementView extends BaseView<AggrementController> {
         );
   @override
   Widget vBuilder() => ListView(
-        children: [
+        children: const [
           Center(child: Text('Buraya Sözleşme maddeleri gelecek')),
         ],
       );

@@ -15,7 +15,7 @@ class StaffView extends BaseView<StaffController> {
   @override
   Widget vBuilder() =>  ListView(
         children: [
-          Container(
+          SizedBox(
             width: Get.width,
             height: Get.height * 0.8,
             child: ListView.builder(
@@ -42,7 +42,7 @@ class StaffView extends BaseView<StaffController> {
                     ),
                     subtitle: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children:const  [
                         Text('Apartman Yöneticisi'),
                         Text('+90 548 865 56381'),
                       ],

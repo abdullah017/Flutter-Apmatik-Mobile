@@ -65,7 +65,7 @@ class _PostCardWidgetState extends State<PostCardWidget> {
                     ),
                   ),
                   minLeadingWidth: 0.0,
-                  contentPadding: EdgeInsets.symmetric(horizontal: 14),
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 14),
                   dense: true,
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -76,7 +76,7 @@ class _PostCardWidgetState extends State<PostCardWidget> {
                           AppColors.BLACK,
                         ),
                       ),
-                      Icon(Icons.more_horiz),
+                      const Icon(Icons.more_horiz),
                     ],
                   )),
               Stack(
@@ -225,7 +225,7 @@ Padding buildArrowIconButton() {
           splashColor: Colors.transparent,
           highlightColor: Colors.transparent,
           padding: EdgeInsets.zero,
-          constraints: BoxConstraints(),
+          constraints: const BoxConstraints(),
           onPressed: () {
             showSimple(message: 'Katıldığınız için teşekkürler');
           },
@@ -236,12 +236,12 @@ Padding buildArrowIconButton() {
           ),
         ),
         Transform.translate(
-          offset: Offset(0, 0),
+          offset: const Offset(0, 0),
           child: IconButton(
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
             padding: EdgeInsets.zero,
-            constraints: BoxConstraints(),
+            constraints: const BoxConstraints(),
             onPressed: () {
               showSimple(message: 'Katıldığınız için teşekkürler');
             },
@@ -259,8 +259,8 @@ Padding buildArrowIconButton() {
 Widget buildStackedImages({
   TextDirection direction = TextDirection.ltr,
 }) {
-  final double size = 30;
-  final double xShift = 10;
+  const double size = 30;
+  const double xShift = 10;
   final urlImages = [
     'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80',
     'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
@@ -275,7 +275,7 @@ Widget buildStackedImages({
       ...items,
       ClipOval(
         child: Container(
-          padding: EdgeInsets.all(5),
+          padding: const EdgeInsets.all(5),
           color: Colors.white,
           child: ClipOval(
               child: Container(
@@ -297,11 +297,11 @@ Widget buildStackedImages({
 }
 
 Widget buildImage(String urlImage) {
-  final double borderSize = 5;
+  const double borderSize = 5;
 
   return ClipOval(
     child: Container(
-      padding: EdgeInsets.all(borderSize),
+      padding: const EdgeInsets.all(borderSize),
       color: Colors.white,
       child: ClipOval(
         child: Image.network(

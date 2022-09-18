@@ -1,4 +1,4 @@
-// ignore_for_file: unnecessary_null_comparison
+// ignore_for_file: unnecessary_null_comparison, avoid_print
 
 import 'package:dio/dio.dart';
 
@@ -7,7 +7,7 @@ class LoggingInterceptors extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     print(
-        "--> ${options.method != null ? options.method.toUpperCase() : 'METHOD'} ${"" + (options.baseUrl) + (options.path)}");
+        "--> ${options.method != null ? options.method.toUpperCase() : 'METHOD'} ${"${options.baseUrl}${options.path}"}");
     print("Headers:");
     options.headers.forEach((k, v) => print('$k: $v'));
     print("queryParameters:");
@@ -21,18 +21,18 @@ class LoggingInterceptors extends Interceptor {
   }
 
   @override
-  void onError(DioError dioError, ErrorInterceptorHandler handler) {
+  void onError(DioError err, ErrorInterceptorHandler handler) {
 
 
-    print("eeerorororor ${dioError.response}");
+    print("eeerorororor ${err.response}");
     print(
-        "<-- ${dioError.message} ${(dioError.response?.requestOptions != null ? (dioError.response!.requestOptions.baseUrl + dioError.requestOptions.path) : 'URL')}");
+        "<-- ${err.message} ${(err.response?.requestOptions != null ? (err.response!.requestOptions.baseUrl + err.requestOptions.path) : 'URL')}");
     print(
-        "${dioError.response != null ? dioError.response?.data : 'Unknown Error'}");
+        "${err.response != null ? err.response?.data : 'Unknown Error'}");
     print("<-- End error");
     print(
-        'ERROR[${dioError.response?.statusCode}] => PATH: ${dioError.requestOptions.baseUrl}');
-    return super.onError(dioError, handler);
+        'ERROR[${err.response?.statusCode}] => PATH: ${err.requestOptions.baseUrl}');
+    return super.onError(err, handler);
   }
 
   @override

@@ -36,27 +36,27 @@ class ImagesModel {
     favorite = json.containsKey("favorite") ? json['favorite'] : "0" ;
 
     avgColor = json['avg_color'];
-    src = json['src'] != null ? new Src.fromJson(json['src']) : null;
+    src = json['src'] != null ?  Src.fromJson(json['src']) : null;
     liked = json['liked'];
     alt = json['alt'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['width'] = this.width;
-    data['height'] = this.height;
-    data['url'] = this.url;
-    data['favorite'] = this.favorite;
-    data['photographer'] = this.photographer;
-    data['photographer_url'] = this.photographerUrl;
-    data['photographer_id'] = this.photographerId;
-    data['avg_color'] = this.avgColor;
-    if (this.src != null) {
-      data['src'] = this.src!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['width'] = width;
+    data['height'] = height;
+    data['url'] = url;
+    data['favorite'] = favorite;
+    data['photographer'] = photographer;
+    data['photographer_url'] = photographerUrl;
+    data['photographer_id'] = photographerId;
+    data['avg_color'] = avgColor;
+    if (src != null) {
+      data['src'] = src!.toJson();
     }
-    data['liked'] = this.liked;
-    data['alt'] = this.alt;
+    data['liked'] = liked;
+    data['alt'] = alt;
     return data;
   }
 }
@@ -93,15 +93,15 @@ class Src {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['original'] = this.original;
-    data['large2x'] = this.large2x;
-    data['large'] = this.large;
-    data['medium'] = this.medium;
-    data['small'] = this.small;
-    data['portrait'] = this.portrait;
-    data['landscape'] = this.landscape;
-    data['tiny'] = this.tiny;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['original'] = original;
+    data['large2x'] = large2x;
+    data['large'] = large;
+    data['medium'] = medium;
+    data['small'] = small;
+    data['portrait'] = portrait;
+    data['landscape'] = landscape;
+    data['tiny'] = tiny;
     return data;
   }
 }

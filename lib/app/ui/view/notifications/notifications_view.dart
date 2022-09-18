@@ -21,15 +21,15 @@ class NotificationsView extends BaseView<NotificationsController> {
             ),
             ListView.builder(
               shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: 2,
               itemBuilder: (context, index) {
                 return Card(
-                  color: Color.fromRGBO(247, 241, 228, .9),
+                  color: const Color.fromRGBO(247, 241, 228, .9),
                   child: Container(
                       width: 350,
                       height: 66.h,
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                         horizontal: 20,
                       ),
                       child: Column(
@@ -45,7 +45,7 @@ class NotificationsView extends BaseView<NotificationsController> {
                             style: appTextStyle.getSfProDisplayRegular_H7_other(
                                 AppColors.BLACK),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 3,
                           ),
                           Text(
@@ -67,7 +67,7 @@ class NotificationsView extends BaseView<NotificationsController> {
                   appTextStyle.getSfProDisplayLight_Italic_H6(AppColors.GREY),
             ),
             ListView.builder(
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemCount: 7,
               itemBuilder: (context, index) {
@@ -76,7 +76,7 @@ class NotificationsView extends BaseView<NotificationsController> {
                   child: Container(
                       width: 350,
                       height: 66.h,
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                         horizontal: 20,
                       ),
                       child: Column(
@@ -92,7 +92,7 @@ class NotificationsView extends BaseView<NotificationsController> {
                             style: appTextStyle.getSfProDisplayRegular_H7_other(
                                 AppColors.BLACK),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 3,
                           ),
                           Text(

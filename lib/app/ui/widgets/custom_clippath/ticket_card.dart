@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api, sort_child_properties_last
+
 import 'package:flutter/material.dart';
 
 class FlutterTicketWidget extends StatefulWidget {
@@ -7,8 +9,8 @@ class FlutterTicketWidget extends StatefulWidget {
   final Color color;
   final bool isCornerRounded;
 
-  FlutterTicketWidget(
-      {required this.width,
+  const FlutterTicketWidget(
+      {super.key, required this.width,
       required this.height,
       required this.child,
       this.color = Colors.transparent,
@@ -25,7 +27,7 @@ class _FlutterTicketWidgetState extends State<FlutterTicketWidget> {
       clipBehavior: Clip.hardEdge,
       clipper: TicketClipper(),
       child: AnimatedContainer(
-        duration: Duration(seconds: 3),
+        duration: const Duration(seconds: 3),
         width: widget.width,
         height: widget.height,
         child: widget.child,

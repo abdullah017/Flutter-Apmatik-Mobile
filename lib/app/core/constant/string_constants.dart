@@ -1,4 +1,6 @@
 /// This class defines all text/strings used
+// ignore_for_file: constant_identifier_names
+
 class AppStrings {
   static const String APP_NAME = 'Newsify';
 

@@ -25,7 +25,7 @@ class FormValidationHelper {
     return phoneNumber.validatePhoneNumber(phoneNumber);
   }
 
-  IdentificationNumber(String idNumber) {
+  identificationNumber(String idNumber) {
     return idNumber.validateIdentifyNumber(idNumber);
   }
 

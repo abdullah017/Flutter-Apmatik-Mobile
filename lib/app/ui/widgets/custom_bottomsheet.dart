@@ -25,11 +25,11 @@ class CustomBottomSheet extends StatelessWidget {
                 color: Colors.grey.withOpacity(0.5),
                 spreadRadius: 5,
                 blurRadius: 7,
-                offset: Offset(0, 3), // changes position of shadow
+                offset: const Offset(0, 3), // changes position of shadow
               ),
             ],
             color: Colors.white,
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(15), topRight: Radius.circular(15))),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -51,7 +51,7 @@ class CustomBottomSheet extends StatelessWidget {
               activeColor: Colors.orange,
               value: 1,
               groupValue: 1, //controller.radiValue!.value,
-              title: Text('Tekrar Gösterme'),
+              title: const Text('Tekrar Gösterme'),
               selected: true, //controller.selectedRadio,
               onChanged: (int? value) {
                 // controller.selectUS(value);
@@ -67,7 +67,7 @@ class CustomBottomSheet extends StatelessWidget {
                 //   // // controller.duyuru.removeAt(0);
                 //   // // controller.update();
                 // },
-                child: Text('TAMAM')),
+                child: const Text('TAMAM')),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Text(

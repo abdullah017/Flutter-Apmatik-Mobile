@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
@@ -39,23 +41,21 @@ class HomeView extends BaseView<HomeController> {
                 itemCount: controller.imgList.length,
                 itemBuilder:
                     (BuildContext context, int itemIndex, int pageViewIndex) =>
-                        Container(
-                  child: ImageWithTextSliderCard(
-                    imageWidget: FadeInImage.assetNetwork(
-                      width: 121,
-                      height: 158,
-                      fit: BoxFit.cover,
-                      image: controller.imgList[itemIndex],
-                      placeholder: AppAssets.placeholder,
-                    ),
-                    imageTitle: 'Kış Masalı',
-                    imageDescription: 'Kış Masalı',
-                  ),
-                ),
+                        ImageWithTextSliderCard(
+                          imageWidget: FadeInImage.assetNetwork(
+                            width: 121,
+                            height: 158,
+                            fit: BoxFit.cover,
+                            image: controller.imgList[itemIndex],
+                            placeholder: AppAssets.placeholder,
+                          ),
+                          imageTitle: 'Kış Masalı',
+                          imageDescription: 'Kış Masalı',
+                        ),
                 carouselController: controller.carouselController,
                 options: CarouselOptions(
                     padEnds: false,
-                    scrollPhysics: BouncingScrollPhysics(),
+                    scrollPhysics: const BouncingScrollPhysics(),
                     initialPage: 0,
                     viewportFraction: 0.3,
                     autoPlay: false,
@@ -134,7 +134,7 @@ class HomeView extends BaseView<HomeController> {
             ),
             if (controller.subPageId == 0)
               ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 padding: EdgeInsets.zero,
                 shrinkWrap: true,
                 itemCount: 2,
@@ -148,7 +148,7 @@ class HomeView extends BaseView<HomeController> {
               ),
             if (controller.subPageId == 1)
               ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 padding: EdgeInsets.zero,
                 shrinkWrap: true,
                 itemCount: 1,
@@ -166,7 +166,7 @@ class HomeView extends BaseView<HomeController> {
                 }),
               ),
             if (controller.subPageId == 2)
-              SponsoredCardWidget(
+              const SponsoredCardWidget(
                 imageUrl:
                     'https://jiujitsutimes.com/wp-content/uploads/sponsored-slider.png',
               ),
@@ -174,7 +174,7 @@ class HomeView extends BaseView<HomeController> {
               Column(
                 children: [
                   ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     padding: EdgeInsets.zero,
                     shrinkWrap: true,
                     itemCount: 2,
@@ -196,7 +196,7 @@ class HomeView extends BaseView<HomeController> {
                     postTime: '8',
                     postTitle: 'Çöpler Hakkında',
                   ),
-                  SponsoredCardWidget(
+                  const SponsoredCardWidget(
                     imageUrl:
                         'https://jiujitsutimes.com/wp-content/uploads/sponsored-slider.png',
                   ),

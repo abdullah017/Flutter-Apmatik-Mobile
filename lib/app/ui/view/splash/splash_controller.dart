@@ -1,3 +1,5 @@
+// ignore_for_file: overridden_fields, avoid_print
+
 import 'package:apmatik/app/core/base/base_controller.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:get/get.dart';
@@ -13,6 +15,7 @@ class SplashController extends BaseController {
 
   // var isMoreDataAvailable = true.obs;
   Map source = {ConnectivityResult.none: false};
+  @override
   String? msg;
   @override
   void onInit() {

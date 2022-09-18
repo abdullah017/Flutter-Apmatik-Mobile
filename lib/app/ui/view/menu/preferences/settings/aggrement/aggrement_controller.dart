@@ -10,8 +10,5 @@ class AggrementController extends BaseController {
   bool? get isPageMenuItem => true;
   @override
   bool? get isSettingItem => true;
-  @override
-  void onInit() {
-    super.onInit();
-  }
+
 }

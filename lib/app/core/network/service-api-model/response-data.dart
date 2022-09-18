@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, unnecessary_this, non_constant_identifier_names
+
 class ResponseData {
   bool? status;
   String? first_name;
@@ -12,7 +14,7 @@ class ResponseData {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['status'] = this.status;
     data['first_name'] = this.first_name;
     data['token'] = this.token;

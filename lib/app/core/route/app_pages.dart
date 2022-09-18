@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:apmatik/app/ui/view/apartment/add_apartment/add_apertment_binding.dart';
 import 'package:apmatik/app/ui/view/apartment/add_apartment/add_apertment_view.dart';
 import 'package:apmatik/app/ui/view/apartment/qr/qr_binding.dart';
@@ -61,14 +63,14 @@ class AppPages {
         page: () => SplashView(),
         binding: SplashBinding(),
         transition: Transition.noTransition,
-        transitionDuration: Duration(seconds: 0, milliseconds: 0),
+        transitionDuration: const Duration(seconds: 0, milliseconds: 0),
         preventDuplicates: true),
     GetPage(
         name: _Paths.LOGIN,
         page: () => LoginView(),
         binding: LoginBinding(),
         transition: Transition.noTransition,
-        transitionDuration: Duration(seconds: 0, milliseconds: 0),
+        transitionDuration: const Duration(seconds: 0, milliseconds: 0),
         preventDuplicates: true),
     GetPage(
         name: _Paths.REGISTER,
@@ -104,6 +106,8 @@ class AppPages {
         name: _Paths.ADDAPERTMEN,
         page: () => AddApertmentView(),
         binding: AddApertmentBinding(),
+        transition: Transition.rightToLeft,
+        transitionDuration: const Duration(seconds: 2, milliseconds: 10),
         preventDuplicates: true),
     GetPage(
       name: _Paths.READQR,

@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last
+
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/core/constant/padding_constants.dart';
@@ -73,7 +75,7 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
               ? controller.isLogin
                   ? controller.isPageMenuItem!
                       ? buildBackButtonAppBar(controller.pageTitle)
-                      : CustomLoginUserAppBar()
+                      : const CustomLoginUserAppBar()
                   : buildBackButtonAppBar(controller.pageTitle)
               : null,
           bottomNavigationBar: !controller.navBarHide.value
@@ -121,7 +123,7 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
                                       controller.update();
                                     },
                                     unselectedLabelStyle:
-                                        TextStyle(fontSize: 0),
+                                        const TextStyle(fontSize: 0),
                                     unselectedFontSize: 0,
                                     // unselectedIconTheme: IconThemeData(
                                     //   size: 24,
@@ -130,7 +132,7 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
                                     // selectedIconTheme: IconThemeData(
                                     //   size: 24,
                                     // ),
-                                    selectedLabelStyle: TextStyle(fontSize: 0),
+                                    selectedLabelStyle: const TextStyle(fontSize: 0),
                                     type: BottomNavigationBarType.fixed,
                                     landscapeLayout:
                                         BottomNavigationBarLandscapeLayout
@@ -208,7 +210,7 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
         elevation: 0,
         toolbarHeight: preferredSize.height,
         title: Transform.translate(
-          offset: Offset(-20, 0),
+          offset: const Offset(-20, 0),
           child: Text(title ?? '',
               style: controller.isSettingItem!
                   ? AppTextStyle().get_SfPro_Medium_H6(AppColors.BLACK)

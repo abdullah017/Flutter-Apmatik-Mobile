@@ -18,13 +18,13 @@ class LanguagesView extends BaseView<LanguagesController> {
         child: ListView(
           children: [
             Card(
-              shape: RoundedRectangleBorder(
+              shape: const RoundedRectangleBorder(
                   side: BorderSide(color: AppColors.WHITE_GREY, width: 1)),
               elevation: 0,
               color: Colors.transparent,
               borderOnForeground: true,
               child: RadioListTile<int>(
-                contentPadding: EdgeInsets.only(left: 10, right: 10),
+                contentPadding: const EdgeInsets.only(left: 10, right: 10),
                 dense: true,
                 activeColor: Colors.orange,
                 value: 0,
@@ -40,13 +40,13 @@ class LanguagesView extends BaseView<LanguagesController> {
               ),
             ),
             Card(
-              shape: RoundedRectangleBorder(
+              shape: const RoundedRectangleBorder(
                   side: BorderSide(color: AppColors.WHITE_GREY, width: 1)),
               elevation: 0,
               color: Colors.transparent,
               borderOnForeground: true,
               child: RadioListTile<int>(
-                contentPadding: EdgeInsets.only(left: 10, right: 10),
+                contentPadding: const EdgeInsets.only(left: 10, right: 10),
                 dense: true,
                 activeColor: Colors.orange,
                 value: 1,

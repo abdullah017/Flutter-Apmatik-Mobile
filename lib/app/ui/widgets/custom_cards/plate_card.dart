@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api, sort_child_properties_last
+
 import 'package:flutter/material.dart';
 
 class PlateCardWidget extends StatefulWidget {
@@ -7,8 +9,8 @@ class PlateCardWidget extends StatefulWidget {
   final Color color;
   final bool isCornerRounded;
 
-  PlateCardWidget(
-      {required this.width,
+  const PlateCardWidget(
+      {super.key, required this.width,
       required this.height,
       required this.child,
       this.color = Colors.white,
@@ -24,7 +26,7 @@ class _PlateCardWidgetState extends State<PlateCardWidget> {
     return ClipPath(
       clipper: TicketClipper(),
       child: AnimatedContainer(
-        duration: Duration(seconds: 3),
+        duration: const Duration(seconds: 3),
         width: widget.width,
         height: widget.height,
         child: widget.child,

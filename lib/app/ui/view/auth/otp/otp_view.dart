@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
@@ -41,7 +43,7 @@ class OtpView extends BaseView<OtpController> {
     return showModalBottomSheet(
         context: Get.context!,
         builder: (context) {
-          return Container(
+          return SizedBox(
               width: Get.width,
               height: Get.width > 390 ? Get.height * .20.h : Get.height * .30.h,
               child: Column(
@@ -129,8 +131,8 @@ class OtpView extends BaseView<OtpController> {
               borderRadius: BorderRadius.circular(5),
               fieldHeight: 50,
               fieldWidth: 40,
-              fieldOuterPadding: EdgeInsets.all(3)),
-          animationDuration: Duration(milliseconds: 300),
+              fieldOuterPadding: const EdgeInsets.all(3)),
+          animationDuration: const Duration(milliseconds: 300),
           enableActiveFill: true,
           errorAnimationController: controller.errorController,
           controller: controller.textEditingController,
@@ -171,7 +173,7 @@ class OtpView extends BaseView<OtpController> {
           enableDescriptions: false,
           format: CountDownTimerFormat.minutesSeconds,
           endTime: DateTime.now().add(
-            Duration(
+            const Duration(
               minutes: 2,
               seconds: 00,
             ),

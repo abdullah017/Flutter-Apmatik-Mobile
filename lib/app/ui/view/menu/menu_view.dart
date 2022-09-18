@@ -123,7 +123,7 @@ class MenuView extends BaseView<MenuController> {
                                     AppColors.ORANGE),
                               ),
                             ),
-                            Spacer(),
+                            const Spacer(),
                             Visibility(
                               visible: false,
                               child: Padding(
@@ -192,7 +192,7 @@ class MenuView extends BaseView<MenuController> {
                 style: style,
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Visibility(
               visible: arrowIconVisible,
               child: Padding(

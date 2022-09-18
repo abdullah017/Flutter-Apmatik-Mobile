@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 
@@ -21,10 +23,10 @@ class ContainerStyle {
 
         boxShadow: [
           BoxShadow(
-              color: Color(0xFFB7B7B7).withOpacity(0.4),
+              color: const Color(0xFFB7B7B7).withOpacity(0.4),
               spreadRadius: 0,
               blurRadius: 10,
-              offset: Offset(0, 0) // changes position of shadow
+              offset: const Offset(0, 0) // changes position of shadow
           ),
         ]
     );
@@ -47,10 +49,10 @@ class ContainerStyle {
 
         boxShadow: [
           BoxShadow(
-              color: Color(0xFFB7B7B7).withOpacity(0.4),
+              color: const Color(0xFFB7B7B7).withOpacity(0.4),
               spreadRadius: 0,
               blurRadius: 30,
-              offset: Offset(0, 4) // changes position of shadow
+              offset: const Offset(0, 4) // changes position of shadow
           ),
         ]
     );

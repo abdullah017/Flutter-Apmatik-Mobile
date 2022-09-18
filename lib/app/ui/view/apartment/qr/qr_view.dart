@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, prefer_interpolation_to_compose_strings, avoid_print
 
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
@@ -18,7 +18,7 @@ class QrView extends BaseView<QrController> {
   @override
   Widget vBuilder() => Scaffold(
       backgroundColor: AppColors.PAGEBACKGROUND,
-      bottomSheet: Container(
+      bottomSheet: SizedBox(
         width: 390,
         height: 197,
         child: Column(
@@ -63,7 +63,7 @@ class QrView extends BaseView<QrController> {
               Align(
                 alignment: Alignment.center,
                 child: Container(
-                  margin: EdgeInsets.only(bottom: 250),
+                  margin: const EdgeInsets.only(bottom: 250),
                   width: 200,
                   height: 200,
                   decoration: BoxDecoration(
