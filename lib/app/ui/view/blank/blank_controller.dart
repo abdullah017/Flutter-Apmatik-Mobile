@@ -4,6 +4,6 @@ class BlankController extends BaseController {
   @override
   void onInit() {
     super.onInit();
-  tabIndex = 1;
+    tabIndex.value = 1;
   }
 }

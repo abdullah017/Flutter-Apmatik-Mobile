@@ -21,14 +21,14 @@ import 'home_controller.dart';
 class HomeView extends BaseView<HomeController> {
   HomeView({Key? key}) : super(key: key, appBarHide: false);
   @override
-  Widget vBuilder() => controller.hasApertmenKey ?? false
+  Widget vBuilder() => controller.hasApertmenKey ?? true
       ? WillPopScope(
           onWillPop: () {
             return controller.onWillPop();
           },
           child: ListView(children: [
             Padding(
-              padding: AppPadding.guideLine10Vertical8,
+              padding: AppPadding.horizontal10Vertical8,
               child: Text(
                 'Avantajlarımız',
                 style:
@@ -36,22 +36,22 @@ class HomeView extends BaseView<HomeController> {
               ),
             ),
             Padding(
-              padding: AppPadding.guideLine10Vertical8,
+              padding: AppPadding.horizontal10Vertical8,
               child: CarouselSlider.builder(
                 itemCount: controller.imgList.length,
                 itemBuilder:
                     (BuildContext context, int itemIndex, int pageViewIndex) =>
                         ImageWithTextSliderCard(
-                          imageWidget: FadeInImage.assetNetwork(
-                            width: 121,
-                            height: 158,
-                            fit: BoxFit.cover,
-                            image: controller.imgList[itemIndex],
-                            placeholder: AppAssets.placeholder,
-                          ),
-                          imageTitle: 'Kış Masalı',
-                          imageDescription: 'Kış Masalı',
-                        ),
+                  imageWidget: FadeInImage.assetNetwork(
+                    width: 121,
+                    height: 158,
+                    fit: BoxFit.cover,
+                    image: controller.imgList[itemIndex],
+                    placeholder: AppAssets.placeholder,
+                  ),
+                  imageTitle: 'Kış Masalı',
+                  imageDescription: 'Kış Masalı',
+                ),
                 carouselController: controller.carouselController,
                 options: CarouselOptions(
                     padEnds: false,

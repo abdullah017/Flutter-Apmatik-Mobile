@@ -59,7 +59,7 @@ class DashBoardView extends BaseView<DashBoardController> {
                           Expanded(
                             flex: 0,
                             child: ListTile(
-                              contentPadding: AppPadding.guideLine20,
+                              contentPadding: AppPadding.horizontal20,
                               dense: true,
                               title: Text('Toplam Borç',
                                   style: appTextStyle.getSfProDisplayMedium_H5(
@@ -135,7 +135,7 @@ class DashBoardView extends BaseView<DashBoardController> {
 
   buildDeptCard() {
     return Padding(
-      padding: AppPadding.guideLineVertical3,
+      padding: AppPadding.horizontal18Vertical3,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -175,7 +175,7 @@ class DashBoardView extends BaseView<DashBoardController> {
 
   Padding buildLastPaymentsTitleText() {
     return Padding(
-      padding: AppPadding.guideLine10Vertical8,
+      padding: AppPadding.horizontal10Vertical8,
       child: Text(
         'Son Ödemelerim',
         style: appTextStyle.getSfProDisplayRegular_H5(AppColors.DARK_GREY),

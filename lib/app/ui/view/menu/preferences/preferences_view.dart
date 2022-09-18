@@ -1,6 +1,7 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/ui/view/menu/preferences/preferences_controller.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_cupertinoswitch.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class PreferencesView extends BaseView<PreferencesController> {
             );
   @override
   Widget vBuilder() => ListView(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 90.h),
+        padding: AppPadding.horizontal10Vertical90,
         children: [
           buildSettingsCard('languageSettings'.tr, () {
             controller.goToLanguageSettingView();
@@ -28,7 +29,7 @@ class PreferencesView extends BaseView<PreferencesController> {
             height: 15.h,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: AppPadding.allPadding8,
             child: Text(
               'notification'.tr,
             ),
@@ -74,7 +75,7 @@ class PreferencesView extends BaseView<PreferencesController> {
 
   buildPaySwitchSettings() {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: AppPadding.allPadding8,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -94,7 +95,7 @@ class PreferencesView extends BaseView<PreferencesController> {
 
   buildSystemSwitchSettings() {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: AppPadding.allPadding8,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -114,7 +115,7 @@ class PreferencesView extends BaseView<PreferencesController> {
 
   buildAdvantageSwitchSettings() {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: AppPadding.allPadding8,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -138,9 +139,7 @@ class PreferencesView extends BaseView<PreferencesController> {
       child: Container(
         width: 350.w,
         height: 36.h,
-        padding: EdgeInsets.symmetric(
-          horizontal: 10.w,
-        ),
+        padding: AppPadding.guideLine,
         color: Colors.white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

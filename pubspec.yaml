@@ -50,6 +50,8 @@ dependencies:
   flutter_timer_countdown:
   dots_indicator:
   mobile_scanner:
+  persistent_bottom_nav_bar:
+  auto_route:
   intl_phone_number_input:
     git:
       url: https://github.com/AbdOoSaed/intl_phone_number_input
@@ -71,6 +73,8 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  auto_route_generator:          
+  build_runner:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

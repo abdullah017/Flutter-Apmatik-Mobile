@@ -20,8 +20,7 @@ class ProfileView extends BaseView<ProfileController> {
 
   buildView() {
     return ListView(
-      padding: EdgeInsets.zero,
-      physics: const NeverScrollableScrollPhysics(),
+      padding: AppPadding.guideLine,
       children: [
         Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -31,49 +30,38 @@ class ProfileView extends BaseView<ProfileController> {
             ),
             SizedBox(
               height: Get.width >= 390 ? 250.0.h : 280.h,
-              child: Stack(
-                children: <Widget>[
-                  Positioned(
-                    top: 10.0,
-                    left: 0.0,
-                    right: 0.0,
-                    child: Container(
-                      width: 350.w,
-                      height: Get.width >= 390 ? 230.h : 270.h,
-                      padding: AppPadding.guideLine,
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5.0),
-                            border: Border.all(
-                                color: Colors.grey.withOpacity(0.5),
-                                width: 1.0),
-                            color: Colors.white),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Expanded(
-                              flex: 0,
-                              child: buildUserCardHeader(),
-                            ),
-                            buildUserPhoneNumber(),
-                            buildUserMaritalStatusAndJob(),
-                            buildUserChildrenAndPet(),
-                            Transform.translate(
-                              offset: const Offset(0, -10),
-                              child: CustomOutlineTextButton(
-                                fixedSize: const Size(310, 35),
-                                buttonText: 'edit_profile'.tr,
-                                onPressed: () {
-                                  controller.goEditProfileView();
-                                },
-                              ),
-                            ),
-                          ],
+              child: SizedBox(
+                width: 350.w,
+                height: Get.width >= 390 ? 230.h : 270.h,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.0),
+                      border: Border.all(
+                          color: Colors.grey.withOpacity(0.5), width: 1.0),
+                      color: Colors.white),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Expanded(
+                        flex: 0,
+                        child: buildUserCardHeader(),
+                      ),
+                      buildUserPhoneNumber(),
+                      buildUserMaritalStatusAndJob(),
+                      buildUserChildrenAndPet(),
+                      Transform.translate(
+                        offset: const Offset(0, -10),
+                        child: CustomOutlineTextButton(
+                          fixedSize: const Size(310, 35),
+                          buttonText: 'edit_profile'.tr,
+                          onPressed: () {
+                            controller.goEditProfileView();
+                          },
                         ),
                       ),
-                    ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
             SizedBox(
@@ -84,7 +72,6 @@ class ProfileView extends BaseView<ProfileController> {
               shrinkWrap: true,
               children: [
                 Container(
-                    margin: AppPadding.guideLine,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.0),
                         border: Border.all(
@@ -95,7 +82,6 @@ class ProfileView extends BaseView<ProfileController> {
                   height: 10.h,
                 ),
                 Container(
-                    margin: AppPadding.guideLine,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.0),
                         border: Border.all(

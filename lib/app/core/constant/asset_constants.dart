@@ -7,16 +7,20 @@ class AppAssets {
   static const String appbar = 'assets/images/men_face.png';
   static const String medium_splash = 'assets/images/apmatik-medium.png';
   static const String placeholder = 'assets/images/placeholder.png';
+  static const String staff = 'assets/images/stf.png';
+  static const String mng = 'assets/images/mng.png';
+
+
 
   ///[ICONS]
 
   ///[NAVBAR ICONS]
 
-  static const String card_icon = 'assets/icons/card_icon.png';
-  static const String doc_icon = 'assets/icons/doc_icon.png';
-  static const String home_icon = 'assets/icons/home_icon.png';
-  static const String key_icon = 'assets/icons/key_icon.png';
-  static const String menu_icon = 'assets/icons/menu_icon.png';
+  static const String card_icon = 'assets/icons/dashboard.svg';
+  static const String doc_icon = 'assets/icons/document.svg';
+  static const String home_icon = 'assets/icons/home.svg';
+  static const String key_icon = 'assets/icons/key.svg';
+  static const String menu_icon = 'assets/icons/menu.svg';
 
   ///[COMMON PAGE ICONS]
 
