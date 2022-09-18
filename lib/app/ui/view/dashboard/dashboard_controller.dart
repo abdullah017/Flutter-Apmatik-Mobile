@@ -33,6 +33,6 @@ class DashBoardController extends BaseController {
   void onInit() {
     super.onInit();
     addDuyuru();
-    tabIndex = 0;
+    tabIndex.value = 0;
   }
 }

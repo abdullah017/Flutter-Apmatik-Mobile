@@ -168,7 +168,7 @@ class EditProfileView extends BaseView<EditProfileController> {
       child: Container(
         width: 330.w,
         height: 30.h,
-        margin: AppPadding.guideLine9,
+        margin: AppPadding.horizontal9,
         child: DropdownSearch<String>(
           dropdownButtonProps: DropdownButtonProps(
             icon: Transform.translate(
@@ -290,11 +290,11 @@ class EditProfileView extends BaseView<EditProfileController> {
 
   buildShowMeOtherSwitch() {
     return Padding(
-      padding: AppPadding.guideLine9,
+      padding: AppPadding.horizontal5,
       child: Card(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 10.0.w),
-          width: 350.w,
+          width: 360.w,
           height: 30.h,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,

@@ -160,8 +160,8 @@ const Map<String, String> tr = {
       'Apartmanınızı bu listede bulamıyorsanız lütfen apartman yöneticiniz ile iletişime geçiniz.',
 
   'phoneNumberSearchText': 'Alan kodunu ya da ülke adını giriniz',
-  'selectApart':'Apartman Seçimi',
-  'registerWithQr':'Qr Kodu İle Kayıt',
+  'selectApart': 'Apartman Seçimi',
+  'registerWithQr': 'Qr Kodu İle Kayıt',
 
   //MENU SAYFA BAŞLIKLARI
   'profile': 'Profil',
@@ -173,4 +173,5 @@ const Map<String, String> tr = {
   'upPassword': 'Şifremi Güncelle',
   'reportProblem': 'Sorun Bildir',
   'about': 'Hakkında',
+  'apartment_managers': 'Apartman Yöneticileri',
 };

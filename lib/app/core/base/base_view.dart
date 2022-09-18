@@ -132,7 +132,8 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
                                     // selectedIconTheme: IconThemeData(
                                     //   size: 24,
                                     // ),
-                                    selectedLabelStyle: const TextStyle(fontSize: 0),
+                                    selectedLabelStyle:
+                                        const TextStyle(fontSize: 0),
                                     type: BottomNavigationBarType.fixed,
                                     landscapeLayout:
                                         BottomNavigationBarLandscapeLayout
@@ -141,7 +142,7 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
                                     selectedItemColor: Colors.orange,
                                     showSelectedLabels: false,
                                     showUnselectedLabels: false,
-                                    currentIndex: controller.tabIndex,
+                                    currentIndex: controller.tabIndex.value,
                                     items: [
                                       _bottomNavbarItem(
                                         AppAssets.card_icon,
@@ -165,25 +166,6 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
                                       ),
                                     ]),
                               ],
-                            ),
-                            AnimatedPositioned(
-                              bottom: Get.width == 390 ? 25 : 0,
-                              left: constraints.maxWidth /
-                                      5 *
-                                      (controller
-                                          .tabIndex) + //space of current index
-                                  (constraints.maxWidth /
-                                      9) - // minimize the half of it
-                                  30, // minimize the width of dash
-                              child: Container(
-                                width: 50,
-                                height: 3,
-                                decoration: const BoxDecoration(
-                                    color: AppColors.ORANGE),
-                              ),
-                              duration: const Duration(
-                                milliseconds: 500,
-                              ),
                             ),
                           ],
                         ),
@@ -221,7 +203,7 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
             Get.back();
           },
           child: Container(
-            padding: AppPadding.guideLine20,
+            padding: AppPadding.horizontal20,
             width: 24,
             height: 24,
             child: controller.isSettingItem!
@@ -242,16 +224,17 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
 
   _bottomNavbarItem(String assetName, String label) {
     return BottomNavigationBarItem(
-      icon: Image.asset(
+      icon: SvgPicture.asset(
         assetName,
-        width: 25.w,
-        height: 22.h,
+        width: 20.w,
+        height: 25.h,
         fit: BoxFit.contain,
       ),
-      activeIcon: Image.asset(
+      activeIcon: SvgPicture.asset(
         assetName,
-        width: 25.w,
-        height: 22.h,
+        width: 20.w,
+        height: 25.h,
+        color: AppColors.ORANGE,
         fit: BoxFit.contain,
       ),
       label: label,

@@ -3,6 +3,7 @@
 import 'package:apmatik/app/core/helper/form_validation_helper.dart';
 import 'package:apmatik/app/core//utils/utilities.dart';
 import 'package:apmatik/app/core/network/check_connection/check_connecition.dart';
+import 'package:apmatik/app/ui/style/text_style.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -36,9 +37,9 @@ import 'widget_state.dart';
 class BaseController extends GetxController
     with BaseCommonWidgets, Utilities, WidgetState, ScreenState {
   final box = GetStorage();
-  var tabIndex = 2;
+  RxInt tabIndex = 2.obs;
   tabChange(int index) {
-    tabIndex = index;
+    tabIndex.value = index;
     update();
   }
 
@@ -57,6 +58,7 @@ class BaseController extends GetxController
   FormValidationHelper formValidationHelper = FormValidationHelper();
   StreamSubscription? connectionChangeStream;
   CheckNetworkConnection connection = CheckNetworkConnection.instance;
+  AppTextStyle appTextStyle = AppTextStyle();
   set setEnableScrollController(bool value) => withScrollController = value;
 
   ///[Calling showAlertIfNecessary with your app's

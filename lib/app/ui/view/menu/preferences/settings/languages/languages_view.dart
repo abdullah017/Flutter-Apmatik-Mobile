@@ -1,9 +1,9 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/view/menu/preferences/settings/languages/languages_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class LanguagesView extends BaseView<LanguagesController> {
@@ -14,7 +14,7 @@ class LanguagesView extends BaseView<LanguagesController> {
         );
   @override
   Widget vBuilder() => Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 15.h),
+        padding: AppPadding.horizontal10Vertical15,
         child: ListView(
           children: [
             Card(

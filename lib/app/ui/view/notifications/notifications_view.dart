@@ -11,7 +11,7 @@ class NotificationsView extends BaseView<NotificationsController> {
             );
   @override
   Widget vBuilder() => Padding(
-        padding: AppPadding.guideLine10Vertical10,
+        padding: AppPadding.horizontal10Vertical10,
         child: ListView(
           children: [
             Text(

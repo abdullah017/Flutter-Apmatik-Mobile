@@ -95,7 +95,17 @@ class HomeController extends BaseController {
   }
 
   @override
+  void onReady() {
+    tabIndex.value = 2;
+    update();
+    super.onReady();
+  }
+
+  @override
   void onInit() {
+    super.onInit();
+    tabIndex.value = 2;
+    update();
     apertmenRecord();
     updateRecordState();
     if (hasApertmenKey == false || hasApertmenKey == null) {
@@ -103,7 +113,5 @@ class HomeController extends BaseController {
       hasApartmenValue.value = true;
     }
     box.write('isLogin', true);
-    super.onInit();
-    tabIndex = 2;
   }
 }

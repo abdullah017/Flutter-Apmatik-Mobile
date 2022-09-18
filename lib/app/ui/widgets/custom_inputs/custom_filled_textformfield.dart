@@ -18,7 +18,7 @@ class CustomFilledTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: AppPadding.guideLine9,
+      padding: AppPadding.horizontal9,
       child: SizedBox(
         width: 330.w,
         height: 30.h,

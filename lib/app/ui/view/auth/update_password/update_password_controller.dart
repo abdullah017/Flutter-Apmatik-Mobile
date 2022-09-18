@@ -32,7 +32,7 @@ class UpdatePasswordController extends BaseController {
   @override
   void onInit() {
     super.onInit();
-    tabIndex = 4;
+    tabIndex.value = 4;
     oldPassController;
     newPassController;
     reNewPassController;
