@@ -14,10 +14,10 @@ class RegisterController extends BaseController {
   PhoneNumber? phoneNumberWithRegion;
 
   RxBool validForm = false.obs;
-    RxBool showhideErrorMessage = true.obs;
+  RxBool showhideErrorMessage = true.obs;
   var langStorage = 0;
   String? selectedValue = 'Erkek';
-  List<String> listOfValue = ['Erkek', 'Kadın'];
+  List<String> listOfValue = ['Erkek', 'Kadın', 'Diğer'];
 
   TextEditingController nameSurnameController = TextEditingController();
   TextEditingController emailController = TextEditingController();

@@ -178,7 +178,7 @@ class MenuController extends BaseController {
   }
 
   void goToProfileView() {
-    Get.rootDelegate.toNamed('menu/profile');
+    Get.toNamed('profile');
     //Get.toNamed('profile');
   }
 

@@ -352,7 +352,7 @@ class ProfileView extends BaseView<ProfileController> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(right: 40.w),
+            padding: EdgeInsets.only(right: 47.w),
             child: Text.rich(
               TextSpan(
                 text: 'Meslek\n',

@@ -1,5 +1,3 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
@@ -86,7 +84,10 @@ class CommonView extends BaseView<CommonController> {
           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 81.0.h),
-            child: Image.asset(AppAssets.statusPageLogo),
+            child: Image.asset(
+              AppAssets.statusPageLogo,
+              color: Colors.grey,
+            ),
           )
         ],
       ),
@@ -124,7 +125,10 @@ class CommonView extends BaseView<CommonController> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 81.0),
-            child: Image.asset(AppAssets.statusPageLogo),
+            child: Image.asset(
+              AppAssets.statusPageLogo,
+              color: Colors.grey,
+            ),
           )
         ],
       ),
@@ -174,7 +178,10 @@ class CommonView extends BaseView<CommonController> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 81.0),
-            child: Image.asset(AppAssets.statusPageLogo),
+            child: Image.asset(
+              AppAssets.statusPageLogo,
+              color: Colors.grey,
+            ),
           )
         ],
       ),
@@ -228,7 +235,10 @@ class CommonView extends BaseView<CommonController> {
           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 81.0.h),
-            child: Image.asset(AppAssets.statusPageLogo),
+            child: Image.asset(
+              AppAssets.statusPageLogo,
+              color: Colors.grey,
+            ),
           )
         ],
       ),
@@ -275,7 +285,10 @@ class CommonView extends BaseView<CommonController> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 81.0),
-            child: Image.asset(AppAssets.statusPageLogo),
+            child: Image.asset(
+              AppAssets.statusPageLogo,
+              color: Colors.grey,
+            ),
           )
         ],
       ),
@@ -363,7 +376,10 @@ class CommonView extends BaseView<CommonController> {
             visible: logoShow ?? false,
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 81.0),
-              child: Image.asset(AppAssets.statusPageLogo),
+              child: Image.asset(
+                AppAssets.statusPageLogo,
+                color: Colors.grey,
+              ),
             ),
           )
         ],

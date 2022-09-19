@@ -48,7 +48,7 @@ class AdditionalDetailsController extends BaseController {
   var isCheck = false.obs;
 
   String? selectedValue = 'Evli';
-  List<String> listOfValue = ['Evli', 'Bekar'];
+  List<String> listOfValue = ['Evli', 'Bekar', 'Dul'];
   String? selectedJobValue = 'Öğrenci';
   List<String> listOfJobValue = ['Öğrenci', 'Bekar'];
   String? selectedChildValue = 'Çocuğum Yok';
@@ -64,7 +64,6 @@ class AdditionalDetailsController extends BaseController {
     super.onInit();
     dateText.text = DateFormat("dd.MM.yyyy").format(DateTime(2000)).toString();
   }
-
 
   @override
   void onClose() {

@@ -110,7 +110,7 @@ class QuestionnaireCardWidget extends StatelessWidget {
                     description ??
                         'Apartman Boyanması için apartmanımızda anket başlamıştır. Hemen katılıp bizimle fikirlerini paylaş!',
                     style: AppTextStyle()
-                        .getSfProDisplayRegular_H6(AppColors.BLACK),
+                        .getSfProDisplayRegular_H66(AppColors.BLACK),
                   ),
                   buildStackedImages(direction: TextDirection.rtl),
                 ],

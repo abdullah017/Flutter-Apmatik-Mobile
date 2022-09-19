@@ -101,6 +101,9 @@ class QuestionnaireDetailView extends BaseView<QuestionnaireDetailController> {
                 onPressed: () {
                   if (controller.selectedValue != null) {
                     showSimple(message: 'Ankete Katıldığınız için teşekkürler');
+                    Future.delayed(const Duration(seconds: 3), () {
+                      Get.toNamed('home'); // Prints after 1 second.
+                    });
                   } else {
                     showSimple(message: 'Lütfen seçeneklerden birini seçin');
                   }

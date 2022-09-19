@@ -56,7 +56,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
   static const INITIAL = Routes.SPLASH;
-  static const HOME = Routes.HOME;
+  static const HOME = Routes.SPLASH;
   static final routes = [
     GetPage(
         name: _Paths.SPLASH,
@@ -106,8 +106,8 @@ class AppPages {
         name: _Paths.ADDAPERTMEN,
         page: () => AddApertmentView(),
         binding: AddApertmentBinding(),
-        transition: Transition.rightToLeft,
-        transitionDuration: const Duration(seconds: 2, milliseconds: 10),
+        transition: Transition.native,
+        transitionDuration: const Duration(milliseconds: 10000),
         preventDuplicates: true),
     GetPage(
       name: _Paths.READQR,

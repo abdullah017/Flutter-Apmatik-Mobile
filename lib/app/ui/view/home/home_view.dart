@@ -21,7 +21,7 @@ import 'home_controller.dart';
 class HomeView extends BaseView<HomeController> {
   HomeView({Key? key}) : super(key: key, appBarHide: false);
   @override
-  Widget vBuilder() => controller.hasApertmenKey ?? true
+  Widget vBuilder() => controller.hasApertmenKey ?? false
       ? WillPopScope(
           onWillPop: () {
             return controller.onWillPop();
