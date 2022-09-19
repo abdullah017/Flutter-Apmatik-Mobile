@@ -63,4 +63,10 @@ class AddApertmentController extends BaseController
     tabController = TabController(length: 3, vsync: this);
     tabIndex.value = 4;
   }
+
+  @override
+  void onClose() {
+    super.onClose();
+    apartmenNameController;
+  }
 }

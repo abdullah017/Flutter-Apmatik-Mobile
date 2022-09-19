@@ -93,8 +93,8 @@ class QuestionnaireDetailCardWidget extends StatelessWidget {
                 Text(
                   description ??
                       'Apartman Boyanması için apartmanımızda anket başlamıştır. Hemen katılıp bizimle fikirlerini paylaş!',
-                  style:
-                      AppTextStyle().getSfProDisplayRegular_H6(AppColors.BLACK),
+                  style: AppTextStyle()
+                      .getSfProDisplayRegular_H66(AppColors.BLACK),
                 ),
                 buildStackedImages(direction: TextDirection.rtl),
               ],
@@ -137,7 +137,7 @@ class QuestionnaireDetailCardWidget extends StatelessWidget {
 Widget buildStackedImages({
   TextDirection direction = TextDirection.ltr,
 }) {
-  const double size = 30;
+  const double size = 27;
   const double xShift = 10;
   final urlImages = [
     'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80',

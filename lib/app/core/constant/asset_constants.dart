@@ -10,8 +10,6 @@ class AppAssets {
   static const String staff = 'assets/images/stf.png';
   static const String mng = 'assets/images/mng.png';
 
-
-
   ///[ICONS]
 
   ///[NAVBAR ICONS]

@@ -51,7 +51,7 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
   final AppPadding appPadding = AppPadding();
   final FormValidationHelper formValidationHelper = FormValidationHelper();
 
-  T get controller => GetInstance().find<T>(tag: tag);
+  T get controller => GetInstance(). find<T>(tag: tag);
 
   @override
   Widget build(BuildContext context) {
@@ -204,8 +204,8 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
           },
           child: Container(
             padding: AppPadding.horizontal20,
-            width: 24,
-            height: 24,
+            width: 40,
+            height: 40,
             child: controller.isSettingItem!
                 ? Image.asset(
                     AppAssets.black_back_button_icon,
@@ -213,8 +213,8 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
                   )
                 : SvgPicture.asset(
                     'assets/icons/back_button.svg',
-                    width: 12,
-                    height: 12,
+                    width: 40,
+                    height: 40,
                   ),
           ),
         ),
