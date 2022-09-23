@@ -6,6 +6,9 @@ class GatewayController extends BaseController {
   RxBool get navBarHide => false.obs;
 
   @override
+  bool? get showBottomSheet => false;
+
+  @override
   void onInit() {
     tabIndex.value = 0;
     super.onInit();

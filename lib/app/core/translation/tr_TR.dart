@@ -174,4 +174,11 @@ const Map<String, String> tr = {
   'reportProblem': 'Sorun Bildir',
   'about': 'Hakkında',
   'apartment_managers': 'Apartman Yöneticileri',
+  'total_debt': 'Toplam Borç',
+  'pay_all': 'Hepsini Öde',
+  'last_debt_pay': 'Son borç ödeme tarihiniz',
+  'payment_credit_card': 'Kredi Kartı İle Ödeme',
+  'transfer': 'Havale / EFT',
+  'ssl':
+      'Ödemeler SSL sertifikası ile doğrulanarak güvenli bir şekilde yapılmaktadır.',
 };

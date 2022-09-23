@@ -105,12 +105,12 @@ class AppPages {
         binding: BlankBinding(),
         preventDuplicates: true),
     GetPage(
-      name: _Paths.ADDAPERTMEN,
-      page: () => AddApertmentView(),
-      binding: AddApertmentBinding(),
-      transition: Transition.rightToLeft,
-      transitionDuration: const Duration(milliseconds: 500),
-    ),
+        name: _Paths.ADDAPERTMEN,
+        page: () => AddApertmentView(),
+        binding: AddApertmentBinding(),
+        transition: Transition.rightToLeft,
+        transitionDuration: const Duration(milliseconds: 500),
+        preventDuplicates: true),
     GetPage(
       name: _Paths.READQR,
       page: () => QrView(),
