@@ -37,7 +37,17 @@ class PreferencesView extends BaseView<PreferencesController> {
           Container(
             width: 350.w,
             height: 115.h,
-            color: Colors.white,
+            decoration: BoxDecoration(boxShadow: const <BoxShadow>[
+              BoxShadow(
+                color: AppColors.PAGEBACKGROUND,
+                blurRadius: 50.0, // soften the shadow
+                spreadRadius: 0.0, //extend the shadow
+                offset: Offset(
+                  0.0, // Move to right 10  horizontally
+                  3.0, // Move to bottom 10 Vertically
+                ),
+              )
+            ], borderRadius: BorderRadius.circular(5.0), color: Colors.white),
             child: Column(
               children: [
                 buildPaySwitchSettings(),
@@ -140,7 +150,17 @@ class PreferencesView extends BaseView<PreferencesController> {
         width: 350.w,
         height: 36.h,
         padding: AppPadding.guideLine,
-        color: Colors.white,
+        decoration: BoxDecoration(boxShadow: const <BoxShadow>[
+          BoxShadow(
+            color: AppColors.PAGEBACKGROUND,
+            blurRadius: 50.0, // soften the shadow
+            spreadRadius: 0.0, //extend the shadow
+            offset: Offset(
+              0.0, // Move to right 10  horizontally
+              3.0, // Move to bottom 10 Vertically
+            ),
+          )
+        ], borderRadius: BorderRadius.circular(5.0), color: Colors.white),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

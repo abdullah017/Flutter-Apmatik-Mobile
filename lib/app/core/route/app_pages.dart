@@ -24,6 +24,8 @@ import 'package:apmatik/app/ui/view/common/common_binding.dart';
 import 'package:apmatik/app/ui/view/common/common_view.dart';
 import 'package:apmatik/app/ui/view/dashboard/dashboard_binding.dart';
 import 'package:apmatik/app/ui/view/dashboard/dashboard_view.dart';
+import 'package:apmatik/app/ui/view/gateway/gateway_binding.dart';
+import 'package:apmatik/app/ui/view/gateway/gateway_view.dart';
 import 'package:apmatik/app/ui/view/home/home_binding.dart';
 import 'package:apmatik/app/ui/view/home/home_view.dart';
 import 'package:apmatik/app/ui/view/menu/menu_binding.dart';
@@ -56,13 +58,13 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
   static const INITIAL = Routes.SPLASH;
-  static const HOME = Routes.SPLASH;
+  static const HOME = Routes.HOME;
   static final routes = [
     GetPage(
         name: _Paths.SPLASH,
         page: () => SplashView(),
         binding: SplashBinding(),
-        transition: Transition.noTransition,
+        transition: Transition.leftToRight,
         transitionDuration: const Duration(seconds: 0, milliseconds: 0),
         preventDuplicates: true),
     GetPage(
@@ -103,12 +105,12 @@ class AppPages {
         binding: BlankBinding(),
         preventDuplicates: true),
     GetPage(
-        name: _Paths.ADDAPERTMEN,
-        page: () => AddApertmentView(),
-        binding: AddApertmentBinding(),
-        transition: Transition.native,
-        transitionDuration: const Duration(milliseconds: 10000),
-        preventDuplicates: true),
+      name: _Paths.ADDAPERTMEN,
+      page: () => AddApertmentView(),
+      binding: AddApertmentBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 500),
+    ),
     GetPage(
       name: _Paths.READQR,
       page: () => QrView(),
@@ -138,11 +140,15 @@ class AppPages {
         name: _Paths.PROFILE,
         page: () => ProfileView(),
         binding: ProfileBinding(),
+        transition: Transition.rightToLeft,
+        transitionDuration: const Duration(milliseconds: 500),
         preventDuplicates: true),
     GetPage(
       name: _Paths.EDITPROFILE,
       page: () => EditProfileView(),
       binding: EditProfileBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 500),
     ),
     GetPage(
       name: _Paths.NOTIFICATIONS,
@@ -153,31 +159,43 @@ class AppPages {
       name: _Paths.PREFERENCES,
       page: () => PreferencesView(),
       binding: PreferencesBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 500),
     ),
     GetPage(
       name: _Paths.AGGREMENT,
       page: () => AggrementView(),
       binding: AggrementBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 500),
     ),
     GetPage(
       name: _Paths.LANGUAGES,
       page: () => LanguagesView(),
       binding: LanguagesBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 500),
     ),
     GetPage(
       name: _Paths.UPDATEPASSWORD,
       page: () => UpdatePasswordView(),
       binding: UpdatePasswordBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 500),
     ),
     GetPage(
       name: _Paths.REPORT,
       page: () => ReportView(),
       binding: ReportBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 500),
     ),
     GetPage(
       name: _Paths.ABOUT,
       page: () => AboutView(),
       binding: AboutBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 500),
     ),
     GetPage(
       name: _Paths.QUESTIONNAIRE,
@@ -188,6 +206,13 @@ class AppPages {
       name: _Paths.STAFF,
       page: () => StaffView(),
       binding: StaffBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 500),
+    ),
+    GetPage(
+      name: _Paths.GATEWAY,
+      page: () => GatewayView(),
+      binding: GatewayBinding(),
     ),
   ];
 }

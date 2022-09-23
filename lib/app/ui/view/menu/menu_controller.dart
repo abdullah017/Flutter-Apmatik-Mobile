@@ -133,7 +133,7 @@ class MenuController extends BaseController {
     var future = Future(() {});
     for (var i = 0; i < fetchedList.length; i++) {
       future = future.then((_) {
-        return Future.delayed(const Duration(milliseconds: 5), () {
+        return Future.delayed(const Duration(milliseconds: 2), () {
           listItems.add(fetchedList[i]);
           listKey.currentState?.insertItem(listItems.length - 1);
         });
