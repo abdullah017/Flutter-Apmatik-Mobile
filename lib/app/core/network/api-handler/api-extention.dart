@@ -1,4 +1,4 @@
-// ignore_for_file: unused_import, library_prefixes
+// ignore_for_file: unused_import, library_prefixes, file_names
 
 import 'dart:convert';
 
@@ -22,7 +22,6 @@ extension ApiExtension on Future<Response<dynamic>> {
       if (error is DioError) {
         dynamic errorResponse = error.response?.data;
         dynamic statusCode = error.response?.statusCode;
-
         try {
           var errResponse = ErrorBody.fromJson(error.response?.data);
           return ApiResponse.returnResponse(error.response!, errResponse);

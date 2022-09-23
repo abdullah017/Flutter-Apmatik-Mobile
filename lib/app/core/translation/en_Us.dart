@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 const Map<String, String> en = {
   'homeTitle': 'App',
 
@@ -140,7 +142,7 @@ const Map<String, String> en = {
   're_new_password': 'New Password Again',
 
   'resident_status': 'Resident Status',
-  'home_owner': 'Homeowner',
+  'home_owner': 'Owner',
   'tenant': 'Tenant',
   'resident': 'Resident',
 
@@ -159,5 +161,6 @@ const Map<String, String> en = {
   'select_apartment_info':
       'If you cannot find your apartment in this list, please contact your apartment manager.',
 
-  'phoneNumberSearchText': 'Enter area code or country name'
+  'phoneNumberSearchText': 'Enter area code or country name',
+  'apartment_managers': 'Apartment Managers',
 };

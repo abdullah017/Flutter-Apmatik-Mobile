@@ -24,7 +24,7 @@ class ImageWithTextSliderCard extends StatelessWidget {
             clipBehavior: Clip.antiAliasWithSaveLayer,
             child: ShaderMask(
               shaderCallback: (rect) {
-                return LinearGradient(
+                return const LinearGradient(
                   begin: Alignment.center,
                   end: Alignment.bottomCenter,
                   colors: [Colors.transparent, Colors.black],
@@ -39,7 +39,7 @@ class ImageWithTextSliderCard extends StatelessWidget {
           alignment: Alignment.bottomCenter,
           child: ListTile(
             title: Transform.translate(
-              offset: Offset(0, 5),
+              offset: const Offset(0, 5),
               child: Text(
                 imageTitle,
                 style: AppTextStyle().getSfProDisplayMedium_H6(AppColors.WHITE),

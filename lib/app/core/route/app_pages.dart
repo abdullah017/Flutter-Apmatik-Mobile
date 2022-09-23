@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:apmatik/app/ui/view/apartment/add_apartment/add_apertment_binding.dart';
 import 'package:apmatik/app/ui/view/apartment/add_apartment/add_apertment_view.dart';
 import 'package:apmatik/app/ui/view/apartment/qr/qr_binding.dart';
@@ -54,76 +56,61 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
   static const INITIAL = Routes.SPLASH;
-  static const HOME = Routes.HOME;
+  static const HOME = Routes.SPLASH;
   static final routes = [
     GetPage(
         name: _Paths.SPLASH,
         page: () => SplashView(),
         binding: SplashBinding(),
-        transitionDuration: Duration(seconds: 0, milliseconds: 220),
-        transition: Transition.rightToLeftWithFade,
+        transition: Transition.noTransition,
+        transitionDuration: const Duration(seconds: 0, milliseconds: 0),
         preventDuplicates: true),
     GetPage(
         name: _Paths.LOGIN,
         page: () => LoginView(),
         binding: LoginBinding(),
-        transitionDuration: Duration(seconds: 0, milliseconds: 220),
-        transition: Transition.rightToLeftWithFade,
+        transition: Transition.noTransition,
+        transitionDuration: const Duration(seconds: 0, milliseconds: 0),
         preventDuplicates: true),
     GetPage(
         name: _Paths.REGISTER,
         page: () => RegisterView(),
         binding: RegisterBinding(),
-        transitionDuration: Duration(seconds: 0, milliseconds: 220),
-        transition: Transition.rightToLeftWithFade,
         preventDuplicates: true),
     GetPage(
         name: _Paths.ADDITIONAL_DETAILS,
         page: () => AdditionalDetailsView(),
         binding: AdditionalDetailsBinding(),
-        transitionDuration: Duration(seconds: 0, milliseconds: 220),
-        transition: Transition.rightToLeftWithFade,
         preventDuplicates: true),
     GetPage(
         name: _Paths.OTP,
         page: () => OtpView(),
         binding: OtpBinding(),
-        transitionDuration: Duration(seconds: 0, milliseconds: 220),
-        transition: Transition.rightToLeftWithFade,
         preventDuplicates: true),
     GetPage(
         name: _Paths.FORGOTPASSWORD,
         page: () => ForgotPasswordView(),
         binding: ForgotPasswordBinding(),
-        transitionDuration: Duration(seconds: 0, milliseconds: 220),
-        transition: Transition.rightToLeftWithFade,
         preventDuplicates: true),
     GetPage(
         name: _Paths.HOME,
         page: () => HomeView(),
         binding: HomeBinding(),
-        transitionDuration: Duration(seconds: 0, milliseconds: 220),
-        transition: Transition.rightToLeftWithFade,
         preventDuplicates: true),
     GetPage(
         name: _Paths.BLANK,
         page: () => BlankView(),
         binding: BlankBinding(),
-        transitionDuration: Duration(seconds: 0, milliseconds: 220),
-        transition: Transition.rightToLeftWithFade,
         preventDuplicates: true),
     GetPage(
         name: _Paths.ADDAPERTMEN,
         page: () => AddApertmentView(),
         binding: AddApertmentBinding(),
-        transitionDuration: Duration(seconds: 0, milliseconds: 220),
-        transition: Transition.rightToLeftWithFade,
-        preventDuplicates: true
-    ),
+        transition: Transition.native,
+        transitionDuration: const Duration(milliseconds: 10000),
+        preventDuplicates: true),
     GetPage(
       name: _Paths.READQR,
-      transitionDuration: Duration(seconds: 0, milliseconds: 220),
-      transition: Transition.rightToLeftWithFade,
       page: () => QrView(),
       binding: QrBinding(),
     ),
@@ -131,106 +118,76 @@ class AppPages {
         name: _Paths.SELECTAPARTMENT,
         page: () => SelectApartmentView(),
         binding: SelectApartmentBinding(),
-        transitionDuration: Duration(seconds: 0, milliseconds: 220),
-        transition: Transition.rightToLeftWithFade,
         preventDuplicates: true),
     GetPage(
         name: _Paths.COMMON,
         page: () => CommonView(),
         binding: CommonBinding(),
-        transitionDuration: Duration(seconds: 0, milliseconds: 220),
-        transition: Transition.rightToLeftWithFade,
         preventDuplicates: true),
     GetPage(
         name: _Paths.DASHBOARD,
         page: () => DashBoardView(),
         binding: DashBoardBinding(),
-        transitionDuration: Duration(seconds: 0, milliseconds: 220),
-        transition: Transition.rightToLeftWithFade,
         preventDuplicates: true),
     GetPage(
         name: _Paths.MENU,
         page: () => MenuView(),
         binding: MenuBinding(),
-        transitionDuration: Duration(seconds: 0, milliseconds: 220),
-        transition: Transition.rightToLeftWithFade,
         preventDuplicates: true),
     GetPage(
         name: _Paths.PROFILE,
         page: () => ProfileView(),
         binding: ProfileBinding(),
-        transitionDuration: Duration(seconds: 0, milliseconds: 220),
-        transition: Transition.rightToLeftWithFade,
         preventDuplicates: true),
     GetPage(
       name: _Paths.EDITPROFILE,
       page: () => EditProfileView(),
       binding: EditProfileBinding(),
-      transitionDuration: Duration(seconds: 0, milliseconds: 220),
-      transition: Transition.rightToLeftWithFade,
     ),
     GetPage(
       name: _Paths.NOTIFICATIONS,
       page: () => NotificationsView(),
       binding: NotificationsBinding(),
-      transitionDuration: Duration(seconds: 0, milliseconds: 220),
-      transition: Transition.rightToLeftWithFade,
     ),
     GetPage(
       name: _Paths.PREFERENCES,
       page: () => PreferencesView(),
       binding: PreferencesBinding(),
-      transitionDuration: Duration(seconds: 0, milliseconds: 220),
-      transition: Transition.rightToLeftWithFade,
     ),
     GetPage(
       name: _Paths.AGGREMENT,
       page: () => AggrementView(),
       binding: AggrementBinding(),
-      transitionDuration: Duration(seconds: 0, milliseconds: 220),
-      transition: Transition.rightToLeftWithFade,
     ),
     GetPage(
       name: _Paths.LANGUAGES,
       page: () => LanguagesView(),
       binding: LanguagesBinding(),
-      transitionDuration: Duration(seconds: 0, milliseconds: 220),
-      transition: Transition.rightToLeftWithFade,
     ),
     GetPage(
       name: _Paths.UPDATEPASSWORD,
       page: () => UpdatePasswordView(),
       binding: UpdatePasswordBinding(),
-      transitionDuration: Duration(seconds: 0, milliseconds: 220),
-      transition: Transition.rightToLeftWithFade,
     ),
     GetPage(
       name: _Paths.REPORT,
       page: () => ReportView(),
       binding: ReportBinding(),
-      transitionDuration: Duration(seconds: 0, milliseconds: 220),
-      transition: Transition.rightToLeftWithFade,
     ),
     GetPage(
       name: _Paths.ABOUT,
       page: () => AboutView(),
       binding: AboutBinding(),
-      transitionDuration: Duration(seconds: 0, milliseconds: 220),
-      transition: Transition.rightToLeftWithFade,
     ),
     GetPage(
       name: _Paths.QUESTIONNAIRE,
       page: () => QuestionnaireDetailView(),
       binding: QuestionnaireDetailBinding(),
-      transitionDuration: Duration(seconds: 0, milliseconds: 220),
-      transition: Transition.rightToLeftWithFade,
     ),
     GetPage(
       name: _Paths.STAFF,
       page: () => StaffView(),
       binding: StaffBinding(),
-      transitionDuration: Duration(seconds: 0, milliseconds: 220),
-      transition: Transition.rightToLeftWithFade,
     ),
   ];
 }

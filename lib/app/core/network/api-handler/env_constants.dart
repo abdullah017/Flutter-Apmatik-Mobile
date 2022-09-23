@@ -1,4 +1,5 @@
 /// Enum to define Application Environment instance
+// ignore: constant_identifier_names
 enum Environment { DEV, STAGING, PROD }
 
 class EnvironmentConstants {

@@ -44,10 +44,10 @@ class CustomTextFormField extends StatelessWidget {
         obscuringCharacter: obscureCharacter ?? '*',
         validator: validator,
         decoration: InputDecoration(
-          enabledBorder: UnderlineInputBorder(
+          enabledBorder: const UnderlineInputBorder(
             borderSide: BorderSide(color: Color(0xffE6E6E6)),
           ),
-          focusedBorder: UnderlineInputBorder(
+          focusedBorder: const UnderlineInputBorder(
             borderSide: BorderSide(color: AppColors.ORANGE),
           ),
           labelText: labelText,

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomFilledTextFormField extends StatelessWidget {
-  CustomFilledTextFormField({
+  const CustomFilledTextFormField({
     Key? key,
     this.textEditingController,
     this.hint,
@@ -18,8 +18,8 @@ class CustomFilledTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: AppPadding.guideLine9,
-      child: Container(
+      padding: AppPadding.horizontal9,
+      child: SizedBox(
         width: 330.w,
         height: 30.h,
         child: TextFormField(
@@ -33,13 +33,13 @@ class CustomFilledTextFormField extends StatelessWidget {
             fillColor: Colors.white,
             contentPadding:
                 EdgeInsets.symmetric(vertical: 5.0.h, horizontal: 5.0.h),
-            border: OutlineInputBorder(
+            border: const OutlineInputBorder(
               borderSide: BorderSide(color: AppColors.WHITE_GREY, width: 1.0),
             ),
-            enabledBorder: OutlineInputBorder(
+            enabledBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: AppColors.WHITE_GREY, width: 1.0),
             ),
-            focusedBorder: OutlineInputBorder(
+            focusedBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: AppColors.ORANGE, width: 1.0),
             ),
           ),

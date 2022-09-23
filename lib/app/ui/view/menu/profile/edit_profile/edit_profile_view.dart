@@ -109,7 +109,7 @@ class EditProfileView extends BaseView<EditProfileController> {
           children: [
             CircleAvatar(
               backgroundColor: AppColors.ORANGE,
-              backgroundImage: AssetImage(AppAssets.appbar),
+              backgroundImage: const AssetImage(AppAssets.appbar),
               radius: 35.r,
             ),
             Positioned(
@@ -123,7 +123,7 @@ class EditProfileView extends BaseView<EditProfileController> {
                       width: 4,
                       color: Colors.orange,
                     )),
-                child: Icon(
+                child: const Icon(
                   Icons.edit,
                   size: 12,
                   color: Colors.white,
@@ -168,20 +168,20 @@ class EditProfileView extends BaseView<EditProfileController> {
       child: Container(
         width: 330.w,
         height: 30.h,
-        margin: AppPadding.guideLine9,
+        margin: AppPadding.horizontal9,
         child: DropdownSearch<String>(
           dropdownButtonProps: DropdownButtonProps(
             icon: Transform.translate(
-                offset: Offset(-8, 0),
+                offset: const Offset(-8, 0),
                 child: Image.asset(AppAssets.dropdown_icon)),
             padding: EdgeInsets.only(left: 20.w),
           ),
-          dropdownDecoratorProps: DropDownDecoratorProps(
+          dropdownDecoratorProps: const DropDownDecoratorProps(
             dropdownSearchDecoration: InputDecoration(
               filled: true,
               fillColor: AppColors.WHITE,
               contentPadding:
-                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
+                  EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
               border: OutlineInputBorder(
                 borderSide: BorderSide(color: AppColors.WHITE_GREY, width: 1.0),
               ),
@@ -214,7 +214,7 @@ class EditProfileView extends BaseView<EditProfileController> {
           subtitle1: AppTextStyle().getSfProDisplayRegular_H5(AppColors.BLACK),
         ),
       ),
-      child: Container(
+      child: SizedBox(
         width: 330.w,
         height: 30.h,
         child: CustomDropdownButtonFormField(
@@ -241,7 +241,7 @@ class EditProfileView extends BaseView<EditProfileController> {
           subtitle1: AppTextStyle().getSfProDisplayRegular_H5(AppColors.BLACK),
         ),
       ),
-      child: Container(
+      child: SizedBox(
         width: 330.w,
         height: 30.h,
         child: CustomDropdownButtonFormField(
@@ -268,7 +268,7 @@ class EditProfileView extends BaseView<EditProfileController> {
           subtitle1: AppTextStyle().getSfProDisplayRegular_H5(AppColors.BLACK),
         ),
       ),
-      child: Container(
+      child: SizedBox(
         width: 330.w,
         height: 30.h,
         child: CustomDropdownButtonFormField(
@@ -290,11 +290,11 @@ class EditProfileView extends BaseView<EditProfileController> {
 
   buildShowMeOtherSwitch() {
     return Padding(
-      padding: AppPadding.guideLine9,
+      padding: AppPadding.horizontal5,
       child: Card(
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 10.0.w),
-          width: 350.w,
+          width: 360.w,
           height: 30.h,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -302,7 +302,7 @@ class EditProfileView extends BaseView<EditProfileController> {
               Text('show_me_other'.tr,
                   style:
                       appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK)),
-              Spacer(),
+              const Spacer(),
               CustomCupertinoSwitch(
                 value: controller.toggle,
                 onChanged: (value) {

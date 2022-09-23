@@ -21,40 +21,40 @@ class BaseCommonWidgets implements _CommonWidgetsInterface {
       backgroundColor: Colors.black45,
       barBlur: 8.0,
       snackPosition: SnackPosition.BOTTOM,
-      margin: EdgeInsets.only(bottom: 10.0, left: 10.0, right: 10.0),
-      duration: Duration(seconds: 2),
+      margin: const EdgeInsets.only(bottom: 10.0, left: 10.0, right: 10.0),
+      duration: const Duration(seconds: 2),
     );
   }
 
   @override
   void showErrorSnackBar({String title = "", String message = ""}) {
     Get.snackbar(title, message,
-        backgroundColor: Color(0x8AD32F2F),
+        backgroundColor: const Color(0x8AD32F2F),
         barBlur: 10.0,
         snackPosition: SnackPosition.BOTTOM,
-        margin: EdgeInsets.only(bottom: 10.0, left: 10.0, right: 10.0),
-        duration: Duration(seconds: 2),
-        icon: Icon(Icons.error, color: Colors.white)
+        margin: const EdgeInsets.only(bottom: 10.0, left: 10.0, right: 10.0),
+        duration: const Duration(seconds: 2),
+        icon: const Icon(Icons.error, color: Colors.white)
     );
   }
 
   @override
   void showSuccessSnackBar({String title = "", String message = ""}) {
     Get.snackbar(title, message,
-        backgroundColor: Color(0x8A2E7D32),
+        backgroundColor: const Color(0x8A2E7D32),
         barBlur: 10.0,
         snackPosition: SnackPosition.BOTTOM,
-        margin: EdgeInsets.only(bottom: 10.0, left: 10.0, right: 10.0),
-        duration: Duration(seconds: 2),
-        icon: Icon(Icons.check_circle, color: Colors.white)
+        margin: const EdgeInsets.only(bottom: 10.0, left: 10.0, right: 10.0),
+        duration: const Duration(seconds: 2),
+        icon: const Icon(Icons.check_circle, color: Colors.white)
     );
   }
 
   @override
   void showSimpleSnackBar({String message = ""}) {
     Get.showSnackbar(GetBar(
-      messageText: Text(message, style: TextStyle(color: Colors.white)),
-      duration: Duration(seconds: 2),
+      messageText: Text(message, style: const TextStyle(color: Colors.white)),
+      duration: const Duration(seconds: 2),
     ));
   }
 
@@ -62,9 +62,9 @@ class BaseCommonWidgets implements _CommonWidgetsInterface {
   void showSimpleErrorSnackBar({String message = ""}) {
     Get.showSnackbar(GetBar(
       backgroundColor: Colors.red,
-      icon: Icon(Icons.error, color: Colors.white),
-      messageText: Text(message, style: TextStyle(color: Colors.white)),
-      duration: Duration(seconds: 3),
+      icon: const Icon(Icons.error, color: Colors.white),
+      messageText: Text(message, style: const TextStyle(color: Colors.white)),
+      duration: const Duration(seconds: 3),
     ));
   }
 
@@ -72,9 +72,9 @@ class BaseCommonWidgets implements _CommonWidgetsInterface {
   void showSimpleSuccessSnackBar({String message = ""}) {
     Get.showSnackbar(GetBar(
       backgroundColor: Colors.green,
-      icon: Icon(Icons.check_circle, color: Colors.white),
-      messageText: Text(message, style: TextStyle(color: Colors.white)),
-      duration: Duration(seconds: 3),
+      icon: const Icon(Icons.check_circle, color: Colors.white),
+      messageText: Text(message, style: const TextStyle(color: Colors.white)),
+      duration: const Duration(seconds: 3),
     ));
   }
 
@@ -90,12 +90,12 @@ class BaseCommonWidgets implements _CommonWidgetsInterface {
           color: Colors.black26,
           child: Center(
             child: Container(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10.0)
                 ),
-                child: CircularProgressIndicator()),
+                child: const CircularProgressIndicator()),
           ),
         ),
         barrierDismissible: false,

@@ -29,7 +29,7 @@ class AboutView extends BaseView<AboutController> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Notification ID'),
+                const Text('Notification ID'),
                 Text(
                   'sdg234d2f34s2A234SDSD234234',
                   style: appTextStyle

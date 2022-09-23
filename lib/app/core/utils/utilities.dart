@@ -230,9 +230,9 @@ class Utilities {
       String version = packageInfo.version;
       String buildNumber = packageInfo.buildNumber;
       if (Platform.isAndroid) {
-        return "Version " + version;
+        return "Version $version";
       } else {
-        return "Version " + version;
+        return "Version $version";
       }
     });
     return null;
@@ -241,15 +241,16 @@ class Utilities {
   Color? colorConvert(String color) {
     color = color.replaceAll("#", "");
     if (color.length == 6) {
-      return Color(int.parse("0xFF" + color));
+      return Color(int.parse("0xFF$color"));
     } else if (color.length == 8) {
-      return Color(int.parse("0x" + color));
+      return Color(int.parse("0x$color"));
     }
     return null;
   }
 
   void logWhenDebug(String tag, String message) {
-    if (kDebugMode)
+    if (kDebugMode) {
       log("$tag => ${message.toString()}", name: AppStrings.APP_NAME);
+    }
   }
 }

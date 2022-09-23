@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:apmatik/app/core/base/base_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,10 +14,10 @@ class RegisterController extends BaseController {
   PhoneNumber? phoneNumberWithRegion;
 
   RxBool validForm = false.obs;
-    RxBool showhideErrorMessage = true.obs;
+  RxBool showhideErrorMessage = true.obs;
   var langStorage = 0;
   String? selectedValue = 'Erkek';
-  List<String> listOfValue = ['Erkek', 'Kadın'];
+  List<String> listOfValue = ['Erkek', 'Kadın', 'Diğer'];
 
   TextEditingController nameSurnameController = TextEditingController();
   TextEditingController emailController = TextEditingController();

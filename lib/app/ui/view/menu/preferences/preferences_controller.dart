@@ -50,8 +50,4 @@ class PreferencesController extends BaseController {
     Get.toNamed('about');
   }
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
 }

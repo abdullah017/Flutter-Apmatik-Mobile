@@ -39,11 +39,11 @@ class CustonNotificationIcon extends StatelessWidget {
               child: Container(
                 width: 7,
                 height: 7,
-                padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                 decoration:
-                    BoxDecoration(shape: BoxShape.circle, color: Colors.black),
+                    const BoxDecoration(shape: BoxShape.circle, color: Colors.black),
                 alignment: Alignment.center,
-                child: Text('1'),
+                child: const Text('1'),
               ),
             )
           ],

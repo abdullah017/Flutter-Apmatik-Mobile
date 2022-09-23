@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last
+
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
@@ -63,7 +65,7 @@ class QuestionnaireCardWidget extends StatelessWidget {
                     child: Container(
                       width: 70.w,
                       height: 20.h,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: AppColors.ORANGE,
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(30),
@@ -108,7 +110,7 @@ class QuestionnaireCardWidget extends StatelessWidget {
                     description ??
                         'Apartman Boyanması için apartmanımızda anket başlamıştır. Hemen katılıp bizimle fikirlerini paylaş!',
                     style: AppTextStyle()
-                        .getSfProDisplayRegular_H6(AppColors.BLACK),
+                        .getSfProDisplayRegular_H66(AppColors.BLACK),
                   ),
                   buildStackedImages(direction: TextDirection.rtl),
                 ],
@@ -129,7 +131,7 @@ class QuestionnaireCardWidget extends StatelessWidget {
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5),
-                          side: BorderSide(color: AppColors.ORANGE),
+                          side: const BorderSide(color: AppColors.ORANGE),
                         ),
                       ),
                       fixedSize: MaterialStateProperty.all<Size>(
@@ -152,8 +154,8 @@ class QuestionnaireCardWidget extends StatelessWidget {
 Widget buildStackedImages({
   TextDirection direction = TextDirection.ltr,
 }) {
-  final double size = 30;
-  final double xShift = 10;
+  const double size = 30;
+  const double xShift = 10;
   final urlImages = [
     'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80',
     'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
@@ -168,7 +170,7 @@ Widget buildStackedImages({
       ...items,
       ClipOval(
         child: Container(
-          padding: EdgeInsets.all(5),
+          padding: const EdgeInsets.all(5),
           color: Colors.white,
           child: ClipOval(
               child: Container(
@@ -190,11 +192,11 @@ Widget buildStackedImages({
 }
 
 Widget buildImage(String urlImage) {
-  final double borderSize = 5;
+  const double borderSize = 5;
 
   return ClipOval(
     child: Container(
-      padding: EdgeInsets.all(borderSize),
+      padding: const EdgeInsets.all(borderSize),
       color: Colors.white,
       child: ClipOval(
         child: Image.network(

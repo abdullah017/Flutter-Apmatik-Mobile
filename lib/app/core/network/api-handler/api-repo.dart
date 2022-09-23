@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:apmatik/app/core/constant/api_constants.dart';
 import 'package:apmatik/app/core/network/api-handler/api-extention.dart';
 

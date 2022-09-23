@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -31,6 +33,6 @@ class DashBoardController extends BaseController {
   void onInit() {
     super.onInit();
     addDuyuru();
-    tabIndex = 0;
+    tabIndex.value = 0;
   }
 }

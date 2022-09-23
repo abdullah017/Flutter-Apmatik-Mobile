@@ -1,56 +1,77 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/constant/padding_constants.dart';
+import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/view/menu/staff/staff_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 
 class StaffView extends BaseView<StaffController> {
   StaffView({Key? key})
-      : super(
-          key: key,
-        
-        );
+      : super(key: key, appBarHide: false // false
+            );
   @override
-  Widget vBuilder() =>  ListView(
+  Widget vBuilder() => ListView(
         children: [
-          Container(
-            width: Get.width,
-            height: Get.height * 0.8,
-            child: ListView.builder(
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 15.h),
-              shrinkWrap: true,
-              itemCount: 5,
-              itemBuilder: (context, index) {
-                return Card(
-                  child: ListTile(
-                    dense: true,
-                    isThreeLine: true,
-                    leading: ClipRRect(
-                      borderRadius: BorderRadius.circular(8.0),
-                      child: Image.asset(
-                        AppAssets.appbar,
-                        width: 50,
-                        height: 50,
+          ListView.builder(
+            clipBehavior: Clip.none,
+            padding: AppPadding.horizontal10Vertical15,
+            shrinkWrap: true,
+            itemCount: 5,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: AppPadding.allPadding8,
+                decoration: BoxDecoration(
+                  boxShadow: const <BoxShadow>[
+                    BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 4.0, // soften the shadow
+                      spreadRadius: 1.0, //extend the shadow
+                      offset: Offset(
+                        0.0, // Move to right 10  horizontally
+                        3.0, // Move to bottom 10 Vertically
                       ),
-                    ),
-                    title: Text(
-                      'YÖNETİCİ 1',
-                      style:
-                          appTextStyle.getSfProDisplayBold_h6(AppColors.ORANGE),
-                    ),
-                    subtitle: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Apartman Yöneticisi'),
-                        Text('+90 548 865 56381'),
-                      ],
+                    )
+                  ],
+                  borderRadius: BorderRadius.circular(5),
+                  color: Colors.white,
+                ),
+                child: ListTile(
+                  dense: true,
+                  isThreeLine: true,
+                  leading: ClipRRect(
+                    borderRadius:
+                        const BorderRadius.all(Radius.elliptical(5, 5)),
+                    child: Image.asset(
+                      AppAssets.appbar,
                     ),
                   ),
-                );
-              },
-            ),
+                  title: Text(
+                    'YÖNETİCİ 1',
+                    style:
+                        appTextStyle.getSfProDisplayBold_h6(AppColors.ORANGE),
+                  ),
+                  subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Apartman Yöneticisi',
+                        style: AppTextStyle()
+                            .getSfProDisplayRegular_H5(Colors.black),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        '+90 548 865 56381',
+                        style: AppTextStyle()
+                            .getSfProDisplayLight_H5(Colors.black),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
           )
         ],
       );

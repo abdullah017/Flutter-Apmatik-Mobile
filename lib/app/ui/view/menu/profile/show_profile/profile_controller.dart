@@ -20,6 +20,6 @@ class ProfileController extends BaseController {
   @override
   void onInit() {
     super.onInit();
-    tabIndex = 4;
+    tabIndex.value = 4;
   }
 }

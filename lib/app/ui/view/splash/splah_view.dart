@@ -11,6 +11,8 @@ import 'package:get/get.dart';
 import 'splash_controller.dart';
 
 class SplashView extends BaseView<SplashController> {
+  SplashView({super.key});
+
   @override
   Widget vBuilder() => Scaffold(
         body: Stack(
@@ -39,7 +41,7 @@ class SplashView extends BaseView<SplashController> {
           stops: [0, 0.9],
         ),
       ),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(
               image: AssetImage(AppAssets.splashBackground), fit: BoxFit.fill)),
     );
@@ -76,7 +78,7 @@ class SplashView extends BaseView<SplashController> {
           ),
           TextButton(
             style: ButtonStyle(
-              fixedSize: MaterialStateProperty.all<Size>(Size(260, 40)),
+              fixedSize: MaterialStateProperty.all<Size>(const Size(260, 40)),
             ),
             onPressed: () {
               controller.goRegisterPage();

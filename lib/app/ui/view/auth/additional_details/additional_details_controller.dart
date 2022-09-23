@@ -14,7 +14,7 @@
 ///     },
 /// )
 
-// ignore_for_file: unused_local_variable
+// ignore_for_file: unused_local_variable, prefer_typing_uninitialized_variables, avoid_print
 
 import 'dart:io';
 
@@ -48,7 +48,7 @@ class AdditionalDetailsController extends BaseController {
   var isCheck = false.obs;
 
   String? selectedValue = 'Evli';
-  List<String> listOfValue = ['Evli', 'Bekar'];
+  List<String> listOfValue = ['Evli', 'Bekar', 'Dul'];
   String? selectedJobValue = 'Öğrenci';
   List<String> listOfJobValue = ['Öğrenci', 'Bekar'];
   String? selectedChildValue = 'Çocuğum Yok';
@@ -66,11 +66,6 @@ class AdditionalDetailsController extends BaseController {
   }
 
   @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
   void onClose() {
     dateText;
   }
@@ -79,7 +74,7 @@ class AdditionalDetailsController extends BaseController {
   void chooseDate() async {
     if (Platform.isAndroid) {
       DateTime? pickedDate = await showDatePicker(
-        locale: Locale('tr'),
+        locale: const Locale('tr'),
         context: Get.context!,
         initialDate: selectedDate.value,
         firstDate: DateTime(1900),
@@ -129,7 +124,7 @@ class AdditionalDetailsController extends BaseController {
                 )
               ],
               cancelButton: CupertinoActionSheetAction(
-                child: Text('Tamam'),
+                child: const Text('Tamam'),
                 onPressed: () {
                   Get.close(0);
                 },

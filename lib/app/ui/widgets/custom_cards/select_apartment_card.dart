@@ -32,7 +32,7 @@ class SelectApartmentCard extends StatelessWidget {
             splashColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onPressed: onPressed,
-            icon: Icon(
+            icon: const Icon(
               Icons.arrow_forward_outlined,
               color: AppColors.BLACK,
             ),

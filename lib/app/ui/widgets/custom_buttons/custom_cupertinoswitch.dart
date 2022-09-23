@@ -19,7 +19,7 @@ class CustomCupertinoSwitch extends StatelessWidget {
           border: Border.all(
               color: value ? CupertinoColors.activeOrange : AppColors.BLACK12,
               width: 2),
-          borderRadius: BorderRadius.all(Radius.circular(20))),
+          borderRadius: const BorderRadius.all(Radius.circular(20))),
       child: SizedBox(
         width: 33.w,
         height: 17.h,

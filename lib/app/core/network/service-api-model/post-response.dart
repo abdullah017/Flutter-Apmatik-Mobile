@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 class PostResponse {
   bool? success;
   String? message;
@@ -10,9 +12,9 @@ class PostResponse {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['success'] = this.success;
-    data['message'] = this.message;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['success'] = success;
+    data['message'] = message;
     return data;
   }
 }

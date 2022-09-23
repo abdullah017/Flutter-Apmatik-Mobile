@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last
+
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/core/constant/padding_constants.dart';
@@ -49,7 +51,7 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
   final AppPadding appPadding = AppPadding();
   final FormValidationHelper formValidationHelper = FormValidationHelper();
 
-  T get controller => GetInstance().find<T>(tag: tag);
+  T get controller => GetInstance(). find<T>(tag: tag);
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +75,7 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
               ? controller.isLogin
                   ? controller.isPageMenuItem!
                       ? buildBackButtonAppBar(controller.pageTitle)
-                      : CustomLoginUserAppBar()
+                      : const CustomLoginUserAppBar()
                   : buildBackButtonAppBar(controller.pageTitle)
               : null,
           bottomNavigationBar: !controller.navBarHide.value
@@ -121,7 +123,7 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
                                       controller.update();
                                     },
                                     unselectedLabelStyle:
-                                        TextStyle(fontSize: 0),
+                                        const TextStyle(fontSize: 0),
                                     unselectedFontSize: 0,
                                     // unselectedIconTheme: IconThemeData(
                                     //   size: 24,
@@ -130,7 +132,8 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
                                     // selectedIconTheme: IconThemeData(
                                     //   size: 24,
                                     // ),
-                                    selectedLabelStyle: TextStyle(fontSize: 0),
+                                    selectedLabelStyle:
+                                        const TextStyle(fontSize: 0),
                                     type: BottomNavigationBarType.fixed,
                                     landscapeLayout:
                                         BottomNavigationBarLandscapeLayout
@@ -139,7 +142,7 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
                                     selectedItemColor: Colors.orange,
                                     showSelectedLabels: false,
                                     showUnselectedLabels: false,
-                                    currentIndex: controller.tabIndex,
+                                    currentIndex: controller.tabIndex.value,
                                     items: [
                                       _bottomNavbarItem(
                                         AppAssets.card_icon,
@@ -163,25 +166,6 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
                                       ),
                                     ]),
                               ],
-                            ),
-                            AnimatedPositioned(
-                              bottom: Get.width == 390 ? 25 : 0,
-                              left: constraints.maxWidth /
-                                      5 *
-                                      (controller
-                                          .tabIndex) + //space of current index
-                                  (constraints.maxWidth /
-                                      9) - // minimize the half of it
-                                  30, // minimize the width of dash
-                              child: Container(
-                                width: 50,
-                                height: 3,
-                                decoration: const BoxDecoration(
-                                    color: AppColors.ORANGE),
-                              ),
-                              duration: const Duration(
-                                milliseconds: 500,
-                              ),
                             ),
                           ],
                         ),
@@ -208,7 +192,7 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
         elevation: 0,
         toolbarHeight: preferredSize.height,
         title: Transform.translate(
-          offset: Offset(-20, 0),
+          offset: const Offset(-20, 0),
           child: Text(title ?? '',
               style: controller.isSettingItem!
                   ? AppTextStyle().get_SfPro_Medium_H6(AppColors.BLACK)
@@ -219,9 +203,9 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
             Get.back();
           },
           child: Container(
-            padding: AppPadding.guideLine20,
-            width: 24,
-            height: 24,
+            padding: AppPadding.horizontal20,
+            width: 40,
+            height: 40,
             child: controller.isSettingItem!
                 ? Image.asset(
                     AppAssets.black_back_button_icon,
@@ -229,8 +213,8 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
                   )
                 : SvgPicture.asset(
                     'assets/icons/back_button.svg',
-                    width: 12,
-                    height: 12,
+                    width: 40,
+                    height: 40,
                   ),
           ),
         ),
@@ -240,16 +224,17 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
 
   _bottomNavbarItem(String assetName, String label) {
     return BottomNavigationBarItem(
-      icon: Image.asset(
+      icon: SvgPicture.asset(
         assetName,
-        width: 25.w,
-        height: 22.h,
+        width: 20.w,
+        height: 25.h,
         fit: BoxFit.contain,
       ),
-      activeIcon: Image.asset(
+      activeIcon: SvgPicture.asset(
         assetName,
-        width: 25.w,
-        height: 22.h,
+        width: 20.w,
+        height: 25.h,
+        color: AppColors.ORANGE,
         fit: BoxFit.contain,
       ),
       label: label,

@@ -80,7 +80,7 @@ class PhonenumberWithCountryCode extends StatelessWidget {
                     initialValue: PhoneNumber(isoCode: 'TR'),
                     textFieldController: TextEditingController(),
                     formatInput: false,
-                    keyboardType: TextInputType.numberWithOptions(
+                    keyboardType: const TextInputType.numberWithOptions(
                         signed: true, decimal: true),
                     inputDecoration: const InputDecoration(
                       contentPadding: EdgeInsets.only(bottom: 4),

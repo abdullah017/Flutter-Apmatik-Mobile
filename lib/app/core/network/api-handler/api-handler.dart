@@ -1,4 +1,4 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, avoid_print, constant_identifier_names
 
 import 'dart:async';
 import 'package:alice/alice.dart';

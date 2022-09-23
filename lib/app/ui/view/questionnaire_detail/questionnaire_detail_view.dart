@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last
+
 import 'package:apmatik/app/core/base/base_common_widget.dart';
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
@@ -12,7 +14,7 @@ class QuestionnaireDetailView extends BaseView<QuestionnaireDetailController> {
   @override
   Widget vBuilder() => ListView(
         children: [
-          QuestionnaireDetailCardWidget(
+          const QuestionnaireDetailCardWidget(
             imageUrl:
                 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1clx_t9_PqFR5EcpZcdpBpJdYMmgSB1wecQ&usqp=CAU',
             title: 'Apartman Isı Yalıtımı',
@@ -24,14 +26,14 @@ class QuestionnaireDetailView extends BaseView<QuestionnaireDetailController> {
             itemCount: 1,
             itemBuilder: ((context, index) {
               return Container(
-                margin: EdgeInsets.only(top: 10, bottom: 10),
+                margin: const EdgeInsets.only(top: 10, bottom: 10),
                 width: 390.w,
                 color: AppColors.WHITE,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
                       child: Text('Apartmanın Rengi'),
                     ),
                     ListView.builder(
@@ -73,7 +75,7 @@ class QuestionnaireDetailView extends BaseView<QuestionnaireDetailController> {
                                 .getSfProDisplayRegular_H5(AppColors.ORANGE)),
                       ),
                     ),
-                    TextSpan(text: 'okudum kabul ediyorum'),
+                    const TextSpan(text: 'okudum kabul ediyorum'),
                   ],
                   style:
                       appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK)),
@@ -92,13 +94,16 @@ class QuestionnaireDetailView extends BaseView<QuestionnaireDetailController> {
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
-                      side: BorderSide(color: AppColors.ORANGE),
+                      side: const BorderSide(color: AppColors.ORANGE),
                     ),
                   ),
                 ),
                 onPressed: () {
                   if (controller.selectedValue != null) {
                     showSimple(message: 'Ankete Katıldığınız için teşekkürler');
+                    Future.delayed(const Duration(seconds: 3), () {
+                      Get.toNamed('home'); // Prints after 1 second.
+                    });
                   } else {
                     showSimple(message: 'Lütfen seçeneklerden birini seçin');
                   }
@@ -109,7 +114,7 @@ class QuestionnaireDetailView extends BaseView<QuestionnaireDetailController> {
 
   buildRadioButton(dynamic value, dynamic groupValue, String? text,
       Function(dynamic)? onChanged) {
-    return Container(
+    return SizedBox(
       height: 30.h,
       child: RadioListTile(
           dense: true,

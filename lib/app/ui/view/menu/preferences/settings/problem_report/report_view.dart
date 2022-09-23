@@ -1,5 +1,6 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/ui/view/menu/preferences/settings/problem_report/report_controller.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_elevated_button.dart';
 import 'package:dropdown_search/dropdown_search.dart';
@@ -12,119 +13,116 @@ class ReportView extends BaseView<ReportController> {
   ReportView({Key? key})
       : super(
           key: key,
-         appBarHide: false,
+          appBarHide: false,
         );
   @override
-  Widget vBuilder() =>  Form(
+  Widget vBuilder() => Form(
         key: controller.reportFormKey,
         child: ListView(
+          padding: AppPadding.horizontal10Vertical90,
           children: [
             SizedBox(
               height: 15.h,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 5.h),
-              child: Text(
-                'nameSurname'.tr,
-                style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
+            Text(
+              'nameSurname'.tr,
+              style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
+            ),
+            SizedBox(
+              height: 5.h,
+            ),
+            SizedBox(
+              width: 330.w,
+              height: 30.h,
+              child: TextFormField(
+                controller: controller.nameSurnameController,
+                validator: (val) {
+                  return controller.formValidationHelper
+                      .nameSurnameValidator(val!);
+                },
+                decoration: InputDecoration(
+                  fillColor: AppColors.WHITE,
+                  //hintText: 'Hasan Turan',
+                  hintStyle:
+                      appTextStyle.getSfProDisplayRegular_H5(AppColors.ORANGE),
+                  contentPadding: EdgeInsets.symmetric(
+                      vertical: 10.0.h, horizontal: 10.0.h),
+                  border: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                  ),
+                ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0.w),
-              child: Container(
+            SizedBox(
+              height: 15.h,
+            ),
+            Text(
+              'causeProblem'.tr,
+              style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
+            ),
+            SizedBox(
+              height: 5.h,
+            ),
+            Theme(
+              data: ThemeData(
+                  textTheme: TextTheme(
+                      subtitle1: appTextStyle
+                          .getSfProDisplayMedium_H6(AppColors.ORANGE))),
+              child: SizedBox(
                 width: 330.w,
                 height: 30.h,
-                child: TextFormField(
-                  controller: controller.nameSurnameController,
-                  validator: (val) {
-                    return controller.formValidationHelper
-                        .nameSurnameValidator(val!);
-                  },
-                  decoration: InputDecoration(
-                    fillColor: AppColors.WHITE,
-                    //hintText: 'Hasan Turan',
-                    hintStyle: appTextStyle
-                        .getSfProDisplayRegular_H5(AppColors.ORANGE),
-                    contentPadding: EdgeInsets.symmetric(
-                        vertical: 10.0.h, horizontal: 10.0.h),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey, width: 2.0),
+                child: DropdownSearch<String>(
+                  dropdownButtonProps: DropdownButtonProps(
+                    padding: EdgeInsets.only(left: 20.w),
+                  ),
+                  dropdownDecoratorProps: const DropDownDecoratorProps(
+                    dropdownSearchDecoration: InputDecoration(
+                      contentPadding: EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 10.0),
+                      border: OutlineInputBorder(),
                     ),
                   ),
+                  popupProps: PopupProps.menu(
+                    showSearchBox: true,
+                    showSelectedItems: true,
+                    disabledItemFn: (String s) => s.startsWith('I'),
+                  ),
+                  items: controller.joblist,
+                  onChanged: print,
+                  //show selected item
+                  selectedItem: "Uygulama",
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 5.h),
-              child: Text(
-                'causeProblem'.tr,
-                style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
-              ),
+            SizedBox(
+              height: 15.h,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
-              child: Theme(
-                data: ThemeData(
-                    textTheme: TextTheme(
-                        subtitle1: appTextStyle
-                            .getSfProDisplayMedium_H6(AppColors.ORANGE))),
-                child: Container(
-                  width: 330.w,
-                  height: 30.h,
-                  child: DropdownSearch<String>(
-                    dropdownButtonProps: DropdownButtonProps(
-                      padding: EdgeInsets.only(left: 20.w),
-                    ),
-                    dropdownDecoratorProps: DropDownDecoratorProps(
-                      dropdownSearchDecoration: InputDecoration(
-                        contentPadding: const EdgeInsets.symmetric(
-                            vertical: 10.0, horizontal: 10.0),
-                        border: OutlineInputBorder(),
-                      ),
-                    ),
-                    popupProps: PopupProps.menu(
-                      showSearchBox: true,
-                      showSelectedItems: true,
-                      disabledItemFn: (String s) => s.startsWith('I'),
-                    ),
-                    items: controller.joblist,
-                    onChanged: print,
-                    //show selected item
-                    selectedItem: "Uygulama",
-                  ),
-                ),
-              ),
+            Text(
+              'description'.tr,
+              style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 5.h),
-              child: Text(
-                'description'.tr,
-                style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
-              ),
+            SizedBox(
+              height: 5.h,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.0.w),
-              child: Container(
-                width: 330.w,
-                height: 137.h,
-                child: TextFormField(
-                  controller: controller.descriptionController,
-                  validator: (val) {
-                    return null;
-                  },
-                  maxLines: 9,
-                  style:
-                      appTextStyle.getSfProDisplayRegular_H6(AppColors.BLACK),
-                  decoration: InputDecoration(
-                    fillColor: AppColors.WHITE,
-                    //hintText: 'Hasan Turan',
-                    hintStyle: appTextStyle
-                        .getSfProDisplayRegular_H5(AppColors.ORANGE),
-                    contentPadding: EdgeInsets.symmetric(
-                        vertical: 10.0.h, horizontal: 10.0.h),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey, width: 2.0),
-                    ),
+            SizedBox(
+              width: 330.w,
+              height: 137.h,
+              child: TextFormField(
+                controller: controller.descriptionController,
+                validator: (val) {
+                  return null;
+                },
+                maxLines: 9,
+                style: appTextStyle.getSfProDisplayRegular_H6(AppColors.BLACK),
+                decoration: InputDecoration(
+                  fillColor: AppColors.WHITE,
+                  //hintText: 'Hasan Turan',
+                  hintStyle:
+                      appTextStyle.getSfProDisplayRegular_H5(AppColors.ORANGE),
+                  contentPadding: EdgeInsets.symmetric(
+                      vertical: 10.0.h, horizontal: 10.0.h),
+                  border: const OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey, width: 2.0),
                   ),
                 ),
               ),

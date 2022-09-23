@@ -1,4 +1,6 @@
 
+// ignore_for_file: constant_identifier_names, prefer_interpolation_to_compose_strings
+
 /// This class defines all Api EndPoints
 class ApiConstant {
 

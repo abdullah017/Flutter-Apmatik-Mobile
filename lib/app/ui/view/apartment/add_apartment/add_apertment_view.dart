@@ -101,7 +101,7 @@ class AddApertmentView extends BaseView<AddApertmentController> {
 
   Container buildQrImage() {
     return Container(
-        margin: EdgeInsets.only(left: 20),
+        margin: const EdgeInsets.only(left: 20),
         child: Image.asset('assets/images/code.png'));
   }
 

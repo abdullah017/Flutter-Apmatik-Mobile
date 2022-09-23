@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -62,6 +64,16 @@ class AppTextStyle {
         fontStyle: FontStyle.normal,
         color: color);
   }
+
+    TextStyle getSfProDisplayRegular_H66(Color color) {
+    return TextStyle(
+        fontFamily: 'SF Pro Display',
+        fontSize: 12.sp,
+        fontWeight: FontWeight.w400,
+        fontStyle: FontStyle.normal,
+        color: color);
+  }
+
 
   TextStyle getSfProDisplayRegular_H6(Color color) {
     return TextStyle(

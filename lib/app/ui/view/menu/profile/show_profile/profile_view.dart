@@ -20,8 +20,7 @@ class ProfileView extends BaseView<ProfileController> {
 
   buildView() {
     return ListView(
-      padding: EdgeInsets.zero,
-      physics: NeverScrollableScrollPhysics(),
+      padding: AppPadding.guideLine,
       children: [
         Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -29,51 +28,40 @@ class ProfileView extends BaseView<ProfileController> {
             SizedBox(
               height: 80.h,
             ),
-            Container(
+            SizedBox(
               height: Get.width >= 390 ? 250.0.h : 280.h,
-              child: Stack(
-                children: <Widget>[
-                  Positioned(
-                    top: 10.0,
-                    left: 0.0,
-                    right: 0.0,
-                    child: Container(
-                      width: 350.w,
-                      height: Get.width >= 390 ? 230.h : 270.h,
-                      padding: AppPadding.guideLine,
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5.0),
-                            border: Border.all(
-                                color: Colors.grey.withOpacity(0.5),
-                                width: 1.0),
-                            color: Colors.white),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Expanded(
-                              flex: 0,
-                              child: buildUserCardHeader(),
-                            ),
-                            buildUserPhoneNumber(),
-                            buildUserMaritalStatusAndJob(),
-                            buildUserChildrenAndPet(),
-                            Transform.translate(
-                              offset: Offset(0, -10),
-                              child: CustomOutlineTextButton(
-                                fixedSize: Size(310, 35),
-                                buttonText: 'edit_profile'.tr,
-                                onPressed: () {
-                                  controller.goEditProfileView();
-                                },
-                              ),
-                            ),
-                          ],
+              child: SizedBox(
+                width: 350.w,
+                height: Get.width >= 390 ? 230.h : 270.h,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5.0),
+                      border: Border.all(
+                          color: Colors.grey.withOpacity(0.5), width: 1.0),
+                      color: Colors.white),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Expanded(
+                        flex: 0,
+                        child: buildUserCardHeader(),
+                      ),
+                      buildUserPhoneNumber(),
+                      buildUserMaritalStatusAndJob(),
+                      buildUserChildrenAndPet(),
+                      Transform.translate(
+                        offset: const Offset(0, -10),
+                        child: CustomOutlineTextButton(
+                          fixedSize: const Size(310, 35),
+                          buttonText: 'edit_profile'.tr,
+                          onPressed: () {
+                            controller.goEditProfileView();
+                          },
                         ),
                       ),
-                    ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
             SizedBox(
@@ -84,7 +72,6 @@ class ProfileView extends BaseView<ProfileController> {
               shrinkWrap: true,
               children: [
                 Container(
-                    margin: AppPadding.guideLine,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.0),
                         border: Border.all(
@@ -95,7 +82,6 @@ class ProfileView extends BaseView<ProfileController> {
                   height: 10.h,
                 ),
                 Container(
-                    margin: AppPadding.guideLine,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5.0),
                         border: Border.all(
@@ -190,7 +176,7 @@ class ProfileView extends BaseView<ProfileController> {
                             style: appTextStyle
                                 .getSfProDisplaySemiBold_h6(AppColors.BLACK),
                           ),
-                          WidgetSpan(
+                          const WidgetSpan(
                             alignment: PlaceholderAlignment.middle,
                             child: Icon(Icons.circle,
                                 size: 7, color: AppColors.ORANGE),
@@ -225,7 +211,7 @@ class ProfileView extends BaseView<ProfileController> {
         ///
         ///
 
-        controller.cars.length == 0
+        controller.cars.isEmpty
             ? Padding(
                 padding:
                     EdgeInsets.symmetric(horizontal: 20.0.w, vertical: 1.h),
@@ -235,7 +221,7 @@ class ProfileView extends BaseView<ProfileController> {
                       .getSfProDisplayLight_Italic_H6(AppColors.BLACK),
                 ),
               )
-            : Container(
+            : SizedBox(
                 width: 350.w,
                 child: ListView.builder(
                     padding: EdgeInsets.zero,
@@ -273,18 +259,18 @@ class ProfileView extends BaseView<ProfileController> {
                       );
                     }),
               ),
-        controller.cars.length == 0
+        controller.cars.isEmpty
             ? CustomElevatedButton(
-                margin: EdgeInsets.only(top: 10, left: 20),
+                margin: const EdgeInsets.only(top: 10, left: 20),
                 width: 100,
                 height: 30,
                 onPressed: () {},
-                child: Text('Araç Ekle'),
+                child: const Text('Araç Ekle'),
               )
             : Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: CustomOutlineTextButton(
-                  fixedSize: Size(310, 35),
+                  fixedSize: const Size(310, 35),
                   buttonText: 'manage_cars'.tr,
                   onPressed: () {
                     controller.goEditProfileView();
@@ -299,7 +285,7 @@ class ProfileView extends BaseView<ProfileController> {
 
   buildUserChildrenAndPet() {
     return Transform.translate(
-      offset: Offset(0, -15),
+      offset: const Offset(0, -15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -344,7 +330,7 @@ class ProfileView extends BaseView<ProfileController> {
 
   buildUserMaritalStatusAndJob() {
     return Transform.translate(
-      offset: Offset(0, -20),
+      offset: const Offset(0, -20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -366,7 +352,7 @@ class ProfileView extends BaseView<ProfileController> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(right: 40.w),
+            padding: EdgeInsets.only(right: 47.w),
             child: Text.rich(
               TextSpan(
                 text: 'Meslek\n',
@@ -389,7 +375,7 @@ class ProfileView extends BaseView<ProfileController> {
 
   buildUserPhoneNumber() {
     return Transform.translate(
-      offset: Offset(0, -15),
+      offset: const Offset(0, -15),
       child: ListTile(
         minVerticalPadding: 0,
         minLeadingWidth: 0,
@@ -409,7 +395,7 @@ class ProfileView extends BaseView<ProfileController> {
   ListTile buildUserCardHeader() {
     return ListTile(
       leading: CircleAvatar(
-        backgroundImage: AssetImage(
+        backgroundImage: const AssetImage(
           AppAssets.appbar,
         ),
         radius: 25.r,
@@ -428,7 +414,7 @@ class ProfileView extends BaseView<ProfileController> {
           children: [
             Text('mdilmac9@gmail.com',
                 style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK)),
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
             CustomElevatedButton(
@@ -443,7 +429,7 @@ class ProfileView extends BaseView<ProfileController> {
                       backgroundColor: Colors.green,
                       radius: 3.r,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     Text('Komşularım Beni Görebilir',
