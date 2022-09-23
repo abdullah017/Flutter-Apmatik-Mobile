@@ -40,23 +40,28 @@ class GatewayView extends BaseView<GatewayController> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Toplam Borç',
+                      'total_debt'.tr,
                       style: appTextStyle
                           .getSfProDisplayMedium(AppColors.BLACK)
                           .copyWith(height: 2),
                     ),
-                    Text.rich(TextSpan(
-                        text: '2.879,00',
-                        style: appTextStyle
-                            .getSfProDisplayBold_H5(AppColors.ORANGE),
-                        children: [
-                          TextSpan(
-                            text: ' TL',
-                            style: appTextStyle
-                                .getSfProDisplayBold_h6(AppColors.ORANGE),
-                          ),
-                        ])),
-                    Text('\nSon borç ödeme tarihiniz',
+                    Text.rich(
+                      TextSpan(
+                          text: '2.879,00',
+                          style: appTextStyle
+                              .getSfProDisplayBold_H5(AppColors.ORANGE),
+                          children: [
+                            TextSpan(
+                              text: ' TL',
+                              style: appTextStyle
+                                  .getSfProDisplayBold_h6(AppColors.ORANGE),
+                            ),
+                          ]),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text('last_debt_pay'.tr,
                         style: appTextStyle
                             .getSfProDisplayLight_Italic_H6(AppColors.GREY)),
                     Text('20/12/2022',
@@ -76,7 +81,7 @@ class GatewayView extends BaseView<GatewayController> {
             ),
             buildPaymentMethod(
               leading: SvgPicture.asset(AppAssets.card),
-              title: 'Kredi Kartı ile Ödeme',
+              title: 'payment_credit_card'.tr,
               trailing: SvgPicture.asset(AppAssets.back),
             ),
             const SizedBox(
@@ -84,10 +89,10 @@ class GatewayView extends BaseView<GatewayController> {
             ),
             buildPaymentMethod(
                 leading: SvgPicture.asset(AppAssets.fly),
-                title: 'Havele / EFT',
+                title: 'transfer'.tr,
                 trailing: SvgPicture.asset(AppAssets.back)),
             Text(
-              'Ödemeler SSL sertifikası ile doğrulanarak güvenli bir şekilde yapılmaktadır.',
+              'ssl'.tr,
               style: appTextStyle
                   .getSfProDisplayRegular_H7(AppColors.GREY)
                   .copyWith(height: 3),

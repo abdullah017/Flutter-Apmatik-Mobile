@@ -1,5 +1,4 @@
 import 'package:apmatik/app/core/base/base_view.dart';
-import 'package:apmatik/app/ui/view/apartment/add_apartment/add_apertment_controller.dart';
 import 'package:get/get.dart';
 
 class CommonController extends BaseController {
@@ -15,10 +14,10 @@ class CommonController extends BaseController {
 
   void goToHome() {
     box.write('hasApertmen', true).whenComplete(() {
-      Get.toNamed(
+      Get.offAndToNamed(
         'home',
       );
-      Get.delete<AddApertmentController>();
+    
     });
   }
 }
