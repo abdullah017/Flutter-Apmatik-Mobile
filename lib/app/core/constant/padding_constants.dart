@@ -9,6 +9,8 @@ class AppPadding {
       EdgeInsets.symmetric(horizontal: 20.w);
 
   static EdgeInsetsGeometry horizontal9 = EdgeInsets.symmetric(horizontal: 9.w);
+  static EdgeInsetsGeometry horizontal12 =
+      EdgeInsets.symmetric(horizontal: 12.w);
 
   static EdgeInsetsGeometry horizontal10Vertical90 =
       EdgeInsets.symmetric(horizontal: 10.w, vertical: 90.h);

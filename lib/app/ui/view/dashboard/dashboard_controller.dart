@@ -29,6 +29,10 @@ class DashBoardController extends BaseController {
     print(duyuru[0]);
   }
 
+  void navigateGateway() {
+    Get.toNamed('gateway');
+  }
+
   @override
   void onInit() {
     super.onInit();

@@ -36,7 +36,8 @@ abstract class Routes {
   static const REPORT = _Paths.REPORT;
   static const ABOUT = _Paths.ABOUT;
   static const QUESTIONNAIRE = _Paths.QUESTIONNAIRE;
-    static const STAFF = _Paths.STAFF;
+  static const STAFF = _Paths.STAFF;
+  static const GATEWAY = _Paths.GATEWAY;
 }
 
 abstract class _Paths {
@@ -70,5 +71,6 @@ abstract class _Paths {
   static const REPORT = '/report';
   static const ABOUT = '/about';
   static const QUESTIONNAIRE = '/questionnaire_detail';
-    static const STAFF = '/staff';
+  static const STAFF = '/staff';
+  static const GATEWAY = '/gateway';
 }

@@ -9,6 +9,7 @@ class AppAssets {
   static const String placeholder = 'assets/images/placeholder.png';
   static const String staff = 'assets/images/stf.png';
   static const String mng = 'assets/images/mng.png';
+  static const String debit = 'assets/images/debit.png';
 
   ///[ICONS]
 
@@ -49,4 +50,7 @@ class AppAssets {
   static const String edit_icon = 'assets/icons/edit_icon.png';
   static const String gift_icon = 'assets/icons/gift_icon.png';
   static const String remove_icon = 'assets/icons/remove.png';
+  static const String card = 'assets/icons/card.svg';
+  static const String fly = 'assets/icons/fly.svg';
+  static const String back = 'assets/icons/back.svg';
 }

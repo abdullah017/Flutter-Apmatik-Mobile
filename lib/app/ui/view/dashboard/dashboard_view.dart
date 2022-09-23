@@ -72,7 +72,9 @@ class DashBoardView extends BaseView<DashBoardController> {
                                 child: CustomElevatedButton(
                                     width: 90.w,
                                     height: 25.h,
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      controller.navigateGateway();
+                                    },
                                     child: Text(
                                       'Hepsini Öde',
                                       style: AppTextStyle()
