@@ -163,4 +163,13 @@ const Map<String, String> en = {
 
   'phoneNumberSearchText': 'Enter area code or country name',
   'apartment_managers': 'Apartment Managers',
+
+  ///[GATEWAY VIEW TEXTS]
+
+  'total_debt': 'Total Debt',
+  'pay_all': 'Pay All',
+  'last_debt_pay': 'Your last debt payment date',
+  'payment_credit_card': 'Payment by Credit Card',
+  'transfer': 'Wire Transfer / EFT',
+  'ssl': 'Payments are made securely by verifying with an SSL certificate.',
 };

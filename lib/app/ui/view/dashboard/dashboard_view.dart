@@ -61,7 +61,7 @@ class DashBoardView extends BaseView<DashBoardController> {
                             child: ListTile(
                               contentPadding: AppPadding.horizontal20,
                               dense: true,
-                              title: Text('Toplam Borç',
+                              title: Text('total_debt'.tr,
                                   style: appTextStyle.getSfProDisplayMedium_H5(
                                       AppColors.BLACK)),
                               subtitle: Text('2.879,00',
@@ -76,7 +76,7 @@ class DashBoardView extends BaseView<DashBoardController> {
                                       controller.navigateGateway();
                                     },
                                     child: Text(
-                                      'Hepsini Öde',
+                                      'pay_all'.tr,
                                       style: AppTextStyle()
                                           .getSfProDisplayMedium_little(
                                               AppColors.WHITE),
