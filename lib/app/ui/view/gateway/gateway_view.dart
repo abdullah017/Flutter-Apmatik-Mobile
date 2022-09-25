@@ -97,9 +97,10 @@ class GatewayView extends BaseView<GatewayController> {
                   .getSfProDisplayRegular_H7(AppColors.GREY)
                   .copyWith(height: 3),
             ),
-            SvgPicture.asset(
+            Image.asset(
               AppAssets.debit,
-
+              width: 54,
+              height: 20,
             ),
           ],
         ),

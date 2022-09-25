@@ -8,16 +8,16 @@ class RegExpConstans {
   RegExpConstans._init();
 
   /// Sadece Küçük-Büyük [Harf] içerebilir [a-zA-Z0-9ğüşöçİĞÜŞÖÇ]+$
-  final alpha = RegExp(r'^[A-Za-z]+$');
+  final alpha = RegExp(r'^[A-Za-zğüşöçİĞÜŞÖÇ]+$');
 
   /// Sadece [Rakam] içerebilir
   final numeric = RegExp(r'^-?[0-9]+$');
 
   /// Sadece [Alfa Numerik] => Harf yada Rakam içerebilir
-  final alphaNumeric = RegExp(r'^[a-zA-Z0-9]+$');
+  final alphaNumeric = RegExp(r'^[a-zA-Z0-9ğüşöçİĞÜŞÖÇ]+$');
 
   /// Sadece [Harf ve Boşluk] içerebilir
-  final nameExp = RegExp(r'^[A-Za-z-ğüşöçİĞÇ ]+$');
+  final nameExp = RegExp(r'^[a-zA-Z0-9 ğüşöçıİĞÜŞÖÇ]+$');
 
   /// E-posta
   final emailExp = RegExp(

@@ -1,4 +1,5 @@
 import 'package:apmatik/app/core/base/base_view.dart';
+import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
@@ -10,6 +11,7 @@ import 'package:apmatik/app/ui/widgets/custom_buttons/custom_toggle_button.dart'
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 class AddApertmentView extends BaseView<AddApertmentController> {
@@ -102,7 +104,7 @@ class AddApertmentView extends BaseView<AddApertmentController> {
   Container buildQrImage() {
     return Container(
         margin: const EdgeInsets.only(left: 20),
-        child: Image.asset('assets/images/code.png'));
+        child: SvgPicture.asset(AppAssets.qr_icon));
   }
 
   CustomElevatedButton buildReadQrButton() {

@@ -78,7 +78,7 @@ class RegisterView extends BaseView<RegisterController> {
 
   Padding buildPhoneNumber() {
     return Padding(
-      padding: EdgeInsets.only(top: 20.0, left: 20.w,right:20.w),
+      padding: EdgeInsets.only(top: 20.0, left: 20.w, right: 20.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -87,7 +87,6 @@ class RegisterView extends BaseView<RegisterController> {
             style: TextStyle(color: Colors.grey),
           ),
           Container(
-
             decoration: const BoxDecoration(
                 border: Border(
                     bottom: BorderSide(width: 1, color: Color(0xffE6E6E6)))),
@@ -121,21 +120,53 @@ class RegisterView extends BaseView<RegisterController> {
                 SizedBox(
                   height: 50,
                   child: InternationalPhoneNumberInput(
-
                     errorMessage: controller.error.value,
                     selectorButtonOnErrorPadding: 0,
                     locale: controller.langStorage == 0 ? 'tr' : 'en',
                     hintText: 'Telefon Numarası',
+                    ignoreBlank: false,
+                    autoValidateMode: controller.formValidation,
+                    selectorTextStyle: const TextStyle(
+                      color: Colors.black,
+                    ),
+                    selectorConfig: const SelectorConfig(
+                      selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+                      setSelectorButtonAsPrefixIcon: false,
+                      leadingPadding: 0,
+                      showFlags: false,
+                      trailingSpace: false,
+                    ),
+                    searchBoxDecoration:
+                        InputDecoration(labelText: 'phoneNumberSearchText'.tr),
+                    initialValue: controller.phoneNumberWithRegion,
+                    textFieldController: controller.phoneNumberController,
+                    formatInput: false,
+                    keyboardType: const TextInputType.numberWithOptions(
+                        signed: true, decimal: true),
+                    inputDecoration: const InputDecoration(
+                      contentPadding: EdgeInsets.only(bottom: 4, left: 25),
+                      border: InputBorder.none,
+                      enabledBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.transparent, width: 0)),
+                      errorBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.transparent, width: 0)),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.transparent, width: 0)),
+                      floatingLabelAlignment: FloatingLabelAlignment.start,
+                      // labelText: 'Telefon Numarası',
+                    ),
+                    textStyle: const TextStyle(color: Colors.black),
                     onInputValidated: (bool value) {
                       print(value);
                       if (value == true) {
                         controller.validForm.value = true;
                         controller.showhideErrorMessage.value = false;
-                        controller.update();
                       } else {
                         controller.validForm.value = false;
                         controller.showhideErrorMessage.value = true;
-                        controller.update();
                       }
                     },
                     validator: (number) {
@@ -156,43 +187,7 @@ class RegisterView extends BaseView<RegisterController> {
                     onInputChanged: (PhoneNumber number) {
                       print(number.phoneNumber);
                       controller.phoneNumberWithRegion = number;
-
                     },
-                    ignoreBlank: false,
-                    autoValidateMode: controller.formValidation,
-                    selectorTextStyle: const TextStyle(
-                      color: Colors.black,
-                    ),
-                    selectorConfig: const SelectorConfig(
-                      selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
-                      setSelectorButtonAsPrefixIcon: false,
-                      leadingPadding: 0,
-                      showFlags: false,
-                      trailingSpace: false,
-                    ),
-                    searchBoxDecoration:
-                        InputDecoration(labelText: 'phoneNumberSearchText'.tr),
-                    initialValue: PhoneNumber(isoCode: 'TR'),
-                    textFieldController: TextEditingController(),
-                    formatInput: false,
-                    keyboardType: const TextInputType.numberWithOptions(
-                        signed: true, decimal: true),
-                    inputDecoration: const InputDecoration(
-                      contentPadding: EdgeInsets.only(bottom: 4, left: 25),
-                      border: InputBorder.none,
-                      enabledBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.transparent, width: 0)),
-                      errorBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.transparent, width: 0)),
-                      focusedBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.transparent, width: 0)),
-                      floatingLabelAlignment: FloatingLabelAlignment.start,
-                      // labelText: 'Telefon Numarası',
-                    ),
-                    textStyle: const TextStyle(color: Colors.black),
                     onSaved: (PhoneNumber number) {
                       print('On Saved: $number');
                     },
@@ -201,17 +196,19 @@ class RegisterView extends BaseView<RegisterController> {
               ],
             ),
           ),
-            controller.error.value != ''  ?
-            Text(
-              controller.error.value,
-              style: AppTextStyle().getSfProDisplayRegular_Other(Colors.red),
-            ) : SizedBox(),
+          controller.error.value != ''
+              ? Text(
+                  controller.error.value,
+                  style:
+                      AppTextStyle().getSfProDisplayRegular_Other(Colors.red),
+                )
+              : const SizedBox(),
         ],
       ),
     );
   }
 
-   buildGenderDropdownButton() {
+  buildGenderDropdownButton() {
     return SizedBox(
       child: CustomDropdownButtonFormField(
         value: controller.selectedValue,

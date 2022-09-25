@@ -29,7 +29,7 @@ class OtpController extends BaseController
 
   @override
   void onInit() {
-    print(dataForgotPassword[1]['page']);
+    //print(dataForgotPassword[1]['page']);
 
     myFocusNode;
     animationController = AnimationController(
@@ -49,8 +49,7 @@ class OtpController extends BaseController
     dataRegister = box.read('userData');
     if (dataRegister != null) {
       getUserPhone();
-    }
-    if (dataForgotPassword != null) {
+    } else if (dataForgotPassword != null) {
       print(dataForgotPassword);
       phone = dataForgotPassword[0]['number'];
     } else {
@@ -70,12 +69,11 @@ class OtpController extends BaseController
   }
 
   gosAdditionalPage() {
-    if (formKey.currentState!.validate()) {
+    if (formKey.currentState!.validate() && dataForgotPassword == null) {
       Get.offAndToNamed('additional_details');
       print(hasError.value);
       print('EWVET');
-    }
-    if (formKey.currentState!.validate() &&
+    } else if (formKey.currentState!.validate() &&
         dataForgotPassword[1]['page'] == 'forgot') {
       Get.offNamedUntil('login', (route) => false);
       print(hasError.value);

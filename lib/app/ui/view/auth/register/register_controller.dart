@@ -11,7 +11,7 @@ class RegisterController extends BaseController {
   RxBool isRePasswordHidden = true.obs;
   RxString error = "".obs;
   RxBool correctPhone = false.obs;
-  PhoneNumber? phoneNumberWithRegion;
+  PhoneNumber phoneNumberWithRegion = PhoneNumber(isoCode: 'TR');
 
   RxBool validForm = false.obs;
   RxBool showhideErrorMessage = true.obs;
@@ -61,7 +61,7 @@ class RegisterController extends BaseController {
             nameSurnameController.text,
             emailController.text,
             identifyNumberController.text,
-            phoneNumberWithRegion,
+            phoneNumberWithRegion.toString(),
             selectedValue,
             passwordController.text,
           ])

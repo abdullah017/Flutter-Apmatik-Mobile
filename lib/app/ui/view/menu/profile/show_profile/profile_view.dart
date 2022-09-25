@@ -35,7 +35,7 @@ class ProfileView extends BaseView<ProfileController> {
                 width: 350.w,
                 height: Get.width >= 390 ? 230.h : 270.h,
                 child: DecoratedBox(
-                  decoration:CustomDecoration.defaultShadow,
+                  decoration: CustomDecoration.defaultShadow,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -49,7 +49,7 @@ class ProfileView extends BaseView<ProfileController> {
                       Transform.translate(
                         offset: const Offset(0, -10),
                         child: CustomOutlineTextButton(
-                          fixedSize: const Size(310, 35),
+                          fixedSize: const Size(340, 35),
                           buttonText: 'edit_profile'.tr,
                           onPressed: () {
                             controller.goEditProfileView();
@@ -65,7 +65,7 @@ class ProfileView extends BaseView<ProfileController> {
               height: 10.h,
             ),
             ListView(
-              physics:const NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               padding: EdgeInsets.zero,
               shrinkWrap: true,
               children: [
@@ -76,7 +76,7 @@ class ProfileView extends BaseView<ProfileController> {
                   height: 10.h,
                 ),
                 Container(
-                      decoration: CustomDecoration.defaultShadow,
+                    decoration: CustomDecoration.defaultShadow,
                     child: buildAboutMembership()),
               ],
             ),
@@ -383,36 +383,74 @@ class ProfileView extends BaseView<ProfileController> {
     );
   }
 
-
-  Row buildMainCard(){
-    return Row(
-      children: [
-        CircleAvatar(
-          backgroundImage: const AssetImage(
-            AppAssets.appbar,
+  buildMainCard() {
+    return Padding(
+      padding: AppPadding.horizontal20Vertical10,
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+                border: Border.all(color: AppColors.ORANGE, width: 2),
+                borderRadius: BorderRadius.circular(50)),
+            child: CircleAvatar(
+              backgroundImage: const AssetImage(
+                AppAssets.mng,
+              ),
+              radius: 30.r,
+            ),
           ),
-          radius: 30.r,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 5, top: 10),
-          child: Text('Mustafa Dilmaç',
-              style: appTextStyle.get_SfProRounded_SemiBold_h4(AppColors.ORANGE)),
-        ),
-      ],
+          SizedBox(
+            width: 20.w,
+          ),
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 5,
+                ),
+                child: Text('Mustafa Dilmaç',
+                    style: appTextStyle
+                        .get_SfProRounded_SemiBold_h4(AppColors.ORANGE)),
+              ),
+              Text('mdilmac9@gmail.com',
+                  style:
+                      appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK)),
+              const SizedBox(
+                height: 5,
+              ),
+              CustomElevatedButton(
+                  margin: EdgeInsets.zero,
+                  width: 140.w,
+                  height: 20.h,
+                  onPressed: () {},
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.green,
+                        radius: 3.r,
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Text('Komşularım Beni Görebilir',
+                          style: appTextStyle
+                              .getSfProDisplayLight_H6(AppColors.WHITE)),
+                    ],
+                  ))
+            ],
+          )
+        ],
+      ),
     );
   }
 
-
-
-
-
   ListTile buildUserCardHeader() {
     return ListTile(
-
       leading: CircleAvatar(
         backgroundImage: const AssetImage(
           AppAssets.appbar,
-
         ),
         radius: 30.r,
       ),

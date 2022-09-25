@@ -21,8 +21,8 @@ class StaffView extends BaseView<StaffController> {
             itemCount: 5,
             itemBuilder: (context, index) {
               return Container(
-               margin: EdgeInsets.only(bottom: 8),
-                decoration:CustomDecoration.defaultShadow,
+                margin: const EdgeInsets.only(bottom: 8),
+                decoration: CustomDecoration.defaultShadow,
                 child: ListTile(
                   dense: true,
                   isThreeLine: true,
@@ -46,8 +46,8 @@ class StaffView extends BaseView<StaffController> {
                     children: [
                       Text(
                         'Apartman Yöneticisi',
-                        style: AppTextStyle()
-                            .getSfProDisplayRegular_H66(AppColors.BACK_BUTTON_COLOR),
+                        style: AppTextStyle().getSfProDisplayRegular_H66(
+                            AppColors.BACK_BUTTON_COLOR),
                       ),
                       const SizedBox(
                         height: 5,
