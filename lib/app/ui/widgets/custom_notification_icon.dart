@@ -1,8 +1,10 @@
+import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 class CustonNotificationIcon extends StatelessWidget {
-  final IconData iconData;
+
 
   final VoidCallback? onTap;
   final bool hasNotification;
@@ -10,7 +12,6 @@ class CustonNotificationIcon extends StatelessWidget {
   const CustonNotificationIcon({
     Key? key,
     this.onTap,
-    required this.iconData,
     this.hasNotification = false,
   }) : super(key: key);
 
@@ -27,10 +28,7 @@ class CustonNotificationIcon extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Icon(
-                  iconData,
-                  size: 30,
-                ),
+                SvgPicture.asset(AppAssets.notification_icon)
               ],
             ),
             Positioned(
