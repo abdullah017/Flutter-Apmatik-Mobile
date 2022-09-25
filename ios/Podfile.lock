@@ -108,7 +108,7 @@ PODS:
     - PINOperation (~> 1.2.1)
   - PINOperation (1.2.1)
   - PromisesObjC (2.1.1)
-  - Protobuf (3.21.4)
+  - Protobuf (3.21.5)
   - ReachabilitySwift (5.0.0)
   - sensors (0.0.1):
     - Flutter
@@ -237,7 +237,7 @@ SPEC CHECKSUMS:
   PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
   PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
-  Protobuf: 85a48c73d708782e2869564c0438e211aae98e7a
+  Protobuf: 7504b04fffcf6662ad629694db8231f5e744327f
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   sensors: 84eb7a30e47a649e4172b71d6e81be614c280336
   share: 0b2c3e82132f5888bccca3351c504d0003b3b410

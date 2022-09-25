@@ -1,5 +1,6 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/constant/decoration_constants.dart';
 import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/ui/view/menu/preferences/settings/about/about_controller.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +24,7 @@ class AboutView extends BaseView<AboutController> {
             height: 180.h,
             margin: AppPadding.guideLine,
             padding: EdgeInsets.symmetric(horizontal: 20.w),
-            decoration:
-                BoxDecoration(border: Border.all(color: AppColors.WHITE_GREY)),
+           decoration:CustomDecoration.defaultShadow,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,

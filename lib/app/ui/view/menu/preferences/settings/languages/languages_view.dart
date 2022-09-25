@@ -1,5 +1,6 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/constant/decoration_constants.dart';
 import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/view/menu/preferences/settings/languages/languages_controller.dart';
@@ -17,34 +18,29 @@ class LanguagesView extends BaseView<LanguagesController> {
         padding: AppPadding.horizontal10Vertical15,
         child: ListView(
           children: [
-            Card(
-              shape: const RoundedRectangleBorder(
-                  side: BorderSide(color: AppColors.WHITE_GREY, width: 1)),
-              elevation: 0,
-              color: Colors.transparent,
-              borderOnForeground: true,
-              child: RadioListTile<int>(
-                contentPadding: const EdgeInsets.only(left: 10, right: 10),
-                dense: true,
-                activeColor: Colors.orange,
-                value: 0,
-                groupValue: controller.selectedValue,
-                title: Text(
-                  'turkish'.tr,
-                  style:
-                      AppTextStyle().getSfProDisplayRegular_H5(AppColors.BLACK),
-                ),
-                onChanged: (value) {
-                  controller.selectTR(value);
-                },
-              ),
+           Container(
+             decoration: CustomDecoration.defaultShadow,
+             child:  RadioListTile<int>(
+               contentPadding: const EdgeInsets.only(left: 10, right: 10),
+               dense: true,
+               activeColor: Colors.orange,
+               value: 0,
+               groupValue: controller.selectedValue,
+               title: Text(
+                 'turkish'.tr,
+                 style:
+                 AppTextStyle().getSfProDisplayRegular_H5(AppColors.BLACK),
+               ),
+               onChanged: (value) {
+                 controller.selectTR(value);
+               },
+             ),
+           ),
+           const SizedBox(
+              height: 5,
             ),
-            Card(
-              shape: const RoundedRectangleBorder(
-                  side: BorderSide(color: AppColors.WHITE_GREY, width: 1)),
-              elevation: 0,
-              color: Colors.transparent,
-              borderOnForeground: true,
+            Container(
+              decoration: CustomDecoration.defaultShadow,
               child: RadioListTile<int>(
                 contentPadding: const EdgeInsets.only(left: 10, right: 10),
                 dense: true,

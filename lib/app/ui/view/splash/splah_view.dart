@@ -30,20 +30,10 @@ class SplashView extends BaseView<SplashController> {
     return Container(
       width: Get.width,
       height: Get.height * 0.7,
-      foregroundDecoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Color(0xffF7FBFA),
-            Colors.transparent,
-          ],
-          begin: Alignment.bottomCenter,
-          end: Alignment.topCenter,
-          stops: [0, 0.9],
-        ),
-      ),
+
       decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage(AppAssets.splashBackground), fit: BoxFit.fill)),
+              image: AssetImage('assets/images/splash.jpg'), fit: BoxFit.cover)),
     );
   }
 

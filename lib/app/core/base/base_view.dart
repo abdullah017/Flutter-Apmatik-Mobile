@@ -195,7 +195,7 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
           offset: const Offset(-20, 0),
           child: Text(title ?? '',
               style: controller.isSettingItem!
-                  ? AppTextStyle().get_SfPro_Medium_H6(AppColors.BLACK)
+                  ? AppTextStyle().get_SfPro_Medium_H6(AppColors.BACK_BUTTON_COLOR)
                   : AppTextStyle().getSfProDisplayBold_h6(AppColors.ORANGE)),
         ),
         leading: GestureDetector(
@@ -203,18 +203,20 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
             Get.back();
           },
           child: Container(
+            color: Colors.transparent,
             padding: AppPadding.horizontal20,
             width: 40,
             height: 40,
             child: controller.isSettingItem!
-                ? Image.asset(
+                ? SvgPicture.asset(
                     AppAssets.black_back_button_icon,
-                    color: AppColors.BLACK,
+                    color: AppColors.BACK_BUTTON_COLOR,
                   )
                 : SvgPicture.asset(
                     'assets/icons/back_button.svg',
                     width: 40,
                     height: 40,
+
                   ),
           ),
         ),

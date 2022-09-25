@@ -1,11 +1,13 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/constant/decoration_constants.dart';
 import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/ui/view/menu/preferences/preferences_controller.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_cupertinoswitch.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class PreferencesView extends BaseView<PreferencesController> {
@@ -36,20 +38,11 @@ class PreferencesView extends BaseView<PreferencesController> {
           ),
           Container(
             width: 350.w,
-            height: 115.h,
-            decoration: BoxDecoration(boxShadow: const <BoxShadow>[
-              BoxShadow(
-                color: AppColors.PAGEBACKGROUND,
-                blurRadius: 50.0, // soften the shadow
-                spreadRadius: 0.0, //extend the shadow
-                offset: Offset(
-                  0.0, // Move to right 10  horizontally
-                  3.0, // Move to bottom 10 Vertically
-                ),
-              )
-            ], borderRadius: BorderRadius.circular(5.0), color: Colors.white),
+            padding: EdgeInsets.only(top: 5,bottom: 5),
+            decoration: CustomDecoration.defaultShadow,
             child: Column(
               children: [
+
                 buildPaySwitchSettings(),
                 buildSystemSwitchSettings(),
                 buildAdvantageSwitchSettings()
@@ -105,7 +98,7 @@ class PreferencesView extends BaseView<PreferencesController> {
 
   buildSystemSwitchSettings() {
     return Padding(
-      padding: AppPadding.allPadding8,
+      padding: AppPadding.horizontal5,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -150,17 +143,7 @@ class PreferencesView extends BaseView<PreferencesController> {
         width: 350.w,
         height: 36.h,
         padding: AppPadding.guideLine,
-        decoration: BoxDecoration(boxShadow: const <BoxShadow>[
-          BoxShadow(
-            color: AppColors.PAGEBACKGROUND,
-            blurRadius: 50.0, // soften the shadow
-            spreadRadius: 0.0, //extend the shadow
-            offset: Offset(
-              0.0, // Move to right 10  horizontally
-              3.0, // Move to bottom 10 Vertically
-            ),
-          )
-        ], borderRadius: BorderRadius.circular(5.0), color: Colors.white),
+        decoration: CustomDecoration.defaultShadow,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -168,7 +151,7 @@ class PreferencesView extends BaseView<PreferencesController> {
               settingName,
               style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
             ),
-            Image.asset(AppAssets.arrow_icon, color: AppColors.WHITE_GREY)
+            SvgPicture.asset(AppAssets.arrow_icon, color: AppColors.WHITE_GREY)
           ],
         ),
       ),

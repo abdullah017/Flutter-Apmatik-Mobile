@@ -35,10 +35,8 @@ class CustomDropdownButtonFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: padding ?? EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.h),
+      padding: padding ?? EdgeInsets.symmetric(horizontal: 20.w, ),
       child: DropdownButtonFormField(
-        isDense: true,
-        isExpanded: true,
         icon: Padding(
           padding: const EdgeInsets.only(right: 10.0),
           child: Image.asset(AppAssets.dropdown_icon),

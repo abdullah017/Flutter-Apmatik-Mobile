@@ -211,8 +211,8 @@ class AppTextStyle {
   TextStyle getSfProDisplayBold_h6(Color color) {
     return TextStyle(
         fontFamily: 'SF Pro Display',
-        fontSize: 14.sp,
-        fontWeight: FontWeight.w600,
+        fontSize: 12.sp,
+        fontWeight: FontWeight.bold,
         fontStyle: FontStyle.normal,
         color: color);
   }

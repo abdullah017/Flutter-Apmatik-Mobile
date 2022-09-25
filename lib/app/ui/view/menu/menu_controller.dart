@@ -3,8 +3,10 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/constant/decoration_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 class MenuController extends BaseController {
@@ -98,14 +100,16 @@ class MenuController extends BaseController {
         child: Container(
           width: 350.w,
           height: 40.h,
-          color: AppColors.WHITE,
+          decoration: CustomDecoration.defaultShadow,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Image.asset(
+                child: SvgPicture.asset(
                   AppAssets.exit_icon,
+                  width: 22,
+                  height: 22,
                 ),
               ),
               Padding(
@@ -148,13 +152,16 @@ class MenuController extends BaseController {
       child: Container(
         width: 350.w,
         height: 40.h,
-        color: AppColors.WHITE,
+        decoration: CustomDecoration.defaultShadow,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.asset(icon),
+              child: SvgPicture.asset(icon,
+                    width: 22,
+                height: 22
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(5.0),
@@ -168,7 +175,7 @@ class MenuController extends BaseController {
               visible: arrowIconVisible,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Image.asset(AppAssets.arrow_icon),
+                child: SvgPicture.asset(AppAssets.arrow_icon),
               ),
             )
           ],

@@ -1,7 +1,7 @@
 // ignore_for_file: constant_identifier_names
 
 class AppAssets {
-  static const String splashBackground = 'assets/images/splash_image.png';
+  static const String splashBackground = 'assets/images/splash.jpg';
   static const String splashLogo = 'assets/images/splash_logo.png';
   static const String statusPageLogo = 'assets/images/status_page_logo.png';
   static const String appbar = 'assets/images/men_face.png';
@@ -9,7 +9,7 @@ class AppAssets {
   static const String placeholder = 'assets/images/placeholder.png';
   static const String staff = 'assets/images/stf.png';
   static const String mng = 'assets/images/mng.png';
-  static const String debit = 'assets/images/debit.png';
+  static const String debit = 'assets/icons/debit.svg';
 
   ///[ICONS]
 
@@ -33,16 +33,16 @@ class AppAssets {
 
   ///[MENU PAGE ICONS]
 
-  static const String profile_icon = 'assets/icons/profil.png';
-  static const String setting_icon = 'assets/icons/setting.png';
-  static const String option_icon = 'assets/icons/option.png';
-  static const String car_icon = 'assets/icons/car.png';
-  static const String new_add = 'assets/icons/newadd.png';
-  static const String group_icon = 'assets/icons/group.png';
-  static const String exit_icon = 'assets/icons/exit.png';
-  static const String arrow_icon = 'assets/icons/arrow.png';
+  static const String profile_icon = 'assets/icons/user.svg';
+  static const String setting_icon = 'assets/icons/settings.svg';
+  static const String option_icon = 'assets/icons/options.svg';
+  static const String car_icon = 'assets/icons/car.svg';
+  static const String new_add = 'assets/icons/newFlat.svg';
+  static const String group_icon = 'assets/icons/staff.svg';
+  static const String exit_icon = 'assets/icons/logout.svg';
+  static const String arrow_icon = 'assets/icons/chevronRight.svg';
   static const String black_back_button_icon =
-      'assets/icons/blackbackbutton.png';
+      'assets/icons/backButton.svg';
   static const String dropdown_icon = 'assets/icons/dropdown_icon.png';
 
   ///[OTHER PAGE ICONS]

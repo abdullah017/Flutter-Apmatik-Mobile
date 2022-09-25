@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/constant/decoration_constants.dart';
 import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/view/dashboard/dashboard_controller.dart';
@@ -269,17 +270,7 @@ class DashBoardView extends BaseView<DashBoardController> {
 
   buildLastPaymentsCard() {
     return Container(
-      decoration: BoxDecoration(boxShadow: const <BoxShadow>[
-        BoxShadow(
-          color: Colors.black12,
-          blurRadius: 1.0, // soften the shadow
-          spreadRadius: 1.0, //extend the shadow
-          offset: Offset(
-            0.0, // Move to right 10  horizontally
-            1.0, // Move to bottom 10 Vertically
-          ),
-        )
-      ], borderRadius: BorderRadius.circular(5.0), color: Colors.white),
+      decoration: CustomDecoration.defaultShadow,
       margin: AppPadding.guideLine,
       child: ListTile(
         dense: true,

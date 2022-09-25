@@ -2,6 +2,7 @@
 
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:apmatik/app/ui/view/auth/register/register_controller.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_dropdown_formfield_button.dart';
@@ -77,7 +78,7 @@ class RegisterView extends BaseView<RegisterController> {
 
   Padding buildPhoneNumber() {
     return Padding(
-      padding: EdgeInsets.only(top: 20.0, left: 20.w),
+      padding: EdgeInsets.only(top: 20.0, left: 20.w,right:20.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -86,7 +87,7 @@ class RegisterView extends BaseView<RegisterController> {
             style: TextStyle(color: Colors.grey),
           ),
           Container(
-            margin: const EdgeInsets.only(left: 5, right: 20),
+
             decoration: const BoxDecoration(
                 border: Border(
                     bottom: BorderSide(width: 1, color: Color(0xffE6E6E6)))),
@@ -120,6 +121,7 @@ class RegisterView extends BaseView<RegisterController> {
                 SizedBox(
                   height: 50,
                   child: InternationalPhoneNumberInput(
+
                     errorMessage: controller.error.value,
                     selectorButtonOnErrorPadding: 0,
                     locale: controller.langStorage == 0 ? 'tr' : 'en',
@@ -148,11 +150,13 @@ class RegisterView extends BaseView<RegisterController> {
                         print(
                             'DOĞRU NO GİRİLDİYSE=> ${controller.validForm.value}');
                       }
+
                       return null;
                     },
                     onInputChanged: (PhoneNumber number) {
                       print(number.phoneNumber);
                       controller.phoneNumberWithRegion = number;
+
                     },
                     ignoreBlank: false,
                     autoValidateMode: controller.formValidation,
@@ -197,40 +201,37 @@ class RegisterView extends BaseView<RegisterController> {
               ],
             ),
           ),
-          Visibility(
-            replacement: SizedBox.fromSize(
-              size: const Size(0, 0),
-            ),
-            visible: controller.showhideErrorMessage.value,
-            child: Text(
+            controller.error.value != ''  ?
+            Text(
               controller.error.value,
               style: AppTextStyle().getSfProDisplayRegular_Other(Colors.red),
-            ),
-          )
+            ) : SizedBox(),
         ],
       ),
     );
   }
 
-  CustomDropdownButtonFormField buildGenderDropdownButton() {
-    return CustomDropdownButtonFormField(
-      value: controller.selectedValue,
-      items: controller.listOfValue.map((String val) {
-        return DropdownMenuItem(
-          value: val,
-          child: Text(
-            val,
-            style: AppTextStyle().getSfProDisplayMedium_H6(Colors.black),
-          ),
-        );
-      }).toList(),
+   buildGenderDropdownButton() {
+    return SizedBox(
+      child: CustomDropdownButtonFormField(
+        value: controller.selectedValue,
+        items: controller.listOfValue.map((String val) {
+          return DropdownMenuItem(
+            value: val,
+            child: Text(
+              val,
+              style: AppTextStyle().getSfProDisplayMedium_H6(Colors.black),
+            ),
+          );
+        }).toList(),
+      ),
     );
   }
 
   CustomTextFormField buildPasswordTextField() {
     return CustomTextFormField(
       textEditingController: controller.passwordController,
-      padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 1.h),
+      padding: AppPadding.inputPadding,
       labelText: 'password'.tr,
       obscureText: controller.isPasswordHidden.value,
       obscureCharacter: '*',
@@ -245,7 +246,7 @@ class RegisterView extends BaseView<RegisterController> {
               ? Icons.visibility
               : Icons.visibility_off,
           size: 19.sm,
-          color: AppColors.ORANGE,
+          color: AppColors.GREY,
         ),
       ),
       validator: (password) {
@@ -257,7 +258,7 @@ class RegisterView extends BaseView<RegisterController> {
   CustomTextFormField buildRePasswordTextField() {
     return CustomTextFormField(
       textEditingController: controller.repasswordController,
-      padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 1.h),
+      padding: AppPadding.inputPadding,
       labelText: 'rePassword'.tr,
       obscureText: controller.isRePasswordHidden.value,
       obscureCharacter: '*',
@@ -272,7 +273,7 @@ class RegisterView extends BaseView<RegisterController> {
               ? Icons.visibility
               : Icons.visibility_off,
           size: 19.sm,
-          color: AppColors.ORANGE,
+          color: AppColors.GREY,
         ),
       ),
       validator: (repassword) {

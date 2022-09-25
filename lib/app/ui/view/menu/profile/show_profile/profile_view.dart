@@ -1,6 +1,7 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
+import 'package:apmatik/app/core/constant/decoration_constants.dart';
 import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/ui/view/menu/profile/show_profile/profile_controller.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_elevated_button.dart';
@@ -34,17 +35,13 @@ class ProfileView extends BaseView<ProfileController> {
                 width: 350.w,
                 height: Get.width >= 390 ? 230.h : 270.h,
                 child: DecoratedBox(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5.0),
-                      border: Border.all(
-                          color: Colors.grey.withOpacity(0.5), width: 1.0),
-                      color: Colors.white),
+                  decoration:CustomDecoration.defaultShadow,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Expanded(
                         flex: 0,
-                        child: buildUserCardHeader(),
+                        child: buildMainCard(),
                       ),
                       buildUserPhoneNumber(),
                       buildUserMaritalStatusAndJob(),
@@ -68,25 +65,18 @@ class ProfileView extends BaseView<ProfileController> {
               height: 10.h,
             ),
             ListView(
+              physics:const NeverScrollableScrollPhysics(),
               padding: EdgeInsets.zero,
               shrinkWrap: true,
               children: [
                 Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.0),
-                        border: Border.all(
-                            color: Colors.grey.withOpacity(0.5), width: 1.0),
-                        color: Colors.white),
+                    decoration: CustomDecoration.defaultShadow,
                     child: buildRegisteredCars()),
                 SizedBox(
                   height: 10.h,
                 ),
                 Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5.0),
-                        border: Border.all(
-                            color: Colors.grey.withOpacity(0.5), width: 1.0),
-                        color: Colors.white),
+                      decoration: CustomDecoration.defaultShadow,
                     child: buildAboutMembership()),
               ],
             ),
@@ -224,6 +214,7 @@ class ProfileView extends BaseView<ProfileController> {
             : SizedBox(
                 width: 350.w,
                 child: ListView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
                     padding: EdgeInsets.zero,
                     shrinkWrap: true,
                     itemCount: controller.cars.length,
@@ -375,7 +366,7 @@ class ProfileView extends BaseView<ProfileController> {
 
   buildUserPhoneNumber() {
     return Transform.translate(
-      offset: const Offset(0, -15),
+      offset: const Offset(3, -15),
       child: ListTile(
         minVerticalPadding: 0,
         minLeadingWidth: 0,
@@ -392,13 +383,38 @@ class ProfileView extends BaseView<ProfileController> {
     );
   }
 
+
+  Row buildMainCard(){
+    return Row(
+      children: [
+        CircleAvatar(
+          backgroundImage: const AssetImage(
+            AppAssets.appbar,
+          ),
+          radius: 30.r,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 5, top: 10),
+          child: Text('Mustafa Dilmaç',
+              style: appTextStyle.get_SfProRounded_SemiBold_h4(AppColors.ORANGE)),
+        ),
+      ],
+    );
+  }
+
+
+
+
+
   ListTile buildUserCardHeader() {
     return ListTile(
+
       leading: CircleAvatar(
         backgroundImage: const AssetImage(
           AppAssets.appbar,
+
         ),
-        radius: 25.r,
+        radius: 30.r,
       ),
       dense: true,
       title: Padding(

@@ -13,6 +13,7 @@ class MenuView extends BaseView<MenuController> {
         padding: AppPadding.guideLine,
         child: ListView(children: [
           AnimatedList(
+            physics:const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             key: controller.listKey,
             padding: const EdgeInsets.only(top: 10),

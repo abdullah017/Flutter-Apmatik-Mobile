@@ -58,7 +58,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
   static const INITIAL = Routes.SPLASH;
-  static const HOME = Routes.HOME;
+  static const HOME = Routes.SPLASH;
   static final routes = [
     GetPage(
         name: _Paths.SPLASH,
@@ -109,7 +109,7 @@ class AppPages {
         page: () => AddApertmentView(),
         binding: AddApertmentBinding(),
         transition: Transition.rightToLeft,
-        transitionDuration: const Duration(milliseconds: 500),
+        transitionDuration: const Duration(milliseconds: 130),
         preventDuplicates: true),
     GetPage(
       name: _Paths.READQR,
@@ -141,61 +141,63 @@ class AppPages {
         page: () => ProfileView(),
         binding: ProfileBinding(),
         transition: Transition.rightToLeft,
-        transitionDuration: const Duration(milliseconds: 500),
+        transitionDuration: const Duration(milliseconds: 130),
         preventDuplicates: true),
     GetPage(
       name: _Paths.EDITPROFILE,
       page: () => EditProfileView(),
       binding: EditProfileBinding(),
       transition: Transition.rightToLeft,
-      transitionDuration: const Duration(milliseconds: 500),
+      transitionDuration: const Duration(milliseconds: 130),
     ),
     GetPage(
       name: _Paths.NOTIFICATIONS,
       page: () => NotificationsView(),
       binding: NotificationsBinding(),
+      transition: Transition.rightToLeft,
+      transitionDuration: const Duration(milliseconds: 130),
     ),
     GetPage(
       name: _Paths.PREFERENCES,
       page: () => PreferencesView(),
       binding: PreferencesBinding(),
       transition: Transition.rightToLeft,
-      transitionDuration: const Duration(milliseconds: 500),
+      transitionDuration: const Duration(milliseconds: 130),
     ),
     GetPage(
       name: _Paths.AGGREMENT,
       page: () => AggrementView(),
       binding: AggrementBinding(),
       transition: Transition.rightToLeft,
-      transitionDuration: const Duration(milliseconds: 500),
+      transitionDuration: const Duration(milliseconds: 130),
     ),
     GetPage(
       name: _Paths.LANGUAGES,
       page: () => LanguagesView(),
       binding: LanguagesBinding(),
       transition: Transition.rightToLeft,
-      transitionDuration: const Duration(milliseconds: 500),
+      transitionDuration: const Duration(milliseconds: 130),
     ),
     GetPage(
       name: _Paths.UPDATEPASSWORD,
       page: () => UpdatePasswordView(),
       binding: UpdatePasswordBinding(),
       transition: Transition.rightToLeft,
-      transitionDuration: const Duration(milliseconds: 500),
+      transitionDuration: const Duration(milliseconds: 130),
     ),
     GetPage(
       name: _Paths.REPORT,
       page: () => ReportView(),
       binding: ReportBinding(),
       transition: Transition.rightToLeft,
-      transitionDuration: const Duration(milliseconds: 500),
+      transitionDuration: const Duration(milliseconds: 130),
     ),
     GetPage(
       name: _Paths.ABOUT,
       page: () => AboutView(),
       binding: AboutBinding(),
       transition: Transition.rightToLeft,
-      transitionDuration: const Duration(milliseconds: 500),
+      transitionDuration: const Duration(milliseconds: 130),
     ),
     GetPage(
       name: _Paths.QUESTIONNAIRE,
@@ -207,7 +209,7 @@ class AppPages {
       page: () => StaffView(),
       binding: StaffBinding(),
       transition: Transition.rightToLeft,
-      transitionDuration: const Duration(milliseconds: 500),
+      transitionDuration: const Duration(milliseconds: 130),
     ),
     GetPage(
       name: _Paths.GATEWAY,
