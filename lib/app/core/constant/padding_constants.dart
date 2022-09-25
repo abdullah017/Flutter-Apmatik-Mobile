@@ -5,7 +5,10 @@ class AppPadding {
   static EdgeInsetsGeometry guideLine = EdgeInsets.symmetric(horizontal: 10.w);
   static EdgeInsetsGeometry allPadding8 = const EdgeInsets.all(8.0);
 
-  static EdgeInsetsGeometry inputPadding =   EdgeInsets.symmetric(horizontal: 20.w, vertical: 1.h);
+  static EdgeInsetsGeometry inputPadding =
+      EdgeInsets.symmetric(horizontal: 20.w, vertical: 1.h);
+  static EdgeInsetsGeometry horizontal20Vertical10 =
+      EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h);
 
   static EdgeInsetsGeometry horizontal20 =
       EdgeInsets.symmetric(horizontal: 20.w);

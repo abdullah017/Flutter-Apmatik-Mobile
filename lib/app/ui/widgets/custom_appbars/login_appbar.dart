@@ -50,15 +50,19 @@ class CustomLoginUserAppBar extends StatelessWidget
               Expanded(
                 child: ListTile(
                   dense: true,
+                  minVerticalPadding: 0,
                   title: Text(
                     'Samican Kıcır',
                     style: AppTextStyle()
                         .getSfProDisplaySemiBold_h6(AppColors.WHITE),
                   ),
-                  subtitle: Text(
-                    'Apartman Yöneticisi',
-                    style: AppTextStyle()
-                        .getSfProDisplayLight_Italic_H6(AppColors.WHITE),
+                  subtitle: Transform.translate(
+                    offset: const Offset(0, -5),
+                    child: Text(
+                      'Apartman Yöneticisi',
+                      style: AppTextStyle()
+                          .getSfProDisplayLight_Italic_H6(AppColors.WHITE),
+                    ),
                   ),
                 ),
               ),

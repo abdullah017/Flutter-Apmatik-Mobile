@@ -3,13 +3,13 @@
 class AppAssets {
   static const String splashBackground = 'assets/images/splash.jpg';
   static const String splashLogo = 'assets/images/splash_logo.png';
-  static const String statusPageLogo = 'assets/images/status_page_logo.png';
+  static const String statusPageLogo = 'assets/images/inapplogo.png';
   static const String appbar = 'assets/images/men_face.png';
   static const String medium_splash = 'assets/images/apmatik-medium.png';
   static const String placeholder = 'assets/images/placeholder.png';
   static const String staff = 'assets/images/stf.png';
   static const String mng = 'assets/images/mng.png';
-  static const String debit = 'assets/icons/debit.svg';
+  static const String debit = 'assets/icons/master_visa.png';
 
   ///[ICONS]
 
@@ -23,13 +23,12 @@ class AppAssets {
 
   ///[COMMON PAGE ICONS]
 
-  static const String done_icon = 'assets/icons/done_icon.png';
-  static const String apart_icon = 'assets/icons/apart_icon.png';
-  static const String old_app_icon = 'assets/icons/old_app_icon.png';
-  static const String notification_icon = 'assets/icons/notification_icon.png';
-  static const String success_record = 'assets/icons/success_record.png';
-  static const String verify_icon = 'assets/icons/verify_icon.png';
-  static const String wifi_icon = 'assets/icons/wifi_icon.png';
+  static const String done_icon = 'assets/icons/register_success.svg';
+  static const String apart_icon = 'assets/icons/apartmen.svg';
+  static const String old_app_icon = 'assets/icons/warning.svg';
+  static const String notification_icon = 'assets/icons/notification.svg';
+  static const String verify_icon = 'assets/icons/apartmen_success.svg';
+  static const String wifi_icon = 'assets/icons/wifi.svg';
 
   ///[MENU PAGE ICONS]
 
@@ -41,12 +40,11 @@ class AppAssets {
   static const String group_icon = 'assets/icons/staff.svg';
   static const String exit_icon = 'assets/icons/logout.svg';
   static const String arrow_icon = 'assets/icons/chevronRight.svg';
-  static const String black_back_button_icon =
-      'assets/icons/backButton.svg';
-  static const String dropdown_icon = 'assets/icons/dropdown_icon.png';
+  static const String black_back_button_icon = 'assets/icons/backButton.svg';
+  static const String dropdown_icon = 'assets/icons/dropdown_icon.svg';
 
   ///[OTHER PAGE ICONS]
-  static const String qr_icon = 'assets/icons/qr_icon.png';
+  static const String qr_icon = 'assets/icons/qr.svg';
   static const String edit_icon = 'assets/icons/edit_icon.png';
   static const String gift_icon = 'assets/icons/gift_icon.png';
   static const String remove_icon = 'assets/icons/remove.png';

@@ -38,7 +38,7 @@ class PreferencesView extends BaseView<PreferencesController> {
           ),
           Container(
             width: 350.w,
-            padding: EdgeInsets.only(top: 5,bottom: 5),
+            padding: const EdgeInsets.only(top: 5,bottom: 5),
             decoration: CustomDecoration.defaultShadow,
             child: Column(
               children: [

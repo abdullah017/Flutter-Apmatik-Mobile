@@ -5,6 +5,7 @@ import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/ui/style/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class CustomDropdownButtonFormField extends StatelessWidget {
   final bool isBordered;
@@ -35,11 +36,14 @@ class CustomDropdownButtonFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: padding ?? EdgeInsets.symmetric(horizontal: 20.w, ),
+      padding: padding ??
+          EdgeInsets.symmetric(
+            horizontal: 20.w,
+          ),
       child: DropdownButtonFormField(
         icon: Padding(
           padding: const EdgeInsets.only(right: 10.0),
-          child: Image.asset(AppAssets.dropdown_icon),
+          child: SvgPicture.asset(AppAssets.dropdown_icon),
         ),
         style: AppTextStyle().getSfProDisplayRegular_H5(AppColors.BLACK),
         decoration: isBordered

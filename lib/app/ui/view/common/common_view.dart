@@ -6,6 +6,7 @@ import 'package:apmatik/app/ui/view/common/common_controller.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_elevated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 class CommonView extends BaseView<CommonController> {
@@ -54,7 +55,7 @@ class CommonView extends BaseView<CommonController> {
         children: [
           Padding(
               padding: EdgeInsets.symmetric(vertical: 23.0.h),
-              child: Image.asset(
+              child: SvgPicture.asset(
                 AppAssets.wifi_icon,
                 width: 66.w,
                 height: 66.h,
@@ -87,6 +88,8 @@ class CommonView extends BaseView<CommonController> {
             child: Image.asset(
               AppAssets.statusPageLogo,
               color: Colors.grey,
+              width: 90.w,
+              height: 65.h,
             ),
           )
         ],
@@ -102,7 +105,7 @@ class CommonView extends BaseView<CommonController> {
         children: [
           Padding(
               padding: const EdgeInsets.symmetric(vertical: 23.0),
-              child: Image.asset(
+              child: SvgPicture.asset(
                 AppAssets.old_app_icon,
                 width: 66,
                 height: 66,
@@ -128,6 +131,8 @@ class CommonView extends BaseView<CommonController> {
             child: Image.asset(
               AppAssets.statusPageLogo,
               color: Colors.grey,
+              width: 90.w,
+              height: 65.h,
             ),
           )
         ],
@@ -143,7 +148,7 @@ class CommonView extends BaseView<CommonController> {
         children: [
           Padding(
               padding: const EdgeInsets.symmetric(vertical: 23.0),
-              child: Image.asset(
+              child: SvgPicture.asset(
                 AppAssets.verify_icon,
                 width: 66,
                 height: 66,
@@ -181,6 +186,8 @@ class CommonView extends BaseView<CommonController> {
             child: Image.asset(
               AppAssets.statusPageLogo,
               color: Colors.grey,
+              width: 90.w,
+              height: 65.h,
             ),
           )
         ],
@@ -196,7 +203,7 @@ class CommonView extends BaseView<CommonController> {
         children: [
           Padding(
               padding: EdgeInsets.symmetric(vertical: 20.0.h),
-              child: Image.asset(
+              child: SvgPicture.asset(
                 AppAssets.apart_icon,
                 width: 66.w,
                 height: 66.h,
@@ -238,6 +245,8 @@ class CommonView extends BaseView<CommonController> {
             child: Image.asset(
               AppAssets.statusPageLogo,
               color: Colors.grey,
+              width: 90.w,
+              height: 65.h,
             ),
           )
         ],
@@ -253,8 +262,8 @@ class CommonView extends BaseView<CommonController> {
         children: [
           Padding(
               padding: const EdgeInsets.symmetric(vertical: 23.0),
-              child: Image.asset(
-                AppAssets.success_record,
+              child: SvgPicture.asset(
+                AppAssets.verify_icon,
                 width: 66,
                 height: 66,
                 color: AppColors.BLACK,
@@ -288,6 +297,8 @@ class CommonView extends BaseView<CommonController> {
             child: Image.asset(
               AppAssets.statusPageLogo,
               color: Colors.grey,
+              width: 90.w,
+              height: 65.h,
             ),
           )
         ],
@@ -303,7 +314,7 @@ class CommonView extends BaseView<CommonController> {
         children: [
           Padding(
               padding: const EdgeInsets.symmetric(vertical: 23.0),
-              child: Image.asset(
+              child: SvgPicture.asset(
                 AppAssets.done_icon,
                 width: 66,
                 height: 66,
@@ -342,7 +353,7 @@ class CommonView extends BaseView<CommonController> {
         children: [
           Padding(
               padding: const EdgeInsets.symmetric(vertical: 23.0),
-              child: Image.asset(
+              child: SvgPicture.asset(
                 AppAssets.done_icon,
                 width: 90,
                 height: 90,
@@ -379,6 +390,8 @@ class CommonView extends BaseView<CommonController> {
               child: Image.asset(
                 AppAssets.statusPageLogo,
                 color: Colors.grey,
+                width: 90.w,
+                height: 65.h,
               ),
             ),
           )
