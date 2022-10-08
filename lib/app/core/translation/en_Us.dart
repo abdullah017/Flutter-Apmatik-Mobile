@@ -191,4 +191,6 @@ const Map<String, String> en = {
   ////[MANAGE CREDIT CARD PAGE ]
   'registered_cards': 'My Registered Cards',
   'card_selection': 'Card Selection',
+  ////[MONEY TRANSFER PAGE ]
+  'debt_payment': 'Debt Payment',
 };

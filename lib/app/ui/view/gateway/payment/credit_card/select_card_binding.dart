@@ -1,6 +1,6 @@
-import 'package:apmatik/app/ui/view/payment/credit_card/new_card/newcard_controller.dart';
-import 'package:apmatik/app/ui/view/payment/credit_card/select_card_controller.dart';
-import 'package:apmatik/app/ui/view/payment/credit_card/show_card/show_card_controller.dart';
+import 'package:apmatik/app/ui/view/gateway/payment/credit_card/new_card/newcard_controller.dart';
+import 'package:apmatik/app/ui/view/gateway/payment/credit_card/select_card_controller.dart';
+import 'package:apmatik/app/ui/view/gateway/payment/credit_card/show_card/show_card_controller.dart';
 import 'package:get/get.dart';
 
 class SelectCreditCardBinding extends Bindings {

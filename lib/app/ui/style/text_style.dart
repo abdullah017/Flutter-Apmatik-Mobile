@@ -26,6 +26,15 @@ class AppTextStyle {
         color: color);
   }
 
+  TextStyle getSfProDisplayLight_H6_Bold(Color color) {
+    return TextStyle(
+        fontFamily: 'SF Pro Display',
+        fontSize: 9.sp,
+        fontWeight: FontWeight.bold,
+        fontStyle: FontStyle.normal,
+        color: color);
+  }
+
   /// [LIGHT_ITALIC_FONT_TYPE]
   TextStyle getSfProDisplayLight_Italic_H6(Color color) {
     return TextStyle(

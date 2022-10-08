@@ -4,13 +4,13 @@ import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/core/helper/input_formatter/card_date_formatter.dart';
 import 'package:apmatik/app/core/utils/credit_card_utils.dart';
-import 'package:apmatik/app/ui/view/payment/credit_card/new_card/newcard_controller.dart';
+import 'package:apmatik/app/ui/style/text_style.dart';
+import 'package:apmatik/app/ui/view/gateway/payment/credit_card/new_card/newcard_controller.dart';
 import 'package:apmatik/app/ui/widgets/custom_inputs/custom_filled_textformfield.dart';
 import 'package:easy_mask/easy_mask.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import '../../../../style/text_style.dart';
 
 class NewCardView extends BaseView<NewCardController> {
   NewCardView({super.key});

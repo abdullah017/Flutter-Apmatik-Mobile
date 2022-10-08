@@ -2,7 +2,7 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/core/model/credit_card_model.dart';
-import 'package:apmatik/app/ui/view/payment/credit_card/show_card/show_card_controller.dart';
+import 'package:apmatik/app/ui/view/gateway/payment/credit_card/show_card/show_card_controller.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_outline_textbutton.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

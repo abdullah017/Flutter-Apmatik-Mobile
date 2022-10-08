@@ -14,13 +14,13 @@ class BaseCommonWidgets implements _CommonWidgetsInterface {
   /// There are many amazing [SNACKBAR]
 
   @override
-  void showSnackBar({String title = "", String message = ""}) {
+  void showSnackBar({String title = "", String message = "",SnackPosition? snackPosition}) {
     Get.snackbar(
       title,
       message,
       backgroundColor: Colors.black45,
       barBlur: 8.0,
-      snackPosition: SnackPosition.BOTTOM,
+      snackPosition: snackPosition ?? SnackPosition.BOTTOM,
       margin: const EdgeInsets.only(bottom: 10.0, left: 10.0, right: 10.0),
       duration: const Duration(seconds: 2),
     );

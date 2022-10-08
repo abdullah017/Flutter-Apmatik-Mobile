@@ -188,7 +188,7 @@ const Map<String, String> tr = {
   ////[SELECT CARD PAGE ]
   'new_card': 'Yeni Kart',
   'my_cards': 'Kartlarım',
-  'payment':'Ödeme',
+  'payment': 'Ödeme',
   ////[SHOW CARD PAGE ]
   'not_register_cards': 'Kayıtlı kart bulunamadı.',
   ////[NEW CREDIT CARD PAGE ]
@@ -199,5 +199,8 @@ const Map<String, String> tr = {
   'save_card': 'Kredi Kartı Bilgilerimi Kaydet',
   ////[MANAGE CREDIT CARD PAGE ]
   'registered_cards': 'Kayıtlı Kartlarım',
-  'card_selection':'Kart Seçimi',
+  'card_selection': 'Kart Seçimi',
+
+  ////[MONEY TRANSFER PAGE ]
+  'debt_payment': 'Borç Ödeme',
 };

@@ -14,7 +14,8 @@ class AppPadding {
   static EdgeInsetsGeometry zeroPadding = EdgeInsets.zero;
 
   static EdgeInsetsGeometry allPadding8 = const EdgeInsets.all(8.0);
-
+  static EdgeInsetsGeometry onlyLeftRightTop =
+      EdgeInsets.only(left: 10.w, right: 10.w, top: 5.h);
   static EdgeInsetsGeometry horizontal20Vertical10 =
       EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h);
   static EdgeInsetsGeometry horizontal10Vertical60 =

@@ -54,6 +54,8 @@ class AppAssets {
   static const String fly = 'assets/icons/fly.svg';
   static const String back = 'assets/icons/back.svg';
   static const String delete = 'assets/icons/delete.svg';
+  static const String copy = 'assets/icons/copy_icon.svg';
+    static const String ziraat = 'assets/icons/ziraat.png';
 
   ///[CREDIT CARD TYPE ICONS]
   static const String master_card = 'assets/icons/master.png';
