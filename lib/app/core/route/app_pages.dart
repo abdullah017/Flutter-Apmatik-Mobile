@@ -26,6 +26,14 @@ import 'package:apmatik/app/ui/view/dashboard/dashboard_binding.dart';
 import 'package:apmatik/app/ui/view/dashboard/dashboard_view.dart';
 import 'package:apmatik/app/ui/view/gateway/gateway_binding.dart';
 import 'package:apmatik/app/ui/view/gateway/gateway_view.dart';
+import 'package:apmatik/app/ui/view/gateway/payment/credit_card/manage_card/manage_card_binding.dart';
+import 'package:apmatik/app/ui/view/gateway/payment/credit_card/manage_card/manage_card_view.dart';
+import 'package:apmatik/app/ui/view/gateway/payment/credit_card/select_card_binding.dart';
+import 'package:apmatik/app/ui/view/gateway/payment/credit_card/select_card_view.dart';
+import 'package:apmatik/app/ui/view/gateway/payment/credit_card/show_card/show_card_binding.dart';
+import 'package:apmatik/app/ui/view/gateway/payment/credit_card/show_card/show_card_view.dart';
+import 'package:apmatik/app/ui/view/gateway/payment/money_transfer/money_transfer_binding.dart';
+import 'package:apmatik/app/ui/view/gateway/payment/money_transfer/money_transfer_view.dart';
 import 'package:apmatik/app/ui/view/home/home_binding.dart';
 import 'package:apmatik/app/ui/view/home/home_view.dart';
 import 'package:apmatik/app/ui/view/menu/menu_binding.dart';
@@ -47,12 +55,6 @@ import 'package:apmatik/app/ui/view/menu/profile/show_profile/profile_view.dart'
 import 'package:apmatik/app/ui/view/menu/staff/staff_binding.dart';
 import 'package:apmatik/app/ui/view/notifications/notifications_binding.dart';
 import 'package:apmatik/app/ui/view/notifications/notifications_view.dart';
-import 'package:apmatik/app/ui/view/payment/credit_card/manage_card/manage_card_binding.dart';
-import 'package:apmatik/app/ui/view/payment/credit_card/manage_card/manage_card_view.dart';
-import 'package:apmatik/app/ui/view/payment/credit_card/select_card_binding.dart';
-import 'package:apmatik/app/ui/view/payment/credit_card/select_card_view.dart';
-import 'package:apmatik/app/ui/view/payment/credit_card/show_card/show_card_binding.dart';
-import 'package:apmatik/app/ui/view/payment/credit_card/show_card/show_card_view.dart';
 import 'package:apmatik/app/ui/view/questionnaire_detail/questionnaire_detail_binding.dart';
 import 'package:apmatik/app/ui/view/questionnaire_detail/questionnaire_detail_view.dart';
 import 'package:apmatik/app/ui/view/splash/splah_view.dart';
@@ -236,6 +238,11 @@ class AppPages {
       name: _Paths.MANAGECARD,
       page: () => ManageCardView(),
       binding: ManageCardBinding(),
+    ),
+    GetPage(
+      name: _Paths.MONEYTRANSFER,
+      page: () => MoneyTransferView(),
+      binding: MoneyTransferBinding(),
     ),
   ];
 }

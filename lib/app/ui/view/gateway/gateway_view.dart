@@ -21,6 +21,7 @@ class GatewayView extends BaseView<GatewayController> {
 
             ///[PAYMENT DETAIL CARD]
             buildPaymentDetailCard(),
+
             const SizedBox(
               height: 30,
             ),
@@ -32,11 +33,13 @@ class GatewayView extends BaseView<GatewayController> {
               height: 20,
             ),
             buildPaymentMethodButton(
-              leading: SvgPicture.asset(AppAssets.card),
-              title: 'payment_credit_card'.tr,
-              trailing: SvgPicture.asset(AppAssets.back),
-              onTap: () => Get.toNamed('/select_card'),
-            ),
+                leading: SvgPicture.asset(AppAssets.card),
+                title: 'payment_credit_card'.tr,
+                trailing: SvgPicture.asset(AppAssets.back),
+                onTap: () {
+                  Get.toNamed('/select_card');
+                  print('BASTINBASTINBASTIN');
+                }),
             const SizedBox(
               height: 10,
             ),
@@ -44,7 +47,7 @@ class GatewayView extends BaseView<GatewayController> {
               leading: SvgPicture.asset(AppAssets.fly),
               title: 'transfer'.tr,
               trailing: SvgPicture.asset(AppAssets.back),
-              onTap: () => Get.toNamed('/select_card'),
+              onTap: () => Get.toNamed('/money_transfer'),
             ),
 
             ///[SSL İNFO TEXT]
@@ -113,7 +116,10 @@ class GatewayView extends BaseView<GatewayController> {
   }
 
   buildPaymentMethodButton(
-      {Widget? leading, String? title, Widget? trailing, VoidCallback? onTap}) {
+      {Widget? leading,
+      String? title,
+      Widget? trailing,
+      GestureTapCallback? onTap}) {
     return GestureDetector(
       onTap: onTap,
       child: Container(

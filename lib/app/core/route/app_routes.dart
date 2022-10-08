@@ -41,6 +41,7 @@ abstract class Routes {
   static const PAYMENT = _Paths.SELECTCREDITCARD;
   static const SHOWCARD = _Paths.SHOWCARD;
   static const MANAGECARD = _Paths.MANAGECARD;
+  static const MONEYTRANSFER = _Paths.MONEYTRANSFER;
 }
 
 abstract class _Paths {
@@ -79,4 +80,5 @@ abstract class _Paths {
   static const SELECTCREDITCARD = '/select_card';
   static const SHOWCARD = '/showcard';
   static const MANAGECARD = '/manage_card';
+  static const MONEYTRANSFER = '/money_transfer';
 }
