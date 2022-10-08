@@ -47,6 +47,12 @@ import 'package:apmatik/app/ui/view/menu/profile/show_profile/profile_view.dart'
 import 'package:apmatik/app/ui/view/menu/staff/staff_binding.dart';
 import 'package:apmatik/app/ui/view/notifications/notifications_binding.dart';
 import 'package:apmatik/app/ui/view/notifications/notifications_view.dart';
+import 'package:apmatik/app/ui/view/payment/credit_card/manage_card/manage_card_binding.dart';
+import 'package:apmatik/app/ui/view/payment/credit_card/manage_card/manage_card_view.dart';
+import 'package:apmatik/app/ui/view/payment/credit_card/select_card_binding.dart';
+import 'package:apmatik/app/ui/view/payment/credit_card/select_card_view.dart';
+import 'package:apmatik/app/ui/view/payment/credit_card/show_card/show_card_binding.dart';
+import 'package:apmatik/app/ui/view/payment/credit_card/show_card/show_card_view.dart';
 import 'package:apmatik/app/ui/view/questionnaire_detail/questionnaire_detail_binding.dart';
 import 'package:apmatik/app/ui/view/questionnaire_detail/questionnaire_detail_view.dart';
 import 'package:apmatik/app/ui/view/splash/splah_view.dart';
@@ -57,8 +63,8 @@ part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.SPLASH;
-  static const HOME = Routes.SPLASH;
+  static const INITIAL = Routes.GATEWAY;
+  static const HOME = Routes.GATEWAY;
   static final routes = [
     GetPage(
         name: _Paths.SPLASH,
@@ -215,6 +221,21 @@ class AppPages {
       name: _Paths.GATEWAY,
       page: () => GatewayView(),
       binding: GatewayBinding(),
+    ),
+    GetPage(
+      name: _Paths.SELECTCREDITCARD,
+      page: () => SelectCreditCardView(),
+      binding: SelectCreditCardBinding(),
+    ),
+    GetPage(
+      name: _Paths.SHOWCARD,
+      page: () => ShowCardView(),
+      binding: ShowCardBinding(),
+    ),
+    GetPage(
+      name: _Paths.MANAGECARD,
+      page: () => ManageCardView(),
+      binding: ManageCardBinding(),
     ),
   ];
 }

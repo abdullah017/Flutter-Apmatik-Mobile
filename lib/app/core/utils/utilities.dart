@@ -64,25 +64,25 @@ class Utilities {
     String formattedDate = DateFormat('EEEE').format(dateTime);
     switch (formattedDate) {
       case "Monday":
-        formattedDate = "Senin";
+        formattedDate = "Mon";
         break;
       case "Tuesday":
-        formattedDate = "Selasa";
+        formattedDate = "Tues";
         break;
       case "Wednesday":
-        formattedDate = "Rabu";
+        formattedDate = "Wed";
         break;
       case "Thursday":
-        formattedDate = "Kamis";
+        formattedDate = "Thu";
         break;
       case "Friday":
-        formattedDate = "Jum'at";
+        formattedDate = "Fri";
         break;
       case "Saturday":
-        formattedDate = "Sabtu";
+        formattedDate = "Satu";
         break;
       case "Sunday":
-        formattedDate = "Minggu";
+        formattedDate = "Sun";
         break;
     }
 

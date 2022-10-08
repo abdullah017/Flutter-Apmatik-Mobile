@@ -31,21 +31,135 @@ class CommonView extends BaseView<CommonController> {
 
   @override
   Widget vBuilder() => Scaffold(
-      body: controller.status == 'registerSuccess'
-          ? buildRegisterSuccessWidget()
-          : controller.status == 'resetPasswordSuccess'
-              ? buildResetPasswordSuccessWidget()
-              : controller.status == 'noConnection'
-                  ? buildNoConnectionWidget()
-                  : controller.status == 'oldVersionApp'
-                      ? buildOldVersionAppWidget()
-                      : controller.status == 'verifyError'
-                          ? buildVerifyError()
-                          : controller.status == 'noApartmenRecord'
-                              ? buildNoApartmenRecord()
-                              : controller.status == 'registerApartmentSuccess'
-                                  ? buildRegisterApartmentSuccessWidget()
-                                  : Container());
+        body: controller.status == 'registerSuccess'
+            ? buildRegisterSuccessWidget()
+            : controller.status == 'resetPasswordSuccess'
+                ? buildResetPasswordSuccessWidget()
+                : controller.status == 'noConnection'
+                    ? buildNoConnectionWidget()
+                    : controller.status == 'oldVersionApp'
+                        ? buildOldVersionAppWidget()
+                        : controller.status == 'verifyError'
+                            ? buildVerifyError()
+                            : controller.status == 'noApartmenRecord'
+                                ? buildNoApartmenRecord()
+                                : controller.status ==
+                                        'registerApartmentSuccess'
+                                    ? buildRegisterApartmentSuccessWidget()
+                                    : controller.status == 'paymentSuccess'
+                                        ? buildPaymentSuccess()
+                                        : Container(),
+      );
+
+  Center buildPaymentFail() {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Padding(
+              padding: const EdgeInsets.symmetric(vertical: 23.0),
+              child: SvgPicture.asset(
+                AppAssets.payment_fail,
+                width: 66,
+                height: 66,
+                color: AppColors.RED,
+              )),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Text(
+              'ÖDEME BAŞARISIZ',
+              style: appTextStyle.get_SfProRounded_SemiBold_h5(AppColors.BLACK),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20),
+            child: Text(
+              'Ödemeniz alınırken bir sorun oluştu. Lütfen daha ödeme işlemini tekrar deneyin.',
+              style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20.0),
+            child: CustomElevatedButton(
+              onPressed: () {
+                controller.goToHome();
+              },
+              child: Text('completed'.tr),
+            ),
+          ),
+          SizedBox(
+            height: Get.height * 0.20,
+          )
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(vertical: 81.0),
+          //   child: Image.asset(
+          //     AppAssets.statusPageLogo,
+          //     color: Colors.grey,
+          //     width: 90.w,
+          //     height: 65.h,
+          //   ),
+          // )
+        ],
+      ),
+    );
+  }
+
+  Center buildPaymentSuccess() {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Padding(
+              padding: const EdgeInsets.symmetric(vertical: 23.0),
+              child: SvgPicture.asset(
+                AppAssets.payment_success,
+                width: 66,
+                height: 66,
+                color: AppColors.ORANGE,
+              )),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Text(
+              'ÖDEME BAŞARILI',
+              style: appTextStyle.get_SfProRounded_SemiBold_h5(AppColors.BLACK),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20),
+            child: Text(
+              'Ödemeniz başarılı bir şekilde tamamlanmıştır. Ödemeniz hesabınıza hemen yansıtılmıştır. Ödemeniz için teşekkür ederiz.',
+              style: appTextStyle.getSfProDisplayRegular_H5(AppColors.BLACK),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20.0),
+            child: CustomElevatedButton(
+              onPressed: () {
+                controller.goToHome();
+              },
+              child: Text('completed'.tr),
+            ),
+          ),
+          SizedBox(
+            height: Get.height * 0.20,
+          )
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(vertical: 81.0),
+          //   child: Image.asset(
+          //     AppAssets.statusPageLogo,
+          //     color: Colors.grey,
+          //     width: 90.w,
+          //     height: 65.h,
+          //   ),
+          // )
+        ],
+      ),
+    );
+  }
 
   Center buildNoConnectionWidget() {
     return Center(

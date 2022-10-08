@@ -50,12 +50,11 @@ dependencies:
   flutter_timer_countdown:
   dots_indicator:
   mobile_scanner:
-  persistent_bottom_nav_bar:
-  auto_route:
+  mask_text_input_formatter:
+  easy_mask:
   intl_phone_number_input:
-    git:
-      url: https://github.com/AbdOoSaed/intl_phone_number_input
-
+  sqflite:
+  
   #UTILS
   device_info:
   package_info:
@@ -73,8 +72,6 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
-  auto_route_generator:          
-  build_runner:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -130,7 +127,11 @@ flutter:
       fonts:
         - asset: assets/fonts/SF_Pro/SFPRODISPLAYMEDIUM.OTF
           weight: 500
-         
+
+    - family: Credit Card
+      fonts:
+        - asset: assets/fonts/CreditCard/credit_card_font.otf
+             
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

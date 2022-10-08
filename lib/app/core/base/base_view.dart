@@ -51,7 +51,7 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
   final AppPadding appPadding = AppPadding();
   final FormValidationHelper formValidationHelper = FormValidationHelper();
 
-  T get controller => GetInstance(). find<T>(tag: tag);
+  T get controller => GetInstance().find<T>(tag: tag);
 
   @override
   Widget build(BuildContext context) {
@@ -195,12 +195,14 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
           offset: const Offset(-20, 0),
           child: Text(title ?? '',
               style: controller.isSettingItem!
-                  ? AppTextStyle().get_SfPro_Medium_H6(AppColors.BACK_BUTTON_COLOR)
+                  ? AppTextStyle()
+                      .get_SfPro_Medium_H6(AppColors.BACK_BUTTON_COLOR)
                   : AppTextStyle().getSfProDisplayBold_h6(AppColors.ORANGE)),
         ),
         leading: GestureDetector(
           onTap: () {
             Get.back();
+            controller.update();
           },
           child: Container(
             color: Colors.transparent,
@@ -216,7 +218,6 @@ abstract class BaseView<T extends BaseController> extends StatelessWidget {
                     'assets/icons/back_button.svg',
                     width: 40,
                     height: 40,
-
                   ),
           ),
         ),
