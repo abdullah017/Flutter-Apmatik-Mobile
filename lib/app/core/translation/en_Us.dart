@@ -26,7 +26,7 @@ const Map<String, String> en = {
   'November': 'November',
   'December': 'December',
 
-  ///[UYGULAMA METİNLERİ]
+  ///[OTHER TEXT]
   'loginTitle': 'Login',
   'loginButton': 'Login',
   'registerTitle': 'Register',
@@ -164,12 +164,31 @@ const Map<String, String> en = {
   'phoneNumberSearchText': 'Enter area code or country name',
   'apartment_managers': 'Apartment Managers',
 
-  ///[GATEWAY VIEW TEXTS]
-
+  ///[GATEWAY PAGE]
+  'payment_methot': 'Payment Methot',
   'total_debt': 'Total Debt',
   'pay_all': 'Pay All',
   'last_debt_pay': 'Your last debt payment date',
   'payment_credit_card': 'Payment by Credit Card',
   'transfer': 'Wire Transfer / EFT',
   'ssl': 'Payments are made securely by verifying with an SSL certificate.',
+
+  ////[SELECT CARD PAGE ]
+  'new_card': 'New Card',
+  'my_cards': 'My Cards',
+  'payment': 'Payment',
+
+  ////[SHOW CARD PAGE ]
+  'not_register_cards': 'Registered card could not be found.',
+
+  ////[NEW CREDIT CARD PAGE ]
+  'card_holder': 'Name on Card',
+  'card_number': 'Card Number',
+  'card_expriy_date': 'Expiration Date',
+  'card_cvv': 'CVV Code',
+  'save_card': 'Save Credit Card',
+
+  ////[MANAGE CREDIT CARD PAGE ]
+  'registered_cards': 'My Registered Cards',
+  'card_selection': 'Card Selection',
 };

@@ -38,6 +38,9 @@ abstract class Routes {
   static const QUESTIONNAIRE = _Paths.QUESTIONNAIRE;
   static const STAFF = _Paths.STAFF;
   static const GATEWAY = _Paths.GATEWAY;
+  static const PAYMENT = _Paths.SELECTCREDITCARD;
+  static const SHOWCARD = _Paths.SHOWCARD;
+  static const MANAGECARD = _Paths.MANAGECARD;
 }
 
 abstract class _Paths {
@@ -73,4 +76,7 @@ abstract class _Paths {
   static const QUESTIONNAIRE = '/questionnaire_detail';
   static const STAFF = '/staff';
   static const GATEWAY = '/gateway';
+  static const SELECTCREDITCARD = '/select_card';
+  static const SHOWCARD = '/showcard';
+  static const MANAGECARD = '/manage_card';
 }

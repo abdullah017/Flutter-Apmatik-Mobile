@@ -29,6 +29,8 @@ class AppAssets {
   static const String notification_icon = 'assets/icons/notification.svg';
   static const String verify_icon = 'assets/icons/apartmen_success.svg';
   static const String wifi_icon = 'assets/icons/wifi.svg';
+  static const String payment_success = 'assets/icons/payment_success.svg';
+  static const String payment_fail = 'assets/icons/payment_fail.svg';
 
   ///[MENU PAGE ICONS]
 
@@ -51,4 +53,10 @@ class AppAssets {
   static const String card = 'assets/icons/card.svg';
   static const String fly = 'assets/icons/fly.svg';
   static const String back = 'assets/icons/back.svg';
+  static const String delete = 'assets/icons/delete.svg';
+
+  ///[CREDIT CARD TYPE ICONS]
+  static const String master_card = 'assets/icons/master.png';
+  static const String visa_card = 'assets/icons/visa.png';
+  static const String threed_secure = 'assets/icons/3dsecure_master.png';
 }

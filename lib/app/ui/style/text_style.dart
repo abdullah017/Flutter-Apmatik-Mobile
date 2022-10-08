@@ -65,7 +65,7 @@ class AppTextStyle {
         color: color);
   }
 
-    TextStyle getSfProDisplayRegular_H66(Color color) {
+  TextStyle getSfProDisplayRegular_H66(Color color) {
     return TextStyle(
         fontFamily: 'SF Pro Display',
         fontSize: 12.sp,
@@ -73,7 +73,6 @@ class AppTextStyle {
         fontStyle: FontStyle.normal,
         color: color);
   }
-
 
   TextStyle getSfProDisplayRegular_H6(Color color) {
     return TextStyle(
@@ -291,6 +290,17 @@ class AppTextStyle {
     return TextStyle(
         fontFamily: 'SF Pro',
         fontSize: 16.sp,
+        fontWeight: FontWeight.w500,
+        fontStyle: FontStyle.normal,
+        color: color);
+  }
+  /////-----------------------[CREDIT CARD FONT TYPE AREA!]------------------------------------/////
+
+  /// [CREDITCARD_FONT_TYPE]
+  TextStyle getCreditCardFont_Size16(Color color) {
+    return TextStyle(
+        fontFamily: 'CREDIT CARD',
+        fontSize: 10.sp,
         fontWeight: FontWeight.w500,
         fontStyle: FontStyle.normal,
         color: color);

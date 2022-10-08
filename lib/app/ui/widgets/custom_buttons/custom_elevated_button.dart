@@ -7,6 +7,7 @@ class CustomElevatedButton extends StatelessWidget {
   final double? width;
   final double height;
   final Gradient gradient;
+  final Color? buttonColor;
   final VoidCallback? onPressed;
   final Widget child;
   final Size? fixedSize;
@@ -22,6 +23,7 @@ class CustomElevatedButton extends StatelessWidget {
     this.gradient = AppColors.BUTTON_GRADIENT,
     this.fixedSize,
     this.margin,
+    this.buttonColor,
   }) : super(key: key);
 
   @override
@@ -38,7 +40,7 @@ class CustomElevatedButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.transparent,
+          backgroundColor: buttonColor ?? Colors.transparent,
           shadowColor: Colors.transparent,
           shape: RoundedRectangleBorder(borderRadius: borderRadius),
           fixedSize: fixedSize ?? Size(263.w, 50.h),

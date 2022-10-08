@@ -32,6 +32,14 @@ class FormValidationHelper {
   apartmenName(String apartmenName) {
     return apartmenName.validateApartmenName(apartmenName);
   }
+
+  creditCardNumber(String cardNumber) {
+    return cardNumber.validateCreditCardNumber(cardNumber);
+  }
+
+    validateEmptyOrNull(String value) {
+    return value.validateEmptyOrNull(value);
+  }
   // validatePassword(password) {
   //   if (password!.isEmpty) {
   //     isValidate.value = false;

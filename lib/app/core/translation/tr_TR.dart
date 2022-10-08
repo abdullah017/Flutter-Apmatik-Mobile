@@ -163,7 +163,7 @@ const Map<String, String> tr = {
   'selectApart': 'Apartman Seçimi',
   'registerWithQr': 'Qr Kodu İle Kayıt',
 
-  //MENU SAYFA BAŞLIKLARI
+  ////[MENU PAGE ]
   'profile': 'Profil',
   'edit_profile': 'Profilimi Düzenle',
   'notification': 'Bildirimler',
@@ -174,6 +174,9 @@ const Map<String, String> tr = {
   'reportProblem': 'Sorun Bildir',
   'about': 'Hakkında',
   'apartment_managers': 'Apartman Yöneticileri',
+
+  ///[GATEWAY PAGE]
+  'payment_methot': 'Ödeme Yöntemi',
   'total_debt': 'Toplam Borç',
   'pay_all': 'Hepsini Öde',
   'last_debt_pay': 'Son borç ödeme tarihiniz',
@@ -181,4 +184,20 @@ const Map<String, String> tr = {
   'transfer': 'Havale / EFT',
   'ssl':
       'Ödemeler SSL sertifikası ile doğrulanarak güvenli bir şekilde yapılmaktadır.',
+
+  ////[SELECT CARD PAGE ]
+  'new_card': 'Yeni Kart',
+  'my_cards': 'Kartlarım',
+  'payment':'Ödeme',
+  ////[SHOW CARD PAGE ]
+  'not_register_cards': 'Kayıtlı kart bulunamadı.',
+  ////[NEW CREDIT CARD PAGE ]
+  'card_holder': 'Kart Üzerindeki İsim',
+  'card_number': 'Kart Numarası',
+  'card_expriy_date': 'Son Kullanma Tarihi',
+  'card_cvv': 'CVV Kodu',
+  'save_card': 'Kredi Kartı Bilgilerimi Kaydet',
+  ////[MANAGE CREDIT CARD PAGE ]
+  'registered_cards': 'Kayıtlı Kartlarım',
+  'card_selection':'Kart Seçimi',
 };

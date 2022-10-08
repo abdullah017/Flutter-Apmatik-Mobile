@@ -14,8 +14,11 @@ extension StringValidatorExtensions on String {
       RegExpConstans.instance!.emailExp.hasMatch(this).obs;
   RxBool get isValidPhoneNumber =>
       RegExpConstans.instance!.phoneExp.hasMatch(this).obs;
+  RxBool get isValidCreditCardNumber =>
+      RegExpConstans.instance!.creditCardNumber.hasMatch(this).obs;
 //  RxBool getisValidBirthDate =>
 //       RegExpConstans.instance!.birthDate.hasMatch(this).obs;
+//\d{4}(?:\s?\d{4}){3}
 
   ///  Adı soyadı giriş alanı için [Onaylama] kontrolü
   String? validateNameAndSurname(String? value) {
@@ -128,10 +131,24 @@ extension StringValidatorExtensions on String {
     return null;
   }
 
+  ///  Kredi kartı için Kart Numara [Onaylama] kontrolü
+  String? validateCreditCardNumber(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Lütfen Kart Numarası alanını boş bırakmayın.';
+      //
+    }
+    if (value.length < 19 ||
+        value.length > 19 ||
+        !value.isValidCreditCardNumber.value) {
+      return 'Geçerli bir kart numarası girdiğinizden emin olun.';
+    }
+    return null;
+  }
+
   ///  Null yada Boş mu?
   String? validateEmptyOrNull(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Lütfen bu boş alanı doldurun.';
+      return 'Lütfen ilgili boş alanı doldurun.';
     } else {
       return null;
     }

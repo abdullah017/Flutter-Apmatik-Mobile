@@ -2,13 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppPadding {
+  ///[GUIDLINE-DEFAULT HORIZONTAL PADDING]
   static EdgeInsetsGeometry guideLine = EdgeInsets.symmetric(horizontal: 10.w);
-  static EdgeInsetsGeometry allPadding8 = const EdgeInsets.all(8.0);
 
+  ///[OPTIONAL INPUT PADDING]
   static EdgeInsetsGeometry inputPadding =
       EdgeInsets.symmetric(horizontal: 20.w, vertical: 1.h);
+
+  ///[OTHER PADDING]
+
+  static EdgeInsetsGeometry zeroPadding = EdgeInsets.zero;
+
+  static EdgeInsetsGeometry allPadding8 = const EdgeInsets.all(8.0);
+
   static EdgeInsetsGeometry horizontal20Vertical10 =
       EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h);
+  static EdgeInsetsGeometry horizontal10Vertical60 =
+      EdgeInsets.symmetric(horizontal: 10.w, vertical: 60.h);
+
+  static EdgeInsetsGeometry horizontal10 =
+      EdgeInsets.symmetric(horizontal: 10.w);
 
   static EdgeInsetsGeometry horizontal20 =
       EdgeInsets.symmetric(horizontal: 20.w);
