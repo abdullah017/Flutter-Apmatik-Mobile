@@ -193,4 +193,10 @@ const Map<String, String> en = {
   'card_selection': 'Card Selection',
   ////[MONEY TRANSFER PAGE ]
   'debt_payment': 'Debt Payment',
+
+  ///[SHOW GUEST CARD TEXT]
+  'show_guestcard_info':
+      'Create and manage QR code codes so that your guests who will come to your home can automatically enter your buildings entrance system',
+  'guest_card_system': 'Guest Card System',
+  'add_guest': 'Add Guest',
 };

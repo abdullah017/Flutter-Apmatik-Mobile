@@ -55,10 +55,14 @@ class AppAssets {
   static const String back = 'assets/icons/back.svg';
   static const String delete = 'assets/icons/delete.svg';
   static const String copy = 'assets/icons/copy_icon.svg';
-    static const String ziraat = 'assets/icons/ziraat.png';
+  static const String ziraat = 'assets/icons/ziraat.png';
 
   ///[CREDIT CARD TYPE ICONS]
   static const String master_card = 'assets/icons/master.png';
   static const String visa_card = 'assets/icons/visa.png';
   static const String threed_secure = 'assets/icons/3dsecure_master.png';
+
+  ///[SHOW GUEST CARD ICONS]
+  static const String add_guest = 'assets/icons/guest_card.svg';
+  static const String guest_image = 'assets/icons/person.svg';
 }

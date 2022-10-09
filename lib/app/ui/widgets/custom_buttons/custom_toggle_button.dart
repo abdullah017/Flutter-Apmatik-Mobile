@@ -11,6 +11,7 @@ class CustomToggleButton extends StatelessWidget {
   final String? thirdText;
   final List<bool> isSelected;
   final Function(int)? onPressed;
+  final List<Widget>? newChildren;
 
   const CustomToggleButton(
       {Key? key,
@@ -18,7 +19,7 @@ class CustomToggleButton extends StatelessWidget {
       this.secondText,
       this.thirdText,
       this.onPressed,
-      required this.isSelected})
+      required this.isSelected, this.newChildren})
       : super(key: key);
 
   @override
@@ -37,7 +38,7 @@ class CustomToggleButton extends StatelessWidget {
           borderWidth: 0,
           //splashColor: Colors.red,
           highlightColor: Colors.orange,
-          children: <Widget>[
+          children: newChildren ?? <Widget>  [
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 30.w),
               child: Text(firstText ?? 'home_owner'.tr,
@@ -46,6 +47,11 @@ class CustomToggleButton extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 30.w),
               child: Text(secondText ?? 'tenant'.tr,
+                  style: const TextStyle(fontSize: 12)),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30.w),
+              child: Text(thirdText ?? 'resident'.tr,
                   style: const TextStyle(fontSize: 12)),
             ),
             Padding(
