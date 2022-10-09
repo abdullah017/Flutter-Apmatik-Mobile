@@ -44,6 +44,15 @@ class EditGuestCardView extends BaseView<EditGuestCardController> {
               child: const Text(
                 'Kaydet',
               ),
+            ),
+            Center(
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  'Giriş Kartını Sil',
+                  style: appTextStyle.getSfProDisplayRegular_H5(AppColors.RED),
+                ),
+              ),
             )
           ],
         ),
