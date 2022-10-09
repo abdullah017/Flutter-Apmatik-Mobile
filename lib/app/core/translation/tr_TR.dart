@@ -203,4 +203,10 @@ const Map<String, String> tr = {
 
   ////[MONEY TRANSFER PAGE ]
   'debt_payment': 'Borç Ödeme',
+
+  ///[SHOW GUEST CARD TEXT]
+  'show_guestcard_info':
+      'Evinize gelecek misafirleriniz binanızın giriş sisteminde otomatik olarak giriş yapabilecekleri QR kodu kodları oluşturun ve yönetin',
+  'guest_card_system': 'Misafir Kart Sistemi',
+  'add_guest': 'Misafir Ekle',
 };

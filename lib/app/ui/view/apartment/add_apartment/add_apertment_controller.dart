@@ -41,8 +41,9 @@ class AddApertmentController extends BaseController
     }
   }
 
+ 
   @override
-  tabChange(int newIndex) {
+   tabChange(int newIndex) {
     for (int index = 0; index < isSelected.length; index++) {
       if (index == newIndex) {
         isSelected[index] = true;

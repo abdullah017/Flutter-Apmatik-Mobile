@@ -38,6 +38,7 @@ class BaseController extends GetxController
     with BaseCommonWidgets, Utilities, WidgetState, ScreenState {
   final box = GetStorage();
   RxInt tabIndex = 2.obs;
+
   tabChange(int index) {
     tabIndex.value = index;
     update();
