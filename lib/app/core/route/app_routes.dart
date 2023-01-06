@@ -45,6 +45,13 @@ abstract class Routes {
   static const SHOWGUESTCARD = _Paths.SHOWGUESTCARD;
   static const ADDGUESTCARD = _Paths.ADDGUESTCARD;
   static const EDITGUESTCARD = _Paths.EDITGUESTCARD;
+  static const SHOWTROUBLES = _Paths.SHOWTROUBLES;
+  static const DETAILTROUBLES = _Paths.DETAILTROUBLES;
+  static const ADDTROUBLES = _Paths.ADDTROUBLES;
+  static const SHOWPAMENTS = _Paths.SHOWPAMENTS;
+  static const DETAILPAYMENTS = _Paths.DETAILPAYMENTS;
+  static const SHOWCARS = _Paths.SHOWCARS;
+  static const ADDCARS = _Paths.ADDCARS;
 }
 
 abstract class _Paths {
@@ -87,4 +94,11 @@ abstract class _Paths {
   static const SHOWGUESTCARD = '/show_guestcard';
   static const ADDGUESTCARD = '/add_guestcard';
   static const EDITGUESTCARD = '/edit_guestcard';
+  static const SHOWTROUBLES = '/show_troubles';
+  static const DETAILTROUBLES = '/detail_troubles';
+  static const ADDTROUBLES = '/add_troubles';
+  static const SHOWPAMENTS = '/show_payments';
+  static const DETAILPAYMENTS = '/detail_payments';
+  static const SHOWCARS = '/show_cars';
+  static const ADDCARS = '/add_cars';
 }

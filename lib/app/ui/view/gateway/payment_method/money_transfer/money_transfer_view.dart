@@ -3,7 +3,7 @@ import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/core/constant/decoration_constants.dart';
 import 'package:apmatik/app/core/constant/padding_constants.dart';
-import 'package:apmatik/app/ui/view/gateway/payment/money_transfer/money_transfer_controller.dart';
+import 'package:apmatik/app/ui/view/gateway/payment_method/money_transfer/money_transfer_controller.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_bottom_payment_button_widget.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_dropdown_formfield_button.dart';
 import 'package:flutter/material.dart';

@@ -54,6 +54,9 @@ dependencies:
   easy_mask:
   intl_phone_number_input:
   sqflite:
+  timelines: ^0.1.0
+  fl_chart: ^0.55.2
+  syncfusion_flutter_charts: ^20.3.56
   
   #UTILS
   device_info:

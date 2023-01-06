@@ -41,11 +41,11 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.3.2)
     - "GoogleToolboxForMac/NSString+URLArguments (= 2.3.2)"
   - "GoogleToolboxForMac/NSString+URLArguments (2.3.2)"
-  - GoogleUtilities/Environment (7.7.0):
+  - GoogleUtilities/Environment (7.8.0):
     - PromisesObjC (< 3.0, >= 1.2)
-  - GoogleUtilities/Logger (7.7.0):
+  - GoogleUtilities/Logger (7.8.0):
     - GoogleUtilities/Environment
-  - GoogleUtilities/UserDefaults (7.7.0):
+  - GoogleUtilities/UserDefaults (7.8.0):
     - GoogleUtilities/Logger
   - GoogleUtilitiesComponents (1.1.0):
     - GoogleUtilities/Logger
@@ -108,7 +108,7 @@ PODS:
     - PINOperation (~> 1.2.1)
   - PINOperation (1.2.1)
   - PromisesObjC (2.1.1)
-  - Protobuf (3.21.4)
+  - Protobuf (3.21.7)
   - ReachabilitySwift (5.0.0)
   - sensors (0.0.1):
     - Flutter
@@ -216,7 +216,7 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 1c8145da7117bd68bbbed00cf304edb6a24de00f
   GoogleMLKit: 755661c46990a85e42278015f26400286d98ad95
   GoogleToolboxForMac: 8bef7c7c5cf7291c687cf5354f39f9db6399ad34
-  GoogleUtilities: e0913149f6b0625b553d70dae12b49fc62914fd1
+  GoogleUtilities: 1d20a6ad97ef46f67bbdec158ce00563a671ebb7
   GoogleUtilitiesComponents: 679b2c881db3b615a2777504623df6122dd20afe
   GTMSessionFetcher: 5595ec75acf5be50814f81e9189490412bad82ba
   HLSCachingReverseProxyServer: 59935e1e0244ad7f3375d75b5ef46e8eb26ab181
@@ -237,7 +237,7 @@ SPEC CHECKSUMS:
   PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
   PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
-  Protobuf: 85a48c73d708782e2869564c0438e211aae98e7a
+  Protobuf: f4128517d7a42302e106cc3afe614ee3a7513e94
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   sensors: 84eb7a30e47a649e4172b71d6e81be614c280336
   share: 0b2c3e82132f5888bccca3351c504d0003b3b410

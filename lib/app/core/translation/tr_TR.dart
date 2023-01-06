@@ -209,4 +209,15 @@ const Map<String, String> tr = {
       'Evinize gelecek misafirleriniz binanızın giriş sisteminde otomatik olarak giriş yapabilecekleri QR kodu kodları oluşturun ve yönetin',
   'guest_card_system': 'Misafir Kart Sistemi',
   'add_guest': 'Misafir Ekle',
+
+  ///[SHOW TROUBLES TEXT]
+  'troubles_list': 'Arızalar Listesi',
+  'troubles_subtitle':
+      'Evinize gelecek misafirleriniz binanızın giriş sisteminde otomatik olarak giriş yapabilecekleri QR kodu kodları oluşturun ve yönetin',
+  'troubles_title': 'Arıza Kayıt Sistemi',
+  'troubles_button': 'Arıza Kaydı Oluştur',
+
+  ///[SHOW TROUBLES TEXT]
+  'my_cars': 'Araçlarım',
+  'add_car': 'Araç Ekle',
 };

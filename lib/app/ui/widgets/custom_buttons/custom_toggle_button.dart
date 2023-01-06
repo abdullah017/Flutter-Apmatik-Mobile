@@ -19,7 +19,8 @@ class CustomToggleButton extends StatelessWidget {
       this.secondText,
       this.thirdText,
       this.onPressed,
-      required this.isSelected, this.newChildren})
+      required this.isSelected,
+      this.newChildren})
       : super(key: key);
 
   @override
@@ -38,28 +39,24 @@ class CustomToggleButton extends StatelessWidget {
           borderWidth: 0,
           //splashColor: Colors.red,
           highlightColor: Colors.orange,
-          children: newChildren ?? <Widget>  [
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30.w),
-              child: Text(firstText ?? 'home_owner'.tr,
-                  style: const TextStyle(fontSize: 12)),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30.w),
-              child: Text(secondText ?? 'tenant'.tr,
-                  style: const TextStyle(fontSize: 12)),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30.w),
-              child: Text(thirdText ?? 'resident'.tr,
-                  style: const TextStyle(fontSize: 12)),
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30.w),
-              child: Text(thirdText ?? 'resident'.tr,
-                  style: const TextStyle(fontSize: 12)),
-            ),
-          ],
+          children: newChildren ??
+              <Widget>[
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30.w),
+                  child: Text(firstText ?? 'home_owner'.tr,
+                      style: const TextStyle(fontSize: 12)),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30.w),
+                  child: Text(secondText ?? 'tenant'.tr,
+                      style: const TextStyle(fontSize: 12)),
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 30.w),
+                  child: Text(thirdText ?? 'resident'.tr,
+                      style: const TextStyle(fontSize: 12)),
+                ),
+              ],
           onPressed: onPressed),
     );
   }

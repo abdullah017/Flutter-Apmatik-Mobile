@@ -20,20 +20,24 @@ import 'package:apmatik/app/ui/view/auth/update_password/update_password_binding
 import 'package:apmatik/app/ui/view/auth/update_password/update_password_view.dart';
 import 'package:apmatik/app/ui/view/blank/blank_binding.dart';
 import 'package:apmatik/app/ui/view/blank/blank_view.dart';
+import 'package:apmatik/app/ui/view/cars/add_cars/add_cars_binding.dart';
+import 'package:apmatik/app/ui/view/cars/add_cars/add_cars_view.dart';
+import 'package:apmatik/app/ui/view/cars/show_cars/show_cars_binding.dart';
+import 'package:apmatik/app/ui/view/cars/show_cars/show_cars_view.dart';
 import 'package:apmatik/app/ui/view/common/common_binding.dart';
 import 'package:apmatik/app/ui/view/common/common_view.dart';
 import 'package:apmatik/app/ui/view/dashboard/dashboard_binding.dart';
 import 'package:apmatik/app/ui/view/dashboard/dashboard_view.dart';
 import 'package:apmatik/app/ui/view/gateway/gateway_binding.dart';
 import 'package:apmatik/app/ui/view/gateway/gateway_view.dart';
-import 'package:apmatik/app/ui/view/gateway/payment/credit_card/manage_card/manage_card_binding.dart';
-import 'package:apmatik/app/ui/view/gateway/payment/credit_card/manage_card/manage_card_view.dart';
-import 'package:apmatik/app/ui/view/gateway/payment/credit_card/select_card_binding.dart';
-import 'package:apmatik/app/ui/view/gateway/payment/credit_card/select_card_view.dart';
-import 'package:apmatik/app/ui/view/gateway/payment/credit_card/show_card/show_card_binding.dart';
-import 'package:apmatik/app/ui/view/gateway/payment/credit_card/show_card/show_card_view.dart';
-import 'package:apmatik/app/ui/view/gateway/payment/money_transfer/money_transfer_binding.dart';
-import 'package:apmatik/app/ui/view/gateway/payment/money_transfer/money_transfer_view.dart';
+import 'package:apmatik/app/ui/view/gateway/payment_method/credit_card/manage_card/manage_card_binding.dart';
+import 'package:apmatik/app/ui/view/gateway/payment_method/credit_card/manage_card/manage_card_view.dart';
+import 'package:apmatik/app/ui/view/gateway/payment_method/credit_card/select_card_binding.dart';
+import 'package:apmatik/app/ui/view/gateway/payment_method/credit_card/select_card_view.dart';
+import 'package:apmatik/app/ui/view/gateway/payment_method/credit_card/show_card/show_card_binding.dart';
+import 'package:apmatik/app/ui/view/gateway/payment_method/credit_card/show_card/show_card_view.dart';
+import 'package:apmatik/app/ui/view/gateway/payment_method/money_transfer/money_transfer_binding.dart';
+import 'package:apmatik/app/ui/view/gateway/payment_method/money_transfer/money_transfer_view.dart';
 import 'package:apmatik/app/ui/view/guest_card/add_guest_card/add_guest_binding.dart';
 import 'package:apmatik/app/ui/view/guest_card/add_guest_card/add_guest_view.dart';
 import 'package:apmatik/app/ui/view/guest_card/edit_guest_card/edit_guest_binding.dart';
@@ -61,18 +65,28 @@ import 'package:apmatik/app/ui/view/menu/profile/show_profile/profile_view.dart'
 import 'package:apmatik/app/ui/view/menu/staff/staff_binding.dart';
 import 'package:apmatik/app/ui/view/notifications/notifications_binding.dart';
 import 'package:apmatik/app/ui/view/notifications/notifications_view.dart';
+import 'package:apmatik/app/ui/view/payments/detail_payments/detail_payments_binding.dart';
+import 'package:apmatik/app/ui/view/payments/detail_payments/detail_payments_view.dart';
+import 'package:apmatik/app/ui/view/payments/show_payments/show_payments_binding.dart';
+import 'package:apmatik/app/ui/view/payments/show_payments/show_payments_view.dart';
 import 'package:apmatik/app/ui/view/questionnaire_detail/questionnaire_detail_binding.dart';
 import 'package:apmatik/app/ui/view/questionnaire_detail/questionnaire_detail_view.dart';
 import 'package:apmatik/app/ui/view/splash/splah_view.dart';
 import 'package:apmatik/app/ui/view/splash/splash_binding.dart';
+import 'package:apmatik/app/ui/view/troubles/add_troubles/add_troubles_binding.dart';
+import 'package:apmatik/app/ui/view/troubles/add_troubles/add_troubles_view.dart';
+import 'package:apmatik/app/ui/view/troubles/detail_troubles/detail_troubles_binding.dart';
+import 'package:apmatik/app/ui/view/troubles/detail_troubles/detail_troubles_view.dart';
+import 'package:apmatik/app/ui/view/troubles/show_troubles/show_troubles_binding.dart';
+import 'package:apmatik/app/ui/view/troubles/show_troubles/show_troubles_view.dart';
 import 'package:get/get.dart';
 import '../../ui/view/menu/staff/staff_view.dart';
 part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
-  static const INITIAL = Routes.SHOWGUESTCARD;
-  static const HOME = Routes.SHOWGUESTCARD;
+  static const INITIAL = Routes.LOGIN;
+  static const HOME = Routes.LOGIN;
   static final routes = [
     GetPage(
         name: _Paths.SPLASH,
@@ -264,6 +278,46 @@ class AppPages {
       name: _Paths.EDITGUESTCARD,
       page: () => EditGuestCardView(),
       binding: EditGuestBinding(),
+    ),
+    GetPage(
+      name: _Paths.SHOWTROUBLES,
+      page: () => ShowTroublesView(),
+      binding: ShowTroublesBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAILTROUBLES,
+      page: () => DetailTroublesView(),
+      binding: DetailTroublesBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADDTROUBLES,
+      page: () => AddTroublesView(),
+      binding: AddTroublesBinding(),
+    ),
+    GetPage(
+      name: _Paths.SHOWPAMENTS,
+      page: () => ShowPaymentsView(),
+      binding: ShowPaymentsBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAILPAYMENTS,
+      page: () => DetailPaymentsView(),
+      binding: DetailPaymentsBinding(),
+    ),
+    GetPage(
+      name: _Paths.SHOWCARS,
+      page: () => ShowCarsView(),
+      binding: ShowCarsBinding(),
+    ),
+    GetPage(
+      name: _Paths.SHOWCARS,
+      page: () => ShowCarsView(),
+      binding: ShowCarsBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADDCARS,
+      page: () => AddCarsView(),
+      binding: AddCarsBinding(),
     ),
   ];
 }

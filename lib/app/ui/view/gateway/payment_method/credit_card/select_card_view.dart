@@ -1,8 +1,8 @@
 import 'package:apmatik/app/core/base/base_view.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/core/constant/padding_constants.dart';
-import 'package:apmatik/app/ui/view/gateway/payment/credit_card/new_card/newcard_view.dart';
-import 'package:apmatik/app/ui/view/gateway/payment/credit_card/show_card/show_card_view.dart';
+import 'package:apmatik/app/ui/view/gateway/payment_method/credit_card/new_card/newcard_view.dart';
+import 'package:apmatik/app/ui/view/gateway/payment_method/credit_card/show_card/show_card_view.dart';
 
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_bottom_payment_button_widget.dart';
 import 'package:flutter/material.dart';

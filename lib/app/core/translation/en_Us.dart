@@ -199,4 +199,11 @@ const Map<String, String> en = {
       'Create and manage QR code codes so that your guests who will come to your home can automatically enter your buildings entrance system',
   'guest_card_system': 'Guest Card System',
   'add_guest': 'Add Guest',
+
+  ///[SHOW TROUBLES TEXT]
+  'troubles_list': 'Troubles List',
+  'troubles_subtitle':
+      'Create and manage QR code codes so that your guests who will come to your home can automatically enter your buildings entrance system',
+  'troubles_title': 'Failure Log System',
+  'troubles_button': 'Create Trouble Log',
 };

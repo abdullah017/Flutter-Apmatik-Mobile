@@ -4,7 +4,7 @@ import 'package:apmatik/app/core/constant/color_constants.dart';
 import 'package:apmatik/app/core/constant/decoration_constants.dart';
 import 'package:apmatik/app/core/constant/padding_constants.dart';
 import 'package:apmatik/app/core/model/credit_card_model.dart';
-import 'package:apmatik/app/ui/view/gateway/payment/credit_card/manage_card/manage_card_controller.dart';
+import 'package:apmatik/app/ui/view/gateway/payment_method/credit_card/manage_card/manage_card_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';

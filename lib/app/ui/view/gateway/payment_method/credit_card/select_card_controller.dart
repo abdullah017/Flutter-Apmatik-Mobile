@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:apmatik/app/core/base/base_controller.dart';
 import 'package:apmatik/app/core/constant/asset_constants.dart';
 import 'package:apmatik/app/core/constant/color_constants.dart';
-import 'package:apmatik/app/ui/view/gateway/payment/credit_card/new_card/newcard_controller.dart';
+import 'package:apmatik/app/ui/view/gateway/payment_method/credit_card/new_card/newcard_controller.dart';
 import 'package:apmatik/app/ui/widgets/custom_buttons/custom_elevated_button.dart';
 import 'package:apmatik/app/ui/widgets/custom_inputs/custom_textformfield.dart';
 import 'package:flutter/material.dart';

@@ -24,7 +24,11 @@ class AddApertmentController extends BaseController
   List<String> listOfCountry = ['Türkiye', 'Almanya'];
   List<String> listOfCitys = ['İstanbul', 'İzmir'];
   List<String> listOfDistricts = ['Tuzla', 'Bornova'];
-  List<bool> isSelected = [true, false, false];
+  List<bool> isSelected = [
+    true,
+    false,
+    false,
+  ];
 
   TextEditingController apartmenNameController = TextEditingController();
   GlobalKey<FormState> addApartmenFormKey = GlobalKey<FormState>();
@@ -41,9 +45,8 @@ class AddApertmentController extends BaseController
     }
   }
 
- 
   @override
-   tabChange(int newIndex) {
+  tabChange(int newIndex) {
     for (int index = 0; index < isSelected.length; index++) {
       if (index == newIndex) {
         isSelected[index] = true;

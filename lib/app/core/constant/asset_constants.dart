@@ -49,7 +49,7 @@ class AppAssets {
   static const String qr_icon = 'assets/icons/qr.svg';
   static const String edit_icon = 'assets/icons/edit_icon.png';
   static const String gift_icon = 'assets/icons/gift_icon.png';
-  static const String remove_icon = 'assets/icons/remove.png';
+  static const String remove_icon = 'assets/icons/delete.svg';
   static const String card = 'assets/icons/card.svg';
   static const String fly = 'assets/icons/fly.svg';
   static const String back = 'assets/icons/back.svg';
@@ -65,4 +65,9 @@ class AppAssets {
   ///[SHOW GUEST CARD ICONS]
   static const String add_guest = 'assets/icons/guest_card.svg';
   static const String guest_image = 'assets/icons/person.svg';
+
+  ///[SHOW TROUBLES ICONS]
+  static const String troubles = 'assets/icons/troubles.svg';
+  static const String troubles_white = 'assets/icons/troubles_card.svg';
+  static const String troubles_home = 'assets/icons/troubles_home.svg';
 }
